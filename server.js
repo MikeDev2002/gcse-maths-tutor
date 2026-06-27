@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const url = require('url');
 
 // Load .env manually — no packages needed
 function loadEnv() {
@@ -20,53 +19,67 @@ function loadEnv() {
 }
 loadEnv();
 
-const API_KEY = process.env.ANTHROPIC_API_KEY;
+const API_KEY = process.env.GEMINI_API_KEY;
 const PORT = process.env.PORT || 3000;
 
-const SYSTEM_PROMPT = `You are a friendly and encouraging maths tutor helping a UK GCSE student (ages 14-16).
+const SYSTEM_PROMPT = `You are a friendly and encouraging maths tutor for a Year 10 student studying AQA GCSE Maths at Higher tier. Their exam will be in May/June 2027.
 
 Your role:
-- Guide students to understand concepts, not just give answers
-- Break problems into clear steps
-- Use UK GCSE terminology and curriculum (Edexcel/AQA style)
-- Encourage students when they get things right
-- Gently correct mistakes and explain why
-- Use British spellings (e.g. "colour", "recognise", "factorise")
-- Reference mark schemes when relevant ("this would get 2 marks for method")
+- Guide the student to understand concepts — don't just give answers
+- Break problems into clear, numbered steps
+- Use AQA-specific terminology and match AQA mark scheme language (e.g. "M1 for method", "A1 for answer", "show your working")
+- Encourage the student when they get things right
+- Gently correct mistakes and explain why the method was wrong
+- Use British spellings (factorise, recognise, colour, centre)
 
-Topics you cover: Number, Algebra, Ratio & Proportion, Geometry & Measures, Probability, Statistics.
+AQA Higher tier topics you cover:
+- Number: integers, fractions, decimals, percentages, surds, standard form, indices, upper/lower bounds
+- Algebra: expanding, factorising, solving equations and inequalities, simultaneous equations, quadratics (factorising, quadratic formula, completing the square), algebraic fractions, sequences (nth term, geometric), functions (composite and inverse), proof
+- Ratio & Proportion: ratio, percentage change, compound interest/depreciation, direct and inverse proportion
+- Geometry: angles, polygons, circle theorems, arc length, sector area, Pythagoras, trigonometry (SOH CAH TOA, sine rule, cosine rule), 3D shapes, vectors, transformations, similarity and congruence, area and volume
+- Probability: basic probability, tree diagrams, Venn diagrams, conditional probability
+- Statistics: mean/median/mode/range, frequency tables, cumulative frequency, box plots, histograms, scatter graphs and correlation
 
-Keep responses concise and clear — students learn better from shorter, focused explanations. Use line breaks between steps. When writing maths, be clear and readable (e.g. write "x^2" for x squared, "sqrt()" for square root).
+Teaching approach:
+- Keep explanations concise — short and focused works better than long paragraphs
+- When writing maths use clear notation: x^2 for squared, sqrt() for square root, use / for fractions
+- If the student is stuck, ask a guiding question rather than revealing the answer
+- Remind them of relevant AQA exam technique where appropriate (e.g. "always write the formula first — that gets you the method mark even if your arithmetic slips")
+- Be encouraging but realistic — focus on building genuine understanding, not shortcuts`;
 
-If a student seems stuck, ask a guiding question rather than giving the answer directly.`;
+async function callGemini(messages) {
+  if (!API_KEY) throw new Error('GEMINI_API_KEY not set in .env');
 
-async function callClaude(messages) {
-  if (!API_KEY) throw new Error('ANTHROPIC_API_KEY not set in .env');
+  // Gemini uses "model" instead of "assistant" for the AI role
+  const contents = messages.map(m => ({
+    role: m.role === 'assistant' ? 'model' : 'user',
+    parts: [{ text: m.content }]
+  }));
 
   const body = JSON.stringify({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 1024,
-    system: SYSTEM_PROMPT,
-    messages
+    system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+    contents
   });
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': API_KEY,
-      'anthropic-version': '2023-06-01'
-    },
-    body
-  });
+  const response = await fetch(
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-goog-api-key': API_KEY
+      },
+      body
+    }
+  );
 
   if (!response.ok) {
     const err = await response.text();
-    throw new Error(`Claude API error ${response.status}: ${err}`);
+    throw new Error(`Gemini API error ${response.status}: ${err}`);
   }
 
   const data = await response.json();
-  return data.content[0].text;
+  return data.candidates[0].content.parts[0].text;
 }
 
 function readBody(req) {
@@ -79,7 +92,7 @@ function readBody(req) {
 }
 
 const server = http.createServer(async (req, res) => {
-  const { pathname } = url.parse(req.url);
+  const { pathname } = new URL(req.url, 'http://localhost');
 
   // CORS for local dev
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -97,10 +110,11 @@ const server = http.createServer(async (req, res) => {
     try {
       const raw = await readBody(req);
       const { messages } = JSON.parse(raw);
-      const reply = await callClaude(messages);
+      const reply = await callGemini(messages);
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ reply }));
     } catch (err) {
+      console.error('Error:', err);
       res.writeHead(500, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: err.message }));
     }
@@ -113,5 +127,5 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`Maths Tutor running at http://localhost:${PORT}`);
-  if (!API_KEY) console.warn('WARNING: ANTHROPIC_API_KEY not set — add it to .env');
+  if (!API_KEY) console.warn('WARNING: GEMINI_API_KEY not set — add it to .env');
 });
