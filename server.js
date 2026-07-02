@@ -61,25 +61,28 @@ async function callGemini(messages) {
     contents
   });
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+
   const response = await fetch(
-    'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:streamGenerateContent?alt=sse',
     {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'X-goog-api-key': API_KEY
       },
-      body
+      body,
+      signal: controller.signal
     }
-  );
+  ).finally(() => clearTimeout(timeout));
 
   if (!response.ok) {
     const err = await response.text();
     throw new Error(`Gemini API error ${response.status}: ${err}`);
   }
 
-  const data = await response.json();
-  return data.candidates[0].content.parts[0].text;
+  return response;
 }
 
 function readBody(req) {
@@ -110,13 +113,46 @@ const server = http.createServer(async (req, res) => {
     try {
       const raw = await readBody(req);
       const { messages } = JSON.parse(raw);
-      const reply = await callGemini(messages);
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ reply }));
+      const geminiRes = await callGemini(messages);
+
+      res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive'
+      });
+
+      const reader = geminiRes.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop();
+
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          const json = line.slice(6).trim();
+          if (!json) continue;
+          try {
+            const chunk = JSON.parse(json);
+            const text = chunk.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (text) res.write(`data: ${JSON.stringify({ token: text })}\n\n`);
+          } catch (_) {}
+        }
+      }
+
+      res.write('data: [DONE]\n\n');
+      res.end();
     } catch (err) {
       console.error('Error:', err);
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: err.message }));
+      if (!res.headersSent) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
     }
     return;
   }
