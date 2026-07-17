@@ -20,6 +20,7 @@ function loadEnv() {
 loadEnv();
 
 const API_KEY = process.env.GEMINI_API_KEY;
+const ELEVENLABS_KEY = process.env.ELEVENLABS_API_KEY;
 const PORT = process.env.PORT || 3000;
 
 const SYSTEM_PROMPT = `You are a friendly and encouraging maths tutor for a Year 10 student studying AQA GCSE Maths at Higher tier. Their exam will be in May/June 2027.
@@ -85,6 +86,53 @@ async function callGemini(messages) {
   return response;
 }
 
+// ---- Optional: natural cloud voice via ElevenLabs (only active if a key is set) ----
+
+async function listElevenLabsVoices() {
+  const response = await fetch('https://api.elevenlabs.io/v2/voices', {
+    headers: { 'xi-api-key': ELEVENLABS_KEY }
+  });
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`ElevenLabs voices error ${response.status}: ${err}`);
+  }
+  const data = await response.json();
+  return (data.voices || []).map(v => ({
+    id: v.voice_id,
+    name: v.name,
+    gender: v.labels?.gender || '',
+    accent: v.labels?.accent || ''
+  }));
+}
+
+async function synthesizeSpeech(text, voiceId) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+
+  const response = await fetch(
+    `https://api.elevenlabs.io/v1/text-to-speech/${encodeURIComponent(voiceId)}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'xi-api-key': ELEVENLABS_KEY
+      },
+      body: JSON.stringify({
+        text,
+        model_id: 'eleven_multilingual_v2',
+        voice_settings: { stability: 0.5, similarity_boost: 0.75, style: 0, speed: 1.0, use_speaker_boost: true }
+      }),
+      signal: controller.signal
+    }
+  ).finally(() => clearTimeout(timeout));
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`ElevenLabs speech error ${response.status}: ${err}`);
+  }
+  return response;
+}
+
 function readBody(req) {
   return new Promise((resolve, reject) => {
     let body = '';
@@ -106,6 +154,82 @@ const server = http.createServer(async (req, res) => {
     const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(html);
+    return;
+  }
+
+  // Static files (avatar models, extra pages) — locked to this folder, no dotfiles
+  if (req.method === 'GET') {
+    const types = { '.html': 'text/html', '.glb': 'model/gltf-binary', '.png': 'image/png', '.jpg': 'image/jpeg', '.js': 'text/javascript', '.css': 'text/css' };
+    const ext = path.extname(pathname).toLowerCase();
+    const safe = path.normalize(pathname).replace(/^([/\\])+/, '');
+    const full = path.join(__dirname, safe);
+    if (types[ext] && full.startsWith(__dirname) && !safe.split(/[/\\]/).some(p => p.startsWith('.'))) {
+      try {
+        const data = fs.readFileSync(full);
+        res.writeHead(200, { 'Content-Type': types[ext] });
+        res.end(data);
+        return;
+      } catch (_) { /* fall through to 404 */ }
+    }
+  }
+
+  if (pathname === '/voices' && req.method === 'GET') {
+    if (!ELEVENLABS_KEY) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ configured: false, voices: [] }));
+      return;
+    }
+    try {
+      const voices = await listElevenLabsVoices();
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ configured: true, voices }));
+    } catch (err) {
+      console.error('Error (voices):', err);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ configured: true, voices: [], error: 'Could not reach the natural voice service.' }));
+    }
+    return;
+  }
+
+  if (pathname === '/speak' && req.method === 'POST') {
+    if (!ELEVENLABS_KEY) {
+      res.writeHead(501, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Natural voice is not set up (no ELEVENLABS_API_KEY in .env).' }));
+      return;
+    }
+    try {
+      const raw = await readBody(req);
+      const { text, voiceId } = JSON.parse(raw);
+      if (!text || !voiceId) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Missing text or voiceId.' }));
+        return;
+      }
+
+      const speechRes = await synthesizeSpeech(text, voiceId);
+      res.writeHead(200, { 'Content-Type': 'audio/mpeg' });
+
+      const reader = speechRes.body.getReader();
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        res.write(Buffer.from(value));
+      }
+      res.end();
+    } catch (err) {
+      console.error('Error (speak):', err);
+      if (!res.headersSent) {
+        let friendly = 'Could not generate the natural voice right now.';
+        const msg = String(err.message || '');
+        if (err.name === 'AbortError' || /aborted/i.test(msg)) {
+          friendly = 'The natural voice took too long to respond.';
+        } else if (/429|quota/i.test(msg)) {
+          friendly = "We've used up this month's free natural-voice quota.";
+        }
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: friendly }));
+      }
+    }
     return;
   }
 
@@ -150,8 +274,20 @@ const server = http.createServer(async (req, res) => {
     } catch (err) {
       console.error('Error:', err);
       if (!res.headersSent) {
+        // Translate technical failures into something a student can act on
+        let friendly = 'Something went wrong. Please try again.';
+        const msg = String(err.message || '');
+        if (err.name === 'AbortError' || /aborted/i.test(msg)) {
+          friendly = "The tutor is taking too long to answer — it's probably very busy. Please try again in a minute.";
+        } else if (/503|UNAVAILABLE|high demand|overloaded/i.test(msg)) {
+          friendly = 'The tutor service is very busy right now. Please wait a minute and try again.';
+        } else if (/429|quota|RESOURCE_EXHAUSTED/i.test(msg)) {
+          friendly = "We've used up our free questions for now. Please try again a bit later.";
+        } else if (/GEMINI_API_KEY/.test(msg)) {
+          friendly = 'The tutor is not set up yet — the API key is missing from the .env file.';
+        }
         res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: err.message }));
+        res.end(JSON.stringify({ error: friendly }));
       }
     }
     return;
@@ -164,4 +300,5 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`Maths Tutor running at http://localhost:${PORT}`);
   if (!API_KEY) console.warn('WARNING: GEMINI_API_KEY not set — add it to .env');
+  if (!ELEVENLABS_KEY) console.log('Natural cloud voice is off (no ELEVENLABS_API_KEY in .env) — using the free browser voice.');
 });

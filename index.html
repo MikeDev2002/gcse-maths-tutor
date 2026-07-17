@@ -62,50 +62,37 @@
     }
     .hbtn:hover { background: rgba(255,255,255,0.3); }
 
-    /* ---- Avatar ---- */
+    /* ---- 3D Avatar ---- */
     .avatar-panel {
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      padding: 14px 20px 6px;
+      padding: 8px 20px 4px;
+      background: linear-gradient(180deg, #e0e7ff 0%, var(--bg) 100%);
     }
-    .avatar {
-      width: 96px; height: 96px;
-      filter: drop-shadow(0 6px 14px rgba(99,102,241,0.35));
-      transition: transform 0.3s;
+    #avatar {
+      width: 100%;
+      max-width: 560px;
+      height: 280px;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
     }
-    .avatar.talking { animation: bob 0.6s ease-in-out infinite; }
-    .avatar.listening { transform: scale(1.05); }
-    @keyframes bob { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-4px);} }
+    #avatar canvas { display: block; width: 100% !important; height: 100% !important; }
+    #avatar .loading, #avatar .avatar-error {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 12px;
+      font-size: 0.85rem; color: var(--muted);
+    }
+    #avatar .avatar-error { color: #b91c1c; }
 
-    .face .eye-white { fill: #ffffff; }
-    .face .pupil {
-      fill: #312e81;
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: blink 5s infinite;
+    .controls-row {
+      display: flex; align-items: center; gap: 8px;
+      flex-wrap: wrap; justify-content: center;
     }
-    @keyframes blink {
-      0%, 93%, 100% { transform: scaleY(1); }
-      96% { transform: scaleY(0.1); }
-    }
-    .face .cheek { fill: #f9a8d4; opacity: 0.55; }
-    .face .mouth-smile { display: block; }
-    .face .mouth-open { display: none; }
-    .avatar.talking .mouth-smile { display: none; }
-    .avatar.talking .mouth-open {
-      display: block;
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: talk 0.26s infinite;
-    }
-    @keyframes talk {
-      0%, 100% { transform: scaleY(0.28); }
-      50% { transform: scaleY(1); }
-    }
-
     .status {
       font-size: 0.85rem;
       color: var(--muted);
@@ -113,6 +100,20 @@
       min-height: 1.2em;
       text-align: center;
     }
+    .accent-picker {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8rem; color: var(--muted);
+    }
+    #accent, #cloudVoice, #voiceEngine {
+      font-size: 0.8rem;
+      padding: 4px 8px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: var(--surface);
+      color: var(--text);
+      max-width: 220px;
+    }
+    #voiceEngine option:disabled { color: #94a3b8; }
 
     #chat {
       flex: 1;
@@ -286,29 +287,34 @@
 </header>
 
 <div class="avatar-panel">
-  <svg class="avatar" id="avatar" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="headGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#818cf8"/>
-        <stop offset="1" stop-color="#6366f1"/>
-      </linearGradient>
-    </defs>
-    <g class="face">
-      <circle cx="60" cy="60" r="52" fill="url(#headGrad)"/>
-      <!-- eyes -->
-      <circle class="eye-white" cx="43" cy="52" r="11"/>
-      <circle class="eye-white" cx="77" cy="52" r="11"/>
-      <circle class="pupil" cx="45" cy="53" r="5"/>
-      <circle class="pupil" cx="79" cy="53" r="5"/>
-      <!-- cheeks -->
-      <circle class="cheek" cx="34" cy="72" r="7"/>
-      <circle class="cheek" cx="86" cy="72" r="7"/>
-      <!-- mouth: smile when idle, open oval when talking -->
-      <path class="mouth-smile" d="M 44 78 Q 60 94 76 78" fill="none" stroke="#312e81" stroke-width="4" stroke-linecap="round"/>
-      <ellipse class="mouth-open" cx="60" cy="82" rx="13" ry="11" fill="#312e81"/>
-    </g>
-  </svg>
+  <div id="avatar">
+    <div class="loading" id="avatarLoading">Loading your tutor…</div>
+  </div>
   <div class="status" id="status">Hi! Ask me a maths question 😊</div>
+  <div class="controls-row">
+    <div class="accent-picker">
+      <span>🧑‍🏫 Tutor:</span>
+      <select id="gender" title="Choose your tutor">
+        <option value="female">👩 Female</option>
+        <option value="male">👨 Male</option>
+      </select>
+    </div>
+    <div class="accent-picker">
+      <span>🗣️ Accent:</span>
+      <select id="accent" title="Choose the tutor's voice/accent"></select>
+    </div>
+    <div class="accent-picker" id="engineRow">
+      <span>🎙️ Voice quality:</span>
+      <select id="voiceEngine" title="Browser voice is free; Natural is a higher-quality cloud voice">
+        <option value="browser">Browser (free)</option>
+        <option value="cloud" id="cloudOption" disabled>Natural (cloud)</option>
+      </select>
+    </div>
+    <div class="accent-picker" id="cloudVoiceRow" style="display:none;">
+      <span>👤 Voice:</span>
+      <select id="cloudVoice" title="Choose the natural cloud voice"></select>
+    </div>
+  </div>
 </div>
 
 <div id="chat">
@@ -346,36 +352,145 @@
   const chatEl = document.getElementById('chat');
   const inputEl = document.getElementById('input');
   const sendBtn = document.getElementById('send');
-  const avatarEl = document.getElementById('avatar');
   const statusEl = document.getElementById('status');
   const micBtn = document.getElementById('mic');
   const voiceBtn = document.getElementById('voiceToggle');
+  const accentSel = document.getElementById('accent');
+  const voiceEngineSel = document.getElementById('voiceEngine');
+  const cloudOption = document.getElementById('cloudOption');
+  const cloudVoiceRow = document.getElementById('cloudVoiceRow');
+  const cloudVoiceSel = document.getElementById('cloudVoice');
   let messages = [];
   let voiceOn = true;
+  let voiceEngine = 'browser';   // 'browser' (free) or 'cloud' (natural, needs ELEVENLABS_API_KEY)
+  let cloudVoiceId = null;
+  let currentCloudAudio = null;
 
   const IDLE_STATUS = 'Hi! Ask me a maths question 😊';
   function setStatus(t) { statusEl.textContent = t; }
-  function setTalking(on) { avatarEl.classList.toggle('talking', on); }
+  function setTalking(on) { if (window.tutorAvatar) window.tutorAvatar.setTalking(on); }
 
   // ---------- Text-to-speech (tutor speaks) ----------
   const synth = window.speechSynthesis;
   let ttsVoice = null;
 
-  function pickVoice() {
-    if (!synth) return;
-    const voices = synth.getVoices();
-    ttsVoice =
-      voices.find(v => /en-GB/i.test(v.lang) && /female|Hazel|Libby|Sonia/i.test(v.name)) ||
-      voices.find(v => /en-GB/i.test(v.lang)) ||
-      voices.find(v => /^en/i.test(v.lang)) ||
-      voices[0] || null;
+  const ACCENT_NAMES = { 'GB': 'UK', 'US': 'US', 'AU': 'Australian' };
+
+  // Apple ships "novelty" voices (sound effects, cartoon characters) that are
+  // useless for tutoring — hide them from the student.
+  const NOVELTY = /albert|bad news|bahh|bells|boing|bubbles|cellos|fred|good news|grandma|grandpa|jester|junior|kathy|organ|ralph|rocko|sandy|shelley|superstar|trinoids|whisper|wobble|zarvox|eddy|flo|reed/i;
+
+  // Higher-quality voices first: Premium > Enhanced > Google/Natural > standard
+  function voiceRank(v) {
+    const n = v.name;
+    if (/premium/i.test(n)) return 0;
+    if (/enhanced/i.test(n)) return 1;
+    if (/google|natural|neural|online/i.test(n)) return 2;
+    return 3;
   }
+
+  function populateVoices() {
+    if (!synth) return;
+    // Just the three accents the student wants: UK, US, Australian
+    let voices = synth.getVoices()
+      .filter(v => /^en[-_](GB|US|AU)/i.test(v.lang));
+    const serious = voices.filter(v => !NOVELTY.test(v.name));
+    if (serious.length) voices = serious;
+    voices.sort((a, b) =>
+      voiceRank(a) - voiceRank(b) ||
+      a.lang.localeCompare(b.lang) ||
+      a.name.localeCompare(b.name));
+    if (!voices.length) return;
+
+    let savedURI = accentSel.value;
+    try { savedURI = localStorage.getItem('tutorVoiceURI') || savedURI; } catch (_) {}
+
+    accentSel.innerHTML = '';
+    voices.forEach(v => {
+      const region = v.lang.slice(3, 5).toUpperCase();
+      const star = voiceRank(v) <= 2 ? '★ ' : '';
+      const o = document.createElement('option');
+      o.value = v.voiceURI;
+      o.textContent = `${star}${ACCENT_NAMES[region] || region} — ${v.name.replace(/\s*\((?!Premium|Enhanced).*\)$/i, '')}`;
+      accentSel.appendChild(o);
+    });
+
+    // Keep the saved/current choice if still present, else the best UK voice
+    // (list is sorted best-first), else the best overall
+    const chosen =
+      voices.find(v => v.voiceURI === savedURI) ||
+      voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+      voices[0];
+    accentSel.value = chosen.voiceURI;
+    ttsVoice = chosen;
+  }
+
   if (synth) {
-    pickVoice();
-    synth.onvoiceschanged = pickVoice;
+    populateVoices();
+    synth.onvoiceschanged = populateVoices;
+    accentSel.onchange = () => {
+      ttsVoice = synth.getVoices().find(v => v.voiceURI === accentSel.value) || ttsVoice;
+      try { localStorage.setItem('tutorVoiceURI', accentSel.value); } catch (_) {}
+    };
   } else {
     voiceBtn.style.display = 'none';
+    document.querySelectorAll('.accent-picker').forEach(el => el.style.display = 'none');
   }
+
+  // ---------- Natural cloud voice (optional — only if the server has an ElevenLabs key) ----------
+  function labelCloudVoice(v) {
+    const bits = [v.accent, v.gender].filter(Boolean).map(s => s[0].toUpperCase() + s.slice(1));
+    return bits.length ? `${bits.join(' ')} — ${v.name}` : v.name;
+  }
+
+  async function initCloudVoice() {
+    let data;
+    try {
+      const res = await fetch('/voices');
+      data = await res.json();
+    } catch (_) {
+      return; // server unreachable — just stay on the free browser voice
+    }
+    if (!data.configured || !data.voices || !data.voices.length) return;
+
+    cloudOption.disabled = false;
+    cloudVoiceSel.innerHTML = '';
+    data.voices.forEach(v => {
+      const o = document.createElement('option');
+      o.value = v.id;
+      o.textContent = labelCloudVoice(v);
+      cloudVoiceSel.appendChild(o);
+    });
+
+    let savedId = null;
+    try { savedId = localStorage.getItem('tutorCloudVoiceId'); } catch (_) {}
+    const match = data.voices.find(v => v.id === savedId);
+    cloudVoiceSel.value = (match || data.voices[0]).id;
+    cloudVoiceId = cloudVoiceSel.value;
+
+    cloudVoiceSel.onchange = () => {
+      cloudVoiceId = cloudVoiceSel.value;
+      try { localStorage.setItem('tutorCloudVoiceId', cloudVoiceId); } catch (_) {}
+    };
+
+    // Only switch to the cloud engine if the student had picked it before
+    // AND it's actually available this time round.
+    let savedEngine = 'browser';
+    try { savedEngine = localStorage.getItem('tutorVoiceEngine') || 'browser'; } catch (_) {}
+    if (savedEngine === 'cloud') {
+      voiceEngine = 'cloud';
+      voiceEngineSel.value = 'cloud';
+      cloudVoiceRow.style.display = '';
+    }
+  }
+  initCloudVoice();
+
+  voiceEngineSel.onchange = () => {
+    voiceEngine = voiceEngineSel.value;
+    cloudVoiceRow.style.display = voiceEngine === 'cloud' ? '' : 'none';
+    try { localStorage.setItem('tutorVoiceEngine', voiceEngine); } catch (_) {}
+    stopSpeaking();
+  };
 
   // Turn maths markdown/LaTeX into something that reads aloud sensibly
   function speakableText(md) {
@@ -401,10 +516,17 @@
   }
 
   function speak(text) {
-    if (!synth || !voiceOn) return;
-    synth.cancel();
+    if (!voiceOn) return;
     const clean = speakableText(text);
     if (!clean) return;
+
+    if (voiceEngine === 'cloud' && cloudVoiceId) {
+      speakCloud(clean);
+      return;
+    }
+
+    if (!synth) return;
+    synth.cancel();
     const u = new SpeechSynthesisUtterance(clean);
     if (ttsVoice) u.voice = ttsVoice;
     u.lang = (ttsVoice && ttsVoice.lang) || 'en-GB';
@@ -416,8 +538,43 @@
     synth.speak(u);
   }
 
+  async function speakCloud(text) {
+    setStatus('Getting the natural voice ready…');
+    try {
+      const res = await fetch('/speak', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text, voiceId: cloudVoiceId })
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Natural voice failed.');
+      }
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      currentCloudAudio = audio;
+      audio.onplay = () => { setTalking(true); setStatus('Speaking…'); };
+      audio.onended = audio.onerror = () => {
+        setTalking(false);
+        setStatus(IDLE_STATUS);
+        URL.revokeObjectURL(url);
+        if (currentCloudAudio === audio) currentCloudAudio = null;
+      };
+      await audio.play();
+    } catch (err) {
+      console.error('Cloud voice error:', err);
+      // Fall back quietly — the written answer is already on screen either way
+      setStatus(IDLE_STATUS);
+    }
+  }
+
   function stopSpeaking() {
     if (synth) synth.cancel();
+    if (currentCloudAudio) {
+      currentCloudAudio.pause();
+      currentCloudAudio = null;
+    }
     setTalking(false);
   }
 
@@ -605,6 +762,17 @@
         }
       }
 
+      if (!fullText) {
+        // Stream opened but died before any words arrived (e.g. Gemini under load)
+        msgDiv.remove();
+        addError('The tutor got cut off before answering — please try again.');
+        messages.pop();
+        setStatus(IDLE_STATUS);
+        sendBtn.disabled = false;
+        inputEl.focus();
+        return;
+      }
+
       messages.push({ role: 'assistant', content: fullText });
       speak(fullText);            // read the answer aloud
     } catch (err) {
@@ -637,6 +805,249 @@
       </div>`;
     inputEl.focus();
   }
+</script>
+
+<!-- ---- 3D tutor avatar (three.js, loaded from CDN — no install) ---- -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+// Photo-scan quality avatars from the met4citizen/TalkingHead examples
+// (free for this non-commercial prototype; swap for our own before any
+// commercial launch). Served from a CDN — no install needed.
+const AVATARS = {
+  female: { url: 'https://cdn.jsdelivr.net/gh/met4citizen/TalkingHead@main/avatars/avaturn.glb', dist: 0.58 },
+  male:   { url: 'https://cdn.jsdelivr.net/gh/met4citizen/TalkingHead@main/avatars/avatarsdk.glb', dist: 0.68 }
+};
+let camDist = 0.68;
+
+const container = document.getElementById('avatar');
+const genderSel = document.getElementById('gender');
+
+let talking = false;
+window.tutorAvatar = { setTalking(b) { talking = !!b; } };
+
+let renderer, scene, camera, clock, avatarRoot, headBone, headBaseQuat;
+let morphMeshes = [];            // every mesh with blend shapes (head, teeth, brows…)
+let talkKey = null;              // best available mouth control for this avatar
+let smileKeys = [], blinkKeys = [];
+let nextBlink = 1.5, blinkT = -1;
+let eyeBones = [], eyeBaseQuats = [];
+let eyeTarget = { x: 0, y: 0 }, eyeNow = { x: 0, y: 0 }, nextSaccade = 1;
+let loadSeq = 0;                 // guards against out-of-order loads on quick switching
+
+function overlay(msg, isError) {
+  let el = container.querySelector('.loading, .avatar-error');
+  if (!msg) { if (el) el.remove(); return; }
+  if (!el) { el = document.createElement('div'); container.appendChild(el); }
+  el.className = isError ? 'avatar-error' : 'loading';
+  el.textContent = msg;
+}
+
+function setMorph(name, v) {
+  for (const m of morphMeshes) {
+    const i = m.morphTargetDictionary[name];
+    if (i !== undefined) m.morphTargetInfluences[i] = v;
+  }
+}
+function getMorph(name) {
+  for (const m of morphMeshes) {
+    const i = m.morphTargetDictionary[name];
+    if (i !== undefined) return m.morphTargetInfluences[i];
+  }
+  return 0;
+}
+function hasMorph(name) {
+  return morphMeshes.some(m => name in m.morphTargetDictionary);
+}
+
+function disposeAvatar(root) {
+  scene.remove(root);
+  root.traverse(o => {
+    if (o.isMesh) {
+      o.geometry.dispose();
+      const mats = Array.isArray(o.material) ? o.material : [o.material];
+      mats.forEach(m => {
+        for (const k in m) if (m[k] && m[k].isTexture) m[k].dispose();
+        m.dispose();
+      });
+    }
+  });
+}
+
+function frameHead(root) {
+  root.updateMatrixWorld(true);
+  const target = new THREE.Vector3();
+  if (headBone) {
+    headBone.getWorldPosition(target);
+    target.y += 0.05;                                  // centre on the face, not the neck
+  } else {
+    const box = new THREE.Box3().setFromObject(root);
+    const size = box.getSize(new THREE.Vector3());
+    target.set(
+      (box.min.x + box.max.x) / 2,
+      box.min.y + size.y * 0.92,                       // heads live near the top
+      (box.min.z + box.max.z) / 2
+    );
+  }
+  camera.position.set(target.x, target.y + 0.03, target.z + camDist);
+  camera.lookAt(target.x, target.y - 0.005, target.z);
+}
+
+function loadAvatar(gender) {
+  const seq = ++loadSeq;
+  overlay('Loading your tutor…', false);
+  const cfg = AVATARS[gender] || AVATARS.female;
+  camDist = cfg.dist;
+  const loader = new GLTFLoader();
+  loader.load(cfg.url, (gltf) => {
+    if (seq !== loadSeq) return;                       // a newer request won the race
+    if (avatarRoot) disposeAvatar(avatarRoot);
+
+    avatarRoot = gltf.scene;
+    scene.add(avatarRoot);
+
+    morphMeshes = [];
+    headBone = null;
+    eyeBones = []; eyeBaseQuats = [];
+    avatarRoot.traverse(o => {
+      if (o.isMesh && o.morphTargetDictionary && o.morphTargetInfluences) morphMeshes.push(o);
+      if (!headBone && o.isBone && /^head$/i.test(o.name)) headBone = o;
+      if (o.isBone && /eye/i.test(o.name) && !/lid|brow|lash/i.test(o.name)) eyeBones.push(o);
+      if (o.isMesh && o.material) { o.material.envMapIntensity = 0.9; o.material.needsUpdate = true; }
+    });
+    if (!headBone) avatarRoot.traverse(o => { if (!headBone && o.isBone && /head/i.test(o.name)) headBone = o; });
+    headBaseQuat = headBone ? headBone.quaternion.clone() : null;
+    eyeBaseQuats = eyeBones.map(b => b.quaternion.clone());
+
+    // Pick the best mouth/eye controls this model provides
+    talkKey = ['viseme_aa', 'jawOpen', 'mouthOpen'].find(hasMorph) || null;
+    smileKeys = hasMorph('mouthSmileLeft') ? ['mouthSmileLeft', 'mouthSmileRight']
+              : hasMorph('mouthSmile') ? ['mouthSmile'] : [];
+    blinkKeys = hasMorph('eyeBlinkLeft') ? ['eyeBlinkLeft', 'eyeBlinkRight']
+              : hasMorph('eyesClosed') ? ['eyesClosed'] : [];
+
+    frameHead(avatarRoot);
+    overlay(null);
+    try { localStorage.setItem('tutorGender', gender); } catch (_) {}
+    renderer.setAnimationLoop(animate);
+  }, undefined, (err) => {
+    if (seq !== loadSeq) return;
+    console.error('Avatar load error', err);
+    overlay("Couldn't load the 3D tutor — the maths help below still works.", true);
+  });
+}
+
+function animate() {
+  const dt = clock.getDelta();
+  const t = clock.elapsedTime;
+
+  if (morphMeshes.length) {
+    for (const k of smileKeys) setMorph(k, 0.3);       // friendly resting smile
+
+    if (talkKey) {
+      const cur = getMorph(talkKey);
+      let want = 0;
+      if (talking) {
+        want = 0.28 + 0.30 * Math.abs(Math.sin(t * 10.5)) + 0.10 * Math.abs(Math.sin(t * 23));
+      }
+      setMorph(talkKey, cur + (want - cur) * Math.min(1, dt * 16));
+    }
+
+    nextBlink -= dt;
+    if (blinkT < 0 && nextBlink <= 0) { blinkT = 0; nextBlink = 2.5 + Math.random() * 3.5; }
+    let blink = 0;
+    if (blinkT >= 0) {
+      blinkT += dt;
+      const p = blinkT / 0.16;
+      blink = p < 0.5 ? p * 2 : (p < 1 ? (1 - p) * 2 : 0);
+      if (blinkT > 0.16) blinkT = -1;
+    }
+    for (const k of blinkKeys) setMorph(k, blink);
+  }
+
+  // Gentle, natural head movement (a touch livelier while talking)
+  if (headBone && headBaseQuat) {
+    const amp = talking ? 1.6 : 1.0;
+    headBone.quaternion.copy(headBaseQuat);
+    headBone.rotateY(0.045 * amp * Math.sin(t * 0.55));
+    headBone.rotateX(0.025 * amp * Math.sin(t * 0.4 + 1.3));
+    headBone.rotateZ(0.015 * Math.sin(t * 0.3 + 0.6));
+  }
+
+  // Small darting eye movements so the gaze feels alive, not a stare.
+  // While talking the eyes stay mostly on the student.
+  if (eyeBones.length) {
+    nextSaccade -= dt;
+    if (nextSaccade <= 0) {
+      nextSaccade = 1.2 + Math.random() * 2.5;
+      const range = talking ? 0.02 : 0.05;
+      eyeTarget.x = (Math.random() - 0.5) * range;       // up/down
+      eyeTarget.y = (Math.random() - 0.5) * range * 2;   // left/right
+    }
+    const s = Math.min(1, dt * 14);                      // quick dart, then hold
+    eyeNow.x += (eyeTarget.x - eyeNow.x) * s;
+    eyeNow.y += (eyeTarget.y - eyeNow.y) * s;
+    eyeBones.forEach((b, i) => {
+      b.quaternion.copy(eyeBaseQuats[i]);
+      b.rotateX(eyeNow.x);
+      b.rotateY(eyeNow.y);
+    });
+  }
+
+  renderer.render(scene, camera);
+}
+
+try {
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+  container.appendChild(renderer.domElement);
+
+  scene = new THREE.Scene();
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+  // Soft warm key + cool fill so faces read warm and lifelike
+  const key = new THREE.DirectionalLight(0xffe9d2, 1.3);
+  key.position.set(-0.6, 0.8, 1.4); scene.add(key);
+  const fill = new THREE.DirectionalLight(0xd8e6ff, 0.5);
+  fill.position.set(1.0, 0.3, 0.8); scene.add(fill);
+
+  camera = new THREE.PerspectiveCamera(25, container.clientWidth / container.clientHeight, 0.05, 100);
+  clock = new THREE.Clock();
+
+  let startGender = 'female';
+  try { startGender = localStorage.getItem('tutorGender') || 'female'; } catch (_) {}
+  if (!AVATARS[startGender]) startGender = 'female';
+  genderSel.value = startGender;
+  genderSel.onchange = () => loadAvatar(genderSel.value);
+
+  loadAvatar(startGender);
+} catch (e) {
+  console.error(e);
+  overlay("3D graphics aren't available here — the maths help below still works.", true);
+}
+
+window.addEventListener('resize', () => {
+  if (!renderer || !camera) return;
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  if (avatarRoot) frameHead(avatarRoot);
+});
 </script>
 </body>
 </html>

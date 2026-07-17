@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Avatar audition</title>
+<style>
+  body { margin: 0; background: linear-gradient(180deg,#e0e7ff,#eef1f8); font-family: system-ui; }
+  #stage { width: 100vw; height: 100vh; }
+  #label { position: fixed; top: 10px; left: 10px; background: #fff; padding: 6px 12px; border-radius: 8px; font-size: 14px; }
+</style>
+<script type="importmap">
+{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="stage"></div>
+<div id="label">loading…</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const params = new URLSearchParams(location.search);
+const url = params.get('m');
+const talking = params.get('talk') === '1';
+document.getElementById('label').textContent = (url || 'no ?m= given').split('/').pop();
+
+const stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(stage.clientWidth, stage.clientHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.1;
+stage.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+const key = new THREE.DirectionalLight(0xffe9d2, 1.3); key.position.set(-0.6, 0.8, 1.4); scene.add(key);
+const fill = new THREE.DirectionalLight(0xd8e6ff, 0.5); fill.position.set(1.0, 0.3, 0.8); scene.add(fill);
+
+const camera = new THREE.PerspectiveCamera(25, stage.clientWidth / stage.clientHeight, 0.05, 100);
+const clock = new THREE.Clock();
+let morphMeshes = [], headBone = null, baseQ = null, talkKey = null, smileKeys = [];
+
+new GLTFLoader().load(url, (gltf) => {
+  const root = gltf.scene;
+  scene.add(root);
+  root.traverse(o => {
+    if (o.isMesh && o.morphTargetDictionary) morphMeshes.push(o);
+    if (!headBone && o.isBone && /head/i.test(o.name)) headBone = o;
+    if (o.isMesh && o.material) { o.material.envMapIntensity = 0.9; }
+  });
+  baseQ = headBone ? headBone.quaternion.clone() : null;
+  const has = n => morphMeshes.some(m => n in m.morphTargetDictionary);
+  talkKey = ['viseme_aa','jawOpen','mouthOpen'].find(has) || null;
+  smileKeys = has('mouthSmileLeft') ? ['mouthSmileLeft','mouthSmileRight'] : has('mouthSmile') ? ['mouthSmile'] : [];
+
+  root.updateMatrixWorld(true);
+  const t = new THREE.Vector3();
+  if (headBone) { headBone.getWorldPosition(t); t.y += 0.05; }
+  else { const b = new THREE.Box3().setFromObject(root); const s = b.getSize(new THREE.Vector3()); t.set((b.min.x+b.max.x)/2, b.min.y + s.y*0.92, (b.min.z+b.max.z)/2); }
+  camera.position.set(t.x, t.y + 0.03, t.z + 0.72);
+  camera.lookAt(t.x, t.y - 0.01, t.z);
+
+  const set = (n, v) => morphMeshes.forEach(m => { const i = m.morphTargetDictionary[n]; if (i !== undefined) m.morphTargetInfluences[i] = v; });
+  renderer.setAnimationLoop(() => {
+    const el = clock.elapsedTime;
+    smileKeys.forEach(k => set(k, 0.3));
+    if (talking && talkKey) set(talkKey, 0.3 + 0.3 * Math.abs(Math.sin(el * 10)));
+    renderer.render(scene, camera);
+  });
+  document.getElementById('label').textContent += ' ✓ talk:' + (talkKey || 'NONE') + ' smile:' + (smileKeys[0] || 'NONE');
+}, undefined, e => { document.getElementById('label').textContent += ' — LOAD FAILED'; console.error(e); });
+</script>
+</body>
+</html>
