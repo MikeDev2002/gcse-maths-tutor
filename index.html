@@ -73,33 +73,58 @@
     }
     .hbtn:hover { background: rgba(255,255,255,0.3); }
 
-    /* ---- 3D Avatar ---- */
+    /* ---- Owl avatar ---- */
     .avatar-panel {
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      padding: 8px 20px 4px;
+      padding: 10px 20px 8px;
       background: linear-gradient(180deg, #e0e7ff 0%, var(--bg) 100%);
     }
     #avatar {
-      width: 100%;
-      max-width: 560px;
-      height: 280px;
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
+      width: 180px;
+      height: 180px;
     }
-    #avatar canvas { display: block; width: 100% !important; height: 100% !important; }
-    #avatar .loading, #avatar .avatar-error {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 12px;
-      font-size: 0.85rem; color: var(--muted);
-    }
-    #avatar .avatar-error { color: #b91c1c; }
+    #avatar svg { width: 100%; height: 100%; display: block; }
 
+    .owl-bob { animation: owlBob 3.4s ease-in-out infinite; transform-origin: 50% 100%; }
+    @keyframes owlBob {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-3px) rotate(-0.6deg); }
+    }
+    #avatar.talking .owl-bob { animation-duration: 0.5s; }
+
+    .owl-eyelid {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: owlBlink 4.2s infinite;
+    }
+    .owl-eyelid.right { animation-delay: 0.05s; }
+    @keyframes owlBlink {
+      0%, 92%, 100% { transform: scaleY(0); }
+      95%           { transform: scaleY(1); }
+    }
+
+    .owl-beak-closed { display: block; }
+    .owl-beak-open   { display: none; }
+    #avatar.talking .owl-beak-closed { display: none; }
+    #avatar.talking .owl-beak-open {
+      display: block;
+      transform-box: fill-box;
+      transform-origin: top center;
+      animation: owlChomp 0.22s infinite;
+    }
+    @keyframes owlChomp {
+      0%, 100% { transform: scaleY(0.5); }
+      50%      { transform: scaleY(1); }
+    }
+
+    .control-group {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8rem; color: var(--muted);
+    }
     .controls-row {
       display: flex; align-items: center; gap: 8px;
       flex-wrap: wrap; justify-content: center;
@@ -111,11 +136,7 @@
       min-height: 1.2em;
       text-align: center;
     }
-    .accent-picker {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.8rem; color: var(--muted);
-    }
-    #accent, #cloudVoice, #voiceEngine {
+    #cloudVoice, #voiceEngine {
       font-size: 0.8rem;
       padding: 4px 8px;
       border-radius: 8px;
@@ -264,29 +285,79 @@
       font-size: 0.88rem; align-self: center; max-width: 80%;
     }
 
-    .welcome {
+    /* ---- Topic browser ---- */
+    .topic-browser {
       align-self: center; text-align: center;
-      max-width: 480px; padding: 24px;
-      background: var(--surface); border-radius: 16px;
-      border: 1px solid #e2e8f0; margin: auto;
+      max-width: 620px; width: 100%;
+      margin: auto;
     }
-    .welcome h2 { font-size: 1.15rem; margin-bottom: 8px; }
-    .welcome p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
-    .welcome .topics {
-      display: flex; flex-wrap: wrap; gap: 6px;
-      justify-content: center; margin-top: 14px;
+    .tb-intro { margin-bottom: 18px; }
+    .tb-intro h2 { font-size: 1.2rem; margin-bottom: 8px; }
+    .tb-intro p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; max-width: 480px; margin: 0 auto; }
+
+    .tb-back {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 14px; text-align: left;
     }
-    .welcome .topic {
-      background: var(--primary-light); color: var(--primary-dark);
-      padding: 4px 10px; border-radius: 20px;
-      font-size: 0.78rem; font-weight: 600;
+    .tb-back-btn {
+      background: var(--surface); border: 1px solid #e2e8f0;
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 0.82rem; font-weight: 600; color: var(--primary-dark);
+      cursor: pointer; transition: all 0.15s; white-space: nowrap;
+    }
+    .tb-back-btn:hover { border-color: var(--primary); background: var(--primary-light); }
+    .tb-topic-title { font-size: 1rem; font-weight: 700; }
+
+    .tb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    .tb-card {
+      background: var(--surface);
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 18px 14px;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+      animation: tbCardIn 0.3s ease backwards;
+      animation-delay: calc(var(--i, 0) * 0.035s);
+    }
+    .tb-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(79,70,229,0.14);
+      border-color: var(--primary);
+    }
+    .tb-card .tb-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .tb-card .tb-label { font-size: 0.88rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+
+    .tb-sub-card {
+      grid-template-columns: unset;
+    }
+    .tb-grid.subs {
+      grid-template-columns: 1fr;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .tb-grid.subs .tb-card {
+      display: flex; align-items: center; gap: 12px;
+      text-align: left; padding: 14px 16px;
+    }
+    .tb-grid.subs .tb-card .tb-icon { margin-bottom: 0; font-size: 1.3rem; }
+    .tb-grid.subs .tb-card .tb-label { font-size: 0.92rem; }
+    .tb-grid.subs .tb-card .tb-chevron { margin-left: auto; color: var(--muted); }
+
+    @keyframes tbCardIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="icon">📐</div>
+  <div class="icon">🦉</div>
   <div>
     <h1>GCSE Maths Tutor</h1>
     <p>Your personal tutor — ask or say anything!</p>
@@ -299,49 +370,84 @@
 
 <div class="avatar-panel">
   <div id="avatar">
-    <div class="loading" id="avatarLoading">Loading your tutor…</div>
+    <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="owlBodyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8b8ff5"/>
+          <stop offset="1" stop-color="#6366f1"/>
+        </linearGradient>
+        <linearGradient id="owlWingGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#5b5ce0"/>
+          <stop offset="1" stop-color="#4f46e5"/>
+        </linearGradient>
+      </defs>
+
+      <ellipse cx="100" cy="207" rx="52" ry="8" fill="#4f46e5" opacity="0.13"/>
+
+      <g class="owl-bob">
+        <!-- ear tufts -->
+        <path d="M 56 62 Q 50 30 74 46 Z" fill="#6366f1"/>
+        <path d="M 144 62 Q 150 30 126 46 Z" fill="#6366f1"/>
+
+        <!-- wings -->
+        <ellipse cx="46" cy="140" rx="16" ry="34" fill="url(#owlWingGrad)"/>
+        <ellipse cx="154" cy="140" rx="16" ry="34" fill="url(#owlWingGrad)"/>
+
+        <!-- body -->
+        <ellipse cx="100" cy="132" rx="62" ry="70" fill="url(#owlBodyGrad)"/>
+
+        <!-- belly / facial disc -->
+        <ellipse cx="100" cy="150" rx="38" ry="34" fill="#f4f1ff"/>
+        <ellipse cx="100" cy="98"  rx="46" ry="40" fill="#f4f1ff"/>
+
+        <!-- graduation cap -->
+        <g transform="translate(100 46)">
+          <rect x="-30" y="2" width="60" height="9" rx="3" fill="#312e81"/>
+          <path d="M -36 6 L 0 -12 L 36 6 L 0 22 Z" fill="#3730a3"/>
+          <circle cx="0" cy="-12" r="3.5" fill="#facc15"/>
+          <path d="M 30 8 L 34 26 L 26 22 Z" fill="#facc15"/>
+        </g>
+
+        <!-- eyes -->
+        <circle cx="80"  cy="96" r="19" fill="#ffffff"/>
+        <circle cx="120" cy="96" r="19" fill="#ffffff"/>
+        <circle cx="81"  cy="97" r="9" fill="#312e81"/>
+        <circle cx="121" cy="97" r="9" fill="#312e81"/>
+        <circle cx="84"  cy="93" r="2.6" fill="#ffffff"/>
+        <circle cx="124" cy="93" r="2.6" fill="#ffffff"/>
+        <rect class="owl-eyelid left"  x="61"  y="77" width="38" height="19" fill="#8b8ff5"/>
+        <rect class="owl-eyelid right" x="101" y="77" width="38" height="19" fill="#8b8ff5"/>
+
+        <!-- beak -->
+        <path class="owl-beak-closed" d="M 92 112 L 108 112 L 100 124 Z" fill="#fbbf24"/>
+        <g class="owl-beak-open">
+          <path d="M 91 111 L 109 111 L 100 118 Z" fill="#f59e0b"/>
+          <path d="M 93 120 L 107 120 L 100 129 Z" fill="#fbbf24"/>
+        </g>
+
+        <!-- feet -->
+        <path d="M 78 200 L 74 210 M 78 200 L 78 211 M 78 200 L 82 210" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M 122 200 L 118 210 M 122 200 L 122 211 M 122 200 L 126 210" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </g>
+    </svg>
   </div>
   <div class="status" id="status">Hi! Ask me a maths question 😊</div>
   <div class="controls-row">
-    <div class="accent-picker">
-      <span>🧑‍🏫 Tutor:</span>
-      <select id="gender" title="Choose your tutor">
-        <option value="female">👩 Female</option>
-        <option value="male">👨 Male</option>
-      </select>
-    </div>
-    <div class="accent-picker">
-      <span>🗣️ Accent:</span>
-      <select id="accent" title="Choose the tutor's voice/accent"></select>
-    </div>
-    <div class="accent-picker" id="engineRow">
+    <div class="control-group" id="engineRow">
       <span>🎙️ Voice quality:</span>
       <select id="voiceEngine" title="Browser voice is free; Natural is a higher-quality cloud voice">
         <option value="browser">Browser (free)</option>
         <option value="cloud" id="cloudOption" disabled>Natural (cloud)</option>
       </select>
     </div>
-    <div class="accent-picker" id="cloudVoiceRow" style="display:none;">
+    <div class="control-group" id="cloudVoiceRow" style="display:none;">
       <span>👤 Voice:</span>
       <select id="cloudVoice" title="Choose the natural cloud voice"></select>
     </div>
   </div>
 </div>
 
-<div id="chat">
-  <div class="welcome" id="welcome">
-    <h2>Hello! I'm your GCSE Maths Tutor</h2>
-    <p>Ask me about any maths topic — by typing or by tapping the 🎤 and speaking. I'll guide you through problems step by step and read my answers out loud.</p>
-    <div class="topics">
-      <span class="topic">Number</span>
-      <span class="topic">Algebra</span>
-      <span class="topic">Geometry</span>
-      <span class="topic">Statistics</span>
-      <span class="topic">Probability</span>
-      <span class="topic">Ratio &amp; Proportion</span>
-    </div>
-  </div>
-</div>
+<div id="chat"></div>
 
 <footer>
   <div class="input-row">
@@ -366,7 +472,7 @@
   const statusEl = document.getElementById('status');
   const micBtn = document.getElementById('mic');
   const voiceBtn = document.getElementById('voiceToggle');
-  const accentSel = document.getElementById('accent');
+  const avatarEl = document.getElementById('avatar');
   const voiceEngineSel = document.getElementById('voiceEngine');
   const cloudOption = document.getElementById('cloudOption');
   const cloudVoiceRow = document.getElementById('cloudVoiceRow');
@@ -379,16 +485,130 @@
 
   const IDLE_STATUS = 'Hi! Ask me a maths question 😊';
   function setStatus(t) { statusEl.textContent = t; }
-  function setTalking(on) { if (window.tutorAvatar) window.tutorAvatar.setTalking(on); }
+  function setTalking(on) { avatarEl.classList.toggle('talking', on); }
+
+  // ---------- Bite-sized topic browser ----------
+  const TOPICS = [
+    { name: 'Number', icon: '🔢', subs: [
+      'Fractions, decimals & percentages',
+      'Standard form',
+      'Surds',
+      'Laws of indices',
+      'Upper & lower bounds'
+    ]},
+    { name: 'Algebra', icon: '🧮', subs: [
+      'Expanding & factorising',
+      'Solving equations & inequalities',
+      'Simultaneous equations',
+      'Quadratics: factorising & the formula',
+      'Completing the square',
+      'Algebraic fractions',
+      'Sequences (linear, quadratic, geometric)',
+      'Functions & iteration',
+      'Algebraic proof'
+    ]},
+    { name: 'Ratio & Proportion', icon: '⚖️', subs: [
+      'Ratio',
+      'Percentage change',
+      'Compound interest & depreciation',
+      'Direct & inverse proportion'
+    ]},
+    { name: 'Geometry', icon: '📐', subs: [
+      'Angles & polygons',
+      'Circle theorems',
+      'Arc length & sector area',
+      "Pythagoras' theorem",
+      'Trigonometry (SOH CAH TOA)',
+      'Sine & cosine rules',
+      '3D shapes & volume',
+      'Vectors',
+      'Transformations',
+      'Similarity & congruence'
+    ]},
+    { name: 'Probability', icon: '🎲', subs: [
+      'Basic probability',
+      'Tree diagrams',
+      'Venn diagrams & set notation',
+      'Conditional probability'
+    ]},
+    { name: 'Statistics', icon: '📊', subs: [
+      'Averages & range',
+      'Frequency tables',
+      'Cumulative frequency & box plots',
+      'Histograms',
+      'Scatter graphs & correlation'
+    ]}
+  ];
+
+  function topicBrowserHTML() {
+    return `
+      <div class="topic-browser" id="topicBrowser">
+        <div class="tb-intro">
+          <h2>Hello! I'm your GCSE Maths Tutor</h2>
+          <p>Pick a topic below for a focused ~20-minute session, or just type or speak your own question any time.</p>
+        </div>
+        <div class="tb-back" id="tbBack" style="display:none;">
+          <button class="tb-back-btn" onclick="renderTopicGrid()">← All topics</button>
+          <span class="tb-topic-title" id="tbTopicTitle"></span>
+        </div>
+        <div class="tb-grid" id="tbGrid"></div>
+      </div>`;
+  }
+
+  // Cards are built with data-index + addEventListener (never inline onclick
+  // with interpolated text) — several sub-topic labels contain apostrophes
+  // and ampersands ("Pythagoras' theorem", "Ratio & Proportion") which would
+  // break a quoted HTML attribute if the text were embedded directly in it.
+  function renderTopicGrid() {
+    document.getElementById('tbBack').style.display = 'none';
+    const grid = document.getElementById('tbGrid');
+    grid.className = 'tb-grid';
+    grid.innerHTML = TOPICS.map((t, i) => `
+      <div class="tb-card" style="--i:${i}" data-index="${i}">
+        <div class="tb-icon">${t.icon}</div>
+        <div class="tb-label">${t.name}</div>
+      </div>`).join('');
+    grid.querySelectorAll('.tb-card').forEach(card => {
+      card.addEventListener('click', () => renderSubtopicGrid(Number(card.dataset.index)));
+    });
+  }
+
+  function renderSubtopicGrid(topicIndex) {
+    const topic = TOPICS[topicIndex];
+    const backRow = document.getElementById('tbBack');
+    backRow.style.display = 'flex';
+    document.getElementById('tbTopicTitle').textContent = `${topic.icon} ${topic.name}`;
+    const grid = document.getElementById('tbGrid');
+    grid.className = 'tb-grid subs';
+    grid.innerHTML = topic.subs.map((s, i) => `
+      <div class="tb-card" style="--i:${i}" data-index="${i}">
+        <span class="tb-icon">📘</span>
+        <span class="tb-label">${s}</span>
+        <span class="tb-chevron">›</span>
+      </div>`).join('');
+    grid.querySelectorAll('.tb-card').forEach(card => {
+      card.addEventListener('click', () => startTopicSession(topic.name, topic.subs[Number(card.dataset.index)]));
+    });
+  }
+
+  function startTopicSession(topicName, sub) {
+    const displayLabel = `📘 ${sub}`;
+    const apiPrompt = `Let's do a focused, roughly 20-minute study session on "${sub}" (part of ${topicName}) for Edexcel GCSE Higher tier. Start with a short, clear introduction to the topic, then explain the method with one worked example, and finish by giving me one short practice question to try myself.`;
+    sendMessage(displayLabel, apiPrompt);
+  }
+
+  function showTopicBrowser() {
+    chatEl.innerHTML = topicBrowserHTML();
+    renderTopicGrid();
+  }
+  showTopicBrowser();
 
   // ---------- Text-to-speech (tutor speaks) ----------
   const synth = window.speechSynthesis;
   let ttsVoice = null;
 
-  const ACCENT_NAMES = { 'GB': 'UK', 'US': 'US', 'AU': 'Australian' };
-
   // Apple ships "novelty" voices (sound effects, cartoon characters) that are
-  // useless for tutoring — hide them from the student.
+  // useless for tutoring — hide them from consideration entirely.
   const NOVELTY = /albert|bad news|bahh|bells|boing|bubbles|cellos|fred|good news|grandma|grandpa|jester|junior|kathy|organ|ralph|rocko|sandy|shelley|superstar|trinoids|whisper|wobble|zarvox|eddy|flo|reed/i;
 
   // Higher-quality voices first: Premium > Enhanced > Google/Natural > standard
@@ -400,52 +620,26 @@
     return 3;
   }
 
-  function populateVoices() {
+  // No accent picker — just silently pick the best-sounding English voice
+  // available, preferring British English to match the curriculum.
+  function pickBestVoice() {
     if (!synth) return;
-    // Just the three accents the student wants: UK, US, Australian
-    let voices = synth.getVoices()
-      .filter(v => /^en[-_](GB|US|AU)/i.test(v.lang));
+    let voices = synth.getVoices().filter(v => /^en/i.test(v.lang));
     const serious = voices.filter(v => !NOVELTY.test(v.name));
     if (serious.length) voices = serious;
+    if (!voices.length) return;
     voices.sort((a, b) =>
       voiceRank(a) - voiceRank(b) ||
-      a.lang.localeCompare(b.lang) ||
+      (/en[-_]GB/i.test(b.lang) ? 1 : 0) - (/en[-_]GB/i.test(a.lang) ? 1 : 0) ||
       a.name.localeCompare(b.name));
-    if (!voices.length) return;
-
-    let savedURI = accentSel.value;
-    try { savedURI = localStorage.getItem('tutorVoiceURI') || savedURI; } catch (_) {}
-
-    accentSel.innerHTML = '';
-    voices.forEach(v => {
-      const region = v.lang.slice(3, 5).toUpperCase();
-      const star = voiceRank(v) <= 2 ? '★ ' : '';
-      const o = document.createElement('option');
-      o.value = v.voiceURI;
-      o.textContent = `${star}${ACCENT_NAMES[region] || region} — ${v.name.replace(/\s*\((?!Premium|Enhanced).*\)$/i, '')}`;
-      accentSel.appendChild(o);
-    });
-
-    // Keep the saved/current choice if still present, else the best UK voice
-    // (list is sorted best-first), else the best overall
-    const chosen =
-      voices.find(v => v.voiceURI === savedURI) ||
-      voices.find(v => /en[-_]GB/i.test(v.lang)) ||
-      voices[0];
-    accentSel.value = chosen.voiceURI;
-    ttsVoice = chosen;
+    ttsVoice = voices[0];
   }
 
   if (synth) {
-    populateVoices();
-    synth.onvoiceschanged = populateVoices;
-    accentSel.onchange = () => {
-      ttsVoice = synth.getVoices().find(v => v.voiceURI === accentSel.value) || ttsVoice;
-      try { localStorage.setItem('tutorVoiceURI', accentSel.value); } catch (_) {}
-    };
+    pickBestVoice();
+    synth.onvoiceschanged = pickBestVoice;
   } else {
     voiceBtn.style.display = 'none';
-    document.querySelectorAll('.accent-picker').forEach(el => el.style.display = 'none');
   }
 
   // ---------- Natural cloud voice (optional — only if the server has an ElevenLabs key) ----------
@@ -662,8 +856,8 @@
   };
 
   function addMessage(role, text) {
-    const welcome = document.getElementById('welcome');
-    if (welcome) welcome.remove();
+    const topicBrowser = document.getElementById('topicBrowser');
+    if (topicBrowser) topicBrowser.remove();
 
     const div = document.createElement('div');
     div.className = `message ${role === 'user' ? 'student' : 'tutor'}`;
@@ -708,16 +902,19 @@
     if (t) t.remove();
   }
 
-  async function sendMessage() {
-    const text = inputEl.value.trim();
+  async function sendMessage(overrideDisplay, overrideApi) {
+    const text = (overrideDisplay !== undefined ? overrideDisplay : inputEl.value).trim();
+    const apiText = (overrideApi !== undefined ? overrideApi : text);
     if (!text || sendBtn.disabled) return;
 
     stopSpeaking();
-    inputEl.value = '';
-    inputEl.style.height = 'auto';
+    if (overrideDisplay === undefined) {
+      inputEl.value = '';
+      inputEl.style.height = 'auto';
+    }
     sendBtn.disabled = true;
 
-    messages.push({ role: 'user', content: text });
+    messages.push({ role: 'user', content: apiText });
     addMessage('user', text);
     showTyping();
     setStatus('Thinking…');
@@ -801,264 +998,9 @@
     stopSpeaking();
     setStatus(IDLE_STATUS);
     messages = [];
-    chatEl.innerHTML = `
-      <div class="welcome" id="welcome">
-        <h2>Hello! I'm your GCSE Maths Tutor</h2>
-        <p>Ask me about any maths topic — by typing or by tapping the 🎤 and speaking. I'll guide you through problems step by step and read my answers out loud.</p>
-        <div class="topics">
-          <span class="topic">Number</span>
-          <span class="topic">Algebra</span>
-          <span class="topic">Geometry</span>
-          <span class="topic">Statistics</span>
-          <span class="topic">Probability</span>
-          <span class="topic">Ratio &amp; Proportion</span>
-        </div>
-      </div>`;
+    showTopicBrowser();
     inputEl.focus();
   }
-</script>
-
-<!-- ---- 3D tutor avatar (three.js, loaded from CDN — no install) ---- -->
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-  }
-}
-</script>
-<script type="module">
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-
-// Photo-scan quality avatars from the met4citizen/TalkingHead examples
-// (free for this non-commercial prototype; swap for our own before any
-// commercial launch). Served from a CDN — no install needed.
-const AVATARS = {
-  female: { url: 'https://cdn.jsdelivr.net/gh/met4citizen/TalkingHead@main/avatars/avaturn.glb', dist: 0.58 },
-  male:   { url: 'https://cdn.jsdelivr.net/gh/met4citizen/TalkingHead@main/avatars/avatarsdk.glb', dist: 0.68 }
-};
-let camDist = 0.68;
-
-const container = document.getElementById('avatar');
-const genderSel = document.getElementById('gender');
-
-let talking = false;
-window.tutorAvatar = { setTalking(b) { talking = !!b; } };
-
-let renderer, scene, camera, clock, avatarRoot, headBone, headBaseQuat;
-let morphMeshes = [];            // every mesh with blend shapes (head, teeth, brows…)
-let talkKey = null;              // best available mouth control for this avatar
-let smileKeys = [], blinkKeys = [];
-let nextBlink = 1.5, blinkT = -1;
-let eyeBones = [], eyeBaseQuats = [];
-let eyeTarget = { x: 0, y: 0 }, eyeNow = { x: 0, y: 0 }, nextSaccade = 1;
-let loadSeq = 0;                 // guards against out-of-order loads on quick switching
-
-function overlay(msg, isError) {
-  let el = container.querySelector('.loading, .avatar-error');
-  if (!msg) { if (el) el.remove(); return; }
-  if (!el) { el = document.createElement('div'); container.appendChild(el); }
-  el.className = isError ? 'avatar-error' : 'loading';
-  el.textContent = msg;
-}
-
-function setMorph(name, v) {
-  for (const m of morphMeshes) {
-    const i = m.morphTargetDictionary[name];
-    if (i !== undefined) m.morphTargetInfluences[i] = v;
-  }
-}
-function getMorph(name) {
-  for (const m of morphMeshes) {
-    const i = m.morphTargetDictionary[name];
-    if (i !== undefined) return m.morphTargetInfluences[i];
-  }
-  return 0;
-}
-function hasMorph(name) {
-  return morphMeshes.some(m => name in m.morphTargetDictionary);
-}
-
-function disposeAvatar(root) {
-  scene.remove(root);
-  root.traverse(o => {
-    if (o.isMesh) {
-      o.geometry.dispose();
-      const mats = Array.isArray(o.material) ? o.material : [o.material];
-      mats.forEach(m => {
-        for (const k in m) if (m[k] && m[k].isTexture) m[k].dispose();
-        m.dispose();
-      });
-    }
-  });
-}
-
-function frameHead(root) {
-  root.updateMatrixWorld(true);
-  const target = new THREE.Vector3();
-  if (headBone) {
-    headBone.getWorldPosition(target);
-    target.y += 0.05;                                  // centre on the face, not the neck
-  } else {
-    const box = new THREE.Box3().setFromObject(root);
-    const size = box.getSize(new THREE.Vector3());
-    target.set(
-      (box.min.x + box.max.x) / 2,
-      box.min.y + size.y * 0.92,                       // heads live near the top
-      (box.min.z + box.max.z) / 2
-    );
-  }
-  camera.position.set(target.x, target.y + 0.03, target.z + camDist);
-  camera.lookAt(target.x, target.y - 0.005, target.z);
-}
-
-function loadAvatar(gender) {
-  const seq = ++loadSeq;
-  overlay('Loading your tutor…', false);
-  const cfg = AVATARS[gender] || AVATARS.female;
-  camDist = cfg.dist;
-  const loader = new GLTFLoader();
-  loader.load(cfg.url, (gltf) => {
-    if (seq !== loadSeq) return;                       // a newer request won the race
-    if (avatarRoot) disposeAvatar(avatarRoot);
-
-    avatarRoot = gltf.scene;
-    scene.add(avatarRoot);
-
-    morphMeshes = [];
-    headBone = null;
-    eyeBones = []; eyeBaseQuats = [];
-    avatarRoot.traverse(o => {
-      if (o.isMesh && o.morphTargetDictionary && o.morphTargetInfluences) morphMeshes.push(o);
-      if (!headBone && o.isBone && /^head$/i.test(o.name)) headBone = o;
-      if (o.isBone && /eye/i.test(o.name) && !/lid|brow|lash/i.test(o.name)) eyeBones.push(o);
-      if (o.isMesh && o.material) { o.material.envMapIntensity = 0.9; o.material.needsUpdate = true; }
-    });
-    if (!headBone) avatarRoot.traverse(o => { if (!headBone && o.isBone && /head/i.test(o.name)) headBone = o; });
-    headBaseQuat = headBone ? headBone.quaternion.clone() : null;
-    eyeBaseQuats = eyeBones.map(b => b.quaternion.clone());
-
-    // Pick the best mouth/eye controls this model provides
-    talkKey = ['viseme_aa', 'jawOpen', 'mouthOpen'].find(hasMorph) || null;
-    smileKeys = hasMorph('mouthSmileLeft') ? ['mouthSmileLeft', 'mouthSmileRight']
-              : hasMorph('mouthSmile') ? ['mouthSmile'] : [];
-    blinkKeys = hasMorph('eyeBlinkLeft') ? ['eyeBlinkLeft', 'eyeBlinkRight']
-              : hasMorph('eyesClosed') ? ['eyesClosed'] : [];
-
-    frameHead(avatarRoot);
-    overlay(null);
-    try { localStorage.setItem('tutorGender', gender); } catch (_) {}
-    renderer.setAnimationLoop(animate);
-  }, undefined, (err) => {
-    if (seq !== loadSeq) return;
-    console.error('Avatar load error', err);
-    overlay("Couldn't load the 3D tutor — the maths help below still works.", true);
-  });
-}
-
-function animate() {
-  const dt = clock.getDelta();
-  const t = clock.elapsedTime;
-
-  if (morphMeshes.length) {
-    for (const k of smileKeys) setMorph(k, 0.3);       // friendly resting smile
-
-    if (talkKey) {
-      const cur = getMorph(talkKey);
-      let want = 0;
-      if (talking) {
-        want = 0.28 + 0.30 * Math.abs(Math.sin(t * 10.5)) + 0.10 * Math.abs(Math.sin(t * 23));
-      }
-      setMorph(talkKey, cur + (want - cur) * Math.min(1, dt * 16));
-    }
-
-    nextBlink -= dt;
-    if (blinkT < 0 && nextBlink <= 0) { blinkT = 0; nextBlink = 2.5 + Math.random() * 3.5; }
-    let blink = 0;
-    if (blinkT >= 0) {
-      blinkT += dt;
-      const p = blinkT / 0.16;
-      blink = p < 0.5 ? p * 2 : (p < 1 ? (1 - p) * 2 : 0);
-      if (blinkT > 0.16) blinkT = -1;
-    }
-    for (const k of blinkKeys) setMorph(k, blink);
-  }
-
-  // Gentle, natural head movement (a touch livelier while talking)
-  if (headBone && headBaseQuat) {
-    const amp = talking ? 1.6 : 1.0;
-    headBone.quaternion.copy(headBaseQuat);
-    headBone.rotateY(0.045 * amp * Math.sin(t * 0.55));
-    headBone.rotateX(0.025 * amp * Math.sin(t * 0.4 + 1.3));
-    headBone.rotateZ(0.015 * Math.sin(t * 0.3 + 0.6));
-  }
-
-  // Small darting eye movements so the gaze feels alive, not a stare.
-  // While talking the eyes stay mostly on the student.
-  if (eyeBones.length) {
-    nextSaccade -= dt;
-    if (nextSaccade <= 0) {
-      nextSaccade = 1.2 + Math.random() * 2.5;
-      const range = talking ? 0.02 : 0.05;
-      eyeTarget.x = (Math.random() - 0.5) * range;       // up/down
-      eyeTarget.y = (Math.random() - 0.5) * range * 2;   // left/right
-    }
-    const s = Math.min(1, dt * 14);                      // quick dart, then hold
-    eyeNow.x += (eyeTarget.x - eyeNow.x) * s;
-    eyeNow.y += (eyeTarget.y - eyeNow.y) * s;
-    eyeBones.forEach((b, i) => {
-      b.quaternion.copy(eyeBaseQuats[i]);
-      b.rotateX(eyeNow.x);
-      b.rotateY(eyeNow.y);
-    });
-  }
-
-  renderer.render(scene, camera);
-}
-
-try {
-  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
-  container.appendChild(renderer.domElement);
-
-  scene = new THREE.Scene();
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-
-  // Soft warm key + cool fill so faces read warm and lifelike
-  const key = new THREE.DirectionalLight(0xffe9d2, 1.3);
-  key.position.set(-0.6, 0.8, 1.4); scene.add(key);
-  const fill = new THREE.DirectionalLight(0xd8e6ff, 0.5);
-  fill.position.set(1.0, 0.3, 0.8); scene.add(fill);
-
-  camera = new THREE.PerspectiveCamera(25, container.clientWidth / container.clientHeight, 0.05, 100);
-  clock = new THREE.Clock();
-
-  let startGender = 'female';
-  try { startGender = localStorage.getItem('tutorGender') || 'female'; } catch (_) {}
-  if (!AVATARS[startGender]) startGender = 'female';
-  genderSel.value = startGender;
-  genderSel.onchange = () => loadAvatar(genderSel.value);
-
-  loadAvatar(startGender);
-} catch (e) {
-  console.error(e);
-  overlay("3D graphics aren't available here — the maths help below still works.", true);
-}
-
-window.addEventListener('resize', () => {
-  if (!renderer || !camera) return;
-  camera.aspect = container.clientWidth / container.clientHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  if (avatarRoot) frameHead(avatarRoot);
-});
 </script>
 
 <script>
