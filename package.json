@@ -1,0 +1,12 @@
+{
+  "name": "gcse-maths-tutor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A GCSE Maths tutor for a Year 10 student, powered by Gemini",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

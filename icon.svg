@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- set-square / ruler, echoing the app's header icon -->
+  <g transform="translate(256 266)">
+    <path d="M -140 90 L 100 90 L -140 -90 Z"
+          fill="#ffffff" fill-opacity="0.96" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+    <!-- tick marks along the long edge, like a ruler -->
+    <g stroke="#4f46e5" stroke-width="7" stroke-linecap="round">
+      <line x1="-120" y1="90" x2="-120" y2="66"/>
+      <line x1="-90"  y1="90" x2="-90"  y2="66"/>
+      <line x1="-60"  y1="90" x2="-60"  y2="66"/>
+      <line x1="-30"  y1="90" x2="-30"  y2="66"/>
+      <line x1="0"    y1="90" x2="0"    y2="66"/>
+      <line x1="30"   y1="90" x2="30"   y2="66"/>
+      <line x1="60"   y1="90" x2="60"   y2="66"/>
+    </g>
+  </g>
+
+  <!-- pencil, crossing the set-square -->
+  <g transform="translate(256 256) rotate(-38)">
+    <rect x="-14" y="-170" width="28" height="230" rx="8" fill="#fbbf24"/>
+    <path d="M -14 -170 L 14 -170 L 0 -210 Z" fill="#f4d9a8"/>
+    <path d="M -6 -170 L 6 -170 L 0 -190 Z" fill="#4b3521"/>
+    <rect x="-14" y="56" width="28" height="18" rx="4" fill="#fca5a5"/>
+  </g>
+</svg>

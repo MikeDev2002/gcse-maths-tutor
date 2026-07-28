@@ -160,7 +160,11 @@ const server = http.createServer(async (req, res) => {
 
   // Static files (avatar models, extra pages) — locked to this folder, no dotfiles
   if (req.method === 'GET') {
-    const types = { '.html': 'text/html', '.glb': 'model/gltf-binary', '.png': 'image/png', '.jpg': 'image/jpeg', '.js': 'text/javascript', '.css': 'text/css' };
+    const types = {
+      '.html': 'text/html', '.glb': 'model/gltf-binary', '.png': 'image/png', '.jpg': 'image/jpeg',
+      '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml',
+      '.json': pathname === '/manifest.json' ? 'application/manifest+json' : 'application/json'
+    };
     const ext = path.extname(pathname).toLowerCase();
     const safe = path.normalize(pathname).replace(/^([/\\])+/, '');
     const full = path.join(__dirname, safe);
