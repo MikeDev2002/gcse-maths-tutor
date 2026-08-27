@@ -20,7 +20,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #eef1f8;
+      --bg: #f3f4f9;
       --surface: #ffffff;
       --primary: #6366f1;
       --primary-dark: #4f46e5;
@@ -31,7 +31,9 @@
       --student-border: #bfdbfe;
       --text: #1e293b;
       --muted: #64748b;
+      --border: #e2e8f0;
       --radius: 14px;
+      --good: #16a34a;
     }
 
     body {
@@ -44,809 +46,332 @@
       overflow: hidden;
     }
 
+    /* ---- Header ---- */
     header {
       background: linear-gradient(135deg, #6366f1, #4f46e5);
       color: white;
       padding: 14px 20px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       box-shadow: 0 2px 10px rgba(79,70,229,0.25);
       flex-shrink: 0;
+      flex-wrap: wrap;
     }
+    header .brand h1 { font-size: 1.1rem; font-weight: 700; }
+    header .brand p { font-size: 0.78rem; opacity: 0.85; margin-top: 1px; }
 
-    header .icon { font-size: 1.6rem; }
-    header h1 { font-size: 1.1rem; font-weight: 600; }
-    header p { font-size: 0.8rem; opacity: 0.85; margin-top: 2px; }
-
-    .header-btns { margin-left: auto; display: flex; gap: 8px; }
+    .header-progress {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      opacity: 0.95;
+      min-width: 160px;
+    }
+    .progress-track {
+      width: 110px; height: 6px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #ffffff;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
     .hbtn {
       background: rgba(255,255,255,0.18);
       border: 1px solid rgba(255,255,255,0.35);
       color: white;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 8px;
       cursor: pointer;
       font-size: 0.8rem;
+      font-weight: 600;
       transition: background 0.15s;
       white-space: nowrap;
     }
     .hbtn:hover { background: rgba(255,255,255,0.3); }
 
-    /* ---- Owl avatar ---- */
-    .avatar-panel {
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 20px 8px;
-      background: linear-gradient(180deg, #e0e7ff 0%, var(--bg) 100%);
-    }
-    #avatar {
-      width: 180px;
-      height: 180px;
-    }
-    #avatar svg { width: 100%; height: 100%; display: block; }
-
-    .owl-bob { animation: owlBob 3.4s ease-in-out infinite; transform-origin: 50% 100%; }
-    @keyframes owlBob {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50%      { transform: translateY(-3px) rotate(-0.6deg); }
-    }
-    #avatar.talking .owl-bob { animation-duration: 0.5s; }
-
-    .owl-eyelid {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: owlBlink 4.2s infinite;
-    }
-    .owl-eyelid.right { animation-delay: 0.05s; }
-    @keyframes owlBlink {
-      0%, 92%, 100% { transform: scaleY(0); }
-      95%           { transform: scaleY(1); }
-    }
-
-    .owl-beak-closed { display: block; }
-    .owl-beak-open   { display: none; }
-    #avatar.talking .owl-beak-closed { display: none; }
-    #avatar.talking .owl-beak-open {
-      display: block;
-      transform-box: fill-box;
-      transform-origin: top center;
-      animation: owlChomp 0.22s infinite;
-    }
-    @keyframes owlChomp {
-      0%, 100% { transform: scaleY(0.5); }
-      50%      { transform: scaleY(1); }
-    }
-
-    .control-group {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.8rem; color: var(--muted);
-    }
-    .controls-row {
-      display: flex; align-items: center; gap: 8px;
-      flex-wrap: wrap; justify-content: center;
-    }
-    .status {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-weight: 600;
-      min-height: 1.2em;
-      text-align: center;
-    }
-    #cloudVoice, #voiceEngine {
-      font-size: 0.8rem;
-      padding: 4px 8px;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      background: var(--surface);
-      color: var(--text);
-      max-width: 220px;
-    }
-    #voiceEngine option:disabled { color: #94a3b8; }
-
-    #chat {
+    main {
       flex: 1;
       overflow-y: auto;
-      padding: 12px 20px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+      padding: 24px 20px 40px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; }
+
+    /* ---- Home view ---- */
+    .continue-card {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(79,70,229,0.25);
+    }
+    .continue-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; opacity: 0.85; margin-bottom: 6px;
+    }
+    .continue-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; line-height: 1.35; }
+    .continue-btn {
+      background: white; color: var(--primary-dark);
+      border: none; border-radius: 10px;
+      padding: 11px 22px; font-size: 0.92rem; font-weight: 700;
+      cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .continue-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+
+    .all-done {
+      text-align: center; padding: 8px 0 4px;
+    }
+    .all-done .big-tick { font-size: 2.4rem; margin-bottom: 8px; }
+
+    .subject-group { margin-bottom: 22px; }
+    .subject-heading {
+      font-size: 0.95rem; font-weight: 700; color: var(--muted);
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .subject-heading .sh-count { font-weight: 500; font-size: 0.78rem; margin-left: auto; }
+
+    .module-row {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    }
+    .module-row:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(79,70,229,0.1);
+      transform: translateY(-1px);
+    }
+    .module-row.done { opacity: 0.72; }
+    .mr-week {
+      flex-shrink: 0;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 0.78rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .module-row.done .mr-week { background: #dcfce7; color: var(--good); }
+    .mr-title { font-size: 0.92rem; font-weight: 600; }
+    .mr-check {
+      margin-left: auto; flex-shrink: 0;
+      width: 24px; height: 24px; border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; color: transparent;
+    }
+    .module-row.done .mr-check {
+      border-color: var(--good); background: var(--good); color: white;
     }
 
+    /* ---- Module view ---- */
+    .back-btn {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 7px 16px;
+      font-size: 0.82rem; font-weight: 600; color: var(--primary-dark);
+      cursor: pointer; transition: all 0.15s; margin-bottom: 18px;
+    }
+    .back-btn:hover { border-color: var(--primary); background: var(--primary-light); }
+
+    .module-head { margin-bottom: 26px; }
+    .module-meta {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--primary-dark); margin-bottom: 6px;
+    }
+    .module-head h2 { font-size: 1.5rem; font-weight: 700; }
+
+    .m-section { margin-bottom: 30px; }
+    .m-section h3 {
+      font-size: 1.02rem; font-weight: 700;
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+    .m-body {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+    .m-body p { margin: 8px 0; }
+    .m-body p:first-child { margin-top: 0; }
+    .m-body p:last-child { margin-bottom: 0; }
+
+    .example-card, .test-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .ex-q, .tq-q { font-weight: 600; margin-bottom: 10px; line-height: 1.5; }
+    .ex-sol {
+      background: var(--tutor-bg);
+      border: 1px solid var(--tutor-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .ex-sol p:first-child, .tq-a p:first-child { margin-top: 0; }
+    .ex-sol p:last-child, .tq-a p:last-child { margin-bottom: 0; }
+
+    .reveal-btn {
+      background: none; border: 1.5px solid var(--primary);
+      color: var(--primary-dark); font-weight: 600; font-size: 0.82rem;
+      border-radius: 8px; padding: 6px 14px; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .reveal-btn:hover { background: var(--primary-light); }
+    .tq-a {
+      margin-top: 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .tq-a[hidden] { display: none; }
+
+    .complete-btn {
+      display: block; width: 100%;
+      background: var(--good); color: white;
+      border: none; border-radius: var(--radius);
+      padding: 14px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: opacity 0.15s;
+      margin-top: 10px;
+    }
+    .complete-btn:hover { opacity: 0.92; }
+    .complete-btn.already-done { background: var(--muted); cursor: default; }
+
+    /* ---- Q&A (chat) ---- */
+    .qa-section .m-section-hint {
+      font-size: 0.85rem; color: var(--muted); margin-bottom: 14px;
+    }
+    #qaMessages {
+      display: flex; flex-direction: column; gap: 12px;
+      margin-bottom: 14px;
+    }
     .message {
-      max-width: 80%;
+      max-width: 85%;
       padding: 12px 16px;
       border-radius: var(--radius);
       line-height: 1.6;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       word-break: break-word;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
-
-    .message h1, .message h2, .message h3 {
-      font-size: 1rem; font-weight: 700; margin: 10px 0 4px;
-    }
+    .message h1, .message h2, .message h3 { font-size: 1rem; font-weight: 700; margin: 10px 0 4px; }
     .message p { margin: 6px 0; }
     .message ul, .message ol { margin: 6px 0 6px 20px; }
     .message li { margin: 3px 0; }
     .message strong { font-weight: 700; }
-    .message hr { border: none; border-top: 1px solid #e2e8f0; margin: 10px 0; }
-    .message code {
-      background: rgba(0,0,0,0.06);
-      padding: 1px 5px; border-radius: 4px;
-      font-family: monospace; font-size: 0.9em;
-    }
-
+    .message code { background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
     .message.tutor {
-      align-self: flex-start;
-      background: var(--tutor-bg);
-      border: 1px solid var(--tutor-border);
-      border-bottom-left-radius: 2px;
+      align-self: flex-start; background: var(--tutor-bg);
+      border: 1px solid var(--tutor-border); border-bottom-left-radius: 2px;
     }
     .message.student {
-      align-self: flex-end;
-      background: var(--student-bg);
-      border: 1px solid var(--student-border);
-      border-bottom-right-radius: 2px;
+      align-self: flex-end; background: var(--student-bg);
+      border: 1px solid var(--student-border); border-bottom-right-radius: 2px;
     }
     .message .sender {
-      font-size: 0.72rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.05em;
-      margin-bottom: 5px; opacity: 0.6;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; margin-bottom: 5px; opacity: 0.6;
     }
     .message.tutor .sender { color: #7c3aed; }
     .message.student .sender { color: #2563eb; }
 
     .typing {
-      align-self: flex-start;
-      background: var(--tutor-bg);
-      border: 1px solid var(--tutor-border);
-      border-radius: var(--radius);
-      border-bottom-left-radius: 2px;
-      padding: 14px 18px;
+      align-self: flex-start; background: var(--tutor-bg);
+      border: 1px solid var(--tutor-border); border-radius: var(--radius);
+      border-bottom-left-radius: 2px; padding: 14px 18px;
       display: flex; gap: 5px; align-items: center;
     }
     .typing span {
-      width: 8px; height: 8px;
-      background: #7c3aed; border-radius: 50%;
-      display: inline-block;
-      animation: bounce 1.2s infinite; opacity: 0.7;
+      width: 8px; height: 8px; background: #7c3aed; border-radius: 50%;
+      display: inline-block; animation: bounce 1.2s infinite; opacity: 0.7;
     }
     .typing span:nth-child(2) { animation-delay: 0.2s; }
     .typing span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes bounce {
-      0%, 60%, 100% { transform: translateY(0); }
-      30% { transform: translateY(-6px); }
-    }
+    @keyframes bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
 
-    footer {
-      background: var(--surface);
-      border-top: 1px solid #e2e8f0;
-      padding: 14px 20px;
-      flex-shrink: 0;
-    }
-    .input-row {
-      display: flex; gap: 10px;
-      max-width: 900px; margin: 0 auto;
-      align-items: flex-end;
-    }
+    .qa-input-row { display: flex; gap: 10px; align-items: flex-end; }
     #input {
-      flex: 1;
-      border: 2px solid #e2e8f0;
-      border-radius: var(--radius);
-      padding: 10px 14px;
-      font-size: 0.95rem; font-family: inherit;
-      resize: none; outline: none;
-      transition: border-color 0.15s;
+      flex: 1; border: 2px solid var(--border); border-radius: var(--radius);
+      padding: 10px 14px; font-size: 0.92rem; font-family: inherit;
+      resize: none; outline: none; transition: border-color 0.15s;
       line-height: 1.5; max-height: 120px; min-height: 46px;
+      background: var(--surface);
     }
     #input:focus { border-color: var(--primary); }
-
     .icon-btn {
-      width: 46px; height: 46px;
-      border-radius: var(--radius);
-      border: 2px solid #e2e8f0;
-      background: var(--surface);
+      width: 46px; height: 46px; border-radius: var(--radius);
+      border: 2px solid var(--border); background: var(--surface);
       font-size: 1.2rem; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       transition: all 0.15s; flex-shrink: 0;
     }
     .icon-btn:hover { border-color: var(--primary); }
-    .icon-btn.recording {
-      background: #fee2e2; border-color: #ef4444;
-      animation: pulse 1s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
-      50% { box-shadow: 0 0 0 6px rgba(239,68,68,0); }
-    }
-
+    .icon-btn.recording { background: #fee2e2; border-color: #ef4444; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); } 50% { box-shadow: 0 0 0 6px rgba(239,68,68,0); } }
     #send {
-      background: var(--primary);
-      color: white; border: none;
-      border-radius: var(--radius);
-      padding: 10px 20px;
-      font-size: 0.95rem; font-weight: 600;
-      cursor: pointer;
+      background: var(--primary); color: white; border: none;
+      border-radius: var(--radius); padding: 10px 20px;
+      font-size: 0.92rem; font-weight: 600; cursor: pointer;
       transition: background 0.15s, opacity 0.15s;
       white-space: nowrap; height: 46px; flex-shrink: 0;
     }
     #send:hover:not(:disabled) { background: var(--primary-dark); }
     #send:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    .hint { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 8px; }
-
     .error-msg {
       background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c;
       border-radius: var(--radius); padding: 10px 14px;
-      font-size: 0.88rem; align-self: center; max-width: 80%;
+      font-size: 0.88rem; margin-bottom: 10px;
     }
-
-    /* ---- Topic browser ---- */
-    .topic-browser {
-      align-self: center; text-align: center;
-      max-width: 620px; width: 100%;
-      margin: auto;
-    }
-    .tb-intro { margin-bottom: 18px; }
-    .tb-intro h2 { font-size: 1.2rem; margin-bottom: 8px; }
-    .tb-intro p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; max-width: 480px; margin: 0 auto; }
-
-    .tb-back {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 14px; text-align: left;
-    }
-    .tb-back-btn {
-      background: var(--surface); border: 1px solid #e2e8f0;
-      border-radius: 20px; padding: 6px 14px;
-      font-size: 0.82rem; font-weight: 600; color: var(--primary-dark);
-      cursor: pointer; transition: all 0.15s; white-space: nowrap;
-    }
-    .tb-back-btn:hover { border-color: var(--primary); background: var(--primary-light); }
-    .tb-topic-title { font-size: 1rem; font-weight: 700; }
-
-    .tb-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 12px;
-    }
-    .tb-card {
-      background: var(--surface);
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 18px 14px;
-      cursor: pointer;
-      text-align: center;
-      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
-      animation: tbCardIn 0.3s ease backwards;
-      animation-delay: calc(var(--i, 0) * 0.035s);
-    }
-    .tb-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(79,70,229,0.14);
-      border-color: var(--primary);
-    }
-    .tb-card .tb-icon { font-size: 1.8rem; margin-bottom: 8px; }
-    .tb-card .tb-label { font-size: 0.88rem; font-weight: 700; color: var(--text); line-height: 1.3; }
-
-    .tb-sub-card {
-      grid-template-columns: unset;
-    }
-    .tb-grid.subs {
-      grid-template-columns: 1fr;
-      max-width: 460px;
-      margin: 0 auto;
-    }
-    .tb-grid.subs .tb-card {
-      display: flex; align-items: center; gap: 12px;
-      text-align: left; padding: 14px 16px;
-    }
-    .tb-grid.subs .tb-card .tb-icon { margin-bottom: 0; font-size: 1.3rem; }
-    .tb-grid.subs .tb-card .tb-label { font-size: 0.92rem; }
-    .tb-grid.subs .tb-card .tb-chevron { margin-left: auto; color: var(--muted); }
-
-    @keyframes tbCardIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .content-missing {
+      text-align: center; color: var(--muted); padding: 60px 20px;
+      font-size: 0.95rem; line-height: 1.7;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="icon">🦉</div>
-  <div>
+  <div class="brand">
     <h1>GCSE Maths Tutor</h1>
-    <p>Your personal tutor — ask or say anything!</p>
+    <p>Edexcel Higher Tier — Weekly Sessions</p>
   </div>
-  <div class="header-btns">
-    <button class="hbtn" id="voiceToggle" onclick="toggleVoice()">🔊 Voice on</button>
-    <button class="hbtn" onclick="clearChat()">New session</button>
-  </div>
+  <div class="header-progress" id="headerProgress"></div>
+  <button class="hbtn" id="homeBtn" onclick="showHome()" style="display:none;">☰ All modules</button>
 </header>
 
-<div class="avatar-panel">
-  <div id="avatar">
-    <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="owlBodyGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#8b8ff5"/>
-          <stop offset="1" stop-color="#6366f1"/>
-        </linearGradient>
-        <linearGradient id="owlWingGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#5b5ce0"/>
-          <stop offset="1" stop-color="#4f46e5"/>
-        </linearGradient>
-      </defs>
-
-      <ellipse cx="100" cy="207" rx="52" ry="8" fill="#4f46e5" opacity="0.13"/>
-
-      <g class="owl-bob">
-        <!-- ear tufts -->
-        <path d="M 56 62 Q 50 30 74 46 Z" fill="#6366f1"/>
-        <path d="M 144 62 Q 150 30 126 46 Z" fill="#6366f1"/>
-
-        <!-- wings -->
-        <ellipse cx="46" cy="140" rx="16" ry="34" fill="url(#owlWingGrad)"/>
-        <ellipse cx="154" cy="140" rx="16" ry="34" fill="url(#owlWingGrad)"/>
-
-        <!-- body -->
-        <ellipse cx="100" cy="132" rx="62" ry="70" fill="url(#owlBodyGrad)"/>
-
-        <!-- belly / facial disc -->
-        <ellipse cx="100" cy="150" rx="38" ry="34" fill="#f4f1ff"/>
-        <ellipse cx="100" cy="98"  rx="46" ry="40" fill="#f4f1ff"/>
-
-        <!-- graduation cap -->
-        <g transform="translate(100 46)">
-          <rect x="-30" y="2" width="60" height="9" rx="3" fill="#312e81"/>
-          <path d="M -36 6 L 0 -12 L 36 6 L 0 22 Z" fill="#3730a3"/>
-          <circle cx="0" cy="-12" r="3.5" fill="#facc15"/>
-          <path d="M 30 8 L 34 26 L 26 22 Z" fill="#facc15"/>
-        </g>
-
-        <!-- eyes -->
-        <circle cx="80"  cy="96" r="19" fill="#ffffff"/>
-        <circle cx="120" cy="96" r="19" fill="#ffffff"/>
-        <circle cx="81"  cy="97" r="9" fill="#312e81"/>
-        <circle cx="121" cy="97" r="9" fill="#312e81"/>
-        <circle cx="84"  cy="93" r="2.6" fill="#ffffff"/>
-        <circle cx="124" cy="93" r="2.6" fill="#ffffff"/>
-        <rect class="owl-eyelid left"  x="61"  y="77" width="38" height="19" fill="#8b8ff5"/>
-        <rect class="owl-eyelid right" x="101" y="77" width="38" height="19" fill="#8b8ff5"/>
-
-        <!-- beak -->
-        <path class="owl-beak-closed" d="M 92 112 L 108 112 L 100 124 Z" fill="#fbbf24"/>
-        <g class="owl-beak-open">
-          <path d="M 91 111 L 109 111 L 100 118 Z" fill="#f59e0b"/>
-          <path d="M 93 120 L 107 120 L 100 129 Z" fill="#fbbf24"/>
-        </g>
-
-        <!-- feet -->
-        <path d="M 78 200 L 74 210 M 78 200 L 78 211 M 78 200 L 82 210" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <path d="M 122 200 L 118 210 M 122 200 L 122 211 M 122 200 L 126 210" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
-      </g>
-    </svg>
-  </div>
-  <div class="status" id="status">Hi! Ask me a maths question 😊</div>
-  <div class="controls-row">
-    <div class="control-group" id="engineRow">
-      <span>🎙️ Voice quality:</span>
-      <select id="voiceEngine" title="Browser voice is free; Natural is a higher-quality cloud voice">
-        <option value="browser">Browser (free)</option>
-        <option value="cloud" id="cloudOption" disabled>Natural (cloud)</option>
-      </select>
-    </div>
-    <div class="control-group" id="cloudVoiceRow" style="display:none;">
-      <span>👤 Voice:</span>
-      <select id="cloudVoice" title="Choose the natural cloud voice"></select>
-    </div>
-  </div>
-</div>
-
-<div id="chat"></div>
-
-<footer>
-  <div class="input-row">
-    <button class="icon-btn" id="mic" onclick="toggleMic()" title="Speak your question">🎤</button>
-    <textarea
-      id="input"
-      placeholder="Type your maths question here… or tap 🎤 to speak"
-      rows="1"
-    ></textarea>
-    <button id="send" onclick="sendMessage()">Send</button>
-  </div>
-  <p class="hint">Press Enter to send &nbsp;·&nbsp; Shift+Enter for a new line</p>
-</footer>
+<main><div class="wrap" id="app"></div></main>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 <script>
-  const chatEl = document.getElementById('chat');
-  const inputEl = document.getElementById('input');
-  const sendBtn = document.getElementById('send');
-  const statusEl = document.getElementById('status');
-  const micBtn = document.getElementById('mic');
-  const voiceBtn = document.getElementById('voiceToggle');
-  const avatarEl = document.getElementById('avatar');
-  const voiceEngineSel = document.getElementById('voiceEngine');
-  const cloudOption = document.getElementById('cloudOption');
-  const cloudVoiceRow = document.getElementById('cloudVoiceRow');
-  const cloudVoiceSel = document.getElementById('cloudVoice');
-  let messages = [];
-  let voiceOn = true;
-  let voiceEngine = 'browser';   // 'browser' (free) or 'cloud' (natural, needs ELEVENLABS_API_KEY)
-  let cloudVoiceId = null;
-  let currentCloudAudio = null;
+  const appEl = document.getElementById('app');
+  const homeBtn = document.getElementById('homeBtn');
+  const headerProgressEl = document.getElementById('headerProgress');
 
-  const IDLE_STATUS = 'Hi! Ask me a maths question 😊';
-  function setStatus(t) { statusEl.textContent = t; }
-  function setTalking(on) { avatarEl.classList.toggle('talking', on); }
-
-  // ---------- Bite-sized topic browser ----------
-  const TOPICS = [
-    { name: 'Number', icon: '🔢', subs: [
-      'Fractions, decimals & percentages',
-      'Standard form',
-      'Surds',
-      'Laws of indices',
-      'Upper & lower bounds'
-    ]},
-    { name: 'Algebra', icon: '🧮', subs: [
-      'Expanding & factorising',
-      'Solving equations & inequalities',
-      'Simultaneous equations',
-      'Quadratics: factorising & the formula',
-      'Completing the square',
-      'Algebraic fractions',
-      'Sequences (linear, quadratic, geometric)',
-      'Functions & iteration',
-      'Algebraic proof'
-    ]},
-    { name: 'Ratio & Proportion', icon: '⚖️', subs: [
-      'Ratio',
-      'Percentage change',
-      'Compound interest & depreciation',
-      'Direct & inverse proportion'
-    ]},
-    { name: 'Geometry', icon: '📐', subs: [
-      'Angles & polygons',
-      'Circle theorems',
-      'Arc length & sector area',
-      "Pythagoras' theorem",
-      'Trigonometry (SOH CAH TOA)',
-      'Sine & cosine rules',
-      '3D shapes & volume',
-      'Vectors',
-      'Transformations',
-      'Similarity & congruence'
-    ]},
-    { name: 'Probability', icon: '🎲', subs: [
-      'Basic probability',
-      'Tree diagrams',
-      'Venn diagrams & set notation',
-      'Conditional probability'
-    ]},
-    { name: 'Statistics', icon: '📊', subs: [
-      'Averages & range',
-      'Frequency tables',
-      'Cumulative frequency & box plots',
-      'Histograms',
-      'Scatter graphs & correlation'
-    ]}
-  ];
-
-  function topicBrowserHTML() {
-    return `
-      <div class="topic-browser" id="topicBrowser">
-        <div class="tb-intro">
-          <h2>Hello! I'm your GCSE Maths Tutor</h2>
-          <p>Pick a topic below for a focused ~20-minute session, or just type or speak your own question any time.</p>
-        </div>
-        <div class="tb-back" id="tbBack" style="display:none;">
-          <button class="tb-back-btn" onclick="renderTopicGrid()">← All topics</button>
-          <span class="tb-topic-title" id="tbTopicTitle"></span>
-        </div>
-        <div class="tb-grid" id="tbGrid"></div>
-      </div>`;
-  }
-
-  // Cards are built with data-index + addEventListener (never inline onclick
-  // with interpolated text) — several sub-topic labels contain apostrophes
-  // and ampersands ("Pythagoras' theorem", "Ratio & Proportion") which would
-  // break a quoted HTML attribute if the text were embedded directly in it.
-  function renderTopicGrid() {
-    document.getElementById('tbBack').style.display = 'none';
-    const grid = document.getElementById('tbGrid');
-    grid.className = 'tb-grid';
-    grid.innerHTML = TOPICS.map((t, i) => `
-      <div class="tb-card" style="--i:${i}" data-index="${i}">
-        <div class="tb-icon">${t.icon}</div>
-        <div class="tb-label">${t.name}</div>
-      </div>`).join('');
-    grid.querySelectorAll('.tb-card').forEach(card => {
-      card.addEventListener('click', () => renderSubtopicGrid(Number(card.dataset.index)));
-    });
-  }
-
-  function renderSubtopicGrid(topicIndex) {
-    const topic = TOPICS[topicIndex];
-    const backRow = document.getElementById('tbBack');
-    backRow.style.display = 'flex';
-    document.getElementById('tbTopicTitle').textContent = `${topic.icon} ${topic.name}`;
-    const grid = document.getElementById('tbGrid');
-    grid.className = 'tb-grid subs';
-    grid.innerHTML = topic.subs.map((s, i) => `
-      <div class="tb-card" style="--i:${i}" data-index="${i}">
-        <span class="tb-icon">📘</span>
-        <span class="tb-label">${s}</span>
-        <span class="tb-chevron">›</span>
-      </div>`).join('');
-    grid.querySelectorAll('.tb-card').forEach(card => {
-      card.addEventListener('click', () => startTopicSession(topic.name, topic.subs[Number(card.dataset.index)]));
-    });
-  }
-
-  function startTopicSession(topicName, sub) {
-    const displayLabel = `📘 ${sub}`;
-    const apiPrompt = `Let's do a focused, roughly 20-minute study session on "${sub}" (part of ${topicName}) for Edexcel GCSE Higher tier. Start with a short, clear introduction to the topic, then explain the method with one worked example, and finish by giving me one short practice question to try myself.`;
-    sendMessage(displayLabel, apiPrompt);
-  }
-
-  function showTopicBrowser() {
-    chatEl.innerHTML = topicBrowserHTML();
-    renderTopicGrid();
-  }
-  showTopicBrowser();
-
-  // ---------- Text-to-speech (tutor speaks) ----------
-  const synth = window.speechSynthesis;
-  let ttsVoice = null;
-
-  // Apple ships "novelty" voices (sound effects, cartoon characters) that are
-  // useless for tutoring — hide them from consideration entirely.
-  const NOVELTY = /albert|bad news|bahh|bells|boing|bubbles|cellos|fred|good news|grandma|grandpa|jester|junior|kathy|organ|ralph|rocko|sandy|shelley|superstar|trinoids|whisper|wobble|zarvox|eddy|flo|reed/i;
-
-  // Higher-quality voices first: Premium > Enhanced > Google/Natural > standard
-  function voiceRank(v) {
-    const n = v.name;
-    if (/premium/i.test(n)) return 0;
-    if (/enhanced/i.test(n)) return 1;
-    if (/google|natural|neural|online/i.test(n)) return 2;
-    return 3;
-  }
-
-  // No accent picker — just silently pick the best-sounding English voice
-  // available, preferring British English to match the curriculum.
-  function pickBestVoice() {
-    if (!synth) return;
-    let voices = synth.getVoices().filter(v => /^en/i.test(v.lang));
-    const serious = voices.filter(v => !NOVELTY.test(v.name));
-    if (serious.length) voices = serious;
-    if (!voices.length) return;
-    voices.sort((a, b) =>
-      voiceRank(a) - voiceRank(b) ||
-      (/en[-_]GB/i.test(b.lang) ? 1 : 0) - (/en[-_]GB/i.test(a.lang) ? 1 : 0) ||
-      a.name.localeCompare(b.name));
-    ttsVoice = voices[0];
-  }
-
-  if (synth) {
-    pickBestVoice();
-    synth.onvoiceschanged = pickBestVoice;
-  } else {
-    voiceBtn.style.display = 'none';
-  }
-
-  // ---------- Natural cloud voice (optional — only if the server has an ElevenLabs key) ----------
-  function labelCloudVoice(v) {
-    const bits = [v.accent, v.gender].filter(Boolean).map(s => s[0].toUpperCase() + s.slice(1));
-    return bits.length ? `${bits.join(' ')} — ${v.name}` : v.name;
-  }
-
-  async function initCloudVoice() {
-    let data;
-    try {
-      const res = await fetch('/voices');
-      data = await res.json();
-    } catch (_) {
-      return; // server unreachable — just stay on the free browser voice
-    }
-    if (!data.configured || !data.voices || !data.voices.length) return;
-
-    cloudOption.disabled = false;
-    cloudVoiceSel.innerHTML = '';
-    data.voices.forEach(v => {
-      const o = document.createElement('option');
-      o.value = v.id;
-      o.textContent = labelCloudVoice(v);
-      cloudVoiceSel.appendChild(o);
-    });
-
-    let savedId = null;
-    try { savedId = localStorage.getItem('tutorCloudVoiceId'); } catch (_) {}
-    const match = data.voices.find(v => v.id === savedId);
-    cloudVoiceSel.value = (match || data.voices[0]).id;
-    cloudVoiceId = cloudVoiceSel.value;
-
-    cloudVoiceSel.onchange = () => {
-      cloudVoiceId = cloudVoiceSel.value;
-      try { localStorage.setItem('tutorCloudVoiceId', cloudVoiceId); } catch (_) {}
-    };
-
-    // Only switch to the cloud engine if the student had picked it before
-    // AND it's actually available this time round.
-    let savedEngine = 'browser';
-    try { savedEngine = localStorage.getItem('tutorVoiceEngine') || 'browser'; } catch (_) {}
-    if (savedEngine === 'cloud') {
-      voiceEngine = 'cloud';
-      voiceEngineSel.value = 'cloud';
-      cloudVoiceRow.style.display = '';
-    }
-  }
-  initCloudVoice();
-
-  voiceEngineSel.onchange = () => {
-    voiceEngine = voiceEngineSel.value;
-    cloudVoiceRow.style.display = voiceEngine === 'cloud' ? '' : 'none';
-    try { localStorage.setItem('tutorVoiceEngine', voiceEngine); } catch (_) {}
-    stopSpeaking();
-  };
-
-  // Turn maths markdown/LaTeX into something that reads aloud sensibly
-  function speakableText(md) {
-    let t = md;
-    t = t.replace(/```[\s\S]*?```/g, ' ');
-    t = t.replace(/`([^`]*)`/g, '$1');
-    t = t.replace(/\\frac\{([^}]*)\}\{([^}]*)\}/g, '$1 over $2');
-    t = t.replace(/\\sqrt\{([^}]*)\}/g, 'square root of $1');
-    t = t.replace(/\\times/g, ' times ');
-    t = t.replace(/\\div/g, ' divided by ');
-    t = t.replace(/\\pi/g, ' pi ');
-    t = t.replace(/\\[a-zA-Z]+/g, ' ');
-    t = t.replace(/\^\{?2\}?/g, ' squared');
-    t = t.replace(/\^\{?3\}?/g, ' cubed');
-    t = t.replace(/\^\{?([0-9n]+)\}?/g, ' to the power $1');
-    t = t.replace(/[\${}\\]/g, ' ');
-    t = t.replace(/[*_#>]/g, ' ');
-    t = t.replace(/^\s*[-•]\s/gm, ' ');
-    t = t.replace(/\bsqrt\b/gi, 'square root');
-    t = t.replace(/\s*\/\s*/g, ' over ');
-    t = t.replace(/\s+/g, ' ').trim();
-    return t;
-  }
-
-  function speak(text) {
-    if (!voiceOn) return;
-    const clean = speakableText(text);
-    if (!clean) return;
-
-    if (voiceEngine === 'cloud' && cloudVoiceId) {
-      speakCloud(clean);
-      return;
-    }
-
-    if (!synth) return;
-    synth.cancel();
-    const u = new SpeechSynthesisUtterance(clean);
-    if (ttsVoice) u.voice = ttsVoice;
-    u.lang = (ttsVoice && ttsVoice.lang) || 'en-GB';
-    u.rate = 0.98;
-    u.pitch = 1.05;
-    u.onstart = () => { setTalking(true); setStatus('Speaking…'); };
-    u.onend   = () => { setTalking(false); setStatus(IDLE_STATUS); };
-    u.onerror = () => { setTalking(false); setStatus(IDLE_STATUS); };
-    synth.speak(u);
-  }
-
-  async function speakCloud(text) {
-    setStatus('Getting the natural voice ready…');
-    try {
-      const res = await fetch('/speak', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text, voiceId: cloudVoiceId })
-      });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || 'Natural voice failed.');
-      }
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const audio = new Audio(url);
-      currentCloudAudio = audio;
-      audio.onplay = () => { setTalking(true); setStatus('Speaking…'); };
-      audio.onended = audio.onerror = () => {
-        setTalking(false);
-        setStatus(IDLE_STATUS);
-        URL.revokeObjectURL(url);
-        if (currentCloudAudio === audio) currentCloudAudio = null;
-      };
-      await audio.play();
-    } catch (err) {
-      console.error('Cloud voice error:', err);
-      // Fall back quietly — the written answer is already on screen either way
-      setStatus(IDLE_STATUS);
-    }
-  }
-
-  function stopSpeaking() {
-    if (synth) synth.cancel();
-    if (currentCloudAudio) {
-      currentCloudAudio.pause();
-      currentCloudAudio = null;
-    }
-    setTalking(false);
-  }
-
-  function toggleVoice() {
-    voiceOn = !voiceOn;
-    voiceBtn.textContent = voiceOn ? '🔊 Voice on' : '🔇 Voice off';
-    if (!voiceOn) stopSpeaking();
-  }
-
-  // ---------- Speech recognition (student speaks) ----------
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  let recog = null, recording = false;
-
-  if (SR) {
-    recog = new SR();
-    recog.lang = 'en-GB';
-    recog.interimResults = false;
-    recog.maxAlternatives = 1;
-
-    recog.onresult = (e) => {
-      const transcript = e.results[0][0].transcript;
-      inputEl.value = (inputEl.value ? inputEl.value + ' ' : '') + transcript;
-      inputEl.dispatchEvent(new Event('input'));
-    };
-    recog.onend = () => {
-      recording = false;
-      micBtn.classList.remove('recording');
-      if (statusEl.textContent === 'Listening…') setStatus(IDLE_STATUS);
-      inputEl.focus();
-    };
-    recog.onerror = () => {
-      recording = false;
-      micBtn.classList.remove('recording');
-      setStatus(IDLE_STATUS);
-    };
-  } else {
-    micBtn.style.display = 'none';
-  }
-
-  function toggleMic() {
-    if (!recog) return;
-    if (recording) {
-      recog.stop();
-      return;
-    }
-    stopSpeaking();        // don't listen while the tutor is talking
-    try {
-      recog.start();
-      recording = true;
-      micBtn.classList.add('recording');
-      setStatus('Listening…');
-    } catch (_) { /* start() throws if already active */ }
-  }
-
-  // ---------- Textarea behaviour ----------
-  inputEl.addEventListener('input', () => {
-    inputEl.style.height = 'auto';
-    inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + 'px';
-  });
-  inputEl.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      sendMessage();
-    }
-  });
-
-  // ---------- Chat rendering ----------
   const KATEX_OPTS = {
     delimiters: [
       { left: '$$', right: '$$', display: true },
@@ -855,38 +380,307 @@
     throwOnError: false
   };
 
-  function addMessage(role, text) {
-    const topicBrowser = document.getElementById('topicBrowser');
-    if (topicBrowser) topicBrowser.remove();
+  // Render math BEFORE markdown, not after. marked applies standard
+  // CommonMark backslash-escaping (e.g. "\%" -> "%") to the raw text, and if
+  // that runs first, a literal "%" ends up INSIDE the LaTeX source — which
+  // KaTeX then reads as a comment-to-end-of-line, silently truncating the
+  // rest of the expression. Extracting and rendering $...$/$$...$$ first
+  // (via katex.renderToString, stashed behind placeholder tokens) means
+  // marked never sees raw LaTeX source at all, so this can't happen —
+  // important here since percent signs appear constantly in GCSE maths.
+  function renderMd(el, text) {
+    text = text || '';
+    const mathBlocks = [];
+    function stash(math, displayMode) {
+      let html;
+      try { html = katex.renderToString(math, { displayMode, throwOnError: false }); }
+      catch (_) { html = math; }
+      const token = ` MATH${mathBlocks.length} `;
+      mathBlocks.push(html);
+      return token;
+    }
+    text = text.replace(/\$\$([\s\S]+?)\$\$/g, (_, m) => stash(m, true));
+    text = text.replace(/\$([^$\n]+?)\$/g, (_, m) => stash(m, false));
 
+    let html = marked.parse(text);
+    html = html.replace(/ MATH(\d+) /g, (_, i) => mathBlocks[Number(i)]);
+    el.innerHTML = html;
+  }
+
+  // ---------- Progress tracking (localStorage) ----------
+  const PROGRESS_KEY = 'tutorProgressV1';
+  function getProgress() {
+    try { return new Set(JSON.parse(localStorage.getItem(PROGRESS_KEY) || '[]')); }
+    catch (_) { return new Set(); }
+  }
+  function saveProgress(set) {
+    try { localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set])); } catch (_) {}
+  }
+
+  // ---------- Load the generated curriculum content ----------
+  let MODULES = [];
+  let currentModule = null;
+  let loadError = null;
+
+  async function loadModules() {
+    try {
+      const res = await fetch('/content/modules.json');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      MODULES = await res.json();
+    } catch (err) {
+      console.error('Could not load modules.json:', err);
+      loadError = err;
+      MODULES = [];
+    }
+    showHome();
+  }
+
+  function updateHeaderProgress() {
+    if (!MODULES.length) { headerProgressEl.textContent = ''; return; }
+    const done = getProgress();
+    const completed = MODULES.filter(m => done.has(m.id)).length;
+    const pct = Math.round((completed / MODULES.length) * 100);
+    headerProgressEl.innerHTML = `
+      <span>${completed} / ${MODULES.length} modules</span>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>`;
+  }
+
+  // ---------- Home view: continue card + full syllabus ----------
+  function showHome() {
+    currentModule = null;
+    homeBtn.style.display = 'none';
+    updateHeaderProgress();
+
+    if (loadError || !MODULES.length) {
+      appEl.innerHTML = `<div class="content-missing">
+        📚 The curriculum content hasn't been generated yet.<br>
+        Run <code>node scripts/generate-modules.js</code> to create <code>content/modules.json</code>, then reload this page.
+      </div>`;
+      return;
+    }
+
+    const done = getProgress();
+    const next = MODULES.find(m => !done.has(m.id));
+
+    const continueHTML = next
+      ? `<div class="continue-card">
+          <div class="continue-label">Next up — Week ${next.week}</div>
+          <div class="continue-title">${next.icon} ${next.subject}: ${next.title}</div>
+          <button class="continue-btn" data-id="${next.id}">Start This Week's Lesson →</button>
+        </div>`
+      : `<div class="continue-card">
+          <div class="all-done">
+            <div class="big-tick">🎉</div>
+            <div class="continue-title" style="margin-bottom:2px;">All 37 modules complete!</div>
+            <p style="opacity:0.9;font-size:0.85rem;">Revisit any module below any time.</p>
+          </div>
+        </div>`;
+
+    const subjects = [];
+    for (const m of MODULES) {
+      let group = subjects.find(s => s.name === m.subject);
+      if (!group) { group = { name: m.subject, icon: m.icon, items: [] }; subjects.push(group); }
+      group.items.push(m);
+    }
+
+    const syllabusHTML = subjects.map(group => {
+      const doneCount = group.items.filter(m => done.has(m.id)).length;
+      const rows = group.items.map(m => `
+        <div class="module-row ${done.has(m.id) ? 'done' : ''}" data-id="${m.id}">
+          <div class="mr-week">${m.week}</div>
+          <div class="mr-title">${m.title}</div>
+          <div class="mr-check">✓</div>
+        </div>`).join('');
+      return `
+        <div class="subject-group">
+          <div class="subject-heading">${group.icon} ${group.name} <span class="sh-count">${doneCount}/${group.items.length}</span></div>
+          ${rows}
+        </div>`;
+    }).join('');
+
+    appEl.innerHTML = `${continueHTML}<div class="syllabus">${syllabusHTML}</div>`;
+
+    appEl.querySelectorAll('[data-id]').forEach(el => {
+      el.addEventListener('click', () => openModule(el.dataset.id));
+    });
+  }
+
+  // ---------- Module view ----------
+  function openModule(id) {
+    const mod = MODULES.find(m => m.id === id);
+    if (!mod) return;
+    currentModule = mod;
+    homeBtn.style.display = '';
+    messages = [];
+
+    const examplesHTML = (mod.examples || []).map(ex => `
+      <div class="example-card">
+        <div class="ex-q"></div>
+        <div class="ex-sol"></div>
+      </div>`).join('');
+
+    const testHTML = (mod.testQuestions || []).map((tq, i) => `
+      <div class="test-card">
+        <div class="tq-q">${i + 1}. </div>
+        <button class="reveal-btn" data-i="${i}">Show answer</button>
+        <div class="tq-a" hidden></div>
+      </div>`).join('');
+
+    appEl.innerHTML = `
+      <button class="back-btn" onclick="showHome()">← All modules</button>
+      <div class="module-head">
+        <div class="module-meta">Week ${mod.week} · ${mod.subject}</div>
+        <h2>${mod.title}</h2>
+      </div>
+
+      <section class="m-section">
+        <h3>📖 Overview</h3>
+        <div class="m-body" id="mOverview"></div>
+      </section>
+
+      <section class="m-section">
+        <h3>✏️ Worked Examples</h3>
+        ${examplesHTML || '<p style="color:var(--muted);font-size:0.9rem;">No examples generated.</p>'}
+      </section>
+
+      <section class="m-section">
+        <h3>📝 Test Questions</h3>
+        ${testHTML || '<p style="color:var(--muted);font-size:0.9rem;">No test questions generated.</p>'}
+      </section>
+
+      <button class="complete-btn" id="completeBtn">✓ Mark this module complete</button>
+
+      <section class="m-section qa-section" style="margin-top:34px;">
+        <h3>💬 Ask a Question</h3>
+        <p class="m-section-hint">Stuck on something above, or want it explained a different way? Ask here.</p>
+        <div id="qaMessages"></div>
+        <div class="qa-input-row">
+          <button class="icon-btn" id="mic" title="Speak your question">🎤</button>
+          <textarea id="input" placeholder="Ask about this topic…" rows="1"></textarea>
+          <button id="send">Send</button>
+        </div>
+      </section>
+    `;
+
+    renderMd(document.getElementById('mOverview'), mod.overview);
+
+    appEl.querySelectorAll('.example-card').forEach((card, i) => {
+      const ex = mod.examples[i];
+      renderMd(card.querySelector('.ex-q'), ex.question);
+      renderMd(card.querySelector('.ex-sol'), ex.solution);
+    });
+
+    appEl.querySelectorAll('.test-card').forEach((card, i) => {
+      const tq = mod.testQuestions[i];
+      const qEl = card.querySelector('.tq-q');
+      qEl.innerHTML = (i + 1) + '. ';
+      const qSpan = document.createElement('span');
+      qEl.appendChild(qSpan);
+      renderMd(qSpan, tq.question);
+      const aEl = card.querySelector('.tq-a');
+      renderMd(aEl, tq.answer);
+    });
+
+    appEl.querySelectorAll('.reveal-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.test-card');
+        const a = card.querySelector('.tq-a');
+        a.hidden = !a.hidden;
+        btn.textContent = a.hidden ? 'Show answer' : 'Hide answer';
+      });
+    });
+
+    refreshCompleteButton();
+    document.getElementById('completeBtn').addEventListener('click', markComplete);
+
+    // Wire up the Q&A controls (re-fetched each openModule since we rebuilt the DOM)
+    bindQAControls();
+
+    window.scrollTo(0, 0);
+  }
+
+  function refreshCompleteButton() {
+    const btn = document.getElementById('completeBtn');
+    const done = getProgress();
+    if (done.has(currentModule.id)) {
+      btn.textContent = '✓ Completed';
+      btn.classList.add('already-done');
+    } else {
+      btn.textContent = '✓ Mark this module complete';
+      btn.classList.remove('already-done');
+    }
+  }
+
+  function markComplete() {
+    const done = getProgress();
+    done.add(currentModule.id);
+    saveProgress(done);
+    refreshCompleteButton();
+    updateHeaderProgress();
+  }
+
+  // ---------- Q&A (scoped chat, reusing the existing /chat pipeline) ----------
+  let messages = [];
+  let inputEl, sendBtn, micBtn, recog, recording = false;
+
+  function bindQAControls() {
+    inputEl = document.getElementById('input');
+    sendBtn = document.getElementById('send');
+    micBtn = document.getElementById('mic');
+
+    inputEl.addEventListener('input', () => {
+      inputEl.style.height = 'auto';
+      inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + 'px';
+    });
+    inputEl.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendQAMessage(); }
+    });
+    sendBtn.addEventListener('click', sendQAMessage);
+
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) { micBtn.style.display = 'none'; return; }
+
+    recog = new SR();
+    recog.lang = 'en-GB';
+    recog.interimResults = false;
+    recog.maxAlternatives = 1;
+    recog.onresult = (e) => {
+      const transcript = e.results[0][0].transcript;
+      inputEl.value = (inputEl.value ? inputEl.value + ' ' : '') + transcript;
+      inputEl.dispatchEvent(new Event('input'));
+    };
+    recog.onend = () => { recording = false; micBtn.classList.remove('recording'); };
+    recog.onerror = () => { recording = false; micBtn.classList.remove('recording'); };
+
+    micBtn.addEventListener('click', () => {
+      if (recording) { recog.stop(); return; }
+      try { recog.start(); recording = true; micBtn.classList.add('recording'); }
+      catch (_) { /* start() throws if already active */ }
+    });
+  }
+
+  function qaMessagesEl() { return document.getElementById('qaMessages'); }
+
+  function addQAMessage(role, text) {
     const div = document.createElement('div');
     div.className = `message ${role === 'user' ? 'student' : 'tutor'}`;
-
     const sender = document.createElement('div');
     sender.className = 'sender';
     sender.textContent = role === 'user' ? 'You' : 'Tutor';
-
     const body = document.createElement('div');
-    if (role === 'user') {
-      body.textContent = text;
-    } else if (text) {
-      body.innerHTML = marked.parse(text);
-      renderMathInElement(body, KATEX_OPTS);
-    }
-
+    if (role === 'user') body.textContent = text;
+    else if (text) renderMd(body, text);
     div.appendChild(sender);
     div.appendChild(body);
-    chatEl.appendChild(div);
-    chatEl.scrollTop = chatEl.scrollHeight;
+    qaMessagesEl().appendChild(div);
     return div;
   }
 
-  function addError(msg) {
+  function addQAError(msg) {
     const div = document.createElement('div');
     div.className = 'error-msg';
     div.textContent = '⚠️ ' + msg;
-    chatEl.appendChild(div);
-    chatEl.scrollTop = chatEl.scrollHeight;
+    qaMessagesEl().appendChild(div);
   }
 
   function showTyping() {
@@ -894,30 +688,32 @@
     div.className = 'typing';
     div.id = 'typing';
     div.innerHTML = '<span></span><span></span><span></span>';
-    chatEl.appendChild(div);
-    chatEl.scrollTop = chatEl.scrollHeight;
+    qaMessagesEl().appendChild(div);
   }
   function hideTyping() {
     const t = document.getElementById('typing');
     if (t) t.remove();
   }
 
-  async function sendMessage(overrideDisplay, overrideApi) {
-    const text = (overrideDisplay !== undefined ? overrideDisplay : inputEl.value).trim();
-    const apiText = (overrideApi !== undefined ? overrideApi : text);
+  async function sendQAMessage() {
+    const text = inputEl.value.trim();
     if (!text || sendBtn.disabled) return;
 
-    stopSpeaking();
-    if (overrideDisplay === undefined) {
-      inputEl.value = '';
-      inputEl.style.height = 'auto';
-    }
+    // On the first question of a module's Q&A, quietly give the tutor the
+    // module's context so it can answer in scope. The student only ever
+    // sees their own clean question — this prefix is API-only.
+    const isFirst = messages.length === 0;
+    const apiText = isFirst
+      ? `(Context for you only — the student is partway through this week's lesson on "${currentModule.title}" (${currentModule.subject}). Overview covered: ${(currentModule.overview || '').slice(0, 400)} Now answer their question below in that context.)\n\nStudent's question: ${text}`
+      : text;
+
+    inputEl.value = '';
+    inputEl.style.height = 'auto';
     sendBtn.disabled = true;
 
     messages.push({ role: 'user', content: apiText });
-    addMessage('user', text);
+    addQAMessage('user', text);
     showTyping();
-    setStatus('Thinking…');
 
     try {
       const res = await fetch('/chat', {
@@ -929,17 +725,16 @@
       if (!res.ok) {
         const data = await res.json();
         hideTyping();
-        addError(data.error || 'Something went wrong. Please try again.');
+        addQAError(data.error || 'Something went wrong. Please try again.');
         messages.pop();
         sendBtn.disabled = false;
-        setStatus(IDLE_STATUS);
         inputEl.focus();
         return;
       }
 
       hideTyping();
       let fullText = '';
-      const msgDiv = addMessage('assistant', '');
+      const msgDiv = addQAMessage('assistant', '');
       const bodyEl = msgDiv.querySelector('div:last-child');
 
       const reader = res.body.getReader();
@@ -949,58 +744,41 @@
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split('\n');
         buffer = lines.pop();
-
         for (const line of lines) {
           if (!line.startsWith('data: ')) continue;
           const payload = line.slice(6).trim();
           if (payload === '[DONE]') break;
           try {
             const { token } = JSON.parse(payload);
-            if (token) {
-              fullText += token;
-              bodyEl.innerHTML = marked.parse(fullText);
-              renderMathInElement(bodyEl, KATEX_OPTS);
-              chatEl.scrollTop = chatEl.scrollHeight;
-            }
+            if (token) { fullText += token; renderMd(bodyEl, fullText); }
           } catch (_) {}
         }
       }
 
       if (!fullText) {
-        // Stream opened but died before any words arrived (e.g. Gemini under load)
         msgDiv.remove();
-        addError('The tutor got cut off before answering — please try again.');
+        addQAError('The tutor got cut off before answering — please try again.');
         messages.pop();
-        setStatus(IDLE_STATUS);
         sendBtn.disabled = false;
         inputEl.focus();
         return;
       }
 
       messages.push({ role: 'assistant', content: fullText });
-      speak(fullText);            // read the answer aloud
     } catch (err) {
       hideTyping();
-      addError('Could not reach the server. Is it running?');
+      addQAError('Could not reach the server. Is it running?');
       messages.pop();
-      setStatus(IDLE_STATUS);
     }
 
     sendBtn.disabled = false;
     inputEl.focus();
   }
 
-  function clearChat() {
-    stopSpeaking();
-    setStatus(IDLE_STATUS);
-    messages = [];
-    showTopicBrowser();
-    inputEl.focus();
-  }
+  loadModules();
 </script>
 
 <script>

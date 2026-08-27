@@ -1,7 +1,7 @@
 {
   "name": "GCSE Maths Tutor",
   "short_name": "Maths Tutor",
-  "description": "Your personal Edexcel GCSE Maths tutor — ask or say anything!",
+  "description": "A weekly, 37-module Edexcel GCSE Maths Higher tier curriculum for home tutoring sessions.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
