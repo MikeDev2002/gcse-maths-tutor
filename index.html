@@ -130,6 +130,76 @@
     }
     .all-done .big-tick { font-size: 2.4rem; margin-bottom: 8px; }
 
+    /* ---- Welcome hero ---- */
+    .hero { margin-bottom: 20px; }
+    .hero h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
+    .hero p { color: var(--muted); font-size: 0.92rem; line-height: 1.5; max-width: 560px; }
+
+    /* ---- Guide (how to use / stuck) ---- */
+    .guide-toggle {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 8px 16px; font-size: 0.82rem; font-weight: 600;
+      color: var(--primary-dark); cursor: pointer; margin-bottom: 14px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .guide-toggle:hover { border-color: var(--primary); background: var(--primary-light); }
+    .guide-toggle .chev { font-size: 0.65rem; transition: transform 0.2s; display: inline-block; }
+    .guide-toggle.open .chev { transform: rotate(180deg); }
+
+    .guide-panel {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 22px; margin-bottom: 24px;
+    }
+    .guide-panel h4 {
+      font-size: 0.88rem; font-weight: 700; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .guide-steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px; margin-bottom: 22px;
+    }
+    .guide-step { font-size: 0.84rem; line-height: 1.5; }
+    .guide-step .gs-num {
+      display: flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--primary-light); color: var(--primary-dark);
+      font-weight: 700; font-size: 0.75rem; margin-bottom: 6px;
+    }
+    .guide-step strong { display: block; margin-bottom: 2px; }
+    .guide-step .gs-desc { color: var(--muted); }
+    .guide-stuck {
+      background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;
+      padding: 14px 16px; font-size: 0.84rem; line-height: 1.6; color: #78350f;
+    }
+    .guide-stuck ul { margin: 6px 0 0 20px; }
+    .guide-stuck li { margin: 3px 0; }
+
+    /* ---- Progress overview ---- */
+    .progress-overview {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px;
+    }
+    .progress-overview h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 12px; }
+    .status-bar {
+      display: flex; height: 12px; border-radius: 6px; overflow: hidden;
+      background: #e2e8f0; margin-bottom: 12px;
+    }
+    .status-bar-seg { height: 100%; transition: width 0.3s ease; }
+    .status-bar-seg.completed { background: var(--good); }
+    .status-bar-seg.started { background: #f59e0b; }
+    .status-legend {
+      display: flex; flex-wrap: wrap; gap: 8px 18px;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .status-legend .li-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      display: inline-block; margin-right: 6px;
+    }
+    .li-dot.completed { background: var(--good); }
+    .li-dot.started { background: #f59e0b; }
+    .li-dot.not-started { background: #cbd5e1; }
+
     .subject-group { margin-bottom: 22px; }
     .subject-heading {
       font-size: 0.95rem; font-weight: 700; color: var(--muted);
@@ -152,7 +222,7 @@
       box-shadow: 0 4px 14px rgba(79,70,229,0.1);
       transform: translateY(-1px);
     }
-    .module-row.done { opacity: 0.72; }
+    .module-row[data-status="completed"] { opacity: 0.72; }
     .mr-week {
       flex-shrink: 0;
       width: 30px; height: 30px;
@@ -162,8 +232,14 @@
       font-size: 0.78rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
     }
-    .module-row.done .mr-week { background: #dcfce7; color: var(--good); }
-    .mr-title { font-size: 0.92rem; font-weight: 600; }
+    .module-row[data-status="completed"] .mr-week { background: #dcfce7; color: var(--good); }
+    .module-row[data-status="started"] .mr-week { background: #fef3c7; color: #b45309; }
+    .mr-title { font-size: 0.92rem; font-weight: 600; display: flex; align-items: center; flex-wrap: wrap; }
+    .mr-status-label {
+      font-size: 0.7rem; font-weight: 700; color: #b45309;
+      background: #fef3c7; border-radius: 6px; padding: 2px 7px;
+      margin-left: 8px; white-space: nowrap;
+    }
     .mr-check {
       margin-left: auto; flex-shrink: 0;
       width: 24px; height: 24px; border-radius: 50%;
@@ -171,8 +247,11 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 0.85rem; color: transparent;
     }
-    .module-row.done .mr-check {
+    .module-row[data-status="completed"] .mr-check {
       border-color: var(--good); background: var(--good); color: white;
+    }
+    .module-row[data-status="started"] .mr-check {
+      border-color: #f59e0b; color: #f59e0b; font-size: 0.7rem;
     }
 
     /* ---- Module view ---- */
@@ -408,13 +487,34 @@
   }
 
   // ---------- Progress tracking (localStorage) ----------
-  const PROGRESS_KEY = 'tutorProgressV1';
+  // Each module is one of three states: 'not-started' (default, absent from
+  // the map), 'started' (opened at least once), or 'completed' (marked done
+  // via the button in the module view). Stored as {[moduleId]: status}.
+  // Migrates the old completed-only array format (tutorProgressV1) the first
+  // time it's read, so nobody's earlier progress is lost.
+  const PROGRESS_KEY = 'tutorProgressV2';
+  const LEGACY_PROGRESS_KEY = 'tutorProgressV1';
   function getProgress() {
-    try { return new Set(JSON.parse(localStorage.getItem(PROGRESS_KEY) || '[]')); }
-    catch (_) { return new Set(); }
+    try {
+      const raw = localStorage.getItem(PROGRESS_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch (_) {}
+    try {
+      const legacy = JSON.parse(localStorage.getItem(LEGACY_PROGRESS_KEY) || '[]');
+      const migrated = {};
+      legacy.forEach(id => { migrated[id] = 'completed'; });
+      if (legacy.length) saveProgress(migrated);
+      return migrated;
+    } catch (_) { return {}; }
   }
-  function saveProgress(set) {
-    try { localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set])); } catch (_) {}
+  function saveProgress(map) {
+    try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(map)); } catch (_) {}
+  }
+  function getStatus(map, id) { return map[id] || 'not-started'; }
+  function setModuleStatus(id, status) {
+    const p = getProgress();
+    p[id] = status;
+    saveProgress(p);
   }
 
   // ---------- Load the generated curriculum content ----------
@@ -437,15 +537,15 @@
 
   function updateHeaderProgress() {
     if (!MODULES.length) { headerProgressEl.textContent = ''; return; }
-    const done = getProgress();
-    const completed = MODULES.filter(m => done.has(m.id)).length;
+    const progress = getProgress();
+    const completed = MODULES.filter(m => getStatus(progress, m.id) === 'completed').length;
     const pct = Math.round((completed / MODULES.length) * 100);
     headerProgressEl.innerHTML = `
       <span>${completed} / ${MODULES.length} modules</span>
       <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>`;
   }
 
-  // ---------- Home view: continue card + full syllabus ----------
+  // ---------- Home view: welcome, guide, progress overview, continue card, syllabus ----------
   function showHome() {
     currentModule = null;
     homeBtn.style.display = 'none';
@@ -459,14 +559,24 @@
       return;
     }
 
-    const done = getProgress();
-    const next = MODULES.find(m => !done.has(m.id));
+    const progress = getProgress();
+    const statusOf = id => getStatus(progress, id);
+    const completedCount = MODULES.filter(m => statusOf(m.id) === 'completed').length;
+    const startedCount = MODULES.filter(m => statusOf(m.id) === 'started').length;
+    const notStartedCount = MODULES.length - completedCount - startedCount;
+    const next = MODULES.find(m => statusOf(m.id) !== 'completed');
+
+    const heroHTML = `
+      <div class="hero">
+        <h2>👋 Ready for this week's session?</h2>
+        <p>One topic, worked examples, a few questions to try, and space to ask anything — pick up where you left off below, or jump to any topic in the full syllabus.</p>
+      </div>`;
 
     const continueHTML = next
       ? `<div class="continue-card">
-          <div class="continue-label">Next up — Week ${next.week}</div>
+          <div class="continue-label">${statusOf(next.id) === 'started' ? 'Continue — ' : 'Next up — '}Week ${next.week}</div>
           <div class="continue-title">${next.icon} ${next.subject}: ${next.title}</div>
-          <button class="continue-btn" data-id="${next.id}">Start This Week's Lesson →</button>
+          <button class="continue-btn" data-id="${next.id}">${statusOf(next.id) === 'started' ? 'Continue This Lesson →' : "Start This Week's Lesson →"}</button>
         </div>`
       : `<div class="continue-card">
           <div class="all-done">
@@ -476,6 +586,47 @@
           </div>
         </div>`;
 
+    // Default open for anyone who hasn't chosen to collapse it yet.
+    const guideOpenSetting = localStorage.getItem('tutorGuideOpen');
+    const isGuideOpen = guideOpenSetting === null ? true : guideOpenSetting === 'true';
+
+    const guideHTML = `
+      <button class="guide-toggle ${isGuideOpen ? 'open' : ''}" id="guideToggle">
+        ℹ️ How to use this each week <span class="chev">▾</span>
+      </button>
+      <div class="guide-panel" id="guidePanel" ${isGuideOpen ? '' : 'hidden'}>
+        <h4>📘 A typical session, in four steps</h4>
+        <div class="guide-steps">
+          <div class="guide-step"><span class="gs-num">1</span><strong>Read the Overview</strong><span class="gs-desc">Together, out loud if that helps — no jargon, just the idea.</span></div>
+          <div class="guide-step"><span class="gs-num">2</span><strong>Go through the Examples</strong><span class="gs-desc">See exactly how a real Higher-tier question gets solved, step by step.</span></div>
+          <div class="guide-step"><span class="gs-num">3</span><strong>Try the Test Questions</strong><span class="gs-desc">Have a go, then reveal the answer to check the working.</span></div>
+          <div class="guide-step"><span class="gs-num">4</span><strong>Ask if anything's unclear</strong><span class="gs-desc">Use the Q&amp;A box any time — mid-lesson or after.</span></div>
+        </div>
+        <h4>🆘 If you get stuck</h4>
+        <div class="guide-stuck">
+          Getting stuck is normal — it usually just means the next idea is worth slowing down for.
+          <ul>
+            <li>Re-read the closest Worked Example — it's almost always the same method with different numbers.</li>
+            <li>Ask the tutor in the Q&amp;A box (type it, or tap 🎤 and just say it) — it already knows which topic you're on.</li>
+            <li>Still unsure? Note the question down and talk it through together — that's exactly what these sessions are for.</li>
+          </ul>
+        </div>
+      </div>`;
+
+    const progressOverviewHTML = `
+      <div class="progress-overview">
+        <h4>📊 Your Progress</h4>
+        <div class="status-bar">
+          <div class="status-bar-seg completed" style="width:${(completedCount / MODULES.length) * 100}%"></div>
+          <div class="status-bar-seg started" style="width:${(startedCount / MODULES.length) * 100}%"></div>
+        </div>
+        <div class="status-legend">
+          <span><span class="li-dot completed"></span>${completedCount} Completed</span>
+          <span><span class="li-dot started"></span>${startedCount} In progress</span>
+          <span><span class="li-dot not-started"></span>${notStartedCount} Not started</span>
+        </div>
+      </div>`;
+
     const subjects = [];
     for (const m of MODULES) {
       let group = subjects.find(s => s.name === m.subject);
@@ -484,13 +635,18 @@
     }
 
     const syllabusHTML = subjects.map(group => {
-      const doneCount = group.items.filter(m => done.has(m.id)).length;
-      const rows = group.items.map(m => `
-        <div class="module-row ${done.has(m.id) ? 'done' : ''}" data-id="${m.id}">
+      const doneCount = group.items.filter(m => statusOf(m.id) === 'completed').length;
+      const rows = group.items.map(m => {
+        const status = statusOf(m.id);
+        const checkGlyph = status === 'completed' ? '✓' : status === 'started' ? '●' : '';
+        const statusLabel = status === 'started' ? '<span class="mr-status-label">In progress</span>' : '';
+        return `
+        <div class="module-row" data-id="${m.id}" data-status="${status}">
           <div class="mr-week">${m.week}</div>
-          <div class="mr-title">${m.title}</div>
-          <div class="mr-check">✓</div>
-        </div>`).join('');
+          <div class="mr-title">${m.title}${statusLabel}</div>
+          <div class="mr-check">${checkGlyph}</div>
+        </div>`;
+      }).join('');
       return `
         <div class="subject-group">
           <div class="subject-heading">${group.icon} ${group.name} <span class="sh-count">${doneCount}/${group.items.length}</span></div>
@@ -498,10 +654,19 @@
         </div>`;
     }).join('');
 
-    appEl.innerHTML = `${continueHTML}<div class="syllabus">${syllabusHTML}</div>`;
+    appEl.innerHTML = `${heroHTML}${continueHTML}${guideHTML}${progressOverviewHTML}<div class="syllabus">${syllabusHTML}</div>`;
 
     appEl.querySelectorAll('[data-id]').forEach(el => {
       el.addEventListener('click', () => openModule(el.dataset.id));
+    });
+
+    const guideToggle = document.getElementById('guideToggle');
+    const guidePanel = document.getElementById('guidePanel');
+    guideToggle.addEventListener('click', () => {
+      const nowOpen = guidePanel.hidden;
+      guidePanel.hidden = !nowOpen;
+      guideToggle.classList.toggle('open', nowOpen);
+      try { localStorage.setItem('tutorGuideOpen', String(nowOpen)); } catch (_) {}
     });
   }
 
@@ -512,6 +677,13 @@
     currentModule = mod;
     homeBtn.style.display = '';
     messages = [];
+
+    // Mark as started the first time it's opened — never downgrade a module
+    // that's already been completed back to "started".
+    const progress = getProgress();
+    if (getStatus(progress, mod.id) === 'not-started') {
+      setModuleStatus(mod.id, 'started');
+    }
 
     const examplesHTML = (mod.examples || []).map(ex => `
       <div class="example-card">
@@ -601,8 +773,8 @@
 
   function refreshCompleteButton() {
     const btn = document.getElementById('completeBtn');
-    const done = getProgress();
-    if (done.has(currentModule.id)) {
+    const progress = getProgress();
+    if (getStatus(progress, currentModule.id) === 'completed') {
       btn.textContent = '✓ Completed';
       btn.classList.add('already-done');
     } else {
@@ -612,9 +784,7 @@
   }
 
   function markComplete() {
-    const done = getProgress();
-    done.add(currentModule.id);
-    saveProgress(done);
+    setModuleStatus(currentModule.id, 'completed');
     refreshCompleteButton();
     updateHeaderProgress();
   }
