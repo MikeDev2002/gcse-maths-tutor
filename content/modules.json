@@ -478,5 +478,45 @@
         "answer": "Answer: $x = 6$, Common ratio $r = 2$.\nWorking: Since it is geometric, $\\frac{x+6}{x} = \\frac{3x+6}{x+6}$. Cross-multiply: $(x+6)^2 = x(3x+6) \\Rightarrow x^2 + 12x + 36 = 3x^2 + 6x$. Rearrange to $2x^2 - 6x - 36 = 0 \\Rightarrow x^2 - 3x - 18 = 0$. Factorise: $(x - 6)(x + 3) = 0$. Since $x > 0$, $x = 6$. The terms are $6, 12, 24$, so common ratio $r = 12 \\div 6 = 2$."
       }
     ]
+  },
+  {
+    "id": "algebra-functions-iteration",
+    "week": 13,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Functions & iteration",
+    "overview": "Welcome to Functions and Iteration. In GCSE maths, think of a function like a tiny factory machine. You feed a number into it (called the input, usually written as $x$), the machine does some mathematical operations to it, and out pops a new number (called the output). We write this as $f(x)$, which is just a fancy way of saying 'the function of $x$'. For example, if our machine is $f(x) = 2x + 3$, and we feed in $4$, we replace $x$ with $4$ to get $2(4) + 3 = 11$. Sometimes we link functions together, like $fg(x)$, which means you put your number into machine $g$ first, and then feed that exact output straight into machine $f$. An inverse function, written as $f^{-1}(x)$, simply works the machine backwards to undo what it did, returning your original number. Iteration is a clever extension of this idea. Often in real life, we cannot solve tough equations directly, so we use a recurrence relation (a formula like $x_{n+1} = \text{something involving } x_n$). You start with a guess, feed it into the formula to get a better answer, and then feed that new answer back in repeatedly. This is called 'iterating', and you keep going until the numbers settle on a stable value, which gives you an approximate solution to the equation. There is no special formula sheet provided for this topic in the Edexcel Higher exam, so you must memorise how to set up composite functions, find inverses by swapping $x$ and $y$, and how to substitute values into iterative sequences carefully.",
+    "examples": [
+      {
+        "question": "Given the functions $f(x) = 3x - 2$ and $g(x) = x^2 + 5$, find the value of $fg(4)$.",
+        "solution": "Step 1: Understand the notation $fg(4)$. This means we must apply function $g$ to the input $4$ first, and then take that result and put it into function $f$. Step 2: Calculate $g(4)$. Substitute $x = 4$ into $g(x) = x^2 + 5$. So, $g(4) = (4)^2 + 5 = 16 + 5 = 21$. This earns an M1 method mark for evaluating the inner function. Step 3: Now take this output ($21$) and use it as the input for $f(x)$. Calculate $f(21)$. Substitute $x = 21$ into $f(x) = 3x - 2$. So, $f(21) = 3(21) - 2 = 63 - 2 = 61$. This earns the final A1 accuracy mark. Final Answer: $61$."
+      },
+      {
+        "question": "Show that the equation $x^3 - 4x - 1 = 0$ can be rearranged into the iteration formula $x_{n+1} = \\sqrt[3]{4x_n + 1}$. Starting with $x_1 = 2$, find the values of $x_2$ and $x_3$ to 3 decimal places.",
+        "solution": "Step 1: Rearrange the original equation $x^3 - 4x - 1 = 0$ to isolate an $x$ term. Add $4x$ and $1$ to both sides to get $x^3 = 4x + 1$. Step 2: Take the cube root of both sides to get $x = \\sqrt[3]{4x + 1}$. By adding subscript $n$ to represent the current term and $n+1$ for the next term, we get our iteration formula: $x_{n+1} = \\sqrt[3]{4x_n + 1}$ (M1 mark for valid rearrangement). Step 3: Substitute the first guess $x_1 = 2$ into the formula to find $x_2$. $x_2 = \\sqrt[3]{4(2) + 1} = \\sqrt[3]{8 + 1} = \\sqrt[3]{9} = 2.080083...$ Rounding to 3 decimal places gives $x_2 = 2.080$ (M1 mark for substituting $x_1$). Step 4: Substitute $x_2 = 2.080083...$ into the formula to find $x_3$. $x_3 = \\sqrt[3]{4(2.080083...) + 1} = \\sqrt[3]{8.32033... + 1} = \\sqrt[3]{9.32033...} = 2.10515...$ Rounding to 3 decimal places gives $x_3 = 2.105$ (A1 mark for accurate evaluation). Final Answer: $x_2 = 2.080$, $x_3 = 2.105$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Given $f(x) = 5x + 3$, find the inverse function $f^{-1}(x)$.",
+        "answer": "Let $y = 5x + 3$. Swap $x$ and $y$: $x = 5y + 3$. Rearrange to make $y$ the subject: $x - 3 = 5y$, so $y = (x - 3) / 5$. Final Answer: $f^{-1}(x) = (x - 3) / 5$ (or $\\frac{x-3}{5}$)."
+      },
+      {
+        "question": "Given $f(x) = 2x - 1$ and $g(x) = x^2$, find an expression for the composite function $gf(x)$ in its simplest form.",
+        "answer": "$gf(x)$ means putting $f(x)$ into $g(x)$. Substitute $2x - 1$ everywhere you see $x$ in $g(x)$. So $gf(x) = (2x - 1)^2$. Expand the brackets: $(2x - 1)(2x - 1) = 4x^2 - 2x - 2x + 1$. Final Answer: $4x^2 - 4x + 1$."
+      },
+      {
+        "question": "The function $f$ is defined as $f(x) = \\frac{4}{x - 2}$ for $x \\neq 2$. Find $f(5)$.",
+        "answer": "Substitute $x = 5$ into the function: $f(5) = \\frac{4}{5 - 2} = \\frac{4}{3}$. Final Answer: $\\frac{4}{3}$ (or $1.33$ recurring)."
+      },
+      {
+        "question": "Using the iteration formula $x_{n+1} = \\frac{5}{x_n^2 + 2}$ and starting with $x_1 = 1$, find the value of $x_3$. Give your answer to 3 decimal places.",
+        "answer": "For $x_2$: substitute $x_1 = 1$ into the formula: $x_2 = \\frac{5}{(1)^2 + 2} = \\frac{5}{1 + 2} = \\frac{5}{3} = 1.6666...$ For $x_3$: substitute $x_2 = \\frac{5}{3}$ into the formula: $x_3 = \\frac{5}{(5/3)^2 + 2} = \\frac{5}{25/9 + 2} = \\frac{5}{43/9} = \\frac{45}{43} = 1.0465...$ Final Answer: $1.047$ (rounded to 3 decimal places)."
+      },
+      {
+        "question": "Given that $f(x) = 3x + 5$ and $g(x) = 2x - 1$, find the value of $x$ for which $f(x) = g(x)$.",
+        "answer": "Set the two function expressions equal to each other: $3x + 5 = 2x - 1$. Subtract $2x$ from both sides: $x + 5 = -1$. Subtract $5$ from both sides: $x = -6$. Final Answer: $x = -6$."
+      }
+    ]
   }
 ]

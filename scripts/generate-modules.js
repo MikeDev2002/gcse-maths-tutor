@@ -135,7 +135,7 @@ async function callGemini(prompt, attempt = 1) {
   const timeout = setTimeout(() => controller.abort(), 60000);
   try {
     const res = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-goog-api-key': API_KEY },
