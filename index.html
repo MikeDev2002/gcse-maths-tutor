@@ -104,13 +104,16 @@
     }
     .wrap { max-width: 760px; margin: 0 auto; }
 
-    /* ---- Home view: Continue card (compact, sits below the tile grid) ---- */
+    /* ---- Home view: session-intro + Continue card (sit below the tile grid) ---- */
+    .session-intro {
+      margin-top: 22px; margin-bottom: 10px;
+      color: var(--muted); font-size: 0.88rem; line-height: 1.5;
+    }
     .continue-card {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
       border-radius: 14px;
       padding: 14px 20px;
-      margin-top: 22px;
       box-shadow: 0 6px 18px rgba(79,70,229,0.2);
       display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
     }
@@ -621,9 +624,12 @@
     // ---- 1. Welcome ----
     const heroHTML = `
       <div class="hero">
-        <h2>👋 Ready for this week's session?</h2>
-        <p>One topic, worked examples, a few questions to try, and space to ask anything — browse the areas below, or jump straight to this week's lesson at the bottom.</p>
+        <h2>👋 Welcome to GCSE Maths Tutor</h2>
+        <p>Your weekly Edexcel Higher tier sessions — everything you need, all in one place.</p>
       </div>`;
+
+    // Sits just above the continue bar, below the tile grid.
+    const readyHTML = `<p class="session-intro">Ready for this week's session? One topic, worked examples, a few questions to try, and space to ask anything.</p>`;
 
     const continueHTML = next
       ? `<div class="continue-card">
@@ -643,7 +649,7 @@
           </div>
         </div>`;
 
-    appEl.innerHTML = `${heroHTML}${renderHomeTileGrid()}${continueHTML}`;
+    appEl.innerHTML = `${heroHTML}${renderHomeTileGrid()}${readyHTML}${continueHTML}`;
 
     appEl.querySelectorAll('[data-id]').forEach(el => {
       el.addEventListener('click', () => openModule(el.dataset.id));
