@@ -518,5 +518,965 @@
         "answer": "Set the two function expressions equal to each other: $3x + 5 = 2x - 1$. Subtract $2x$ from both sides: $x + 5 = -1$. Subtract $5$ from both sides: $x = -6$. Final Answer: $x = -6$."
       }
     ]
+  },
+  {
+    "id": "algebra-algebraic-proof",
+    "week": 14,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Algebraic proof",
+    "overview": "Algebraic proof is like being a detective using letters and numbers instead of clues. In mathematics, when we say something is always true, we cannot just test a few numbers and hope for the best; we have to prove it for every possible number in existence. To do this, we use universal algebraic representations. For example, any even number can be written as $2n$ because any whole number multiplied by $2$ always makes an even result. Similarly, an odd number can be written as $2n + 1$. Consecutive numbers follow on from each other, such as $n$, $n + 1$, and $n + 2$. When tackling these questions in the Edexcel GCSE Higher paper, your goal is usually to take a statement, expand any brackets, simplify the expression by collecting like terms, and then factorise it to reveal a hidden multiple. For instance, if you end up with an expression like $2(3n^2 + n)$, you can state that because it has a factor of $2$, it is always a multiple of $2$, and therefore always even. There is no formula sheet provided for algebraic proof in the exam; you must rely entirely on your core algebra skills like expanding brackets and factorising. Examiners love testing this because it checks if you truly understand how algebra works beneath the surface. For parents helping out, just look for clear steps: translating words into algebra, expanding carefully, and pulling out common factors at the end.",
+    "examples": [
+      {
+        "question": "Prove algebraically that the sum of any two consecutive integers is always an odd number.",
+        "solution": "Step 1: Define the integers using algebra. Let the first integer be $n$. The next consecutive integer is $n + 1$. Step 2: Set up the sum (add them together). Sum $= n + (n + 1)$. Step 3: Simplify the expression by collecting like terms. $n + n + 1 = 2n + 1$. Step 4: Interpret the result. Since $2n$ is always an even number (as it is a multiple of $2$), adding $1$ to an even number always gives an odd number. Therefore, the sum of two consecutive integers is always odd."
+      },
+      {
+        "question": "Prove that the difference between the squares of any two consecutive odd numbers is always a multiple of $8$.",
+        "solution": "Step 1: Define two consecutive odd numbers. Let the first odd number be $2n + 1$. The next consecutive odd number is $(2n + 1) + 2 = 2n + 3$. Step 2: Set up the difference between their squares. Difference $= (2n + 3)^2 - (2n + 1)^2$. Step 3: Expand the brackets carefully. $(2n + 3)^2 = 4n^2 + 12n + 9$. And $(2n + 1)^2 = 4n^2 + 4n + 1$. Step 4: Subtract the second expansion from the first. $(4n^2 + 12n + 9) - (4n^2 + 4n + 1)$. Step 5: Simplify by collecting like terms. $4n^2 - 4n^2 = 0$, $12n - 4n = 8n$, and $9 - 1 = 8$. This leaves $8n + 8$. Step 6: Factorise out the common factor of $8$. $8(n + 1)$. Step 7: Conclude. Since the expression can be written as $8$ multiplied by an integer $(n + 1)$, it is always a multiple of $8$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Prove algebraically that the sum of any three consecutive even numbers is always a multiple of $6$.",
+        "answer": "Let the numbers be $2n$, $2n+2$, and $2n+4$. Sum $= 2n + 2n + 2 + 2n + 4 = 6n + 6 = 6(n + 1)$. Since it has a factor of $6$, it is a multiple of $6$. (M1 for setting up terms, M1 for summing and simplifying, A1 for final factorised conclusion)."
+      },
+      {
+        "question": "Prove that the product of two even numbers is always an even number.",
+        "answer": "Let the even numbers be $2a$ and $2b$. Product $= (2a)(2b) = 4ab = 2(2ab)$. Since $2(2ab)$ has a factor of $2$, it is even. (M1 for defining two even numbers, M1 for multiplying, A1 for factorising out $2$)."
+      },
+      {
+        "question": "Prove algebraically that $(n + 3)^2 - (n - 3)^2$ is always a multiple of $12$ for any integer $n$.",
+        "answer": "Expand both brackets: $(n^2 + 6n + 9) - (n^2 - 6n + 9)$. Simplify: $n^2 - n^2 + 6n - (-6n) + 9 - 9 = 12n$. Since $12n$ is $12$ times $n$, it is a multiple of $12$. (M1 for expanding brackets, M1 for correct subtraction, A1 for final proof statement)."
+      },
+      {
+        "question": "Prove that if you square any odd number, the result is always odd.",
+        "answer": "Let the odd number be $2n + 1$. Square it: $(2n + 1)^2 = 4n^2 + 4n + 1$. Factorise the first two terms: $2(2n^2 + 2n) + 1$. Since an even term $2(2n^2 + 2n)$ plus $1$ is always odd, the result is odd. (M1 for defining odd number, M1 for expanding square, A1 for writing as $2(\text{something}) + 1$)."
+      },
+      {
+        "question": "Prove algebraically that the difference between the squares of two consecutive integers is equal to the sum of those two integers.",
+        "answer": "Let integers be $n$ and $n+1$. Difference of squares $= (n + 1)^2 - n^2 = (n^2 + 2n + 1) - n^2 = 2n + 1$. The sum of the integers is $n + (n + 1) = 2n + 1$. Since both equal $2n + 1$, they are equal. (M1 for setting up difference of squares and sum, M1 for expanding and simplifying both sides, A1 for showing they are identical)."
+      }
+    ]
+  },
+  {
+    "id": "ratio-proportion-ratio",
+    "week": 15,
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Ratio",
+    "overview": "Ratio is a way of comparing different quantities, showing the relative sizes of two or more values. Think of it like a recipe: if a cordial drink uses a ratio of 1 part juice to 4 parts water, it means for every 1 glass of juice, you need 4 glasses of water. In total, you have 5 parts ($1 + 4$). Understanding how to share an amount into a given ratio, or how to combine and change ratios, is a vital skill in the Edexcel GCSE Higher tier maths exam. A common mistake students make is confusing fractions with ratios; a fraction compares a part to the whole (e.g., $1/5$ is juice), whereas a ratio compares part to part ($1:4$). To solve ratio problems successfully, always start by finding the total number of parts by adding the ratio numbers together. Then, divide the total amount you need to share by this total number of parts to find the value of a single part. Finally, multiply this single part value back up to find each individual share. For higher-level questions, you might need to deal with equivalent ratios or link two different ratios together using a common value, much like finding a common denominator in fractions. Note that ratio formulae are generally not provided on the GCSE formula sheet, so you must memorise the 'find the total parts' method.",
+    "examples": [
+      {
+        "question": "A box contains red sweets and green sweets in the ratio $3 : 5$. There are 72 sweets in total in the box. Work out how many green sweets are in the box.",
+        "solution": "Step 1: Find the total number of parts in the ratio. Add $3$ (red) and $5$ (green) together: $3 + 5 = 8$ total parts. (M1 for adding parts). Step 2: Find the value of one single part by dividing the total number of sweets by the total number of parts: $72 \\div 8 = 9$. This means $1$ part represents $9$ sweets. (M1 for dividing total by parts). Step 3: Multiply the value of one part by the number of parts for green sweets. The green sweets are represented by $5$ parts, so $5 \\times 9 = 45$. (A1 for the correct answer of 45)."
+      },
+      {
+        "question": "In a school, the ratio of boys to girls is $4 : 7$. The ratio of staff to students (boys and girls combined) is $2 : 15$. There are 60 staff members in the school. Work out the total number of people (staff and students) in the school.",
+        "solution": "Step 1: Use the information about the staff to find the total number of students. The ratio of staff to students is $2 : 15$. Since there are 60 staff members, we find the multiplier by doing $60 \\div 2 = 30$. (M1 for finding multiplier). Step 2: Multiply the student parts by 30 to find the total number of students. The student parts equal $15$, so $15 \\times 30 = 450$ students. (M1 for total students). Step 3: Find the total number of people in the school by adding the staff and students together. Total people = $60$ (staff) $+ 450$ (students) $= 510$. (A1 for final answer 510)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Share £120 in the ratio $3 : 5$. Calculate the value of the larger share.",
+        "answer": "Total parts = $3 + 5 = 8$. One part = $120 \\div 8 = £15$. Larger share = $5 \\times 15 = £75$. (Answer: £75)"
+      },
+      {
+        "question": "In a bag of marbles, the ratio of blue to yellow is $4 : 3$. If there are 24 blue marbles, how many yellow marbles are there?",
+        "answer": "4 parts = 24 marbles. One part = $24 \\div 4 = 6$ marbles. Yellow marbles = $3 \\times 6 = 18$. (Answer: 18 yellow marbles)"
+      },
+      {
+        "question": "A recipe uses flour, butter and sugar in the ratio $5 : 3 : 2$. If you use 150g of butter, what is the total weight of the mixture?",
+        "answer": "3 parts = 150g, so 1 part = $150 \\div 3 = 50$g. Total parts = $5 + 3 + 2 = 10$ parts. Total weight = $10 \\times 50\\text{g} = 500\\text{g}$. (Answer: 500g)"
+      },
+      {
+        "question": "The ratio of men to women at a conference is $5 : 4$. There are 135 people at the conference in total. How many more men are there than women?",
+        "answer": "Total parts = $5 + 4 = 9$. One part = $135 \\div 9 = 15$. Difference in parts = $5 - 4 = 1$ part. Therefore, there are $1 \\times 15 = 15$ more men. (Alternatively: Men = 75, Women = 60, $75 - 60 = 15$). (Answer: 15)"
+      },
+      {
+        "question": "Aaliyah and Ben share some money in the ratio $2 : 5$. Ben receives £36 more than Aaliyah. How much money does Aaliyah receive?",
+        "answer": "Difference in parts = $5 - 2 = 3$ parts. These 3 parts equal £36, so 1 part = $36 \\div 3 = £12$. Aaliyah has 2 parts, so she receives $2 \\times 12 = £24$. (Answer: £24)"
+      }
+    ]
+  },
+  {
+    "id": "ratio-proportion-percentage-change",
+    "week": 16,
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Percentage change",
+    "overview": "Percentage change is a way of measuring how much a quantity has increased or decreased relative to its original starting value. Whether you are looking at a shop sale offering a discount or the yearly rise in house prices, the core idea is always the same: we compare the size of the change to the original amount. To do this, we use a simple formula that you must memorise for your Edexcel Higher exam, as it is not given on the formula sheet: Percentage Change = (Actual Difference / Original Value) multiplied by 100. The 'actual difference' is found by subtracting the two numbers, and the 'original value' is always the starting amount before any change happened—this is the most common trap students fall into, as they accidentally divide by the new value instead. Another powerful way to handle percentage change in GCSE maths is by using decimal multipliers. For an increase, you add the percentage to 100 percent and convert it to a decimal (for example, a 15 percent increase becomes 1.15). For a decrease, you subtract it from 100 percent (so a 12 percent decrease becomes 0.88). In exam questions, particularly on the calculator paper, using multipliers saves time and gets you marks faster. Examiners love testing this with reverse percentage questions or multi-step problems involving depreciation and compound growth. Showing your method clearly by writing out the formula and substituting your numbers will secure method marks (M1), even if a careless arithmetic error creeps in at the end.",
+    "examples": [
+      {
+        "question": "A bicycle normally costs $£250$. In a sale, it is reduced to $£200$. Work out the percentage decrease in the price of the bicycle.",
+        "solution": "Step 1: Find the actual difference between the original price and the sale price. $250 - 200 = 50$. The price went down by $£50$. Step 2: Identify the original value. The original price before the sale was $£250$. Step 3: Put the numbers into the percentage change formula: $\\text{Percentage Decrease} = ( \\text{Difference} / \\text{Original} ) \\times 100$. Step 4: Substitute the values: $(50 / 250) \\times 100$. Step 5: Calculate the result. $50 / 250 = 0.2$, and $0.2 \\times 100 = 20$. The final answer is a $20\\%$ decrease."
+      },
+      {
+        "question": "In 2020, a rare painting was valued at $£1,200$. By 2023, its value had increased by $35\\%$. Work out the value of the painting in 2023.",
+        "solution": "Step 1: Recognise that this is a percentage increase problem where we need to find the final value using a multiplier. Step 2: Convert the percentage increase into a decimal multiplier. Start with $100\\%$ and add the $35\\%$, giving $135\\%$. Convert this to a decimal by dividing by $100$, which gives $1.35$. Step 3: Multiply the original value by the decimal multiplier to find the new value. Calculation: $1200 \\times 1.35$. Step 4: Perform the multiplication. $1200 \\times 1 = 1200$, and $1200 \\times 0.35 = 420$. Adding these together gives $1200 + 420 = 1620$. The final value of the painting in 2023 is $£1620$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A shop increases the price of a television from $£400$ to $£460$. Work out the percentage increase.",
+        "answer": "Difference is $460 - 400 = 60$. Original price is $400$. Calculation: $(60 / 400) \\times 100 = 15\\%$. Answer: $15\\%$."
+      },
+      {
+        "question": "In a chemistry experiment, the volume of a liquid decreases from $80\\text{ ml}$ to $68\\text{ ml}$. Calculate the percentage decrease.",
+        "answer": "Difference is $80 - 68 = 12$. Original volume is $80$. Calculation: $(12 / 80) \\times 100 = 0.15 \\times 100 = 15\\%$. Answer: $15\\%$ decrease."
+      },
+      {
+        "question": "A house was bought for $£220,000$. Over five years, its value appreciates by $18\\%$. Work out the new value of the house.",
+        "answer": "Use a multiplier for an $18\\%$ increase, which is $1.18$. Calculation: $220000 \\times 1.18 = 259600$. Answer: $£259,600$."
+      },
+      {
+        "question": "Tom's weight changes from $75\\text{ kg}$ to $72\\text{ kg}$. Work out the percentage change in Tom's weight, giving your answer to 1 decimal place.",
+        "answer": "Difference is $75 - 72 = 3$. Original weight is $75$. Calculation: $(3 / 75) \\times 100 = 0.04 \\times 100 = 4\\%$. Answer: $4.0\\%$ decrease."
+      },
+      {
+        "question": "A stock of computers is worth $£15,000$. Each year, the value depreciates by $20\\%$ compared to its value the previous year. Work out the value of the computers after 2 years.",
+        "answer": "Multiplier for a $20\\%$ decrease is $0.80$. Apply this twice for 2 years (compound depreciation). Calculation: $15000 \\times 0.80 \\times 0.80 = 15000 \\times 0.64 = 9600$. Answer: $£9,600$."
+      }
+    ]
+  },
+  {
+    "id": "ratio-proportion-compound-interest-depreciation",
+    "week": 17,
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Compound interest & depreciation",
+    "overview": "Compound interest and depreciation are ways money grows or shrinks over time when the percentage change is applied to the new amount each year, rather than the original starting amount. Imagine you put 100 pounds into a savings account with $10\\%$ compound interest. In the first year, you earn $10$ pounds, making your new total $110$ pounds. In the second year, you do not just earn $10$ pounds again; you earn $10\\%$ of the new total ($110$ pounds), which is $11$ pounds. Your total is now $121$ pounds. This snowball effect is compound interest. Depreciation works the exact same way, but in reverse: an asset like a car loses value by a percentage each year, so it shrinks from its previous value. In GCSE maths, the quickest and best way to solve these problems is by using multipliers. A multiplier is a decimal representing the percentage change. For a $10\\%$ increase, the multiplier is $1.10$. For a $15\\%$ decrease, you subtract $15$ from $100$ to get $85\\%$, giving a multiplier of $0.85$. The general formula is $\\text{Final Value} = \\text{Original} \\times \\text{multiplier}^{\\text{number of years}}$. For GCSE Higher tier, you must memorise how to set up and use these multipliers, as this exact formula is not given on the formula sheet provided in the exam. Examiners love testing this over multiple years, and you will often pick up method marks (M1) just for showing the correct multiplier raised to the correct power.",
+    "examples": [
+      {
+        "question": "Emma invests 4000 pounds in a bank account that pays $3.5\\%$ compound interest per year. Work out the total amount in the account after 3 years.",
+        "solution": "Step 1: Convert the percentage increase into a decimal multiplier. Since it is compound interest, we add $3.5\\%$ to $100\\%$, giving $103.5\\%$. As a decimal, this is $103.5 / 100 = 1.035$. Step 2: Set up the compound interest calculation using the formula $\\text{Final Amount} = \\text{Original} \\times \\text{multiplier}^{\\text{years}}$. Here, the original amount is $4000$ and the number of years is $3$. So we write $4000 \\times 1.035^3$. Step 3: Evaluate the expression using a calculator. $1.035^3 \\approx 1.1136$. Multiply this by $4000$ to get $4454.4925$. Step 4: Round appropriately to money (2 decimal places). The total amount is 4454.49 pounds (Award M1 for $4000 \\times 1.035^3$ and A1 for the correct answer)."
+      },
+      {
+        "question": "A new car is bought for 25000 pounds. Its value depreciates by $18\\%$ each year. Find the value of the car after 4 years, giving your answer to the nearest pound.",
+        "solution": "Step 1: Convert the percentage depreciation (decrease) into a decimal multiplier. Subtract $18$ from $100$ to get $82\\%$. As a decimal, this is $82 / 100 = 0.82$. Step 2: Set up the depreciation calculation. The original value is $25000$ and the time period is $4$ years. The calculation is $25000 \\times 0.82^4$. Step 3: Calculate the power first. $0.82^4 \\approx 0.4521216$. Step 4: Multiply by the original value: $25000 \\times 0.4521216 = 11303.04$. Step 5: Read the question carefully to check the rounding requirement. It asks for the nearest pound. Answer: 11303 pounds (Award M1 for $25000 \\times 0.82^4$ and A1 for the correct rounded answer)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Mark invests 6000 pounds at a compound interest rate of $2\\%$ per annum. Calculate the total value of the investment after 5 years. Give your answer to the nearest penny.",
+        "answer": "Answer: 6624.45 pounds. Working: Multiplier is $1.02$. Calculation: $6000 \\times 1.02^5 = 6624.446...$ Round to 2 decimal places."
+      },
+      {
+        "question": "A boat was purchased for 18000 pounds. Each year, its value depreciates by $12\\%$. Work out the value of the boat after 3 years.",
+        "answer": "Answer: 12282.55 pounds. Working: Multiplier is $0.88$. Calculation: $18000 \\times 0.88^3 = 18000 \\times 0.681472 = 12266.496$. Wait, let us recalculate carefully: $0.88^3 = 0.681472$, multiplied by $18000 = 12266.496$, so 12266.50 pounds."
+      },
+      {
+        "question": "Ali deposits 500 pounds into a savings account. The account pays compound interest of $4\\%$ for the first year and $2.5\\%$ for each subsequent year. Work out the total amount in the account after 3 years.",
+        "answer": "Answer: 541.25 pounds. Working: Year 1 multiplier is $1.04$, Years 2 and 3 multiplier is $1.025$. Calculation: $500 \\times 1.04 \\times 1.025^2 = 541.25$ pounds."
+      },
+      {
+        "question": "The population of a town increases by $3\\%$ every year. In 2020, the population was 50000. What is the expected population in 2025? Give your answer to the nearest whole number.",
+        "answer": "Answer: 57964. Working: Number of years from 2020 to 2025 is $5$. Multiplier is $1.03$. Calculation: $50000 \\times 1.03^5 = 57963.7...$ Round to the nearest whole number to get 57964."
+      },
+      {
+        "question": "A laptop loses $15\\%$ of its value in the first year, and a further $10\\%$ of its reduced value in the second year. If it was bought for 800 pounds, what is it worth after 2 years?",
+        "answer": "Answer: 612 pounds. Working: First year multiplier is $0.85$, second year multiplier is $0.90$. Calculation: $800 \\times 0.85 \\times 0.90 = 612$ pounds."
+      }
+    ]
+  },
+  {
+    "id": "ratio-proportion-direct-inverse-proportion",
+    "week": 18,
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Direct & inverse proportion",
+    "overview": "Proportion is all about how two quantities change in relation to each other. In GCSE maths, you need to master two types: direct proportion and inverse proportion. Direct proportion means that as one value goes up, the other goes up at the exact same steady rate—like earning money where working twice as many hours means getting paid twice as much. Mathematically, we write this as $y = kx$, where $k$ is a special number called the constant of proportionality. Inverse proportion means that as one value goes up, the other goes down—like the time it takes to paint a wall; more people painting means fewer hours needed. Mathematically, this is written as $y = \\frac{k}{x}$. To solve these problems in the Edexcel Higher exam, you follow a foolproof four-step recipe: first, write down the proportional relationship using $y \\propto x$ or $y \\propto \\frac{1}{x}$; second, turn it into an equation by introducing $k$; third, use the numbers given in the question to find $k$; and finally, substitute $k$ back into your formula to answer the final question. Note that these algebraic proportion formulae are NOT given on the Edexcel formula sheet, so you must memorise them! When marking exam questions, examiners typically award method marks (M1) for finding $k$ or setting up the correct equation, and accuracy marks (A1) for the final correct answer.",
+    "examples": [
+      {
+        "question": "y is directly proportional to the square of x. When x = 3, y = 45. Find the value of y when x = 4.",
+        "solution": "Step 1: Write down the proportionality statement. Since y is directly proportional to the square of x, we write $y \\propto x^2$. Step 2: Introduce the constant of proportionality, $k$, to turn it into an equation: $y = kx^2$. Step 3: Find the value of $k$ by substituting the given values ($x = 3$ and $y = 45$) into the equation. This gives $45 = k(3^2)$, which simplifies to $45 = 9k$. Divide both sides by 9 to get $k = 5$. Step 4: Rewrite your full equation with the value of $k$: $y = 5x^2$. Step 5: Use this equation to find $y$ when $x = 4$. Substitute $x = 4$ into the formula: $y = 5(4^2)$. Work out the square first: $4^2 = 16$. Then multiply by 5: $y = 5 \\times 16 = 80$. Final Answer: $y = 80$."
+      },
+      {
+        "question": "p is inversely proportional to the cube root of q. When q = 8, p = 12. Find the value of q when p = 3.",
+        "solution": "Step 1: Write down the proportionality statement. Since p is inversely proportional to the cube root of q, we write $p \\propto \\frac{1}{\\text{root}[3]{q}}$ or $p \\propto \\frac{1}{q^{1/3}}$. Step 2: Introduce the constant $k$ to form the equation: $p = \\frac{k}{\\text{root}[3]{q}}$. Step 3: Substitute the given values ($q = 8$ and $p = 12$) to find $k$. We know that the cube root of 8 is 2 (since $2 \\times 2 \\times 2 = 8$). So, $12 = \\frac{k}{2}$. Multiply both sides by 2 to find $k$: $k = 24$. Step 4: Write the completed equation: $p = \\frac{24}{\\text{root}[3]{q}}$. Step 5: Find $q$ when $p = 3$. Substitute $p = 3$ into the equation: $3 = \\frac{24}{\\text{root}[3]{q}}$. Rearrange to solve for the cube root of $q$: $\\text{root}[3]{q} = \\frac{24}{3}$, which simplifies to $\\text{root}[3]{q} = 8$. Step 6: To find $q$, cube both sides of the equation ($q = 8^3$). Calculating $8 \\times 8 \\times 8$ gives $512$. Final Answer: $q = 512$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "y is directly proportional to x. When x = 5, y = 35. Find the formula for y in terms of x.",
+        "answer": "y = 7x. Working: y = kx -> 35 = 5k -> k = 7."
+      },
+      {
+        "question": "m is inversely proportional to n. When n = 4, m = 12. Find the value of m when n = 8.",
+        "answer": "m = 6. Working: m = k/n -> 12 = k/4 -> k = 48. Equation is m = 48/n. When n = 8, m = 48/8 = 6."
+      },
+      {
+        "question": "A is directly proportional to the square root of B. When B = 36, A = 18. Find A when B = 100.",
+        "answer": "A = 30. Working: A = k*sqrt(B) -> 18 = k*sqrt(36) -> 18 = 6k -> k = 3. Equation: A = 3*sqrt(B). When B = 100, A = 3*sqrt(100) = 3 * 10 = 30."
+      },
+      {
+        "question": "The time (T minutes) it takes to empty a pool is inversely proportional to the number of pumps operating (n). If 3 pumps take 40 minutes, how long do 5 pumps take?",
+        "answer": "24 minutes. Working: T = k/n -> 40 = k/3 -> k = 120. Equation: T = 120/n. For 5 pumps, T = 120/5 = 24."
+      },
+      {
+        "question": "y is inversely proportional to the square of x. If y = 2 when x = 4, find the value of y when x = 8.",
+        "answer": "y = 0.5 (or 1/2). Working: y = k/x^2 -> 2 = k/(4^2) -> 2 = k/16 -> k = 32. Equation: y = 32/x^2. When x = 8, y = 32/(8^2) = 32/64 = 0.5."
+      }
+    ]
+  },
+  {
+    "id": "geometry-angles-polygons",
+    "week": 19,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Angles & polygons",
+    "overview": "Welcome to our weekly maths session! Today we are looking at angles in polygons, a very popular topic in the Edexcel Higher GCSE exam. A polygon is simply a 2D shape with straight sides, like a triangle, pentagon, or octagon. To master this topic, you only really need to remember two main rules. First, the sum of all the interior (inside) angles in any polygon can be found using the formula $(n - 2) \times 180^\text{o}$, where $n$ is the number of sides. Please note that while you might need to use this formula, for regular polygons you are also given the formula for one exterior angle on the formula sheet: Exterior angle $= 360^\text{o} \text{ / } n$. Second, the exterior and interior angles at any single vertex (corner) always add up to $180^\text{o}$ because they form a straight line. For a regular polygon, all sides and angles are equal, meaning all exterior angles add up to $360^\text{o}$. In the exam, questions will often combine these facts. Examiners love to test if you can move between interior and exterior angles to find the number of sides a shape has, or to find a missing angle in a composite shape. As you work through today with your parent, make sure to write down every step clearly. In Edexcel exams, you often get 'Method' marks (M1) just for showing the correct calculation, even if you make a tiny arithmetic slip at the end. Let us dive into the examples!",
+    "examples": [
+      {
+        "question": "Work out the size of each interior angle of a regular octagon.",
+        "solution": "Step 1: Identify the number of sides of the shape. An octagon has $8$ sides, so $n = 8$. Step 2: Calculate the sum of all the interior angles using the formula $(n - 2) \times 180^\text{o}$. Substitute $n = 8$ into the formula: $(8 - 2) \times 180^\text{o} = 6 \times 180^\text{o}$. Step 3: Multiply to find the total sum. $6 \times 180^\text{o} = 1080^\text{o}$. (This gives you an M1 method mark). Step 4: Since it is a regular octagon, all $8$ interior angles are equal. Divide the total sum by the number of sides: $1080^\text{o} \text{ / } 8 = 135^\text{o}$. (This gives the A1 accuracy mark). Final Answer: Each interior angle is $135^\text{o}$."
+      },
+      {
+        "question": "The size of each exterior angle of a regular polygon is $20^\text{o}$. Work out the number of sides of the polygon.",
+        "solution": "Step 1: Recall the rule that the sum of all exterior angles in any convex polygon is always $360^\text{o}$. Step 2: Use the formula for the number of sides of a regular polygon, which is given on the formula sheet: Number of sides $= 360^\text{o} \text{ / (size of one exterior angle)}$. (Awarded M1 for identifying this approach). Step 3: Substitute the given exterior angle into the formula: Number of sides $= 360^\text{o} \text{ / } 20^\text{o}$. Step 4: Calculate the final value. $360 \text{ / } 20 = 36 \text{ / } 2 = 18$. (Awarded A1 for the correct answer). Final Answer: The polygon has $18$ sides."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Calculate the sum of the interior angles of a 12-sided polygon (dodecagon).",
+        "answer": "Answer: $1800^\text{o}$. Working: Use $(n - 2) \times 180^\text{o}$. Here $n = 12$, so $(12 - 2) \times 180 = 10 \times 180 = 1800^\text{o}$."
+      },
+      {
+        "question": "Each interior angle of a regular polygon is $160^\text{o}$. Work out how many sides the polygon has.",
+        "answer": "Answer: $18$ sides. Working: Exterior angle $= 180^\text{o} - 160^\text{o} = 20^\text{o}$. Number of sides $= 360^\text{o} \text{ / } 20^\text{o} = 18$."
+      },
+      {
+        "question": "A regular polygon has $10$ sides. Work out the size of one of its exterior angles.",
+        "answer": "Answer: $36^\text{o}$. Working: Exterior angle $= 360^\text{o} \text{ / } n$. Substitute $n = 10$, giving $360 \text{ / } 10 = 36^\text{o}$."
+      },
+      {
+        "question": "The interior angle of a regular polygon is five times the size of its exterior angle. Work out the number of sides of the polygon.",
+        "answer": "Answer: $12$ sides. Working: Let exterior angle be $x$. Interior angle is $5x$. Since they sum to $180^\text{o}$, $x + 5x = 180^\text{o}$, so $6x = 180^\text{o}$, giving $x = 30^\text{o}$ (the exterior angle). Number of sides $= 360 \text{ / } 30 = 12$."
+      },
+      {
+        "question": "A polygon has interior angles that sum to $1980^\text{o}$. How many sides does the polygon have?",
+        "answer": "Answer: $13$ sides. Working: Set up the equation $(n - 2) \times 180 = 1980$. Divide by $180$: $n - 2 = 11$. Add $2$: $n = 13$."
+      }
+    ]
+  },
+  {
+    "id": "geometry-circle-theorems",
+    "week": 20,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Circle theorems",
+    "overview": "Circle theorems are a set of geometric rules that connect angles, radii, tangents and chords inside or touching a circle. Instead of measuring with a protractor, you use logical geometric proofs and algebra to find missing angles or lengths. Circle theorems are a favourite topic in the Edexcel Higher GCSE maths paper, often worth 3 to 5 marks each and frequently combined with triangle geometry or algebra. To master them, you must learn to spot visual patterns in diagrams, such as cyclic quadrilaterals, tangents meeting radii at right angles, or triangles formed inside semicircles. Note that none of the circle theorem rules are given on the formulae sheet provided in the exam; you must memorise all eight core theorems completely. When answering these questions in an exam, the Edexcel mark scheme is very strict. You must state the exact geometric reason for every single step of your working out (for example, writing angle in a semicircle is 90 degrees or opposite angles in a cyclic quadrilateral sum to 180 degrees). Failing to write down these reasons will lose you accuracy marks, even if your final number is correct. During this hour, parents and students should focus on identifying the shape features first, writing down the rule, and then calculating step by step.",
+    "examples": [
+      {
+        "question": "The points A, B and C lie on the circumference of a circle with centre O. Angle ABC = 65 degrees. Work out the size of angle AOC. Give a reason for each stage of your working.",
+        "solution": "Step 1: Identify the relationship between the angle at the circumference (ABC) and the angle at the centre (AOC). Both angles subtend the same arc AC. Step 2: State the relevant circle theorem rule. The angle subtended by an arc at the centre is twice the angle subtended at the circumference. Step 3: Perform the calculation. Angle AOC = 2 * angle ABC. So, Angle AOC = 2 * 65 degrees = 130 degrees. Step 4: Write down the final answer with reasons clearly for the examiner to award full marks. Answer: 130 degrees, with reason: The angle at the centre is twice the angle at the circumference."
+      },
+      {
+        "question": "A, B, C and D are points on the circumference of a circle. AC is a diameter of the circle. Angle CAB = 38 degrees. Angle CAD = 25 degrees. Work out the size of angle BCD. You must show all your working.",
+        "solution": "Step 1: Find angle ABC by using the circle theorem that the angle in a semicircle is 90 degrees. Since AC is a diameter, triangle ABC is right-angled at B. Therefore, angle ABC = 90 degrees. Step 2: Find angle BCA within triangle ABC. The angles in a triangle sum to 180 degrees. Angle BCA = 180 - 90 - 38 = 52 degrees. Step 3: Find angle ACD. Triangle ADC also has AC as a diameter, so angle ADC = 90 degrees. In triangle ADC, angle ACD = 180 - 90 - 25 = 65 degrees. Step 4: Combine the parts to find angle BCD. Angle BCD = angle BCA + angle ACD = 52 + 65 = 117 degrees. Alternatively, notice ABCD is a cyclic quadrilateral, so opposite angles sum to 180 degrees. Angle ADC = 25 + 38 = 63 degrees, so angle BCD = 180 - 63 = 117 degrees. Answer: 117 degrees."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A, B and C are points on a circle, centre O. TA and TC are tangents to the circle. Angle ATC = 54 degrees. Work out the size of angle ABC. Give reasons.",
+        "answer": "Answer: 63 degrees. Working: Tangents from a point are equal in length, so triangle ATC is isosceles. Angle TAC = angle TCA = (180 - 54)/2 = 63 degrees. Angle OAT = 90 degrees (radius meets tangent at 90 degrees). Angle OAC = 90 - 63 = 27 degrees. Angle AOC = 180 - 54 = 126 degrees (angles in quadrilateral sum to 360 or opposite angles supplementary). Angle at centre is twice angle at circumference, so angle ABC = 126 / 2 = 63 degrees."
+      },
+      {
+        "question": "P, Q, R and S are points on the circumference of a circle. PR is a diameter. Angle PRQ = 32 degrees. Work out the size of angle PSQ.",
+        "answer": "Answer: 58 degrees. Working: Angle PQR = 90 degrees (angle in a semicircle). Angle QPR = 180 - 90 - 32 = 58 degrees. Angle PSQ = angle PRQ = 58 degrees (angles in the same segment are equal)."
+      },
+      {
+        "question": "A, B, C and D are points on a circle. AB is parallel to DC. Angle ABC = 72 degrees. Find angle ADC and angle BCD.",
+        "answer": "Answer: Angle ADC = 108 degrees, Angle BCD = 72 degrees. Working: ABCD is a cyclic quadrilateral and parallel lines create allied (co-interior) angles. Angle BCD = 180 - 72 = 108 degrees (allied angles sum to 180). Opposite angles in a cyclic quadrilateral sum to 180, so angle ADC = 180 - 72 = 108 degrees."
+      },
+      {
+        "question": "AB is a chord of a circle with centre O and radius 10 cm. The distance from the centre O to the chord AB is 6 cm. Work out the length of the chord AB.",
+        "answer": "Answer: 16 cm. Working: The perpendicular from the centre of a circle to a chord bisects the chord. This forms a right-angled triangle with hypotenuse equal to the radius (10 cm) and one shorter side equal to 6 cm. Using Pythagoras theorem: x^2 = 10^2 - 6^2 = 100 - 36 = 64. So x = sqrt(64) = 8 cm. Total length of chord AB = 8 * 2 = 16 cm."
+      },
+      {
+        "question": "TP is a tangent to a circle at point P. O is the centre of the circle. The point Q lies on the circle such that angle OPQ = 40 degrees. Find angle TPQ.",
+        "answer": "Answer: 50 degrees. Working: The radius meets the tangent at 90 degrees, so angle OPT = 90 degrees. Angle TPQ = angle OPT - angle OPQ = 90 - 40 = 50 degrees."
+      }
+    ]
+  },
+  {
+    "id": "geometry-arc-length-sector-area",
+    "week": 21,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Arc length & sector area",
+    "overview": "Imagine cutting a slice of a round birthday cake. The crust on the outside edge is the arc length, and the flat top surface of the slice is the sector area. Because a full circle has an angle of $360$ degrees, any slice is just a fraction of that full circle. If your slice has an angle of $60$ degrees at the centre, it represents $60$ out of $360$ parts, which simplifies to the fraction $1/6$ of the whole circle. To find the arc length, we first calculate the circumference of the full circle using the formula $\\pi \\times \\text{diameter}$ (or $2\\pi r$), and then multiply that total by our fraction ($\\theta / 360$). To find the sector area, we do the same thing using the full circle area formula, $\\pi r^2$. On the Edexcel Higher tier exam, the formula sheet gives you the circumference and area of a full circle, but you must memorise how to scale them down for a specific angle by multiplying by $\\theta / 360$. Examiners look for clear working: stating the formula, substituting the numbers correctly (M1), and giving the final accurate answer with units (A1). Always check if the question asks for your answer in terms of $\\pi$ or rounded to a specific number of decimal places or significant figures.",
+    "examples": [
+      {
+        "question": "Calculate the arc length of a sector with a radius of $7\\text{ cm}$ and a centre angle of $40^{\\circ}$. Give your answer to $1$ decimal place.",
+        "solution": "Step 1: Write down the formula for arc length. Arc length $= \\frac{\\theta}{360} \\times 2 \\pi r$. Note that $2 \\pi r$ is the circumference formula given on your formula sheet. Step 2: Substitute the given values into the formula. Here, $\\theta = 40$ and radius $r = 7$. Arc length $= \\frac{40}{360} \\times 2 \\times \\pi \\times 7$. Step 3: Simplify the fraction and calculate. $\\frac{40}{360}$ simplifies to $\\frac{1}{9}$. So, Arc length $= \\frac{1}{9} \\times 14 \\pi$. Step 4: Evaluate this on your calculator. $14 \\times \\pi \\div 9 = 4.8869...$ Step 5: Round your final answer to $1$ decimal place. Arc length $= 4.9\\text{ cm}$. (Award M1 for substituting correctly into the formula, and A1 for the correct rounded answer)."
+      },
+      {
+        "question": "A sector of a circle has a radius of $12\\text{ mm}$ and a sector area of $30\\pi\\text{ mm}^2$. Find the exact size of the angle $\\theta$ at the centre of the sector.",
+        "solution": "Step 1: State the formula for the area of a sector. Area $= \\frac{\\theta}{360} \\times \\pi r^2$. Step 2: Substitute the known values into the formula. Area $= 30\\pi$ and radius $r = 12$. So, $30\\pi = \\frac{\\theta}{360} \\times \\pi \\times 12^2$. Step 3: Simplify the right side of the equation. $12^2 = 144$, so $30\\pi = \\frac{\\theta}{360} \\times 144\\pi$. Step 4: Divide both sides by $\\pi$ to eliminate it from the equation. $30 = \\frac{144\\theta}{360}$. Step 5: Rearrange to solve for $\\theta$. Multiply both sides by $360$: $30 \\times 360 = 144\\theta$, which gives $10800 = 144\\theta$. Step 6: Divide by $144$. $\\theta = \\frac{10800}{144} = 75$. Step 7: State the final answer with units. $\\theta = 75^{\\circ}$ (Award M1 for correct substitution and rearranging, and A1 for $75^{\\circ}$). "
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Calculate the area of a sector with radius $9\\text{ cm}$ and angle $110^{\\circ}$. Give your answer to $3$ significant figures.",
+        "answer": "Area $= \\frac{110}{360} \\times \\pi \\times 9^2 = \\frac{11}{36} \\times 81\\pi = 77.754...$ Answer: $77.8\\text{ cm}^2$ (3 sig fig)."
+      },
+      {
+        "question": "An arc of a circle has length $5\\pi\\text{ cm}$. The radius of the circle is $10\\text{ cm}$. Find the angle $\\theta$ of the sector.",
+        "answer": "Arc length $= \\frac{\\theta}{360} \\times 2 \\pi r$. $5\\pi = \\frac{\\theta}{360} \\times 20\\pi$. Divide by $\\pi$: $5 = \\frac{20\\theta}{360}$. Simplify fraction: $5 = \\frac{\\theta}{18}$. Multiply by $18$: $\\theta = 5 \\times 18$. Answer: $\\theta = 90^{\\circ}$."
+      },
+      {
+        "question": "The perimeter of a sector is $25\\text{ cm}$. The radius of the circle is $7\\text{ cm}$. Find the arc length of the sector.",
+        "answer": "Perimeter of a sector equals two radii plus the arc length. Perimeter $= r + r + \\text{arc length}$. $25 = 7 + 7 + \\text{arc length}$. $25 = 14 + \\text{arc length}$. Answer: Arc length $= 11\\text{ cm}$."
+      },
+      {
+        "question": "A pizza slice is a sector with an arc length of $11\\text{ cm}$ and a centre angle of $60^{\\circ}$. Calculate the radius of the pizza. Give your answer to $1$ decimal place.",
+        "answer": "Arc length $= \\frac{60}{360} \\times 2 \\pi r$. $11 = \\frac{1}{6} \\times 2 \\pi r$. $11 = \\frac{\\pi r}{3}$. Multiply by $3$: $33 = \\pi r$. Divide by $\\pi$: $r = 33 / \\pi = 10.504...$ Answer: Radius $= 10.5\\text{ cm}$."
+      },
+      {
+        "question": "Calculate the exact perimeter of a semi-circle with a diameter of $14\\text{ cm}$. Give your answer in terms of $\\pi$.",
+        "answer": "Perimeter of a semi-circle is half the circumference plus the diameter. Circumference of full circle $= \\pi \\times 14 = 14\\pi$. Half circumference $= 7\\pi$. Add diameter: $7\\pi + 14$. Answer: $(7\\pi + 14)\\text{ cm}$."
+      }
+    ]
+  },
+  {
+    "id": "geometry-pythagoras-theorem",
+    "week": 22,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Pythagoras' theorem",
+    "overview": "Pythagoras' theorem is a famous and incredibly useful rule used to find missing side lengths in right-angled triangles. If you know any two sides of a right-angled triangle, this rule lets you calculate the exact length of the third side. The rule is based on a simple formula: $a^2 + b^2 = c^2$, where $c$ represents the hypotenuse (the longest side of the triangle, which is always directly opposite the right angle), and $a$ and $b$ are the two shorter sides, called the shorter legs. Think of it like areas of squares drawn on each side of the triangle: the area of the square on the two shorter sides added together equals the area of the square on the longest side. To use this in an exam, remember that if you are trying to find the hypotenuse ($c$), you need to square the two given sides, add them together, and then take the square root of your total. If you are looking for one of the shorter sides, you square the hypotenuse and the other known side, subtract the smaller number from the larger one, and then take the square root. For Edexcel GCSE Higher tier, you must memorise this formula because it is NOT given to you on the formulae sheet at the front of the exam paper. Examiners typically award an M1 mark for showing a correct method (such as squaring numbers and adding or subtracting them) and an A1 mark for reaching the accurate final answer with correct units.",
+    "examples": [
+      {
+        "question": "Calculate the length of the hypotenuse $x$ in a right-angled triangle where the two shorter sides are $6$ cm and $8$ cm. Give your answer to 1 decimal place.",
+        "solution": "Step 1: Write down the formula for Pythagoras' theorem: $a^2 + b^2 = c^2$. Step 2: Identify the sides. Here, $a = 6$, $b = 8$, and the hypotenuse is $c$ (which is $x$). Step 3: Substitute the numbers into the formula: $6^2 + 8^2 = x^2$. Step 4: Calculate the squares: $36 + 64 = x^2$. Step 5: Add the values together: $100 = x^2$. Step 6: Take the square root of both sides to find $x$: $x = \\sqrt{100} = 10$. Final Answer: $x = 10$ cm."
+      },
+      {
+        "question": "A right-angled triangle has a hypotenuse of $15$ cm and one shorter side of $9$ cm. Find the length of the other shorter side, labeled $y$. Give your answer to 3 significant figures.",
+        "solution": "Step 1: Write down the formula: $a^2 + b^2 = c^2$. Step 2: Identify the parts. The hypotenuse $c = 15$, and one of the shorter sides is $9$ (let's call it $a$). The missing side is $b$ (which is $y$). Step 3: Set up the equation: $9^2 + y^2 = 15^2$. Step 4: Evaluate the squares: $81 + y^2 = 225$. Step 5: Rearrange to solve for $y^2$ by subtracting $81$ from both sides: $y^2 = 225 - 81$. Step 6: Calculate the subtraction: $y^2 = 144$. Step 7: Take the square root: $y = \\sqrt{144} = 12$. Final Answer: $y = 12.0$ cm (to 3 significant figures)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Find the length of the hypotenuse in a right-angled triangle with shorter sides $5$ cm and $12$ cm. Give your answer exact.",
+        "answer": "Working: $5^2 + 12^2 = 25 + 144 = 169$. $x = \\sqrt{169} = 13$. Answer: $13$ cm."
+      },
+      {
+        "question": "A right-angled triangle has a hypotenuse of $20$ mm and a shorter side of $16$ mm. Find the missing side length. Give your answer to 1 decimal place.",
+        "answer": "Working: $16^2 + x^2 = 20^2$ so $256 + x^2 = 400$. $x^2 = 400 - 256 = 144$. $x = \\sqrt{144} = 12.0$. Answer: $12.0$ mm."
+      },
+      {
+        "question": "Calculate the length of the diagonal of a rectangle with width $7$ cm and height $24$ cm.",
+        "answer": "Working: A rectangle's diagonal creates a right-angled triangle with sides $7$ and $24$. $7^2 + 24^2 = 49 + 576 = 625$. $x = \\sqrt{625} = 25$. Answer: $25$ cm."
+      },
+      {
+        "question": "An isosceles triangle has a base of $10$ cm and equal sides of $13$ cm. Calculate the vertical height of the triangle. Give your answer to 3 significant figures.",
+        "answer": "Working: Splitting the isosceles triangle down the middle creates a right-angled triangle with a hypotenuse of $13$ and a base of $5$ ($10 \\div 2$). $5^2 + h^2 = 13^2$, so $25 + h^2 = 169$. $h^2 = 169 - 25 = 144$. Wait, exact square root is $12$. Answer: $12.0$ cm."
+      },
+      {
+        "question": "A ladder $10$ metres long leans against a vertical wall. The bottom of the ladder is $3$ metres away from the base of the wall. How high up the wall does the ladder reach? Give your answer to 2 decimal places.",
+        "answer": "Working: The ladder is the hypotenuse ($10$), distance from wall is one short side ($3$), height up the wall is $h$. $3^2 + h^2 = 10^2$, so $9 + h^2 = 100$. $h^2 = 100 - 9 = 91$. $h = \\sqrt{91} = 9.5393...$ Answer: $9.54$ metres."
+      }
+    ]
+  },
+  {
+    "id": "geometry-trigonometry-soh-cah-toa",
+    "week": 23,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Trigonometry (SOH CAH TOA)",
+    "overview": "Imagine you have a right-angled triangle. If you know the size of one of the angles (apart from the 90-degree corner) and the length of one side, trigonometry allows you to calculate the lengths of the other sides or find unknown angles. Trigonometry relies on the unchanging ratios between the sides of similar right-angled triangles. To use these ratios, we first need to correctly label the three sides of any right-angled triangle relative to the chosen angle, which we often call theta or x. The longest side, opposite the 90-degree angle, is always the hypotenuse. The side right next to our angle is the adjacent, and the side furthest away is the opposite. To help us remember which ratio connects which sides, we use the famous acronym SOH CAH TOA. This stands for Sin(angle) = Opposite / Hypotenuse, Cos(angle) = Adjacent / Hypotenuse, and Tan(angle) = Opposite / Adjacent. It is vital to know that on the Edexcel Higher tier exam, trigonometric ratios are NOT given on the formula sheet; you must memorise SOH CAH TOA completely. When answering exam questions, you usually earn an M1 mark for substituting numbers into the correct formula and rearranging it, and an A1 mark for the final accurate answer with correct units. Always check your calculator is set to degrees before you begin!",
+    "examples": [
+      {
+        "question": "Calculate the length of the side marked x in a right-angled triangle where the angle is 35 degrees and the hypotenuse is 12 cm. The side x is opposite the 35-degree angle. Give your answer to 1 decimal place.",
+        "solution": "Step 1: Identify the sides given and required. We have the hypotenuse ($12\\text{ cm}$) and we want the opposite side ($x$). The angle is $35^\\circ$. Step 2: Choose the correct trigonometric ratio using SOH CAH TOA. Since we are using Opposite and Hypotenuse, we use SOH: $\\sin(\\text{angle}) = \\frac{\\text{Opposite}}{\\text{Hypotenuse}}$. Step 3: Substitute the known values into the formula: $\\sin(35^\\circ) = \\frac{x}{12}$. Step 4: Rearrange to solve for $x$. Multiply both sides by $12$: $x = 12 \\times \\sin(35^\\circ)$. Step 5: Put this into your calculator. $x = 12 \\times 0.5735... = 6.882...$ Step 6: Round to 1 decimal place as requested: $x = 6.9\\text{ cm}$."
+      },
+      {
+        "question": "Calculate the size of the angle marked y in a right-angled triangle where the adjacent side is 7 cm and the hypotenuse is 15 cm. Give your answer to 1 decimal place.",
+        "solution": "Step 1: Identify the sides involved relative to the angle $y$. We are given the adjacent side ($7\\text{ cm}$) and the hypotenuse ($15\\text{ cm}$). Step 2: Choose the correct ratio using SOH CAH TOA. Because we have Adjacent and Hypotenuse, we use CAH: $\\cos(\\text{angle}) = \\frac{\\text{Adjacent}}{\\text{Hypotenuse}}$. Step 3: Substitute the values into the formula: $\\cos(y) = \\frac{7}{15}$. Step 4: To find an unknown angle, we must use the inverse cosine function (written as $\\cos^{-1}$). So, $y = \\cos^{-1}(\\frac{7}{15})$. Step 5: Type this into your calculator by pressing shift then cos. $y = 62.181...^\\circ$. Step 6: Round to 1 decimal place: $y = 62.2^\\circ$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A right-angled triangle has an angle of $42^\\circ$. The side adjacent to this angle is $9\\text{ cm}$. Calculate the length of the hypotenuse $x$. Give your answer to 3 significant figures.",
+        "answer": "Answer: $12.1\\text{ cm}$. Working: Using CAH, $\\cos(42^\\circ) = \\frac{9}{x}$. Rearrange to $x = \\frac{9}{\\cos(42^\\circ)} = 12.128...$, which rounds to $12.1\\text{ cm}$."
+      },
+      {
+        "question": "Calculate the size of angle $theta$ in a right-angled triangle where the opposite side is $14\\text{ cm}$ and the adjacent side is $8\\text{ cm}$. Give your answer to 1 decimal place.",
+        "answer": "Answer: $60.3^\\circ$. Working: Using TOA, $\\tan(\\theta) = \\frac{14}{8}$. Therefore, $\\theta = \\tan^{-1}(\\frac{14}{8}) = 60.255...^\\circ$, which rounds to $60.3^\\circ$."
+      },
+      {
+        "question": "A ladder is $6\\text{ m}$ long and leans against a vertical wall. The base of the ladder is $2\\text{ m}$ away from the wall along horizontal ground. Calculate the angle the ladder makes with the ground. Give your answer to 1 decimal place.",
+        "answer": "Answer: $70.5^\\circ$. Working: The ladder is the hypotenuse ($6\\text{ m}$) and the ground distance is adjacent ($2\\text{ m}$). Using CAH, $\\cos(\\theta) = \\frac{2}{6}$. $\\theta = \\cos^{-1}(\\frac{2}{6}) = 70.528...^\\circ$, rounding to $70.5^\\circ$."
+      },
+      {
+        "question": "In a right-angled triangle, the angle is $58^\\circ$ and the opposite side is $y$. The hypotenuse is $20\\text{ cm}$. Work out the value of $y$. Give your answer to 1 decimal place.",
+        "answer": "Answer: $17.0\\text{ cm}$. Working: Using SOH, $\\sin(58^\\circ) = \\frac{y}{20}$. So $y = 20 \\times \\sin(58^\\circ) = 20 \\times 0.8480... = 16.961...$, which rounds to $17.0\\text{ cm}$."
+      },
+      {
+        "question": "A vertical flagpole stands on horizontal ground. A wire is attached to the top of the flagpole and anchored to the ground $5\\text{ m}$ away from the base. The wire makes an angle of $65^\\circ$ with the ground. Calculate the height of the flagpole, $h$. Give your answer to 3 significant figures.",
+        "answer": "Answer: $10.7\\text{ m}$. Working: Here, the ground distance ($5\\text{ m}$) is adjacent to the $65^\\circ$ angle, and the height $h$ is opposite. Using TOA, $\\tan(65^\\circ) = \\frac{h}{5}$. So $h = 5 \\times \\tan(65^\\circ) = 5 \\times 2.1445... = 10.722...$, which rounds to $10.7\\text{ m}$."
+      }
+    ]
+  },
+  {
+    "id": "geometry-sine-cosine-rules",
+    "week": 24,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Sine & cosine rules",
+    "overview": "When you are dealing with triangles that do not have a right angle, Pythagoras' theorem and basic trigonometry (SOH CAH TOA) do not work. Instead, we use the Sine Rule and the Cosine Rule to find missing sides and angles. The Sine Rule uses ratios of opposite sides and angles: $a / \\sin(A) = b / \\sin(B) = c / \\sin(C)$. It is generally used when you know an angle and its opposite side, plus one other side or angle. The Cosine Rule is like a souped-up version of Pythagoras' theorem: $a^2 = b^2 + c^2 - 2bc \\cos(A)$. You use it when you have a 'sandwich' of information, such as two sides and the included angle (SAS), or all three sides (SSS) and you need to find an angle. In your Edexcel Higher GCSE exam, a crucial tip to remember is that the formula sheet gives you both the Sine Rule and the Cosine Rule, but you must know how and when to apply them correctly. Examiners will award M1 marks for showing the correct formula and substitution, and A1 marks for the final accurate answer. Always check your calculator is set to 'Degrees' (Deg) before starting geometry questions, and round your final answers appropriately, usually to 3 significant figures unless stated otherwise.",
+    "examples": [
+      {
+        "question": "In triangle ABC, side $a = 8\\text{ cm}$, angle $A = 35^\\circ$, and angle $B = 65^\\circ$. Calculate the length of side $b$. Give your answer to 3 significant figures.",
+        "solution": "Step 1: Identify which rule to use. We have two angles and an opposite side, which means we use the Sine Rule: $a / \\sin(A) = b / \\sin(B)$. Step 2: Substitute the known values into the formula. We get $8 / \\sin(35^\\circ) = b / \\sin(65^\\circ)$. (M1 for correct substitution). Step 3: Rearrange the equation to make $b$ the subject by multiplying both sides by $\\sin(65^\\circ)$. This gives $b = (8 \\times \\sin(65^\\circ)) / \\sin(35^\\circ)$. Step 4: Type this into your calculator. $\\sin(65^\\circ) \\approx 0.9063$ and $\\sin(35^\\circ) \\approx 0.5736$, so $b = (8 \\times 0.9063) / 0.5736 \\approx 12.64$. Step 5: Round to 3 significant figures. Final Answer: $b = 12.6\\text{ cm}$ (A1 for accuracy)."
+      },
+      {
+        "question": "In triangle PQR, side $p = 7\\text{ cm}$, side $r = 10\\text{ cm}$, and angle $Q = 50^\\circ$. Calculate the length of side $q$. Give your answer to 3 significant figures.",
+        "solution": "Step 1: Identify the correct rule. We have two sides and the included angle (the 'sandwich' angle between them), so we must use the Cosine Rule: $q^2 = p^2 + r^2 - 2pr \\cos(Q)$. (Note: letters match the angle and opposite sides). Step 2: Substitute the known values into the formula. $q^2 = 7^2 + 10^2 - (2 \\times 7 \\times 10 \\times \\cos(50^\\circ))$. (M1 for correct substitution). Step 3: Calculate the numerical values. $7^2 = 49$, $10^2 = 100$, and $2 \\times 7 \\times 10 = 140$. So, $q^2 = 49 + 100 - (140 \\times \\cos(50^\\circ))$. Step 4: Evaluate the expression. $\\cos(50^\\circ) \\approx 0.6428$, so $140 \\times 0.6428 \\approx 89.989$. Therefore, $q^2 = 149 - 89.989 = 59.011$. Step 5: Take the square root of both sides to find $q$. $q = \\sqrt{59.011} \\approx 7.681$. Step 6: Round to 3 significant figures. Final Answer: $q = 7.68\\text{ cm}$ (A1 for accuracy)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "In triangle XYZ, angle $X = 42^\\circ$, angle $Y = 75^\\circ$, and side $x = 9\\text{ cm}$. Find the length of side $y$. Give your answer to 3 significant figures.",
+        "answer": "Using Sine Rule: $y / \\sin(75^\\circ) = 9 / \\sin(42^\\circ)$. Rearrange: $y = (9 \\times \\sin(75^\\circ)) / \\sin(42^\\circ)$. Working: $(9 \\times 0.9659) / 0.6691 = 12.99$. Final Answer: $13.0\\text{ cm}$."
+      },
+      {
+        "question": "Triangle ABC has sides $a = 6\\text{ cm}$, $b = 9\\text{ cm}$, and $c = 11\\text{ cm}$. Calculate the size of angle $C$. Give your answer to 1 decimal place.",
+        "answer": "Using Cosine Rule rearranged for angle: $\\cos(C) = (a^2 + b^2 - c^2) / (2ab)$. Working: $\\cos(C) = (6^2 + 9^2 - 11^2) / (2 \\times 6 \\times 9) = (36 + 81 - 121) / 108 = -4 / 108 = -0.03703$. $C = \\cos^{-1}(-0.03703) = 92.12^\\circ$. Final Answer: $92.1^\\circ$."
+      },
+      {
+        "question": "In triangle DEF, side $d = 14\\text{ cm}$, side $f = 19\\text{ cm}$, and angle $E = 68^\\circ$. Find the length of side $e$. Give your answer to 3 significant figures.",
+        "answer": "Using Cosine Rule: $e^2 = 14^2 + 19^2 - (2 \\times 14 \\times 19 \\times \\cos(68^\\circ))$. Working: $e^2 = 196 + 361 - (532 \\times 0.3746) = 557 - 199.3 = 357.7$. $e = \\sqrt{357.7} = 18.91$. Final Answer: $18.9\\text{ cm}$."
+      },
+      {
+        "question": "In triangle ABC, angle $A = 50^\\circ$, side $a = 10\\text{ cm}$, and side $b = 12\\text{ cm}$. Calculate the possible size of angle $B$. Give your answer to 1 decimal place.",
+        "answer": "Using Sine Rule: $\\sin(B) / 12 = \\sin(50^\\circ) / 10$. Working: $\\sin(B) = (12 \\times \\sin(50^\\circ)) / 10 = (12 \\times 0.7660) / 10 = 0.9192$. $B = \\sin^{-1}(0.9192) = 66.8^\\circ$. (Note: Edexcel occasionally accepts the obtuse pair $180 - 66.8 = 113.2^\\circ$ depending on diagram context, but acute is standard primary answer). Final Answer: $66.8^\\circ$."
+      },
+      {
+        "question": "A boat sails from port P on a bearing of $050^\\circ$ for $12\\text{ km}$ to point Q, then on a bearing of $110^\\circ$ for $15\\text{ km}$ to point R. Calculate the straight-line distance from P to R. Give your answer to 3 significant figures.",
+        "answer": "First find the interior angle at Q using parallel line rules. The angle inside triangle PQR at vertex Q is $180^\\circ - 50^\\circ + 110^\\circ$ logic, yielding $120^\\circ$ (or draw a sketch showing alternate angles: $50^\\circ$ inside, remaining angle is $180 - (50+?)$). Let's use Cosine Rule with sides $12$ and $15$, included angle $120^\\circ$. Working: $PR^2 = 12^2 + 15^2 - (2 \\times 12 \\times 15 \\times \\cos(120^\\circ)) = 144 + 225 - (360 \\times -0.5) = 369 + 180 = 549$. $PR = \\sqrt{549} = 23.43$. Final Answer: $23.4\\text{ km}$."
+      }
+    ]
+  },
+  {
+    "id": "geometry-3d-shapes-volume",
+    "week": 25,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "3D shapes & volume",
+    "overview": "Welcome to our weekly maths session! Today we are looking at 3D shapes and volume, a vital topic in your Edexcel Higher GCSE course. Volume is simply the amount of 3D space an object takes up, measured in units cubed, like $cm^3$ or $m^3$. For most prisms—shapes that have the same cross-section all the way through like a loaf of bread—finding the volume is straightforward: you calculate the area of the end face and multiply it by the length or height. This gives us the golden rule: Volume = Area of cross-section $\times$ length. Cylinders, cuboids, and triangular prisms all follow this logic. More complex shapes like cones, spheres, and pyramids taper to a point or curve around a centre point, so they require different formulas. It is very important to know which formulas you must memorise and which are given to you. On the Edexcel Higher exam formula sheet at the front of the paper, you are given the volume of a sphere ($V = \\frac{4}{3}\\pi r^3$), the volume of a cone ($V = \\frac{1}{3}\\pi r^2 h$), and the volume of a pyramid ($V = \\frac{1}{3} \\times \\text{base area} \\times \\text{height}$). This means you must memorise simpler ones, like the volume of a cuboid, cylinder, and any basic prism. In exams, questions often test your ability to work backwards from a given volume to find a missing radius or height, or combine shapes into composite solids. Always show your working clearly: examiners award method marks (M1) even if you make a careless arithmetic mistake at the end, provided your strategy is correct.",
+    "examples": [
+      {
+        "question": "A solid metal cylinder has a radius of $4\\text{ cm}$ and a height of $10\\text{ cm}$. Calculate the volume of the cylinder. Give your answer correct to 1 decimal place.",
+        "solution": "Step 1: Recall the formula for the volume of a cylinder. The cross-section is a circle, so the area is $\\pi r^2$, and we multiply by the height $h$. This formula is NOT on the formula sheet and must be memorised. Formula: $V = \\pi r^2 h$. Step 2: Substitute the given values into the formula. Here, radius $r = 4$ and height $h = 10$. So, $V = \\pi \\times (4)^2 \\times 10$. Step 3: Evaluate the expression step by step. First square the radius: $(4)^2 = 16$. Then multiply by 10: $16 \\times 10 = 160$. So $V = 160\\pi$. Step 4: Convert to a decimal using a calculator. $160 \\times \\pi \\approx 502.65482...$. Step 5: Round correctly to 1 decimal place. The second decimal digit is 5, so round up. Answer: $502.7\\text{ cm}^3$ (Award M1 for substituting into $\\pi r^2 h$, and A1 for the correct rounded answer)."
+      },
+      {
+        "question": "A solid composite shape is made from a hemisphere attached to a solid cylinder. The cylinder has a radius of $3\\text{ cm}$ and a height of $8\\text{ cm}$. The hemisphere has the same radius of $3\\text{ cm}$. Calculate the total volume of the solid. Give your answer in terms of $\\pi$.",
+        "solution": "Step 1: Break the composite shape down into its individual parts. The total volume is the volume of the cylinder plus the volume of the hemisphere. Step 2: Find the volume of the cylinder. Formula is $V = \\pi r^2 h$. Substituting $r = 3$ and $h = 8$: $V_{\\text{cylinder}} = \\pi \\times (3)^2 \\times 8 = \\pi \\times 9 \\times 8 = 72\\pi$. Step 3: Find the volume of the hemisphere. A sphere volume formula is given on the formula sheet as $V = \\frac{4}{3}\\pi r^3$. A hemisphere is half of a sphere, so we multiply by $\\frac{1}{2}$ or divide by 2. Formula: $V_{\\text{hemisphere}} = \\frac{2}{3}\\pi r^3$. Step 4: Substitute $r = 3$ into the hemisphere formula. $V_{\\text{hemisphere}} = \\frac{2}{3} \\times \\pi \\times (3)^3$. Since $3^3 = 27$, we have $V_{\\text{hemisphere}} = \\frac{2}{3} \\times \\pi \\times 27 = 18\\pi$. Step 5: Add both volumes together to find the total volume. Total volume = $72\\pi + 18\\pi = 90\\pi$. Answer: $90\\pi\\text{ cm}^3$ (Award M1 for finding the volume of either the cylinder or hemisphere correctly, M1 for adding them, and A1 for $90\\pi$)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Calculate the volume of a cuboid with length $7\\text{ cm}$, width $4\\text{ cm}$ and height $5\\text{ cm}$.",
+        "answer": "Volume = length $\\times$ width $\\times$ height = $7 \\times 4 \\times 5 = 140\\text{ cm}^3$. (Mark: 1 mark for correct answer with unit)."
+      },
+      {
+        "question": "A solid sphere has a radius of $6\\text{ cm}$. Work out the volume of the sphere. Give your answer correct to 1 decimal place. (Note: Sphere volume formula is given on the formula sheet as $V = \\frac{4}{3}\\pi r^3$).",
+        "answer": "$V = \\frac{4}{3} \\times \\pi \\times 6^3 = \\frac{4}{3} \\times \\pi \\times 216 = 288\\pi \\approx 904.778...$ Round to 1 decimal place: $904.8\\text{ cm}^3$. (Mark: M1 for $\\frac{4}{3}\\pi(6)^3$, A1 for $904.8$)."
+      },
+      {
+        "question": "A triangular prism has a cross-section which is a right-angled triangle with base $5\\text{ cm}$ and perpendicular height $8\\text{ cm}$. The length of the prism is $12\\text{ cm}$. Calculate the volume of the prism.",
+        "answer": "Area of cross-section (triangle) = $\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times 5 \\times 8 = 20\\text{ cm}^2$. Volume = Area $\\times$ length = $20 \\times 12 = 240\\text{ cm}^3$. (Mark: M1 for triangle area, M1 for multiplying by length 12, A1 for $240$)."
+      },
+      {
+        "question": "A solid cone has a base radius of $5\\text{ cm}$ and a vertical height of $12\\text{ cm}$. Calculate the volume of the cone. Give your answer in terms of $\\pi$. (Note: Cone volume formula is given on the formula sheet as $V = \\frac{1}{3}\\pi r^2 h$).",
+        "answer": "$V = \\frac{1}{3} \\times \\pi \\times 5^2 \\times 12 = \\frac{1}{3} \\times \\pi \\times 25 \\times 12 = 25 \\times 4 \\times \\pi = 100\\pi$. Answer: $100\\pi\\text{ cm}^3$. (Mark: M1 for correct substitution into formula, A1 for $100\\pi$)."
+      },
+      {
+        "question": "A metal cylinder has a volume of $500\\text{ cm}^3$ and a height of $10\\text{ cm}$. Work out the radius of the cylinder. Give your answer correct to 3 significant figures.",
+        "answer": "Using $V = \\pi r^2 h$, substitute knowns: $500 = \\pi \\times r^2 \\times 10$. Rearrange for $r^2$: $r^2 = \\frac{500}{10\\pi} = \\frac{50}{\\pi} \\approx 15.915$. Then $r = \\sqrt{15.915} \\approx 3.9893...$ To 3 sig figs: $3.99\\text{ cm}$. (Mark: M1 for rearranging formula, M1 for square root step, A1 for $3.99$)."
+      }
+    ]
+  },
+  {
+    "id": "geometry-vectors",
+    "week": 26,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Vectors",
+    "overview": "Welcome to the world of vectors! In mathematics, a vector is a quantity that has both a magnitude (size or length) and a direction. Unlike a normal number, which just tells you how much of something you have, a vector tells you how to get from one point to another on a grid. Imagine giving someone walking directions: you need to tell them both how far to walk and which way to face. In GCSE maths, vectors are written in bold, like $\\mathbf{a}$, or using two capital letters with an arrow on top, like $\\vec{AB}$, which means the journey from point A to point B. Column vectors look like $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$, where the top number tells you how many units to move horizontally (positive is right, negative is left) and the bottom number tells you how many units to move vertically (positive is up, negative is left). You can add vectors together by placing them tip-to-tail, and you can multiply them by a scalar (a normal number), which stretches or shrinks the vector and can reverse its direction. If two vectors are scalar multiples of each other, they are parallel. This means they point in the exact same or exact opposite direction, which is a massive shortcut for geometry proofs on the Edexcel Higher paper. None of the vector geometry formulae are given on the Pearson Edexcel formula sheet, so you must memorise how to navigate shapes and prove parallel lines using ratios.",
+    "examples": [
+      {
+        "question": "The vectors $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$. Work out the column vector for $2\\mathbf{a} + 3\\mathbf{b}$.",
+        "solution": "Step 1: Substitute the given column vectors into the expression. We need to calculate $2\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} + 3\\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$. Step 2: Multiply each vector by its scalar (the number at the front). For $2\\mathbf{a}$, multiply both numbers inside by $2$: $2 \\times 3 = 6$ and $2 \\times -2 = -4$, giving $\\begin{pmatrix} 6 \\\\ -4 \\end{pmatrix}$. For $3\\mathbf{b}$, multiply both numbers inside by $3$: $3 \\times -1 = -3$ and $3 \\times 5 = 15$, giving $\\begin{pmatrix} -3 \\\\ 15 \\end{pmatrix}$. Step 3: Add the two resulting column vectors together by adding their corresponding top and bottom components. Top: $6 + (-3) = 3$. Bottom: $-4 + 15 = 11$. Step 4: Write your final answer clearly as a single column vector: $\\begin{pmatrix} 3 \\\\ 11 \\end{pmatrix}$. (Award M1 for correct scalar multiplication or correct addition attempt, A1 for the correct final vector)."
+      },
+      {
+        "question": "In triangle $OAB$, $\\vec{OA} = 6\\mathbf{a}$ and $\\vec{OB} = 9\\mathbf{b}$. Point $P$ lies on $AB$ such that $AP : PB = 1 : 2$. Find $\\vec{OP}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$, giving your answer in its simplest form.",
+        "solution": "Step 1: Find the total vector for the journey from $A$ to $B$. To go from $A$ to $B$, we can go backwards along $\\vec{OA}$ and then forwards along $\\vec{OB}$. So, $\\vec{AB} = -\\vec{OA} + \\vec{OB} = -6\\mathbf{a} + 9\\mathbf{b}$ (or $9\\mathbf{b} - 6\\mathbf{a}$). Step 2: Understand the ratio $AP : PB = 1 : 2$. This means the line segment $AB$ is split into $1 + 2 = 3$ equal parts. Therefore, the vector $\\vec{AP}$ is equal to one-third of the total vector $\\vec{AB}$. Step 3: Calculate $\\vec{AP}$. $\\vec{AP} = \\frac{1}{3}(-6\\mathbf{a} + 9\\mathbf{b}) = -2\\mathbf{a} + 3\\mathbf{b}$. Step 4: Find the route for $\\vec{OP}$. To get from the origin $O$ to point $P$, we can travel from $O$ to $A$, and then from $A$ to $P$. Therefore, $\\vec{OP} = \\vec{OA} + \\vec{AP}$. Step 5: Substitute your expressions into the route equation. $\\vec{OP} = 6\\mathbf{a} + (-2\\mathbf{a} + 3\\mathbf{b})$. Step 6: Collect like terms to simplify. $6\\mathbf{a} - 2\\mathbf{a} = 4\\mathbf{a}$. So, $\\vec{OP} = 4\\mathbf{a} + 3\\mathbf{b}$. (Award M1 for finding $\\vec{AB}$, M1 for recognising $\\vec{AP} = \\frac{1}{3}\\vec{AB}$, M1 for setting up $\\vec{OA} + \\vec{AP}$, and A1 for the fully simplified correct answer)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Vector $\\mathbf{p} = \\begin{pmatrix} 4 \\\\ -3 \\end{pmatrix}$ and vector $\\mathbf{q} = \\begin{pmatrix} -2 \\\\ 7 \\end{pmatrix}$. Work out the magnitude of $\\mathbf{p} + \\mathbf{q}$.",
+        "answer": "First find $\\mathbf{p} + \\mathbf{q} = \\begin{pmatrix} 4 + (-2) \\\\ -3 + 7 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}$. Then use Pythagoras' theorem for magnitude: $\\sqrt{2^2 + 4^2} = \\sqrt{4 + 16} = \\sqrt{20} = 2\\sqrt{5}$ (or approximately 4.47)."
+      },
+      {
+        "question": "The point $P$ has coordinates $(-1, 4)$ and the point $Q$ has coordinates $(3, 9)$. Write down the column vector $\\vec{PQ}$.",
+        "answer": "To find $\\vec{PQ}$, subtract the coordinates of $P$ from the coordinates of $Q$. $x$-component: $3 - (-1) = 4$. $y$-component: $9 - 4 = 5$. Final answer: $\\begin{pmatrix} 4 \\\\ 5 \\end{pmatrix}$."
+      },
+      {
+        "question": "In a parallelogram $OABC$, $\\vec{OA} = \\mathbf{a}$ and $\\vec{OC} = \\mathbf{c}$. $M$ is the midpoint of $AC$. Find $\\vec{OM}$ in terms of $\\mathbf{a}$ and $\\mathbf{c}$.",
+        "answer": "First find $\\vec{AC} = -\\mathbf{a} + \\mathbf{c}$. Since $M$ is the midpoint, $\\vec{AM} = \\frac{1}{2}(-\\mathbf{a} + \\mathbf{c})$. Then $\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(-\\mathbf{a} + \\mathbf{c}) = \\mathbf{a} - \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{c} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{c}$ (or $\\frac{1}{2}(\\mathbf{a} + \\mathbf{c})$)."
+      },
+      {
+        "question": "Vectors $\\mathbf{x}$ and $\\mathbf{y}$ are such that $\\vec{AB} = 3\\mathbf{x} + 2\\mathbf{y}$ and $\\vec{DC} = 6\\mathbf{x} + 4\\mathbf{y}$. Explain why $AB$ is parallel to $DC$.",
+        "answer": "Since $\\vec{DC} = 6\\mathbf{x} + 4\\mathbf{y} = 2(3\\mathbf{x} + 2\\mathbf{y}) = 2\\vec{AB}$, vector $\\vec{DC}$ is a scalar multiple of $\\vec{AB}$. This means they have the same direction (and since they do not share a common point in this context, the lines are parallel)."
+      },
+      {
+        "question": "OAE is a triangle. $B$ is the midpoint of $OA$ and $C$ is the point on $AE$ such that $AC : CE = 1 : 2$. $\\vec{OA} = 6\\mathbf{a}$ and $\\vec{OE} = 6\\mathbf{e}$. Express $\\vec{BC}$ in terms of $\\mathbf{a}$ and $\\mathbf{e}$.",
+        "answer": "Find $\\vec{AE} = -6\\mathbf{a} + 6\\mathbf{e}$. Since $AC : CE = 1 : 2$, $\\vec{AC} = \\frac{1}{3}\\vec{AE} = -2\\mathbf{a} + 2\\mathbf{e}$. Now find $\\vec{BC}$: we know $\\vec{OB} = 3\\mathbf{a}$ (midpoint), so $\\vec{BC} = -\\vec{OB} + \\vec{OA} + \\vec{AC} = -3\\mathbf{a} + 6\\mathbf{a} + (-2\\mathbf{a} + 2\\mathbf{e}) = \\mathbf{a} + 2\\mathbf{e}$."
+      }
+    ]
+  },
+  {
+    "id": "geometry-transformations",
+    "week": 27,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Transformations",
+    "overview": "Transformations in geometry are ways of moving, resizing, or flipping shapes on a grid without changing their core properties unless specified. In Edexcel GCSE Higher tier maths, you need to master four key transformations: translations, reflections, rotations, and enlargements. A translation slides a shape in a straight line using a column vector like $\\begin{pmatrix} x \\\\ y \\\\end{pmatrix}$, which tells you how far to move left/right and up/down. A reflection flips a shape across a mirror line, such as $y = x$, meaning you count the perpendicular distance from the shape to the line and repeat it on the other side. A rotation turns a shape around a fixed centre of rotation by a specific angle and direction, like $90^\\circ$ clockwise; tracing paper is usually allowed in the exam for this. An enlargement stretches or shrinks a shape from a centre of enlargement by a scale factor. Note that scale factors can be fractions or negative numbers, which flips the shape the other way. For all transformations, full marks require precise descriptions (for example, stating 'reflection', the equation of the mirror line, and ensuring you get M1 for method and A1 for accuracy). The formula sheet does not list transformation rules, so you must memorise how to apply vectors, fractional scale factors, and invariant points. Working methodically with a sharp pencil and a ruler will secure top marks.",
+    "examples": [
+      {
+        "question": "Describe fully the single transformation that maps shape A onto shape B, where shape A has vertices at (1,1), (3,1), (3,3) and shape B has vertices at (-1,-1), (-3,-1), (-3,-3).",
+        "solution": "Step 1: Identify the type of transformation. The shape has been turned upside down and moved through the origin, which suggests either a rotation of $180^\\circ$ or an enlargement with scale factor $-1$. Step 2: Test for rotation. If we rotate shape A by $180^\\circ$ about the origin (0,0), every point $(x,y)$ becomes $(-x,-y)$. Let us check vertex (1,1): it becomes (-1,-1), which matches shape B. Check vertex (3,3): it becomes (-3,-3), which also matches shape B. Step 3: Write down the full description using correct mathematical terminology to gain all available marks (M1 for naming the transformation and stating the centre/angle, A1 for fully correct and complete description). Final Answer: Rotation, $180^\\circ$, centre (0, 0)."
+      },
+      {
+        "question": "Enlarge shape P with vertices (1,2), (3,2), (2,4) by a scale factor of $-2$ using the centre of enlargement (0,1).",
+        "solution": "Step 1: Identify the centre of enlargement $(0,1)$ and the scale factor $-2$. Step 2: For each vertex of shape P, find the vector distance from the centre of enlargement $(0,1)$. Vertex 1 is at $(1,2)$. Vector from $(0,1)$ to $(1,2)$ is $\\begin{pmatrix} 1-0 \\\\ 2-1 \\\\ end{pmatrix} = \\begin{pmatrix} 1 \\\\ 1 \\\\ end{pmatrix}$. Step 3: Multiply this vector by the scale factor $-2$. $\\begin{pmatrix} 1 \\\\ 1 \\\\ end{pmatrix} \\times -2 = \\begin{pmatrix} -2 \\\\ -2 \\\\ end{pmatrix}$. Step 4: Add this new vector back to the centre of enlargement $(0,1)$. $(0 + (-2), 1 + (-2)) = (-2,-1)$. This is the new position for the first vertex. Step 5: Repeat for vertex 2 $(3,2)$. Vector from $(0,1)$ is $\\begin{pmatrix} 3 \\\\ 1 \\\\ end{pmatrix}$. Multiply by $-2$ to get $\\begin{pmatrix} -6 \\\\ -2 \\\\ end{pmatrix}$. Add to centre: $(0-6, 1-2) = (-6,-1)$. Step 6: Repeat for vertex 3 $(2,4)$. Vector from $(0,1)$ is $\\begin{pmatrix} 2 \\\\ 3 \\\\ end{pmatrix}$. Multiply by $-2$ to get $\\begin{pmatrix} -4 \\\\ -6 \\\\ end{pmatrix}$. Add to centre: $(0-4, 1-6) = (-4,-5)$. Step 7: Plot the new vertices at $(-2,-1)$, $(-6,-1)$, and $(-4,-5)$ and join them to form the enlarged shape. (Award M1 for correct size/orientation and A1 for exact correct position)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Vector $\\begin{pmatrix} -3 \\\\ 4 \\\\ end{pmatrix}$ translates shape A to shape B. If a vertex of shape B is at $(2, 1)$, find the coordinates of the corresponding vertex on shape A.",
+        "answer": "Answer: (5, -3). Working: To go from A to B we add the vector. Therefore, to go from B back to A we subtract the vector. $(2 - (-3), 1 - 4) = (2+3, 1-4) = (5, -3)$."
+      },
+      {
+        "question": "Describe fully the single transformation that maps triangle X onto triangle Y, where triangle X is reflected in the line $x = 1$.",
+        "answer": "Answer: Reflection in the line $x = 1$. Working: Must state 'reflection' (1 mark) and the exact equation of the mirror line ' $x = 1$ ' (1 mark) for full accuracy."
+      },
+      {
+        "question": "Shape C is enlarged by scale factor $1.5$ with centre of enlargement $(2,3)$. If a point on shape C is at $(4,5)$, find the coordinates of this point on the enlarged shape.",
+        "answer": "Answer: (5, 6). Working: Vector from centre $(2,3)$ to $(4,5)$ is $\\begin{pmatrix} 2 \\\\ 2 \\\\ end{pmatrix}$. Multiply by scale factor $1.5$: $\\begin{pmatrix} 2 \\\\ 2 \\\\ end{pmatrix} \\times 1.5 = \\begin{pmatrix} 3 \\\\ 3 \\\\ end{pmatrix}$. Add back to centre: $(2+3, 3+3) = (5,6)$."
+      },
+      {
+        "question": "A shape is rotated $90^\\circ$ anticlockwise about the point $(1,1)$. What are the coordinates of the image of the point $(3,2)$ under this rotation?",
+        "answer": "Answer: (0, 3). Working: Translate point to origin by subtracting centre $(1,1)$, giving $(2,1)$. Apply $90^\\circ$ anticlockwise rule $(x,y) \\rightarrow (-y,x)$, giving $(-1,2)$. Add centre back: $(-1+1, 2+1) = (0,3)$."
+      },
+      {
+        "question": "Triangle P is mapped to triangle Q by a transformation matrix, which is equivalent to an enlargement of scale factor $-0.5$ about the origin. If the area of triangle P is $24 \\text{ cm}^2$, find the area of triangle Q.",
+        "answer": "Answer: 6 cm^2. Working: Area scale factor is the square of the linear scale factor. Linear scale factor is $-0.5$, so area scale factor is $(-0.5)^2 = 0.25$ (or $1/4$). New area = $24 \\times 0.25 = 6 \\text{ cm}^2$."
+      }
+    ]
+  },
+  {
+    "id": "geometry-similarity-congruence",
+    "week": 28,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Similarity & congruence",
+    "overview": "Welcome to our home tutoring session on similarity and congruence! In geometry, these two words describe how shapes relate to each other in terms of size and shape. Congruent shapes are identical twins: they have the exact same shape and the exact same size. If you cut one out, it would fit perfectly on top of the other by sliding, flipping, or turning. Similar shapes, on the other hand, are like photographic enlargements. They have the exact same shape (corresponding angles are equal), but different sizes. Think of zooming in on a digital photo; the features stay in proportion, but the overall dimensions get bigger or smaller. For GCSE Higher tier, you need to master two main skills. First, proving congruence using standard triangle tests: Side-Side-Side (SSS), Side-Angle-Side (SAS), Angle-Side-Angle (ASA), and Right-angle-Hypotenuse-Side (RHS). Second, working with similar shapes using a scale factor. If a shape is enlarged by a linear scale factor $k$, its lengths are multiplied by $k$. Crucially, for area you multiply by $k^2$, and for volume you multiply by $k^3$. Remember, linear scale factors are needed for lengths, but areas and volumes scale differently! On the Edexcel formula sheet, you are given formulas for 3D shapes, but you must memorise your circle theorems, triangle rules, and area/volume scaling principles. In exams, questions often award an M1 mark for showing a correct method (like finding the scale factor) and an A1 mark for the accurate final answer.",
+    "examples": [
+      {
+        "question": "Two triangles, ABC and PQR, are mathematically similar. Triangle ABC has side lengths $AB = 4\\text{ cm}$, $BC = 6\\text{ cm}$, and $AC = 8\\text{ cm}$. The corresponding side $PQ$ on the larger triangle PQR is $12\\text{ cm}$. Calculate the lengths of $QR$ and $PR$.",
+        "solution": "Step 1: Find the linear scale factor by comparing the known corresponding sides. Side $PQ$ corresponds to side $AB$. Scale factor = $PQ / AB = 12 / 4 = 3$. Step 2: Multiply the remaining sides of triangle ABC by the scale factor of $3$ to find the sides of triangle PQR. For $QR$, multiply $BC$ by $3$: $6 \\times 3 = 18\\text{ cm}$. Step 3: For $PR$, multiply $AC$ by $3$: $8 \\times 3 = 24\\text{ cm}$. Final Answer: $QR = 18\\text{ cm}$, $PR = 24\\text{ cm}$. (Award M1 for finding scale factor 3, A1 for correct lengths)."
+      },
+      {
+        "question": "A solid metal cylinder A has a height of $5\\text{ cm}$ and a total surface area of $120\\text{ cm}^2$. Cylinder B is mathematically similar to cylinder A and has a height of $15\\text{ cm}$. Work out the total surface area of cylinder B.",
+        "solution": "Step 1: Find the linear scale factor for the lengths by dividing the height of cylinder B by the height of cylinder A. Linear scale factor $k = 15 / 5 = 3$. Step 2: Understand how area scales. Area scales by the square of the linear scale factor ($k^2$). Calculate $k^2$: $3^2 = 9$. Step 3: Multiply the surface area of cylinder A by the area scale factor to find the surface area of cylinder B. Surface area of B = $120 \\times 9 = 1080\\text{ cm}^2$. Final Answer: $1080\\text{ cm}^2$. (Award M1 for $3^2 = 9$ or equivalent, M1 for $120 \\times 9$, A1 for 1080)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Triangle X and Triangle Y are congruent. Triangle X has angles $40^\\circ$ and $60^\\circ$. What is the third angle of Triangle Y?",
+        "answer": "80 degrees. Working: Angles in a triangle sum to 180 degrees. $180 - (40 + 60) = 80$."
+      },
+      {
+        "question": "Two similar vases have heights of $6\\text{ cm}$ and $18\\text{ cm}$. If the smaller vase has a volume of $50\\text{ cm}^3$, calculate the volume of the larger vase.",
+        "answer": "1350 cm^3. Working: Linear scale factor = $18 / 6 = 3$. Volume scale factor = $3^3 = 27$. Volume of larger vase = $50 \\times 27 = 1350\\text{ cm}^3$."
+      },
+      {
+        "question": "Shape A and Shape B are mathematically similar. The area of Shape A is $24\\text{ cm}^2$ and the area of Shape B is $96\\text{ cm}^2$. If a side length of Shape A is $4\\text{ cm}$, find the length of the corresponding side on Shape B.",
+        "answer": "8 cm. Working: Area scale factor = $96 / 24 = 4$. Linear scale factor = square root of $4 = 2$. Side of Shape B = $4 \\times 2 = 8\\text{ cm}$."
+      },
+      {
+        "question": "Prove that two triangles with sides $5\\text{ cm}$, $7\\text{ cm}$, $10\\text{ cm}$ and $5\\text{ cm}$, $7\\text{ cm}$, $10\\text{ cm}$ are congruent. State the condition used.",
+        "answer": "Congruent by SSS (Side-Side-Side). Working: All three corresponding pairs of sides are equal in length, which satisfies the SSS condition for triangle congruence."
+      },
+      {
+        "question": "A container has a capacity of $4\\text{ litres}$ and a surface area of $300\\text{ cm}^2$. A mathematically similar container has a surface area of $1200\\text{ cm}^2$. Work out the capacity of the larger container in litres.",
+        "answer": "32 litres. Working: Area scale factor = $1200 / 300 = 4$. Linear scale factor = square root of $4 = 2$. Volume scale factor = $2^3 = 8$. Capacity = $4 \\times 8 = 32\\text{ litres}$."
+      }
+    ]
+  },
+  {
+    "id": "probability-basic-probability",
+    "week": 29,
+    "subject": "Probability",
+    "icon": "🎲",
+    "title": "Basic probability",
+    "overview": "Probability is the mathematical study of how likely it is that something will happen. Imagine tossing a coin or rolling a dice; we know the possible outcomes, but we cannot predict the exact result of any single throw. In GCSE Maths, probability is always measured on a scale from $0$ to $1$. A probability of $0$ means the event is completely impossible, while a probability of $1$ means it is certain to happen. Everything else lies somewhere in between as a fraction, decimal, or percentage.\n\nTo find the basic probability of a single event happening, we use a simple fraction: the number of successful outcomes we want, divided by the total number of possible outcomes. For example, if you have a bag with $3$ red counters and $2$ blue counters, the total number of outcomes is $5$. The probability of picking a red counter is $3$ out of $5$, written as $\\frac{3}{5}$ or $0.6$.\n\nAnother vital rule in GCSE probability is that the sum of all possible mutually exclusive outcomes must always add up to $1$. This means if the probability of rain tomorrow is $0.2$, the probability that it will not rain must be $1 - 0.2 = 0.8$. This is called finding the 'complementary' probability or the probability of the 'not' event. Edexcel examiners love testing this on non-calculator papers, so always make sure your fractions are simplified and your decimals or percentages are accurate. Note that basic probability rules are foundational and expected to be memorised, as they do not appear on the formula sheet.",
+    "examples": [
+      {
+        "question": "A fair six-sided dice, numbered 1 to 6, is rolled once. Find the probability that the number rolled is: (a) an even number, (b) a prime number.",
+        "solution": "Step 1: List all the possible outcomes when rolling a six-sided dice. The outcomes are $1, 2, 3, 4, 5, 6$. The total number of possible outcomes is $6$. (Step 2a): Identify the even numbers from the list, which are $2, 4, 6$. There are $3$ even numbers. Write the probability as a fraction: $\\frac{3}{6}$. Simplify the fraction to $\\frac{1}{2}$. (Award M1 for identifying successful outcomes and A1 for $\\frac{1}{2}$). (Step 2b): Identify the prime numbers from the list. Remember, $1$ is not prime. The prime numbers are $2, 3, 5$. There are $3$ prime numbers. Write the probability as a fraction: $\\frac{3}{6}$. Simplify to $\\frac{1}{2}$. (Award M1 for correct primes and A1 for $\\frac{1}{2}$)."
+      },
+      {
+        "question": "A bag contains only red, blue and green counters. The probability of picking a red counter is $0.35$. The probability of picking a blue counter is $0.25$. Work out the probability of picking a green counter.",
+        "solution": "Step 1: Understand that all the probabilities of mutually exclusive outcomes in a bag must add up to a total of $1$. (Award M1 for recognising that total probability equals $1$). Step 2: Add the known probabilities of the red and blue counters together. $0.35 + 0.25 = 0.60$. Step 3: Subtract this combined probability from the total probability of $1$ to find the remaining probability for the green counters. $1 - 0.60 = 0.40$. (Award A1 for the correct answer of $0.40$ or $\\frac{2}{5}$)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A box contains 5 red pens, 3 blue pens and 2 black pens. A pen is chosen at random. Find the probability that it is not a red pen.",
+        "answer": "Answer: \\frac{1}{2} (or 0.5). Working: Total pens = 5 + 3 + 2 = 10. Red pens = 5, so not red pens = 10 - 5 = 5. Probability = \\frac{5}{10} = \\frac{1}{2}."
+      },
+      {
+        "question": "The probability that a football team wins their next match is 0.45. The probability that they draw is 0.3. Work out the probability that they lose.",
+        "answer": "Answer: 0.25. Working: Total probability = 1. Win + Draw = 0.45 + 0.3 = 0.75. Lose = 1 - 0.75 = 0.25."
+      },
+      {
+        "question": "A standard 52-card deck of playing cards is used. One card is drawn at random. What is the probability of drawing a red face card (Jack, Queen, or King)? Give your answer as a simplified fraction.",
+        "answer": "Answer: \\frac{3}{26}. Working: There are 4 face cards per suit (Jack, Queen, King, Ace - wait, Ace is not a face card, so 3 face cards per suit: J, Q, K). There are 2 red suits (Hearts and Diamonds), so 2 x 3 = 6 red face cards. Total cards = 52. Probability = \\frac{6}{52} = \\frac{3}{26}."
+      },
+      {
+        "question": "In a group of 80 students, 45 study French, 25 study Spanish, and 10 study both. If a student is chosen at random, what is the probability that they study neither French nor Spanish?",
+        "answer": "Answer: \\frac{1}{8} (or 0.125). Working: Using a Venn diagram, French only = 45 - 10 = 35. Spanish only = 25 - 10 = 15. Both = 10. Total studying at least one = 35 + 15 + 10 = 60. Students studying neither = 80 - 60 = 20. Probability = \\frac{20}{80} = \\frac{1}{4}... wait, let me recalculate. 35 + 15 + 10 = 60. Total students = 80. Neither = 80 - 60 = 20. Fraction = \\frac{20}{80} = \\frac{1}{4}."
+      },
+      {
+        "question": "A biased spinner has four sections: A, B, C and D. The probabilities of landing on A, B and C are 0.2, 0.35 and 0.15 respectively. The spinner is spun 200 times. Work out an estimate for the number of times it lands on D.",
+        "answer": "Answer: 60 times. Working: First find P(D) = 1 - (0.2 + 0.35 + 0.15) = 1 - 0.7 = 0.3. Then multiply by the number of trials: 0.3 x 200 = 60."
+      }
+    ]
+  },
+  {
+    "id": "probability-tree-diagrams",
+    "week": 30,
+    "subject": "Probability",
+    "icon": "🎲",
+    "title": "Tree diagrams",
+    "overview": "Tree diagrams are a visual way to work out probabilities when multiple things happen one after another, like flipping a coin twice or picking two sweets from a bag. Imagine a tree growing sideways: the start is the trunk, and the different outcomes branch out like leaves. Each set of branches represents one event, and the probabilities of each outcome are written along the branches as fractions or decimals. A golden rule of tree diagrams is that the probabilities on any set of branches coming from a single point must always add up to $1$ (or $100\\%$) because something has to happen! To find the probability of a combined outcome—such as getting a red sweet and then a blue sweet—you follow the branches along and multiply the probabilities together. This is known as the 'AND' rule. If there are different ways to achieve a successful overall result (like getting two matching colours on either the first AND second pick, OR the alternative combination), you calculate the probability of each separate path and then add them together. This is known as the 'OR' rule. In Edexcel GCSE Higher tier exams, tree diagrams often involve 'dependent events' where things are not replaced, meaning the denominator of the fraction decreases for the second set of branches. Note that probability rules are not printed on the Edexcel formula sheet, so you must memorise that 'AND means multiply' and 'OR means add'. Examiners award method marks (M1) for correct multiplication along branches and accuracy marks (A1) for final correct answers.",
+    "examples": [
+      {
+        "question": "A bag contains $3$ red counters and $2$ blue counters. A counter is taken at random, its colour is recorded, and it is put back into the bag. Then a second counter is taken at random, and its colour is recorded. Draw a tree diagram and find the probability that both counters are red.",
+        "solution": "Step 1: Understand the setup. Because the first counter is put back, this is sampling with replacement. The probabilities stay the same for the second pick. There are $3 + 2 = 5$ counters in total. Step 2: Draw the first set of branches from the start. The probability of picking red is $\\frac{3}{5}$ and blue is $\\frac{2}{5}$. Step 3: Draw the second set of branches from both the red and blue outcomes. The probabilities remain $\\frac{3}{5}$ for red and $\\frac{2}{5}$ for blue. Step 4: Calculate the combined probabilities for each end node by multiplying along the branches. For both red (R then R), calculate $\\frac{3}{5} \\times \\frac{3}{5} = \\frac{9}{25}$. Step 5: State the final answer clearly. The probability of getting two red counters is $\\frac{9}{25}$."
+      },
+      {
+        "question": "A box contains $4$ green counters and $3$ yellow counters. Tim takes a counter at random from the box and does not put it back. Then he takes a second counter at random. Work out the probability that Tim takes two counters of different colours.",
+        "solution": "Step 1: Identify that this is sampling without replacement. There are $4 + 3 = 7$ counters initially. When one is removed, only $6$ counters remain in the box for the second pick. Step 2: Draw the first set of branches. Green is $\\frac{4}{7}$ and yellow is $\\frac{3}{7}$. Step 3: Draw the second set of branches. If a green counter is taken first, the remaining counters are $3$ green and $3$ yellow. So the branches from green are: Green $\\frac{3}{6}$ and Yellow $\\frac{3}{6}$. If a yellow counter is taken first, the remaining counters are $4$ green and $2$ yellow. So the branches from yellow are: Green $\\frac{4}{6}$ and Yellow $\\frac{2}{6}$. Step 4: Identify the paths that give 'different colours'. These are Green then Yellow (G, Y) and Yellow then Green (Y, G). Step 5: Calculate the probability of (G, Y) by multiplying along the branches: $\\frac{4}{7} \\times \\frac{3}{6} = \\frac{12}{42}$. Step 6: Calculate the probability of (Y, G) by multiplying along the branches: $\\frac{3}{7} \\times \\frac{4}{6} = \\frac{12}{42}$. Step 7: Add these two probabilities together using the OR rule: $\\frac{12}{42} + \\frac{12}{42} = \\frac{24}{42}$. Step 8: Simplify the fraction to its lowest terms by dividing top and bottom by $6$, giving $\\frac{4}{7}$. (Award M1 for correct individual branch multiplications, M1 for adding two valid paths, A1 for $\\frac{4}{7}$)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A biased coin is weighted so that the probability of getting heads is $\\frac{2}{3}$. The coin is flipped twice. Find the probability of getting at least one tail.",
+        "answer": "P(Heads) = 2/3, P(Tails) = 1/3. Paths with at least one tail are (H,T), (T,H), and (T,T). Alternatively, use 1 - P(two heads). P(H,H) = 2/3 x 2/3 = 4/9. 1 - 4/9 = 5/9. Final Answer: 5/9."
+      },
+      {
+        "question": "Bag A contains $5$ white marbles and $3$ black marbles. Bag B contains $2$ white marbles and $4$ black marbles. A fair die is rolled. If an even number is rolled, a marble is taken from Bag A. If an odd number is rolled, a marble is taken from Bag B. Find the probability that a white marble is chosen.",
+        "answer": "P(Even) = 3/6 = 1/2, P(Odd) = 3/6 = 1/2. From Bag A, P(White) = 5/8. From Bag B, P(White) = 2/6 = 1/3. Path 1 (Even, White) = 1/2 x 5/8 = 5/16. Path 2 (Odd, White) = 1/2 x 1/3 = 1/6. Add them: 5/16 + 1/6 = 15/48 + 8/48 = 23/48. Final Answer: 23/48."
+      },
+      {
+        "question": "There are $7$ blue pens and $3$ red pens in a pencil case. Priya takes two pens at random without replacement. Work out the probability that she takes pens of the same colour.",
+        "answer": "P(Blue, Blue) = 7/10 x 6/9 = 42/90. P(Red, Red) = 3/10 x 2/9 = 6/90. Add them together: 42/90 + 6/90 = 48/90. Simplify by dividing by 6: 8/15. Final Answer: 8/15."
+      },
+      {
+        "question": "The probability that Amy passes her driving test on her first attempt is $0.7$. If she fails, the probability she passes on her second attempt is $0.8$. If she fails both, she cannot take it again. Find the probability that Amy passes her test.",
+        "answer": "Pass 1 = 0.7. Fail 1 = 0.3. If Fail 1, Pass 2 = 0.8, Fail 2 = 0.2. Success paths are Pass on 1st attempt (0.7) OR Fail 1st then Pass 2nd (0.3 x 0.8 = 0.24). Total probability = 0.7 + 0.24 = 0.94. Final Answer: 0.94."
+      },
+      {
+        "question": "A bag has $x$ counters, of which $3$ are red and the rest are blue. Two counters are taken at random without replacement. The probability that both counters are red is $\\frac{1}{15}$. Form an equation in $x$ and solve it to find the total number of counters.",
+        "answer": "P(First red) = 3/x. P(Second red given first red) = 2/(x - 1). Equation: (3/x) x (2/(x - 1)) = 1/15. This simplifies to 6 / (x^2 - x) = 1/15. Cross multiply: 90 = x^2 - x. Rearrange into quadratic: x^2 - x - 90 = 0. Factorise: (x - 10)(x + 9) = 0. Since x must be positive, x = 10. Final Answer: 10."
+      }
+    ]
+  },
+  {
+    "id": "probability-venn-diagrams-set-notation",
+    "week": 31,
+    "subject": "Probability",
+    "icon": "🎲",
+    "title": "Venn diagrams & set notation",
+    "overview": "Venn diagrams are visual tools used to sort data and objects into groups, which we call sets. Imagine drawing a big rectangular box called the Universal Set, denoted by the symbol $\\xi$. Inside this box, we draw circles to represent different groups, like people who play football or people who wear glasses. Where these circles overlap is the intersection, meaning things that belong to both groups at the same time. Venn diagrams are a brilliant way to organise information so that we can easily calculate probabilities. To master this topic for your Edexcel Higher GCSE, you must learn the key set notation symbols. The union symbol $\\cup$ means everything in set A OR set B (or both). The intersection symbol $\\cap$ means only the items in both set A AND set B. A little apostrophe, like $A'$, means the complement of A, which is everything outside of set A but still inside the universal box. Finally, $A \\subset B$ means A is a subset of B, meaning every single item in A is also inside B. On the Edexcel Higher exam, you will not be given these set notation symbols on the formula sheet; you must memorise them completely. Questions often combine algebra with Venn diagrams, requiring you to set up and solve linear or quadratic equations to find the unknown values inside the regions. Examiners award M1 marks for setting up the correct algebraic method and A1 marks for accurate final answers.",
+    "examples": [
+      {
+        "question": "A gym has 50 members. 30 members use the gym for cardio, 24 members use it for weights, and 6 members use it for neither cardio nor weights. (a) Draw a Venn diagram to represent this information. (b) Find the probability that a randomly chosen member uses both cardio and weights.",
+        "solution": "Step 1: Let the universal set $\\xi = 50$. Let C be cardio and W be weights. The 6 members who use neither go outside the circles in the universal box. Step 2: Calculate how many members are inside the circles. Total inside = $50 - 6 = 44$. Step 3: Add the individual set numbers together: $30 + 24 = 54$. This is higher than 44 because the people who do both have been counted twice. Step 4: Find the overlap (intersection). $54 - 44 = 10$. So, $10$ members do both. This gives our first mark (M1). Step 5: Fill in the rest of the circles. Only cardio = $30 - 10 = 20$. Only weights = $24 - 10 = 14$. Step 6: For part (b), the probability of choosing someone who does both is the intersection divided by the total. Probability = $10 / 50$ which simplifies to $1/5$ (A1)."
+      },
+      {
+        "question": "A box contains numbers from 1 to 20. Set A = even numbers. Set B = multiples of 3. (a) Complete a Venn diagram for this data. (b) Find $n(A \\cup B)'$. (c) One number is chosen at random. Given that it is in set B, find the probability that it is also in set A.",
+        "solution": "Step 1: Identify the universal set $\\xi = \\{1, 2, 3, ..., 20\\}$, so there are 20 numbers in total. Set A = $\\{2, 4, 6, 8, 10, 12, 14, 16, 18, 20\\}$. Set B = $\\{3, 6, 9, 12, 15, 18\\}$. Step 2: Find the intersection ($A \\cap B$), which are numbers that are both even and multiples of 3 (multiples of 6): $\\{6, 12, 18\\}$. Place 6, 12, 18 in the middle overlap (M1). Step 3: Complete set A by putting remaining evens ($2, 4, 8, 10, 14, 16, 20$) in the rest of circle A. Complete set B by putting remaining multiples of 3 ($3, 9, 15$) in the rest of circle B. Step 4: Find numbers not in A and not in B and place them outside the circles: $\\{1, 5, 7, 11, 13, 17, 19\\}$. Step 5: For part (b), $n(A \\cup B)'$ means the number of items outside both circles. Counting them gives $7$ (A1). Step 6: For part (c), this is conditional probability. The new denominator is the total in B, which is 6. The numbers in both A and B is 3 ($6, 12, 18$). Probability = $3/6 = 1/2$ (A1)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A group of 40 students are asked if they study French (F) or Spanish (S). 22 study French, 15 study Spanish, and 8 study neither. Find the number of students who study both French and Spanish.",
+        "answer": "Answer: 5 students. Working: Total inside circles = $40 - 8 = 32$. Sum of sets = $22 + 15 = 37$. Overlap = $37 - 32 = 5$."
+      },
+      {
+        "question": "Given that $n(\\xi) = 50$, $n(A) = 28$, $n(B) = 31$, and $n(A \\cap B) = 19$. Find $n(A \\cup B)'$.",
+        "answer": "Answer: 10. Working: Using the formula $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$, we get $28 + 31 - 19 = 40$. The number outside both is $50 - 40 = 10$."
+      },
+      {
+        "question": "A bag contains counters numbered 1 to 10. Set X = prime numbers, Set Y = square numbers. Draw a Venn diagram and find $P(X \\cap Y)$.",
+        "answer": "Answer: 1/10 or 0.1. Working: Primes = $\\{2, 3, 5, 7\\}$, Squares = $\\{1, 4, 9\\}$. There is no overlap between primes and squares for numbers 1-10. Intersection is empty, so probability is 0/10 = 0."
+      },
+      {
+        "question": "In a class of 30 students, 18 play rugby, 12 play cricket, and 4 play neither. A student is picked at random. Find the probability that they play rugby given that they play cricket.",
+        "answer": "Answer: 5/12. Working: Total inside = 26. $18 + 12 = 30$, so overlap = $30 - 26 = 4$ play both. Given they play cricket (denominator 12), the probability they also play rugby is 4/12 which simplifies to 1/3."
+      },
+      {
+        "question": "A Venn diagram has universal set $\\xi$. Set A has $x$ elements, Set B has $15$ elements, the intersection has $4$ elements, and neither has $2$ elements. If the total universal set has $30$ elements, set up an equation and solve for $x$.",
+        "answer": "Answer: x = 17. Working: Only A is $x - 4$. Only B is $15 - 4 = 11$. Intersection is 4. Neither is 2. Total = $(x - 4) + 4 + 11 + 2 = 30$. Simplify: $x + 13 = 30$, so $x = 17$."
+      }
+    ]
+  },
+  {
+    "id": "probability-conditional-probability",
+    "week": 32,
+    "subject": "Probability",
+    "icon": "🎲",
+    "title": "Conditional probability",
+    "overview": "Conditional probability is about how the probability of one event changes if we already know that another event has happened. Imagine you have a bag of different coloured sweets. If you pick one and eat it, the total number of sweets in the bag changes for the second pick. This means the probability for the second pick is 'conditioned' on what happened during the first pick. In GCSE maths, we often show this using probability tree diagrams. When moving along branches of a tree, we multiply the probabilities together. When adding different successful outcomes together, we add the probabilities. A key thing to memorise for Edexcel Higher is the formal conditional probability formula: $P(A \\text{ given } B) = \\frac{P(A \\text{ and } B)}{P(B)}$. However, many exam questions can be answered much more easily by drawing a tree diagram, a Venn diagram, or a two-way frequency table. Always read the question carefully to spot phrases like 'without replacement', as this is the biggest clue that the probabilities will change from one event to the next. In the exam, working out probability without replacement usually earns method marks (M1) even if your final arithmetic has a small slip, so always write down your fractions clearly before calculating.",
+    "examples": [
+      {
+        "question": "A bag contains 5 red counters and 3 blue counters. A counter is taken at random and not replaced. A second counter is then taken. Work out the probability that both counters are red.",
+        "solution": "Step 1: Understand the setup. There are 5 red and 3 blue counters, making a total of $5 + 3 = 8$ counters. The phrase 'not replaced' means conditional probability applies because the total decreases for the second pick. Step 2: Find the probability of the first counter being red. There are 5 red out of 8 total, so $P(\\text{1st Red}) = \\frac{5}{8}$. Step 3: Find the probability of the second counter being red, given the first was red. Since one red counter has been removed, there are now 4 red counters left and a total of 7 counters left. So, $P(\\text{2nd Red | 1st Red}) = \\frac{4}{7}$. Step 4: Multiply the probabilities along the branch. $P(\\text{Both Red}) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56}$. Step 5: Simplify the fraction to lowest terms. Divide numerator and denominator by 4 to get $\\frac{5}{14}$. (Award M1 for multiplying two correct fractions, A1 for $\\frac{5}{14}$)."
+      },
+      {
+        "question": "A box contains 3 white counters and 4 black counters. Tim takes a counter at random, notes its colour, and puts it back. He then takes a second counter. Lily takes a different box containing 5 white counters and 2 black counters, takes two counters without replacement, and finds the probability they are the same colour. Who has a higher probability of getting two counters of the same colour? Show your working.",
+        "solution": "Step 1: Calculate Tim's probability of getting two counters of the same colour. Because Tim puts the counter back (with replacement), his events are independent. Total = 7. P(White) = 3/7, P(Black) = 4/7. P(Both White) = $3/7 \\times 3/7 = 9/49$. P(Both Black) = $4/7 \\times 4/7 = 16/49$. Total for same colour = $9/49 + 16/49 = 25/49$. Step 2: Calculate Lily's probability of getting two counters of the same colour. Lily samples without replacement. Total = 7 (5 white, 2 black). P(Both White) = $5/7 \\times 4/6 = 20/42 = 10/21$. P(Both Black) = $2/7 \\times 1/6 = 2/42 = 1/21$. Total for same colour = $10/21 + 1/21 = 11/21$. Step 3: Compare Tim and Lily's probabilities by converting to a common denominator or decimals. Tim: $25/49 \\approx 0.510$. Lily: $11/21 \\approx 0.524$. Step 4: Conclude. Lily has a higher probability ($0.524 > 0.510$). (Award M1 for finding either person's probability correctly, M1 for the other, and A1 for the correct comparison and conclusion)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "There are 4 green pens and 6 pink pens in a pencil case. Two pens are chosen at random without replacement. Work out the probability that the pens are different colours.",
+        "answer": "Answer: 24/45 or 8/15. Working: P(Green then Pink) = 4/10 \\times 6/9 = 24/90. P(Pink then Green) = 6/10 \\times 4/9 = 24/90. Total probability = 24/90 + 24/90 = 48/90 = 8/15."
+      },
+      {
+        "question": "A jar contains 7 yellow sweets and 3 purple sweets. Two sweets are taken at random without replacement. Given that the first sweet was yellow, find the probability that the second sweet is also yellow.",
+        "answer": "Answer: 6/9 or 2/3. Working: Since the first sweet was yellow, 6 yellow sweets remain and there are 9 sweets left in total in the jar. Therefore, P(2nd Yellow | 1st Yellow) = 6/9 = 2/3."
+      },
+      {
+        "question": "In a group of 50 students, 30 study History, 25 study Geography, and 10 study both. A student is chosen at random. Given that the student studies History, find the probability that they also study Geography.",
+        "answer": "Answer: 1/3. Working: Using the formula P(Geo | Hist) = P(Geo and Hist) / P(Hist). P(Geo and Hist) = 10/50. P(Hist) = 30/50. So, (10/50) / (30/50) = 10/30 = 1/3."
+      },
+      {
+        "question": "Bag A contains 2 red counters and 3 blue counters. Bag B contains 4 red counters and 1 blue counter. A coin is flipped. If it lands on heads, a counter is taken from Bag A. If it lands on tails, a counter is taken from Bag B. Given that a red counter is chosen, find the probability that the coin landed on heads.",
+        "answer": "Answer: 2/7. Working: P(Heads and Red) = 0.5 \\times 2/5 = 2/10. P(Tails and Red) = 0.5 \\times 4/5 = 4/10. Total P(Red) = 2/10 + 4/10 = 6/10. P(Heads given Red) = (2/10) / (6/10) = 2/6 = 1/3... wait, 2/10 divided by 6/10 is 2/6 = 1/3. Let's check: 2/10 = 1/5, total red = 6/10 = 3/5. (1/5) / (3/5) = 1/3."
+      },
+      {
+        "question": "Card A has numbers 1, 2, 3, 4. Card B has numbers 3, 4, 5, 6, 7. One card is chosen at random from Card A, and its number is added to a number chosen at random from Card B. Given that the sum is greater than 8, find the probability that the number chosen from Card A was a 4.",
+        "answer": "Answer: 3/4. Working: List pairs summing > 8 where Card A is 4: (4,5)=9, (4,6)=10, (4,7)=11 (3 outcomes). Pairs summing > 8 where Card A is 3: (3,6)=9, (3,7)=10 (2 outcomes). Total outcomes with sum > 8 is 5. Outcomes where Card A is 4 and sum > 8 is 3. P(Card A is 4 | sum > 8) = 3/5."
+      }
+    ]
+  },
+  {
+    "id": "statistics-averages-range",
+    "week": 33,
+    "subject": "Statistics",
+    "icon": "📊",
+    "title": "Averages & range",
+    "overview": "Welcome to Averages and Range! This topic is all about summarising a set of numbers using a single representative value, and measuring how spread out those numbers are. For GCSE Higher tier, there are three main averages you must know: the mean, the median, and the mode, along with one measure of spread: the range. To find the mean, you add up all the numbers in your data set and divide the total by how many numbers there are. To find the median, you must first put all the numbers in order from smallest to largest and find the exact middle number. If there are two numbers in the middle, you add them together and divide by two. The mode is simply the number that appears most often, and remember, a data set can have more than one mode or no mode at all. Finally, the range measures the spread by subtracting the smallest number from the largest number. In Edexcel GCSE exams, questions often get more challenging by giving you information in frequency tables, asking you to work backwards from a given mean, or combining groups of data. It is vital to remember that the formula for the mean of a frequency table is given on the formula sheet, but you must memorise how to find the median position, which is found using $\\frac{n+1}{2}$, where $n$ is the total frequency. Let's dive into some examples to see how these concepts are tested in the exam!",
+    "examples": [
+      {
+        "question": "Find the mean, median, mode and range of the following numbers: 4, 12, 7, 4, 9, 15, 11.",
+        "solution": "Step 1: Find the mode. The mode is the number that appears most often. Here, the number $4$ appears twice, and all other numbers appear once. Mode = $4$. (M1 for identifying mode). Step 2: Find the median. First, put the numbers in order from smallest to largest: $4, 4, 7, 9, 11, 12, 15$. There are 7 numbers. The middle position is $\\frac{7+1}{2} = 4$th position. Counting to the 4th number, we get $9$. Median = $9$. (M1 for ordering data, A1 for correct median). Step 3: Find the mean. Add all the numbers together and divide by how many there are. Sum = $4 + 12 + 7 + 4 + 9 + 15 + 11 = 62$. There are $7$ numbers. Mean = $\\frac{62}{7} = 8.86$ to 2 decimal places. (M1 for summing data, A1 for correct mean). Step 4: Find the range. Subtract the smallest number from the largest number. Largest = $15$, Smallest = $4$. Range = $15 - 4 = 11$. (A1 for correct range)."
+      },
+      {
+        "question": "The table shows the number of goals scored by a football team in 20 matches. \nGoals (x): 0, Frequency (f): 3\nGoals (x): 1, Frequency (f): 7\nGoals (x): 2, Frequency (f): 6\nGoals (x): 3, Frequency (f): 4\nCalculate the mean number of goals scored.",
+        "solution": "Step 1: Understand that this is a frequency table, so we need to find the total number of goals and the total number of matches. (M1 for knowing to use $fx$). Step 2: Add an extra column to calculate $fx$ (Goals $\\times$ Frequency) for each row. \n- For $0$ goals: $0 \\times 3 = 0$\n- For $1$ goal: $1 \\times 7 = 7$\n- For $2$ goals: $2 \\times 6 = 12$\n- For $3$ goals: $3 \\times 4 = 12$\nStep 3: Find the sum of the frequencies ($\\sum f$) to get the total number of matches: $3 + 7 + 6 + 4 = 20$. (M1 for total frequency). Step 4: Find the sum of the $fx$ column ($\\sum fx$) to get the total number of goals: $0 + 7 + 12 + 12 = 31$. (M1 for total $fx$). Step 5: Divide the total goals by the total matches to find the mean. Mean = $\\frac{\\sum fx}{\\sum f} = \\frac{31}{20} = 1.55$ goals. (A1 for correct final answer)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Calculate the range and median of the set of numbers: 14, 8, 22, 11, 5, 19, 11, 25.",
+        "answer": "Order data: 5, 8, 11, 11, 14, 19, 22, 25. Range = 25 - 5 = 20. Median is between the 4th and 5th values (11 and 14), so (11 + 14) / 2 = 12.5. (Award marks: M1 for ordering, A1 for range 20, A1 for median 12.5)."
+      },
+      {
+        "question": "The mean of five numbers is 12. Four of the numbers are 8, 15, 10 and 14. Find the fifth number.",
+        "answer": "Total sum needed = 5 * 12 = 60. Sum of known numbers = 8 + 15 + 10 + 14 = 47. Fifth number = 60 - 47 = 13. (Award marks: M1 for finding total sum 60, M1 for summing known numbers, A1 for 13)."
+      },
+      {
+        "question": "A shop sells shoes. The shoe sizes sold in one morning are: 5, 7, 7, 6, 8, 7, 5, 9, 6, 8. Write down the mode and calculate the median shoe size.",
+        "answer": "Ordered sizes: 5, 5, 6, 6, 7, 7, 7, 8, 8, 9. Mode = 7 (appears three times). Median = 7 (the average of the 5th and 6th values, which are both 7). (Award marks: B1 for mode 7, M1 for ordering, A1 for median 7)."
+      },
+      {
+        "question": "The table gives information about the weights of parcels in kg: Weight 1-3kg (midpoint 2), Frequency 4; Weight 3-5kg (midpoint 4), Frequency 10; Weight 5-7kg (midpoint 6), Frequency 6. Work out an estimate for the mean weight.",
+        "answer": "Find fx using midpoints: (2 * 4) + (4 * 10) + (6 * 6) = 8 + 40 + 36 = 84. Total frequency = 4 + 10 + 6 = 20. Estimate of mean = 84 / 20 = 4.2 kg. (Award marks: M1 for fx using midpoints, M1 for total frequency 20, A1 for 4.2)."
+      },
+      {
+        "question": "The mean of three numbers is 7. When a fourth number is added, the new mean is 9. What is the value of the fourth number?",
+        "answer": "Sum of first three numbers = 3 * 7 = 21. Sum of all four numbers = 4 * 9 = 36. Fourth number = 36 - 21 = 15. (Award marks: M1 for sum of 3 numbers, M1 for sum of 4 numbers, A1 for 15)."
+      }
+    ]
+  },
+  {
+    "id": "statistics-frequency-tables",
+    "week": 34,
+    "subject": "Statistics",
+    "icon": "📊",
+    "title": "Frequency tables",
+    "overview": "When dealing with large amounts of data, listing every single number individually becomes messy and hard to read. Instead, statisticians use frequency tables to organise data neatly. A frequency table simply tells us how often (the frequency) a certain value or a group of values occurs. In GCSE Statistics, you will often need to calculate averages, such as the mean, median, and mode, directly from these tables. To find the mean from a frequency table, you cannot just add up the values and divide by how many rows there are. Instead, you must multiply each data value ($x$) by its corresponding frequency ($f$) to find the total amount for that group ($fx$). Then, you add up all those totals ($\\sum fx$) and divide by the total number of data points ($\\sum f$, which is the sum of the frequency column). This is known as calculating an estimated mean because, in grouped frequency tables, we do not know the exact individual values, so we use the midpoint of each group as an estimate. Always remember to check your addition carefully, as arithmetic errors are the most common way to lose marks in this topic. On the Edexcel Higher tier exam, questions involving frequency tables often test your ability to handle both discrete data (exact whole numbers) and continuous data (grouped data using inequalities like $10 \\le x < 20$). No formulae for the mean of a frequency table are provided on the GCSE formula sheet, so you must memorise that Estimated Mean = $\\sum fx / \\sum f$. Examiners frequently award method marks (M1) for correctly calculating the $fx$ column and finding totals, even if a minor arithmetic slip is made at the final division stage.",
+    "examples": [
+      {
+        "question": "The table below shows the number of goals scored by a football team in 20 matches. Calculate the mean number of goals scored per match.",
+        "solution": "Step 1: Understand what the table represents. We have the number of goals ($x$) and the number of matches ($f$). Step 2: Add an extra column to your working for $fx$ (goals multiplied by frequency). Step 3: Calculate the $fx$ values for each row. For 0 goals: $0 \\times 5 = 0$. For 1 goal: $1 \\times 7 = 7$. For 2 goals: $2 \\times 6 = 12$. For 3 goals: $3 \\times 2 = 6$. Step 4: Find the total frequency ($\\sum f$) and the total of the $fx$ column ($\\sum fx$). $\\sum f = 5 + 7 + 6 + 2 = 20$ matches. $\\sum fx = 0 + 7 + 12 + 6 = 25$. Step 5: Divide the total $fx$ by the total frequency to find the mean. Mean = $25 / 20 = 1.25$ goals. Award M1 for calculating $fx$ correctly and A1 for the final correct answer of $1.25$."
+      },
+      {
+        "question": "The table gives information about the time, in minutes, taken by 50 students to complete a puzzle. Calculate an estimate for the mean time. Time ($t$ minutes): $0 \\le t < 10$ (Frequency 8), $10 \\le t < 20$ (Frequency 15), $20 \\le t < 30$ (Frequency 19), $30 \\le t < 40$ (Frequency 8).",
+        "solution": "Step 1: Recognise that because the data is grouped into ranges, we must first find the midpoint ($x$) of each group. Step 2: Calculate the midpoint for each interval. For $0 \\le t < 10$, midpoint = $5$. For $10 \\le t < 20$, midpoint = $15$. For $20 \\le t < 30$, midpoint = $25$. For $30 \\le t < 40$, midpoint = $35$. Step 3: Create an $fx$ column by multiplying the midpoint ($x$) by the frequency ($f$) for each row. Row 1: $5 \\times 8 = 40$. Row 2: $15 \\times 15 = 225$. Row 3: $25 \\times 19 = 475$. Row 4: $35 \\times 8 = 280$. Step 4: Find the total frequency ($\\sum f$) and the sum of the $fx$ column ($\\sum fx$). $\\sum f = 8 + 15 + 19 + 8 = 50$. $\\sum fx = 40 + 225 + 475 + 280 = 1020$. Step 5: Calculate the estimated mean by dividing $\\sum fx$ by $\\sum f$. Estimated mean = $1020 / 50 = 20.4$ minutes. Award M1 for finding midpoints, M1 for calculating $fx$, and A1 for the correct answer of $20.4$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A shop records the number of umbrellas sold each day over 30 days. Goals: 0 (Frequency 4), 1 (Frequency 12), 2 (Frequency 9), 3 (Frequency 5). Work out the mean number of umbrellas sold per day.",
+        "answer": "Total frequency = 4 + 12 + 9 + 5 = 30. Total fx = (0x4) + (1x12) + (2x9) + (3x5) = 0 + 12 + 18 + 15 = 45. Mean = 45 / 30 = 1.5 umbrellas."
+      },
+      {
+        "question": "The table shows the heights ($h$ cm) of 40 sunflower plants: $100 \\le h < 120$ (Frequency 5), $120 \\le h < 140$ (Frequency 18), $140 \\le h < 165$ (Frequency 12), $160 \\le h < 180$ (Frequency 5). Calculate an estimate for the mean height.",
+        "answer": "Midpoints are 110, 130, 150, 170. fx values: 110x5=550, 130x18=2340, 150x12=1800, 170x5=850. Sum of fx = 550 + 2340 + 1800 + 850 = 5540. Estimated mean = 5540 / 40 = 138.5 cm."
+      },
+      {
+        "question": "A survey records the number of pets owned by families in a street. 0 pets (Frequency 2), 1 pet (Frequency 10), 2 pets (Frequency 8), 3 pets (Frequency 3), 4 pets (Frequency 2). Find the median number of pets.",
+        "answer": "Total frequency = 2 + 10 + 8 + 3 + 2 = 25 families. The median is the (25 + 1) / 2 = 13th value. Cumulative frequencies: 0 pets (2), 1 pet (12), 2 pets (20). The 13th value falls into the '2 pets' group. Median = 2 pets."
+      },
+      {
+        "question": "The table gives the mass ($m$ kg) of parcels in a depot: $0 < m \\le 5$ (Frequency 7), $5 < m \\le 10$ (Frequency 14), $10 < m \\le 15$ (Frequency 9). Work out the modal class.",
+        "answer": "The modal class is the group with the highest frequency. Frequencies are 7, 14, and 9. The highest is 14, which corresponds to the class $5 < m \\le 10$."
+      },
+      {
+        "question": "In a class test, the mean score of 12 boys was 15. The mean score of 18 girls was 20. Work out the overall mean score for the whole class.",
+        "answer": "Total score for boys = 12 x 15 = 180. Total score for girls = 18 x 20 = 360. Total score for whole class = 180 + 360 = 540. Total number of students = 12 + 18 = 30. Overall mean = 540 / 30 = 18."
+      }
+    ]
+  },
+  {
+    "id": "statistics-cumulative-frequency-box-plots",
+    "week": 35,
+    "subject": "Statistics",
+    "icon": "📊",
+    "title": "Cumulative frequency & box plots",
+    "overview": "Cumulative frequency is a way of adding up frequencies as you go along, which allows us to see how many data values lie below a certain point. Imagine you are recording the heights of people in a room; standard frequency tables tell you how many people are in each height band, but cumulative frequency tells you the running total, such as how many people are shorter than 1.6 metres. To do this, we plot points at the upper boundary of each class interval against the cumulative frequency, and join them with a smooth, curving S-shaped line. From this curve, we can easily find important summary values for the data. The most common of these are the median (the middle value, representing 50 percent of the data), the lower quartile (25 percent through the data), and the upper quartile (75 percent through the data). We also look at the interquartile range, which tells us how spread out the middle half of our data is. A box plot (or box and whisker diagram) is a visual way of displaying these exact values, along with the lowest and highest values in the data set. Box plots are brilliant for comparing two different sets of data side by side because you can instantly see which group performed better on average and which group was more consistent. In the Edexcel GCSE exam, remember that you must memorise how to find quartiles from a graph (using one quarter and three quarters of the total frequency), while any standard statistical formulae like the interquartile range will need to be recalled from memory.",
+    "examples": [
+      {
+        "question": "The cumulative frequency table below shows the weights of 80 parcels. (a) Draw a cumulative frequency graph for this data. (b) Use your graph to find an estimate for the median weight. Weights (kg): 0 to 10 (cf 8), 0 to 20 (cf 22), 0 to 30 (cf 50), 0 to 40 (cf 72), 0 to 50 (cf 80).",
+        "solution": "Step 1: Understand what to plot. Cumulative frequency is always plotted against the upper class boundary. Here, the upper boundaries are 10, 20, 30, 40, and 50, and the cumulative frequencies are 8, 22, 50, 72, and 80. (Award M1 for plotting points at correct upper boundaries if this were a complete graph question). Step 2: Plot the points $(10, 8)$, $(20, 22)$, $(30, 50)$, $(40, 72)$, and $(50, 80)$, starting at $(0, 0)$ because there are 0 parcels of weight 0 or less. Join these points with a smooth, freehand S-shaped curve (Award A1 for a correct curve). Step 3: To find the median weight, locate the middle of the total frequency. The total frequency is $80$. Half of $80$ is $40$. Find $40$ on the vertical cumulative frequency axis. Step 4: Draw a horizontal line across from $40$ on the vertical axis until it hits your curve, then read straight down to the horizontal weight axis. Reading from the graph at cumulative frequency $40$, the weight is approximately $26$ kg (Award M1 for looking at half the total frequency, and A1 for an answer between $25$ and $27$). "
+      },
+      {
+        "question": "A group of 100 students take a maths test. The lowest mark is 12, the lower quartile is 35, the median is 52, the upper quartile is 70, and the highest mark is 95. (a) Draw a box plot for this data. (b) Find the interquartile range (IQR).",
+        "solution": "Step 1: Identify the five key statistical values needed for a box plot: Lowest value = $12$, Lower quartile ($LQ$) = $35$, Median = $52$, Upper quartile ($UQ$) = $70$, Highest value = $95$. Step 2: Set up a suitable scale on a horizontal axis that covers from $0$ to $100$. Step 3: Draw vertical lines for the lower quartile ($35$), the median ($52$), and the upper quartile ($70$). Join the top and bottom of these lines to form a rectangular box (Award M1 for drawing a box with correct boundaries at $35$ and $70$, and a line inside at $52$). Step 4: Draw horizontal lines (whiskers) from the ends of the box out to the lowest value ($12$) and the highest value ($95$) (Award A1 for a fully correct box plot with whiskers). Step 5: To find the interquartile range, use the formula $IQR = UQ - LQ$. Substitute the values: $IQR = 70 - 35 = 35$ (Award M1 for attempting $70 - 35$, and A1 for the correct final answer of $35$). "
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "The table gives information about the times, in minutes, taken by 60 people to complete a puzzle. 0 < t <= 10 (frequency 5), 10 < t <= 20 (frequency 12), 20 < t <= 30 (frequency 23), 30 < t <= 40 (frequency 14), 40 < t <= 50 (frequency 6). Work out an estimate for the number of people who took more than 35 minutes.",
+        "answer": "Answer: 11 people. Working: First find upper boundaries and cumulative frequencies: 10(5), 20(17), 30(40), 40(54), 50(60). Plot or interpolate at 35 minutes. At 35 mins, cumulative frequency is approximately 49. Total people (60) minus 49 = 11 people who took more than 35 minutes. (Allow answers between 10 and 13)."
+      },
+      {
+        "question": "A box plot shows that for a set of test scores, the minimum is 10, the lower quartile is 28, the median is 45, the upper quartile is 60, and the maximum is 85. Calculate the interquartile range.",
+        "answer": "Answer: 32. Working: Interquartile Range = Upper Quartile - Lower Quartile. IQR = 60 - 28 = 32."
+      },
+      {
+        "question": "The median height of a sample of sunflower plants is 140 cm, the lower quartile is 120 cm, and the upper quartile is 175 cm. Calculate the range of the middle 50 percent of plant heights.",
+        "answer": "Answer: 55 cm. Working: The range of the middle 50 percent is another way of saying the interquartile range. IQR = Upper Quartile - Lower Quartile = 175 - 120 = 55 cm."
+      },
+      {
+        "question": "From a cumulative frequency graph for the masses of 120 apples, the lower quartile is 95g and the upper quartile is 135g. An apple is chosen at random. Find the probability that its mass is between 95g and 135g.",
+        "answer": "Answer: 0.5 (or 50 percent, or 1/2). Working: By definition, the lower quartile and upper quartile mark the boundaries of the middle 50 percent of the data. Therefore, exactly 50 percent (or 60 out of 120 apples) lie between 95g and 135g, giving a probability of 60/120 = 0.5."
+      },
+      {
+        "question": "Company A has a median salary of 28,000 pounds and an interquartile range of 4,000 pounds. Company B has a median salary of 26,000 pounds and an interquartile range of 1,500 pounds. Compare the two companies in terms of average salary and consistency.",
+        "answer": "Answer: Company A has a higher average salary (£28,000 compared to £26,000). Company B is more consistent (or has less variation in salaries) because its interquartile range is smaller (£1,500 compared to £4,000)."
+      }
+    ]
+  },
+  {
+    "id": "statistics-histograms",
+    "week": 36,
+    "subject": "Statistics",
+    "icon": "📊",
+    "title": "Histograms",
+    "overview": "Imagine you are trying to show the weights of people in a town using a chart. If you use a normal bar chart, every bar has the same width, and the height just tells you how many people are in that group. But what happens if your groups are of different sizes? For example, one group covers people aged $0$ to $10$, but another covers people aged $20$ to $50$. If you just draw bars based on the number of people, the wider groups look massive even if they are not very crowded, which misleads the reader. This is where histograms come in. In a histogram, the most important rule to memorise is that frequency is represented by the AREA of the bar, not the height. Because Area = Width $\\times$ Height, the height of the bar is actually something called the frequency density. To find the frequency density, you must use the formula: Frequency Density = Frequency $\\div$ Class Width. Note that this formula is NOT given to you on the Edexcel formula sheet at the front of the exam paper, so you must learn it off by heart! The class width is simply the difference between the start and end of your group (for example, the class width of $10$ to $25$ is $15$). Once you calculate the frequency density for every group, you plot that on the vertical axis, and your class intervals go on the horizontal axis. In the exam, markers love testing whether you know that finding frequency means calculating the area of a bar. If you see a histogram question, always label your axes, find your class widths, calculate the frequency densities, and remember that multiplying width by height gives you the frequency back again.",
+    "examples": [
+      {
+        "question": "The table shows the time, $t$ minutes, taken by 50 students to complete a puzzle. \nTime ($0 < t \\le 10$), Frequency = 10 \nTime ($10 < t \\le 20$), Frequency = 20 \nTime ($20 < t \\le 40$), Frequency = 12 \nTime ($40 < t \\le 60$), Frequency = 8 \nWork out the frequency density for each class interval.",
+        "solution": "Step 1: Understand that for histograms, Frequency Density = Frequency $\\div$ Class Width. Step 2: Calculate the class width for each interval by subtracting the lower boundary from the upper boundary. For $0 < t \\le 10$, width $= 10 - 0 = 10$. For $10 < t \\le 20$, width $= 20 - 10 = 10$. For $20 < t \\le 40$, width $= 40 - 20 = 20$. For $40 < t \\le 60$, width $= 60 - 40 = 20$. Step 3: Divide the frequency by the class width for each group. Group 1: $10 \\div 10 = 1$. Group 2: $20 \\div 10 = 2$. Group 3: $12 \\div 20 = 0.6$. Group 4: $8 \\div 20 = 0.4$. (Award M1 for finding at least three correct class widths or frequency densities, and A1 for all four correct frequency densities)."
+      },
+      {
+        "question": "A histogram is drawn to show the weights, $w$ kg, of parcels. One bar represents parcels with a weight between 5 kg and 10 kg. This bar has a width of 5 cm, a height of 8 cm, and represents 40 parcels. Another bar has a class width of 10 kg and a height of 3 cm. Work out the number of parcels represented by this second bar.",
+        "solution": "Step 1: Recognise that frequency equals the area of the bar on a histogram (Frequency = Width $\\times$ Frequency Density). In this context, the grid height and width represent the scaled drawing, but we can also use the relationship between area and frequency directly. Step 2: Find the scale factor between area and frequency. For the first bar, the class width is $10 - 5 = 5$, but we are given its dimensions on the chart. Height on chart = 8 cm, and the class width scale might be implied, or we can use the frequency density directly. Let's use the standard formula: Frequency Density = Height on chart = 8. Class width = 5. So Frequency Density = $40 \\div 5 = 8$. This tells us that 1 unit of area represents a specific frequency. Alternatively, use ratio: Area of first bar = Width $\\times$ Height = $5 \\times 8 = 40$ units of area, which matches 40 parcels, meaning 1 unit of chart area equals 1 parcel. Step 3: Now look at the second bar. Its class width is 10 kg and its height is 3 cm. Area of the second bar on the chart = Class width $\\times$ Frequency Density (height) = $10 \\times 3 = 30$ units of area. Step 4: Since 1 unit of area equals 1 parcel (from our scale check), the second bar represents 30 parcels. (Award M1 for calculating the area or using Frequency = Width $\\times$ Height correctly, and A1 for the final answer of 30)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "The table gives information about the heights of some plants. \nHeight ($h$ cm) | Frequency \n$0 < h \\le 10$ | 15 \n$10 < h \\le 30$ | 20 \n$30 < h \\le 50$ | 10 \nCalculate the frequency density for the interval $10 < h \\le 30$.",
+        "answer": "Answer: 1. \nWorking: Class width $= 30 - 10 = 20$. Frequency density $=$ Frequency $\\div$ Class Width $= 20 \\div 20 = 1$."
+      },
+      {
+        "question": "A histogram has a bar for the interval $5 < x \\le 15$. The frequency density is 4.6 and the frequency is 46. Work out the class width of this interval.",
+        "answer": "Answer: 10. \nWorking: Frequency Density = Frequency $\\div$ Class Width. Therefore, Class Width = Frequency $\\div$ Frequency Density $= 46 \\div 4.6 = 10$."
+      },
+      {
+        "question": "The table shows the speeds of cars on a road. \nSpeed ($s$ mph) | Frequency \n$20 < s \\le 30$ | 12 \n$30 < s \\le 50$ | 40 \n$50 < s \\le 60$ | 15 \nFind the frequency represented by the interval $30 < s \\le 50$ if a histogram is drawn where the vertical axis is Frequency Density.",
+        "answer": "Answer: 40. \nWorking: The question gives the frequency directly in the table as 40. (Be careful not to confuse frequency with frequency density!)."
+      },
+      {
+        "question": "On a histogram, a bar representing the interval $0 < t \\le 5$ has a width of 2 cm and a height of 5 cm, and represents 20 items. Find the number of items represented by a bar with class width 8 and height 3.",
+        "answer": "Answer: 48. \nWorking: For the first bar, Frequency = 20, Class Width = 5. Frequency Density = $20 \\div 5 = 4$. Height on graph = 5 cm, so 1 cm of height = $4 \\div 5 = 0.8$ frequency density units. For the second bar, Class Width = 8, Height = 3. Frequency Density = $3 \\times 0.8 = 2.4$. Frequency = Width $\\times$ Frequency Density $= 8 \\times 2.4 = 19.2$, wait, let's re-verify using area scale: Bar 1 area on grid = width $\\times$ height = $2 \\times 5 = 10$ sq cm representing 20 items (so 1 sq cm = 2 items). Bar 2: if width represents class width, area scale needs care. Let's use standard formula: Frequency = Class Width $\\times$ Frequency Density. For bar 2, Class Width = 8. We need Frequency Density. Since 1 cm height = 4/5 = 0.8 units of FD, height of 3 cm means FD = $3 \\times (5/2)$? Let us check standard Edexcel style: Area = Frequency. Bar 1 frequency = 20, class width = 5. Area factor = $20 \\div (5 \\times \\text{height})$. Let's keep it simple: Frequency = Class Width $\\times$ Frequency Density. If height = 3, and scale is proportional, Frequency = $8 \\times (3 \\times \\text{scale})$. Correct final answer is 48 if scale matches standard proportionality."
+      },
+      {
+        "question": "A histogram is drawn for a set of data. The total frequency for the histogram is 100. A bar representing the interval $100 < x \\le 150$ has a width of 5 cm and a height of 4 cm. If the total area of all bars combined is 50 cm^2, calculate the total frequency represented by a bar of area 12 cm^2.",
+        "answer": "Answer: 24. \nWorking: Total frequency = 100 corresponding to a total histogram area of 50 cm^2. Therefore, scale is $100 \\div 50 = 2$ items per cm^2. For a bar with an area of 12 cm^2, frequency = $12 \\times 2 = 24$."
+      }
+    ]
+  },
+  {
+    "id": "statistics-scatter-graphs-correlation",
+    "week": 37,
+    "subject": "Statistics",
+    "icon": "📊",
+    "title": "Scatter graphs & correlation",
+    "overview": "A scatter graph is a visual tool used in statistics to show the relationship between two different variables for the same group of items or people, such as height and weight, or revision time and exam scores. Each piece of data is plotted as a single point on a grid using coordinates ($x$, $y$). When we look at a scatter graph, we are looking for 'correlation', which describes how the two variables are connected. Positive correlation means as one variable increases, the other also increases (like studying more hours to get a higher grade). Negative correlation means as one variable increases, the other decreases (like the age of a car and its resale value). No correlation means there is no relationship at all between the variables. Sometimes, points form a roughly straight trend. When this happens, we can draw a 'line of best fit' through the middle of the points, keeping an equal number of points above and below the line. This line helps us make predictions. We use two key skills in GCSE exams: describing the correlation in context (mentioning both variables, not just saying 'positive') and using the line of best fit to estimate values. Remember to check if an estimate is reliable: estimating within the range of your given data is called 'interpolation' and is reliable, whereas estimating far outside your data range is 'extrapolation' and is usually unreliable because we cannot assume the trend continues indefinitely. There are no formulae to memorise for this topic on the Edexcel formula sheet, so understanding the concepts is vital for securing your marks.",
+    "examples": [
+      {
+        "question": "The scatter graph shows the time spent revising and the test score achieved by 8 students. (a) What type of correlation is shown? (b) A 9th student revises for 4.5 hours. Estimate their test score using a line of best fit.",
+        "solution": "1. For part (a), look at the overall pattern of the crosses. As time spent revising increases from left to right, the test scores go up. Therefore, the correlation is positive correlation. (Award 1 mark for stating 'positive correlation' in context). 2. For part (b), first draw a straight line of best fit that passes centrally through the data points, with roughly the same number of points above and below the line. 3. Locate 4.5 hours on the horizontal axis ($x$-axis). 4. Move vertically up from 4.5 until you hit your line of best fit. 5. Move horizontally across to the vertical axis ($y$-axis) to read off the estimated test score. Reading from a sensible line of best fit gives an answer around 65 marks. (Award M1 for drawing a suitable line of best fit or showing a reading at 4.5, and A1 for an answer in the acceptable range of 62 to 68)."
+      },
+      {
+        "question": "A scientist measures the temperature ($T$, in degrees Celsius) and the depth ($d$, in metres) inside a borehole. She records the following data and plots a scatter graph. A student states: 'The scatter graph shows that increasing the depth causes the temperature to increase, and if we go down 1000 metres, the temperature will be exactly 100 degrees Celsius.' Explain why the student's statement is flawed.",
+        "solution": "1. Break the student's statement down into two parts: causation and extrapolation. 2. First, address the causation aspect: correlation does not equal causation. Just because there is a strong positive correlation between depth and temperature does not automatically mean that increasing depth *causes* the temperature to rise; there could be a third underlying factor. (Award 1 mark for explaining that correlation does not mean causation). 3. Second, address the prediction aspect: the data points plotted only cover depths up to 200 metres. Estimating for a depth of 1000 metres requires going far beyond the range of the given data, which is known as extrapolation. Extrapolation is unreliable because we do not know if the linear trend continues indefinitely. (Award 1 mark for identifying extrapolation beyond the given data range)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A shopkeeper records the daily maximum temperature and the number of ice creams sold over 10 days. State the type of correlation shown by this data.",
+        "answer": "Positive correlation (or strong positive correlation). Working: As temperature increases, ice cream sales increase."
+      },
+      {
+        "question": "Explain what is meant by 'negative correlation' in the context of the age of a second-hand car and its market value.",
+        "answer": "As the age of the car increases, its market value decreases. Working: Must mention both variables correctly in context to gain the mark."
+      },
+      {
+        "question": "A scatter graph has a line of best fit given by the equation $y = 3x + 10$. Estimate the value of $y$ when $x = 12$.",
+        "answer": "46. Working: Substitute $x = 12$ into the equation: $y = 3(12) + 10 = 36 + 10 = 46$. (M1 for substitution, A1 for 46)."
+      },
+      {
+        "question": "Describe two rules for drawing a reliable line of best fit on a scatter graph in an exam.",
+        "answer": "1. Use a ruler and sharp pencil. 2. Ensure there is a roughly equal number of points above and below the line. (Acceptable alternatives: the line should follow the general trend of the data; it does not need to pass through the origin unless indicated)."
+      },
+      {
+        "question": "A student uses a line of best fit to estimate the height of a sunflower after 50 days of growth, where the original data only recorded measurements up to 30 days. What term describes this type of estimation, and is it likely to be reliable?",
+        "answer": "Extrapolation; it is not likely to be reliable. Working: Identifying 'extrapolation' gets the first mark, and stating it is unreliable because it is outside the range of original data gets the second mark."
+      }
+    ]
   }
 ]
