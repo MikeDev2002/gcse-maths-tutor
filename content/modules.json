@@ -1,1 +1,482 @@
-[]
+[
+  {
+    "id": "number-fractions-decimals-percentages",
+    "week": 1,
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Fractions, decimals & percentages",
+    "overview": "Fractions, decimals, and percentages are simply three different ways of showing a part of a whole quantity. For example, half a pizza can be written as 1/2, 0.5, or 50%. At Higher tier GCSE, students are expected to move effortlessly between these three forms, work with recurring decimals algebraically, and solve reverse percentage problems. Converting recurring decimals (like 0.4545...) to fractions allows us to perform exact calculations without rounding errors. Reverse percentages involve finding an original amount before a price increase or decrease occurred. In the Edexcel exam, examiners award method marks (M1) for setting up the correct algebraic steps or identifying multiplier values, while accuracy marks (A1) are awarded for exact, fully simplified answers. There are no formula sheet aids for fractions, decimals, or percentages on the Higher tier paper, so these key methods must be memorised and practiced until they become second nature.",
+    "examples": [
+      {
+        "question": "Prove algebraically that the recurring decimal $0.\\dot{2}\\dot{7}$ can be written as $\\frac{3}{11}$.",
+        "solution": "Step 1: Let $x = 0.272727...$ Step 2: Because there are 2 recurring digits under the dots, multiply $x$ by 100 to get $100x = 27.272727...$ Step 3: Subtract the first equation from the second equation: $100x - x = 27.272727... - 0.272727...$, which simplifies to $99x = 27$ (Method mark M1). Step 4: Divide both sides by 99 to express $x$ as a fraction: $x = \\frac{27}{99}$. Step 5: Simplify the fraction by dividing top and bottom by 9: $x = \\frac{3}{11}$ (Accuracy mark A1)."
+      },
+      {
+        "question": "In a sale, the price of a coat is reduced by $15\\%$. The sale price is £$144.50$. Calculate the original price of the coat.",
+        "solution": "Step 1: Calculate the percentage remaining after the discount: $100\\% - 15\\% = 85\\%$. Step 2: Convert the remaining percentage to a decimal multiplier: $85\\% = 0.85$. Step 3: Write down the equation representing the problem: $\\text{Original Price} \\times 0.85 = 144.50$ (Method mark M1). Step 4: Rearrange to find the original price by dividing by $0.85$: $\\text{Original Price} = 144.50 \\div 0.85$ (Method mark M1). Step 5: Calculate the final answer: $\\text{Original Price} = £170.00$ (Accuracy mark A1)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Prove algebraically that the recurring decimal $0.4\\dot{8}$ can be written as $\\frac{22}{45}$.",
+        "answer": "Let $x = 0.4888...$, so $10x = 4.888...$ and $100x = 48.888...$. Subtracting $10x$ from $100x$ gives $90x = 44$. Therefore, $x = \\frac{44}{90}$, which simplifies to $\\frac{22}{45}$."
+      },
+      {
+        "question": "Express $0.375$ as a fraction in its simplest form.",
+        "answer": "$0.375 = \\frac{375}{1000}$. Dividing top and bottom by 125 gives $\\frac{3}{8}$."
+      },
+      {
+        "question": "A laptop costs £$600$ excluding VAT. VAT is charged at $20\\%$. Work out the total cost including VAT.",
+        "answer": "Multiplier $= 1 + 0.20 = 1.20$. Total cost $= 600 \\times 1.20 = £720$."
+      },
+      {
+        "question": "A car depreciates in value by $12\\%$ each year. It was bought for £$15,000$. Work out its value after 2 years.",
+        "answer": "Multiplier $= 1 - 0.12 = 0.88$. Value after 2 years $= 15000 \\times 0.88^2 = 15000 \\times 0.7744 = £11,616$."
+      },
+      {
+        "question": "After a salary increase of $8\\%$, Maya earns £$34,560$ per year. Work out her salary before the increase.",
+        "answer": "$108\\% = 34560$, so decimal multiplier $= 1.08$. Original salary $= 34560 \\div 1.08 = £32,000$."
+      }
+    ]
+  },
+  {
+    "id": "number-standard-form",
+    "week": 2,
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Standard form",
+    "overview": "Standard form (also known as scientific notation) is a standardized way of writing very large or very small numbers using powers of 10. Instead of writing out cumbersome numbers like $45,000,000$ or $0.0000032$, we write them in the format $A \\times 10^n$.\n\nThere are two essential rules to remember:\n1. The number $A$ (the front number) must always be at least $1$ but strictly less than $10$ (written as $1 \\le A < 10$).\n2. The power $n$ must be an integer (a positive or negative whole number). A positive power indicates a large number (10 or greater), whereas a negative power indicates a small decimal between 0 and 1.\n\nIn Edexcel GCSE Maths (Higher tier, 1MA1), students must convert fluently between standard form and ordinary numbers, as well as perform calculations (addition, subtraction, multiplication, division) both with and without a calculator. In non-calculator papers, examiners award method marks (M1) for correctly manipulating the numbers or indices separately, and accuracy marks (A1) for putting the final answer into proper standard form. No standard form formulas are provided on the exam formula sheet, so understanding these index rules is crucial.",
+    "examples": [
+      {
+        "question": "Work out $(4 \\times 10^5) \\times (8 \\times 10^3)$. Give your answer in standard form.",
+        "solution": "Step 1: Rearrange the expression to group the numbers and the powers of $10$ together:\n$(4 \\times 8) \\times (10^5 \\times 10^3)$\n\nStep 2: Multiply the ordinary numbers:\n$4 \\times 8 = 32$\n\nStep 3: Multiply the powers of $10$ using the index law $10^a \\times 10^b = 10^{a+b}$:\n$10^5 \\times 10^3 = 10^{5+3} = 10^8$ (This step earns an M1 method mark).\n\nStep 4: Combine the two results:\n$32 \\times 10^8$\n\nStep 5: Adjust to valid standard form. The front number $32$ is not between $1$ and $10$. Rewrite $32$ as $3.2 \\times 10^1$.\n\nStep 6: Simplify the final power of $10$:\n$3.2 \\times 10^1 \\times 10^8 = 3.2 \\times 10^9$ (This earns the A1 accuracy mark)."
+      },
+      {
+        "question": "The distance from Earth to the Sun is $1.5 \\times 10^8$ km. The speed of light is $3 \\times 10^5$ km/s. Calculate the time taken, in seconds, for light to travel from the Sun to Earth. Give your answer in standard form.",
+        "solution": "Step 1: Use the speed-distance-time formula $\\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}}$:\n$\\text{Time} = \\frac{1.5 \\times 10^8}{3 \\times 10^5}$\n\nStep 2: Separate the calculation into numbers and powers of $10$:\n$\\left(\\frac{1.5}{3}\\right) \\times \\left(\\frac{10^8}{10^5}\\right)$\n\nStep 3: Divide the ordinary numbers:\n$\\frac{1.5}{3} = 0.5$ (This earns an M1 method mark for correct division strategy).\n\nStep 4: Divide the powers of $10$ using the index law $10^a \\div 10^b = 10^{a-b}$:\n$10^8 \\div 10^5 = 10^{8-5} = 10^3$\n\nStep 5: Combine the components:\n$0.5 \\times 10^3$\n\nStep 6: Convert to valid standard form. The front number $0.5$ is less than $1$, so rewrite $0.5$ as $5 \\times 10^{-1}$.\n\nStep 7: Simplify the powers of $10$:\n$5 \\times 10^{-1} \\times 10^3 = 5 \\times 10^{-1+3} = 5 \\times 10^2$ seconds (This earns the A1 accuracy mark)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Write $0.000456$ in standard form.",
+        "answer": "$4.56 \\times 10^{-4}$. Working: Move the decimal point 4 places to the right to get $4.56$ (which is between $1$ and $10$). Because $0.000456$ is a small number, the power of $10$ is negative."
+      },
+      {
+        "question": "Work out $(3 \\times 10^{-4}) + (5.2 \\times 10^{-3})$. Give your answer in standard form.",
+        "answer": "$5.5 \\times 10^{-3}$. Working: Change to matching powers of $10$: $3 \\times 10^{-4} = 0.3 \\times 10^{-3}$. Add the front numbers: $(0.3 + 5.2) \\times 10^{-3} = 5.5 \\times 10^{-3}$."
+      },
+      {
+        "question": "Work out $(6 \\times 10^7) \\div (1.2 \\times 10^{-3})$. Give your answer in standard form.",
+        "answer": "$5 \\times 10^{10}$. Working: Divide front numbers: $6 \\div 1.2 = 5$. Subtract powers: $7 - (-3) = 10$. Combine to get $5 \\times 10^{10}$."
+      },
+      {
+        "question": "A container has a mass of $2.4 \\times 10^4$ grams. The mass of a microscopic particle inside is $8 \\times 10^{-6}$ grams. How many times heavier is the container than the particle? Give your answer in standard form.",
+        "answer": "$3 \\times 10^9$. Working: Divide mass of container by particle mass: $(2.4 \\times 10^4) \\div (8 \\times 10^{-6}) = (2.4 \\div 8) \\times 10^{4 - (-6)} = 0.3 \\times 10^{10}$. Adjust to standard form: $0.3 \\times 10^{10} = 3 \\times 10^9$."
+      },
+      {
+        "question": "Given that $p = 4 \\times 10^6$ and $q = 5 \\times 10^5$, evaluate $\\frac{p^2}{q}$. Give your answer in standard form.",
+        "answer": "$3.2 \\times 10^7$. Working: First find $p^2 = (4 \\times 10^6)^2 = 16 \\times 10^{12}$. Then divide by $q$: $\\frac{16 \\times 10^{12}}{5 \\times 10^5} = (16 \\div 5) \\times 10^{12-5} = 3.2 \\times 10^7$."
+      }
+    ]
+  },
+  {
+    "id": "number-surds",
+    "week": 3,
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Surds",
+    "overview": "A surd is an exact square root of a number that cannot be written as a whole number or a simple fraction. For instance, $\\sqrt{4}$ is just $2$, so it is not a surd. However, $\\sqrt{2}$ equals $1.41421356...$, an infinite non-repeating decimal. Keeping a number written as $\\sqrt{2}$ keeps the value exact, which is crucial in higher-level mathematics.\n\nIn Edexcel GCSE Higher Tier exams, surds test a student's ability to simplify expressions, expand brackets, and 'rationalise' denominators (removing surds from the bottom of a fraction). Key rules to memorise—as these are not provided on the exam formula sheet—include $\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab}$ and $\\sqrt{a} \\div \\sqrt{b} = \\sqrt{a \\div b}$.\n\nWhen working through exam questions, marks are often split into Method marks (M1) for demonstrating correct steps—such as identifying a square factor like $4, 9, 16,$ or $25$—and Accuracy marks (A1) for giving the final fully simplified answer. Encourage your child to look for the largest square number that fits into the number under the square root.",
+    "examples": [
+      {
+        "question": "Simplify fully $\\sqrt{75} + \\sqrt{12}$.",
+        "solution": "1. Identify the largest square factor for each number: $75 = 25 \\times 3$ and $12 = 4 \\times 3$. (M1)\n2. Rewrite the first surd: $\\sqrt{75} = \\sqrt{25 \\times 3} = \\sqrt{25} \\times \\sqrt{3} = 5\\sqrt{3}$.\n3. Rewrite the second surd: $\\sqrt{12} = \\sqrt{4 \\times 3} = \\sqrt{4} \\times \\sqrt{3} = 2\\sqrt{3}$.\n4. Add the simplified surds together like algebraic terms: $5\\sqrt{3} + 2\\sqrt{3} = 7\\sqrt{3}$. (A1)"
+      },
+      {
+        "question": "Rationalise the denominator of $\\frac{14}{3 + \\sqrt{2}}$ and simplify fully.",
+        "solution": "1. Multiply both the top and bottom of the fraction by the expression with the sign changed, $(3 - \\sqrt{2})$. (M1)\n2. Multiply the numerator: $14 \\times (3 - \\sqrt{2}) = 42 - 14\\sqrt{2}$.\n3. Multiply the denominator using double brackets: $(3 + \\sqrt{2})(3 - \\sqrt{2}) = 9 - 3\\sqrt{2} + 3\\sqrt{2} - 2 = 7$. (M1)\n4. Write as a single fraction: $\\frac{42 - 14\\sqrt{2}}{7}$.\n5. Divide every term in the numerator by $7$: $6 - 2\\sqrt{2}$. (A1)"
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Simplify fully $\\sqrt{48}$.",
+        "answer": "$4\\sqrt{3}$. Working: $\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$."
+      },
+      {
+        "question": "Expand and simplify $(2 + \\sqrt{3})(5 - \\sqrt{3})$.",
+        "answer": "$7 + 3\\sqrt{3}$. Working: Expand brackets: $2(5) - 2\\sqrt{3} + 5\\sqrt{3} - (\\sqrt{3} \\times \\sqrt{3}) = 10 + 3\\sqrt{3} - 3 = 7 + 3\\sqrt{3}$."
+      },
+      {
+        "question": "Rationalise the denominator of $\\frac{10}{\\sqrt{5}}$ and give your answer in its simplest form.",
+        "answer": "$2\\sqrt{5}$. Working: Multiply top and bottom by $\\sqrt{5}$: $\\frac{10 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$."
+      },
+      {
+        "question": "Simplify fully $\\sqrt{18} + \\sqrt{50} - \\sqrt{8}$.",
+        "answer": "$6\\sqrt{2}$. Working: $\\sqrt{18} = 3\\sqrt{2}$, $\\sqrt{50} = 5\\sqrt{2}$, $\\sqrt{8} = 2\\sqrt{2}$. Combined: $3\\sqrt{2} + 5\\sqrt{2} - 2\\sqrt{2} = 6\\sqrt{2}$."
+      },
+      {
+        "question": "Rationalise the denominator of $\\frac{6}{4 - \\sqrt{10}}$. Show your working and write your answer in the form $a + b\\sqrt{10}$.",
+        "answer": "$4 + \\sqrt{10}$ (where $a=4$ and $b=1$). Working: Multiply top and bottom by $(4 + \\sqrt{10})$. Numerator: $6(4 + \\sqrt{10}) = 24 + 6\\sqrt{10}$. Denominator: $(4 - \\sqrt{10})(4 + \\sqrt{10}) = 16 - 10 = 6$. Fraction: $\\frac{24 + 6\\sqrt{10}}{6} = 4 + \\sqrt{10}$."
+      }
+    ]
+  },
+  {
+    "id": "number-laws-of-indices",
+    "week": 4,
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Laws of indices",
+    "overview": "Indices (or powers) are small numbers written to the top right of a base number or variable, showing how many times it multiplies by itself. In Edexcel GCSE Higher Maths, index laws allow us to simplify complex numbers and algebraic expressions efficiently. None of these laws are provided on the Edexcel formula sheet, so every rule must be memorised. Key rules include: when multiplying terms with the same base, add the indices ($a^m \\times a^n = a^{m+n}$); when dividing, subtract the indices ($a^m \\div a^n = a^{m-n}$); and when raising a power to a power, multiply them ($(a^m)^n = a^{m \\times n}$). Special cases include any non-zero term to the power of zero equaling $1$ ($a^0 = 1$), and negative powers indicating a reciprocal ($a^{-n} = \\frac{1}{a^n}$). Fractional powers represent roots: $a^{\\frac{1}{n}} = \\sqrt[n]{a}$ and $a^{\\frac{m}{n}} = (\\sqrt[n]{a})^m$. In exams, examiners award method marks (M1) for correctly applying an index rule, even if a minor arithmetic error occurs, and accuracy marks (A1) for the correct final value or fully simplified form.",
+    "examples": [
+      {
+        "question": "Simplify fully $\\frac{4x^3 \\times 3x^5}{6x^2}$.",
+        "solution": "Step 1: Multiply the numbers and add the powers in the numerator. $4 \\times 3 = 12$ and $x^3 \\times x^5 = x^{3+5} = x^8$. This gives $12x^8$ on top [M1 for applying $a^m \\times a^n = a^{m+n}$]. Step 2: Divide the numerator by the denominator. Divide the coefficients: $12 \\div 6 = 2$. Step 3: Divide the terms with indices by subtracting powers: $x^8 \\div x^2 = x^{8-2} = x^6$ [M1 for applying $a^m \\div a^n = a^{m-n}$]. Step 4: Combine the results to get $2x^6$ [A1]."
+      },
+      {
+        "question": "Evaluate $27^{-\\frac{2}{3}}$.",
+        "solution": "Step 1: Deal with the negative sign in the index by taking the reciprocal: $27^{-\\frac{2}{3}} = \\frac{1}{27^{\\frac{2}{3}}}$ [M1 for recognizing negative index rule]. Step 2: Evaluate the denominator $27^{\\frac{2}{3}}$ using the fractional index rule. Take the cube root of $27$ first: $\\sqrt[3]{27} = 3$ [M1 for root stage]. Step 3: Square the result from Step 2: $3^2 = 9$. Step 4: Write the final answer as a fraction: $\\frac{1}{9}$ [A1]."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Simplify $y^7 \\times y^{-3} \\div y^2$.",
+        "answer": "$y^2$. Working: First add powers for multiplication: $7 + (-3) = 4$, giving $y^4$. Then subtract powers for division: $4 - 2 = 2$, giving $y^2$ (M1 for adding/subtracting powers, A1 for $y^2$)."
+      },
+      {
+        "question": "Work out the value of $64^{\\frac{1}{2}} \\times 8^0$.",
+        "answer": "$8$. Working: $64^{\\frac{1}{2}} = \\sqrt{64} = 8$ (M1). Any number to power $0$ is $1$, so $8^0 = 1$. Thus, $8 \\times 1 = 8$ (A1)."
+      },
+      {
+        "question": "Simplify fully $(3x^4 y^{-2})^3$.",
+        "answer": "$27x^{12}y^{-6}$ or $\\frac{27x^{12}}{y^6}$. Working: Cube the coefficient $3^3 = 27$ (M1). Multiply each power inside by $3$: $(x^4)^3 = x^{12}$ and $(y^{-2})^3 = y^{-6}$ (M1). Combine to get $27x^{12}y^{-6}$ (A1)."
+      },
+      {
+        "question": "Evaluate $\\left(\\frac{16}{81}\\right)^{-\\frac{3}{4}}$.",
+        "answer": "$\\frac{27}{8}$ (or $3\\frac{3}{8}$ or $3.375$). Working: Flip fraction for negative power: $\\left(\\frac{81}{16}\\right)^{\\frac{3}{4}}$ (M1). Take 4th root: $\\frac{\\sqrt[4]{81}}{\\sqrt[4]{16}} = \\frac{3}{2}$ (M1). Cube the result: $\\left(\\frac{3}{2}\\right)^3 = \\frac{27}{8}$ (A1)."
+      },
+      {
+        "question": "Find the value of $n$ such that $2^n = \\frac{8^4}{4^3}$.",
+        "answer": "$n = 6$. Working: Express bases in powers of $2$: $8^4 = (2^3)^4 = 2^{12}$ (M1) and $4^3 = (2^2)^3 = 2^6$ (M1). Divide powers: $2^{12} \\div 2^6 = 2^{12-6} = 2^6$. Therefore $2^n = 2^6$, so $n = 6$ (A1)."
+      }
+    ]
+  },
+  {
+    "id": "number-upper-lower-bounds",
+    "week": 5,
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Upper & lower bounds",
+    "overview": "When a number is rounded or measured, it is usually not exact. Upper and lower bounds tell us the maximum and minimum possible values that the original number could have been before rounding. For example, if a length is given as $8\\text{ cm}$ correct to the nearest centimetre, the original length could be anything from $7.5\\text{ cm}$ up to (but not quite including) $8.5\\text{ cm}$. We call $7.5\\text{ cm}$ the lower bound and $8.5\\text{ cm}$ the upper bound. In Edexcel GCSE exams, you write this range as an error interval using inequalities: $7.5 \\le \\text{length} < 8.5$.\n\nWhen calculating with bounds, you must think strategically about how to get the maximum or minimum overall result. To make a total as large as possible when adding or multiplying, you combine the upper bounds of all numbers. However, when subtracting or dividing, to get the maximum result you must take the upper bound of the starting number and subtract or divide by the lower bound of the second number (and vice versa for the minimum result). Mastering bounds helps students understand measurement uncertainty and perform accurate real-world calculations.",
+    "examples": [
+      {
+        "question": "A rectangular field has a length $L = 40\\text{ m}$ rounded to the nearest metre, and a width $W = 25\\text{ m}$ rounded to the nearest metre. Calculate the upper bound for the perimeter of the field.",
+        "solution": "1. Find the bounds for length $L$: Since $40\\text{ m}$ is to the nearest metre, the degree of accuracy is $1\\text{ m}$. Half of this unit is $0.5\\text{ m}$.\nLower Bound (LB) of $L = 40 - 0.5 = 39.5\\text{ m}$\nUpper Bound (UB) of $L = 40 + 0.5 = 40.5\\text{ m}$\n\n2. Find the bounds for width $W$:\nLB of $W = 25 - 0.5 = 24.5\\text{ m}$\nUB of $W = 25 + 0.5 = 25.5\\text{ m}$\n\n3. Identify the formula for perimeter: $P = 2L + 2W$.\nTo find the upper bound for $P$, use the upper bounds of both length and width (M1 for using UB values in perimeter formula).\n\n4. Calculate the upper bound of $P$:\n$\\text{Upper Bound of } P = 2(40.5) + 2(25.5) = 81 + 51 = 132\\text{ m}$ (A1 for $132\\text{ m}$)."
+      },
+      {
+        "question": "The force $F$ applied to an object is $68.5\\text{ N}$ correct to 1 decimal place. The area $A$ over which the force acts is $4.2\\text{ m}^2$ correct to 2 significant figures. Pressure is given by $P = \\frac{F}{A}$.\n(a) Calculate the lower bound for $P$. Give your answer to 3 decimal places.\n(b) By considering bounds, write down the value of $P$ to a suitable degree of accuracy.",
+        "solution": "1. Find the bounds for $F$ (rounded to 1 d.p. = $0.1$, half unit = $0.05$):\nLB of $F = 68.45\\text{ N}$, UB of $F = 68.55\\text{ N}$\n\n2. Find the bounds for $A$ (rounded to 2 s.f., so rounded to nearest $0.1$, half unit = $0.05$):\nLB of $A = 4.15\\text{ m}^2$, UB of $A = 4.25\\text{ m}^2$\n\n3. Calculate Part (a): To make $P = \\frac{F}{A}$ as small as possible (lower bound), divide the lower bound of $F$ by the upper bound of $A$ (M1):\n$\\text{LB of } P = \\frac{68.45}{4.25} = 16.105882... \\approx 16.106\\text{ N/m}^2$ (A1).\n\n4. Calculate Part (b): First find the upper bound of $P$ by dividing UB of $F$ by LB of $A$:\n$\\text{UB of } P = \\frac{68.55}{4.15} = 16.518072...$\n\n5. Compare both bounds: LB = $16.1058...$ and UB = $16.5180...$.\nBoth bounds round to $16$ when rounded to 2 significant figures (or to the nearest integer). Therefore, $P = 16\\text{ N/m}^2$ to a suitable degree of accuracy."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A number $y$ is reported as $7.3$ rounded to 1 decimal place. Write down the error interval for $y$.",
+        "answer": "$7.25 \\le y < 7.35$. (Working: Half of $0.1$ is $0.05$. Subtract $0.05$ for the lower bound $7.25$ and add $0.05$ for the upper bound $7.35$. Use $\\le$ for the lower bound and $<$ for the upper bound)."
+      },
+      {
+        "question": "The length of a ribbon is $x = 120\\text{ cm}$ to the nearest $10\\text{ cm}$. A piece of length $y = 45\\text{ cm}$ to the nearest centimetre is cut off. Calculate the minimum possible length of the remaining ribbon.",
+        "answer": "Answer: $69.5\\text{ cm}$. Working: Remaining length $= x - y$. To minimize this, calculate $\\text{LB of } x - \\text{UB of } y$. Bounds for $x$: $115 \\le x < 125$. Bounds for $y$: $44.5 \\le y < 45.5$. Minimum remaining length $= 115 - 45.5 = 69.5\\text{ cm}$."
+      },
+      {
+        "question": "A car travels a distance of $D = 180\\text{ miles}$ correct to 2 significant figures in a time of $T = 3.5\\text{ hours}$ correct to 1 decimal place. Calculate the upper bound for the average speed of the car in miles per hour. Give your answer to 2 decimal places.",
+        "answer": "Answer: $53.62\\text{ mph}$. Working: Speed $= \\frac{\\text{Distance}}{\\text{Time}}$. Upper bound of speed requires $\\frac{\\text{UB of } D}{\\text{LB of } T}$. Bounds for $D$: $175 \\le D < 185$. Bounds for $T$: $3.45 \\le T < 3.55$. Upper Bound of speed $= \\frac{185}{3.45} = 53.62318... \\approx 53.62\\text{ mph}$."
+      },
+      {
+        "question": "A value $m$ is given as $4.8$ truncated to 1 decimal place. Write down the error interval for $m$.",
+        "answer": "$4.8 \\le m < 4.9$. Working: Truncation means any digits after 1 decimal place were simply removed. Thus, $m$ can be anything from $4.8$ up to, but not including, $4.9$."
+      },
+      {
+        "question": "The numbers $a$ and $b$ are given as $a = 4.5$ (to 1 decimal place) and $b = 2.1$ (to 1 decimal place). By calculating bounds, find the value of $x = \\frac{a}{b}$ to a suitable degree of accuracy. Show your working clear to explain your choice.",
+        "answer": "Answer: $x = 2$ (to 1 significant figure). Working: Bounds for $a$: $4.45 \\le a < 4.55$. Bounds for $b$: $2.05 \\le b < 2.15$.\nLower Bound of $x = \\frac{4.45}{2.15} = 2.0697...$\nUpper Bound of $x = \\frac{4.55}{2.05} = 2.2195...$\nSince both the lower bound ($2.0697...$) and upper bound ($2.2195...$) round to $2$ to 1 significant figure, the value to a suitable degree of accuracy is $2$."
+      }
+    ]
+  },
+  {
+    "id": "algebra-expanding-factorising",
+    "week": 6,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Expanding & factorising",
+    "overview": "Expanding and factorising are reverse mathematical processes, much like multiplying and dividing. Expanding means removing brackets by multiplying every term inside by the term outside. For double brackets, such as $(x + 2)(x + 3)$, every term in the first bracket must be multiplied by every term in the second. Factorising is the exact opposite: putting an expression back into brackets by finding highest common factors. At Higher tier Edexcel GCSE, students must master expanding double and triple brackets, factorising single brackets fully, factorising simple quadratics ($x^2 + bx + c$), and harder quadratics where the coefficient of $x^2$ is greater than 1 ($ax^2 + bx + c$). Students also need to recognise special algebraic patterns like the Difference of Two Squares ($x^2 - a^2 = (x - a)(x + a)$). In Edexcel exams, clear working earns key method marks (M1) even if a simple arithmetic error occurs, while the final correct simplified answer secures the accuracy mark (A1). Note that factorisation structures are not provided on the exam formula sheet, so these techniques must be memorised and practiced regularly.",
+    "examples": [
+      {
+        "question": "Expand and simplify $(2x + 3)(x - 4)$.",
+        "solution": "1. Multiply the first terms in each bracket: $2x \\times x = 2x^2$. 2. Multiply the outer terms: $2x \\times (-4) = -8x$. 3. Multiply the inner terms: $3 \\times x = 3x$. 4. Multiply the last terms: $3 \\times (-4) = -12$. (Award M1 for four correct expanded terms, or three correct terms out of four). 5. Combine all four terms: $2x^2 - 8x + 3x - 12$. 6. Simplify by collecting like terms (combine $-8x$ and $3x$): $-8x + 3x = -5x$. 7. Final answer: $2x^2 - 5x - 12$ (Award A1)."
+      },
+      {
+        "question": "Factorise fully $2x^2 + 7x + 3$.",
+        "solution": "1. Identify values for $a$, $b$, and $c$ in $ax^2 + bx + c$: $a = 2$, $b = 7$, $c = 3$. 2. Multiply $a \\times c$: $2 \\times 3 = 6$. 3. Find two numbers that multiply to give $6$ and add to give $7$. These numbers are $6$ and $1$. 4. Split the middle term $7x$ using $6$ and $1$: $2x^2 + 6x + 1x + 3$ (Award M1 for splitting the middle term correctly). 5. Factorise the first pair and second pair separately: $2x(x + 3) + 1(x + 3)$. 6. Extract the common bracket $(x + 3)$: $(2x + 1)(x + 3)$ (Award A1)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "1. Expand and simplify $x(3x - 4) + 2(x + 5)$.",
+        "answer": "Working: Expand first bracket to get $3x^2 - 4x$. Expand second bracket to get $2x + 10$. Combine: $3x^2 - 4x + 2x + 10 = 3x^2 - 2x + 10$. Final answer: $3x^2 - 2x + 10$ (1 mark for correct expansion of either bracket, 1 mark for correct final answer)."
+      },
+      {
+        "question": "2. Factorise fully $12x^2 y - 18xy^2$.",
+        "answer": "Working: Find highest common factor of numbers (12 and 18) which is 6. Find common variables, which are $x$ and $y$. Take $6xy$ outside: $6xy(2x - 3y)$. Final answer: $6xy(2x - 3y)$ (1 mark for $6xy$ outside or partial factorisation, 1 mark for fully correct answer)."
+      },
+      {
+        "question": "3. Factorise $x^2 - 9x + 20$.",
+        "answer": "Working: Find two numbers that multiply to $+20$ and add to $-9$. The numbers are $-4$ and $-5$. Final answer: $(x - 4)(x - 5)$ (2 marks; 1 mark for $(x \n\\pm 4)(x \\pm 5)$ with incorrect signs)."
+      },
+      {
+        "question": "4. Factorise $16x^2 - 25$.",
+        "answer": "Working: Recognise as the Difference of Two Squares ($a^2 - b^2$). $\\sqrt{16x^2} = 4x$ and $\\sqrt{25} = 5$. Final answer: $(4x + 5)(4x - 5)$ (1 mark)."
+      },
+      {
+        "question": "5. Factorise fully $3x^2 + 10x - 8$.",
+        "answer": "Working: $a \\times c = 3 \\times (-8) = -24$. Two numbers multiplying to $-24$ and adding to $10$ are $+12$ and $-2$. Rewrite expression: $3x^2 + 12x - 2x - 8 = 3x(x + 4) - 2(x + 4)$. Final answer: $(3x - 2)(x + 4)$ (1 mark for correct split of middle term, 1 mark for correct final answer)."
+      }
+    ]
+  },
+  {
+    "id": "algebra-solving-equations-inequalities",
+    "week": 7,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Solving equations & inequalities",
+    "overview": "Solving an equation or inequality means finding the unknown value, usually represented by $x$, that makes a mathematical statement true. Think of an equation like a balanced pair of scales: whatever operation you perform on one side (such as adding, subtracting, multiplying, or dividing), you must do to the exact same side to keep it balanced. The goal is to isolate $x$ on one side of the equals sign ($=$). An inequality uses symbols like $<$ (less than), $>$ (greater than), $\\leq$ (less than or equal to), or $\\geq$ (greater than or equal to) instead of an equals sign. You solve inequalities using the exact same steps as linear equations, with one crucial rule to remember: if you multiply or divide both sides by a negative number, you must flip the direction of the inequality sign. In Edexcel GCSE Higher tier exams, examiners look for clear method steps (which earn M1 marks) before awarding accuracy marks (A1) for the final answer. Quadratic equations ($x^2$) often require factorising or using the quadratic formula, which is provided on your exam formula sheet. Mastering these balancing techniques ensures you can confidently tackle linear, quadratic, and inequality problems alike.",
+    "examples": [
+      {
+        "question": "Solve the inequality $3(2x - 5) > 4x + 7$.",
+        "solution": "1. Expand the bracket on the left-hand side: $6x - 15 > 4x + 7$ (M1 mark for expanding correctly). 2. Subtract $4x$ from both sides to gather the $x$ terms on one side: $2x - 15 > 7$. 3. Add $15$ to both sides to isolate the $x$ term: $2x > 22$ (M1 mark for isolating terms). 4. Divide both sides by $2$ to solve for $x$: $x > 11$ (A1 mark for the correct final answer)."
+      },
+      {
+        "question": "Solve the quadratic inequality $x^2 - 3x - 10 \\le 0$.",
+        "solution": "1. Treat the inequality as an equation and factorise to find the critical values. We need two numbers that multiply to $-10$ and add to $-3$. These are $-5$ and $+2$. So, $(x - 5)(x + 2) = 0$ (M1 mark for factorising). 2. Identify the critical values by setting each factor to zero: $x = 5$ and $x = -2$. 3. Sketch the curve $y = x^2 - 3x - 10$. It is a U-shaped parabola crossing the horizontal axis at $x = -2$ and $x = 5$. 4. Identify the region where the graph is on or below the axis (less than or equal to zero). This is the region between $-2$ and $5$ inclusive (M1 mark for identifying the correct region). 5. Write the final compound inequality: $-2 \\le x \\le 5$ (A1 mark)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Solve the equation $5(x - 3) = 2x + 9$.",
+        "answer": "$x = 8$. Working: Expand brackets to get $5x - 15 = 2x + 9$. Subtract $2x$ from both sides: $3x - 15 = 9$. Add $15$ to both sides: $3x = 24$. Divide by $3$: $x = 8$."
+      },
+      {
+        "question": "Solve the inequality $4 - 3x < 13$.",
+        "answer": "$x > -3$. Working: Subtract $4$ from both sides: $-3x < 9$. Divide both sides by $-3$ and flip the inequality sign: $x > -3$."
+      },
+      {
+        "question": "Solve the quadratic equation $2x^2 + 5x - 3 = 0$.",
+        "answer": "$x = 0.5$ or $x = -3$. Working: Factorise the quadratic into $(2x - 1)(x + 3) = 0$. Set each factor to zero: $2x - 1 = 0 \\Rightarrow x = 0.5$, and $x + 3 = 0 \\Rightarrow x = -3$."
+      },
+      {
+        "question": "Solve the simultaneous equations: $3x + 2y = 16$ and $2x - y = 6$.",
+        "answer": "$x = 4, y = 2$. Working: Multiply the second equation by $2$ to get $4x - 2y = 12$. Add this to the first equation: $(3x + 4x) + (2y - 2y) = 16 + 12 \\Rightarrow 7x = 28 \\Rightarrow x = 4$. Substitute $x = 4$ into $2(4) - y = 6 \\Rightarrow 8 - y = 6 \\Rightarrow y = 2$."
+      },
+      {
+        "question": "Solve the inequality $x^2 - 9 > 0$.",
+        "answer": "$x < -3$ or $x > 3$. Working: Factorise as $(x - 3)(x + 3) > 0$. The critical values are $x = 3$ and $x = -3$. Since we want the graph region above zero (positive), $x$ must be less than $-3$ or greater than $3$."
+      }
+    ]
+  },
+  {
+    "id": "algebra-simultaneous-equations",
+    "week": 8,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Simultaneous equations",
+    "overview": "Simultaneous equations are two or more algebraic equations containing the same unknown variables, usually $x$ and $y$. The word 'simultaneous' means we must find specific values for these variables that make all equations true at the exact same time. For standard linear equations (where variables are not squared), we use the elimination method. This involves multiplying the equations so that the number in front of one variable matches in both equations, allowing us to eliminate it by adding or subtracting the equations. For Higher tier Edexcel GCSE, students also encounter non-linear simultaneous equations, where one equation is quadratic (containing terms like $x^2$ or $y^2$). For these, we use the substitution method: rearrange the linear equation into the form $y = ...$ or $x = ...$ and substitute it into the quadratic equation. In Edexcel mark schemes, M marks (Method marks) are given for correct steps such as eliminating a variable or substituting, while A marks (Accuracy marks) are given for correct final values. Both $x$ and $y$ values must be found to gain full marks. Formulae for factorising quadratics are not provided on the exam sheet, so memorising standard factorisation methods is essential.",
+    "examples": [
+      {
+        "question": "Solve the simultaneous equations: $3x + 2y = 16$ and $2x - 3y = 2$",
+        "solution": "Step 1: Label the equations. Equation (1): $3x + 2y = 16$. Equation (2): $2x - 3y = 2$. Step 2: Make the coefficients of $y$ equal by multiplying Equation (1) by 3 and Equation (2) by 2. This gives Equation (3): $9x + 6y = 48$ and Equation (4): $4x - 6y = 4$. Step 3: Add Equation (3) and Equation (4) to eliminate $y$ (M1 mark). $(9x + 4x) + (6y - 6y) = 48 + 4 \rightarrow 13x = 52$. Step 4: Solve for $x$. Divide both sides by 13: $x = 4$ (A1 mark). Step 5: Substitute $x = 4$ back into Equation (1) to find $y$ (M1 mark). $3(4) + 2y = 16 \rightarrow 12 + 2y = 16 \rightarrow 2y = 4 \rightarrow y = 2$. Step 6: Write down the final paired answer (A1 mark): $x = 4, y = 2$."
+      },
+      {
+        "question": "Solve the simultaneous equations: $x^2 + y^2 = 25$ and $y = x + 1$",
+        "solution": "Step 1: Notice that one equation is linear ($y = x + 1$) and one is quadratic ($x^2 + y^2 = 25$). Use substitution. Step 2: Substitute $y = x + 1$ into $x^2 + y^2 = 25$ (M1 mark). $x^2 + (x + 1)^2 = 25$. Step 3: Expand the bracket correctly: $(x + 1)^2 = x^2 + 2x + 1$. So the equation becomes $x^2 + x^2 + 2x + 1 = 25 \rightarrow 2x^2 + 2x + 1 = 25$. Step 4: Rearrange into standard quadratic form $ax^2 + bx + c = 0$ by subtracting 25 from both sides: $2x^2 + 2x - 24 = 0$. Step 5: Simplify by dividing the whole equation by 2: $x^2 + x - 12 = 0$. Step 6: Factorise the quadratic (M1 mark): $(x + 4)(x - 3) = 0$. This gives $x = -4$ or $x = 3$. Step 7: Find the corresponding $y$ values using $y = x + 1$ (M1 mark). When $x = 3$: $y = 3 + 1 = 4$. When $x = -4$: $y = -4 + 1 = -3$. Step 8: Pair the answers clearly (A1 mark): $x = 3, y = 4$ and $x = -4, y = -3$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Solve the simultaneous equations: $4x + 3y = 18$ and $4x - y = 10$",
+        "answer": "$x = 3, y = 2$. Working: Subtract second equation from first: $3y - (-y) = 18 - 10 \rightarrow 4y = 8 \rightarrow y = 2$. Substitute $y = 2$ into first equation: $4x + 3(2) = 18 \rightarrow 4x + 6 = 18 \rightarrow 4x = 12 \rightarrow x = 3$."
+      },
+      {
+        "question": "Solve the simultaneous equations: $3x + 5y = 19$ and $2x + 3y = 12$",
+        "answer": "$x = 3, y = 2$. Working: Multiply first equation by 2 ($6x + 10y = 38$) and second equation by 3 ($6x + 9y = 36$). Subtract to get $y = 2$. Substitute $y = 2$ into second equation: $2x + 6 = 12 \rightarrow 2x = 6 \rightarrow x = 3$."
+      },
+      {
+        "question": "At a cinema, 2 adult tickets and 3 child tickets cost £31. Also, 3 adult tickets and 2 child tickets cost £34. Find the cost of an adult ticket and a child ticket.",
+        "answer": "Adult ticket = £8, Child ticket = £5. Working: Let $a$ = adult and $c$ = child. $2a + 3c = 31$ and $3a + 2c = 34$. Multiply first by 3 ($6a + 9c = 93$) and second by 2 ($6a + 4c = 68$). Subtract: $5c = 25 \rightarrow c = 5$. Substitute $c = 5$: $2a + 15 = 31 \rightarrow 2a = 16 \rightarrow a = 8$."
+      },
+      {
+        "question": "Solve the simultaneous equations: $y = 2x + 1$ and $x^2 + y^2 = 10$",
+        "answer": "$x = 1, y = 3$ and $x = -1.8, y = -2.6$. Working: Substitute $y = 2x + 1$ into circle equation: $x^2 + (2x + 1)^2 = 10 \rightarrow x^2 + 4x^2 + 4x + 1 = 10 \rightarrow 5x^2 + 4x - 9 = 0$. Factorise: $(5x + 9)(x - 1) = 0 \rightarrow x = 1$ or $x = -1.8$. Substitute back to find $y$: $y = 2(1) + 1 = 3$ and $y = 2(-1.8) + 1 = -2.6$."
+      },
+      {
+        "question": "Find the points of intersection between the straight line $y = x + 1$ and the curve $y = x^2 - 2x - 3$",
+        "answer": "$(4, 5)$ and $(-1, 0)$. Working: Set equations equal to each other: $x^2 - 2x - 3 = x + 1 \rightarrow x^2 - 3x - 4 = 0$. Factorise: $(x - 4)(x + 1) = 0 \rightarrow x = 4$ or $x = -1$. Find $y$ values using $y = x + 1$: $y = 4 + 1 = 5$ and $y = -1 + 1 = 0$."
+      }
+    ]
+  },
+  {
+    "id": "algebra-quadratics-factorising-the-formula",
+    "week": 9,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Quadratics: factorising & the formula",
+    "overview": "A quadratic equation is an expression where the highest power of $x$ is $x^2$, usually written in the form $ax^2 + bx + c = 0$. Solving it means finding the values of $x$ that make the equation equal to zero. In Edexcel GCSE Maths, there are two primary methods you must master: factorising and using the quadratic formula. Factorising involves putting the expression into two brackets, such as $(x + p)(x + q) = 0$. This method is fast and works best when the solutions are whole numbers or simple fractions. However, when a quadratic cannot be factorised easily, we use the quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. Please note: for the Edexcel Higher Tier (1MA1) exam, students MUST memorise this formula, as it is NOT provided on the formula sheet. In exam mark schemes, examiners award $M$ marks (Method marks, such as $M1$) for correctly setting up brackets or substituting values into the formula, and $A$ marks (Accuracy marks, such as $A1$) for correct final answers. Showing step-by-step working ensures that even if a simple calculation error is made, method marks are still secured.",
+    "examples": [
+      {
+        "question": "Solve $x^2 - 5x - 14 = 0$ by factorising.",
+        "solution": "Step 1: Identify two numbers that multiply to give $-14$ and add together to give $-5$. The factors of $14$ are $1, 14$ and $2, 7$. Choosing $-7$ and $+2$ works because $(-7) \\times 2 = -14$ and $-7 + 2 = -5$. Step 2: Write the expression in double brackets: $(x - 7)(x + 2) = 0$. Award $M1$ for correct factorisation into brackets. Step 3: Set each bracket to zero to find the two possible values of $x$: $x - 7 = 0 \\Rightarrow x = 7$ and $x + 2 = 0 \\Rightarrow x = -2$. Award $A1$ for both correct solutions. Final Answer: $x = 7$ or $x = -2$."
+      },
+      {
+        "question": "Solve $3x^2 + 8x - 2 = 0$. Give your answers correct to 2 decimal places.",
+        "solution": "Step 1: Identify the values of $a$, $b$, and $c$ from $ax^2 + bx + c = 0$. Here, $a = 3$, $b = 8$, and $c = -2$. Step 2: Write down the quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. Step 3: Substitute the values into the formula carefully using brackets for negative numbers: $x = \\frac{-(8) \\pm \\sqrt{(8)^2 - 4(3)(-2)}}{2(3)}$. Award $M1$ for correct substitution into the formula. Step 4: Simplify inside the square root and the denominator: $x = \\frac{-8 \\pm \\sqrt{64 + 24}}{6} = \\frac{-8 \\pm \\sqrt{88}}{6}$. Step 5: Calculate the two separate values of $x$: $x = \\frac{-8 + \\sqrt{88}}{6} \\approx 0.2301...$ and $x = \\frac{-8 - \\sqrt{88}}{6} \\approx -2.8968...$ Step 6: Round each value to 2 decimal places as requested: $x = 0.23$ or $x = -2.90$. Award $A1$ for both correct rounded answers."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Solve $x^2 + 7x + 12 = 0$ by factorising.",
+        "answer": "Working: Find two numbers that multiply to $12$ and add to $7$ ($3$ and $4$). Factorise to $(x + 3)(x + 4) = 0$ ($M1$). Set each bracket to zero: $x + 3 = 0$ or $x + 4 = 0$. Answer: $x = -3$ or $x = -4$ ($A1$)."
+      },
+      {
+        "question": "Solve $2x^2 + 5x - 3 = 0$ by factorising.",
+        "answer": "Working: Multiply $a \\times c = 2 \\times (-3) = -6$. Find numbers multiplying to $-6$ and adding to $5$ ($6$ and $-1$). Rewrite middle term: $2x^2 + 6x - x - 3 = 0 \\Rightarrow 2x(x + 3) - 1(x + 3) = 0 \\Rightarrow (2x - 1)(x + 3) = 0$ ($M1$). Answer: $x = 0.5$ (or $\\frac{1}{2}$) or $x = -3$ ($A1$)."
+      },
+      {
+        "question": "Solve $x^2 - 6x + 2 = 0$. Give your answers in the form $p \\pm \\sqrt{q}$, where $p$ and $q$ are integers.",
+        "answer": "Working: Use formula with $a = 1$, $b = -6$, $c = 2$. $x = \\frac{-(-6) \\pm \\sqrt{(-6)^2 - 4(1)(2)}}{2(1)} = \\frac{6 \\pm \\sqrt{36 - 8}}{2} = \\frac{6 \\pm \\sqrt{28}}{2}$ ($M1$). Simplify $\\sqrt{28} = 2\\sqrt{7}$, so $x = \\frac{6 \\pm 2\\sqrt{7}}{2} = 3 \\pm \\sqrt{7}$. Answer: $x = 3 \\pm \\sqrt{7}$ ($A1$)."
+      },
+      {
+        "question": "Solve $5x^2 - 3x - 1 = 0$. Give your answers correct to 2 decimal places.",
+        "answer": "Working: Use formula with $a = 5$, $b = -3$, $c = -1$. $x = \\frac{-(-3) \\pm \\sqrt{(-3)^2 - 4(5)(-1)}}{2(5)} = \\frac{3 \\pm \\sqrt{9 + 20}}{10} = \\frac{3 \\pm \\sqrt{29}}{10}$ ($M1$). $x = \\frac{3 + 5.385...}{10} = 0.84$ or $x = \\frac{3 - 5.385...}{10} = -0.24$. Answer: $x = 0.84$ or $x = -0.24$ ($A1$)."
+      },
+      {
+        "question": "The area of a rectangle is $15\\text{ cm}^2$. The length of the rectangle is $(x + 4)\\text{ cm}$ and the width is $(x - 1)\\text{ cm}$. Form a quadratic equation and solve it to find the value of $x$ to 2 decimal places.",
+        "answer": "Working: Area = length $\\times$ width $\\Rightarrow (x + 4)(x - 1) = 15 \\Rightarrow x^2 + 3x - 4 = 15 \\Rightarrow x^2 + 3x - 19 = 0$ ($M1$). Use formula: $x = \\frac{-3 \\pm \\sqrt{3^2 - 4(1)(-19)}}{2(1)} = \\frac{-3 \\pm \\sqrt{85}}{2}$. $x = \\frac{-3 + 9.2195}{2} = 3.11$ or $x = \\frac{-3 - 9.2195}{2} = -6.11$. Discard negative solution as length must be positive. Answer: $x = 3.11$ ($A1$)."
+      }
+    ]
+  },
+  {
+    "id": "algebra-completing-the-square",
+    "week": 10,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Completing the square",
+    "overview": "Completing the square is a fundamental algebraic technique used to rewrite quadratic expressions from the standard form $x^2 + bx + c$ into the completed square form $(x + p)^2 + q$. This process is essential because it allows students to easily solve quadratic equations without using the quadratic formula, and it directly reveals the coordinates of the turning point (minimum or maximum vertex) of a quadratic curve. To complete the square for $x^2 + bx + c$, you take half of the coefficient of $x$ (which is $b/2$) to form the bracket $(x + b/2)^2$, subtract the square of that halved value, $(b/2)^2$, and then add the constant $c$. In Edexcel GCSE Maths Higher tier exams, this technique is not included on the formula sheet and must be memorised. Examiners award method marks (M1) for halving the middle coefficient and placing it in the bracket, and accuracy marks (A1) for correctly evaluating the final constant term.",
+    "examples": [
+      {
+        "question": "Express $x^2 + 8x - 5$ in the form $(x + a)^2 + b$, where $a$ and $b$ are integers.",
+        "solution": "Step 1: Identify the coefficient of $x$, which is $+8$. Halve this number to get $+4$. Step 2: Write down the squared bracket using this value: $(x + 4)^2$. Step 3: Subtract the square of the halved number ($4^2 = 16$) to balance the expansion: $(x + 4)^2 - 16$. Step 4: Include the original constant term ($-5$) at the end: $(x + 4)^2 - 16 - 5$. Step 5: Simplify the constants: $-16 - 5 = -21$. The final answer is $(x + 4)^2 - 21$."
+      },
+      {
+        "question": "Solve the equation $2x^2 - 12x + 7 = 0$ by completing the square. Give your answers in the form $p \\pm \\frac{\\sqrt{q}}{2}$, where $p$ and $q$ are integers.",
+        "solution": "Step 1: Factorise out the coefficient of $x^2$ ($2$) from the first two terms: $2[x^2 - 6x] + 7 = 0$. Step 2: Complete the square inside the square brackets for $x^2 - 6x$. Halve $-6$ to get $-3$: $x^2 - 6x = (x - 3)^2 - 9$. Step 3: Substitute this back into the expression: $2[(x - 3)^2 - 9] + 7 = 0$. Step 4: Expand the outer bracket by multiplying by $2$: $2(x - 3)^2 - 18 + 7 = 0$, which simplifies to $2(x - 3)^2 - 11 = 0$. Step 5: Rearrange to isolate the squared term: $2(x - 3)^2 = 11$, so $(x - 3)^2 = \\frac{11}{2}$. Step 6: Take the square root of both sides: $x - 3 = \\pm \\sqrt{\\frac{11}{2}}$. Step 7: Add $3$ to both sides: $x = 3 \\pm \\sqrt{\\frac{11}{2}}$, which can be written as $3 \\pm \\frac{\\sqrt{22}}{2}$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Write $x^2 + 10x + 15$ in the form $(x + a)^2 + b$.",
+        "answer": "Halving $10$ gives $5$. Bracket: $(x + 5)^2$. Subtract $5^2 = 25$: $(x + 5)^2 - 25 + 15$. Final answer: $(x + 5)^2 - 10$."
+      },
+      {
+        "question": "Write $x^2 - 6x + 2$ in the form $(x + p)^2 + q$. Hence, state the coordinates of the turning point of the graph $y = x^2 - 6x + 2$.",
+        "answer": "Completed square form: $(x - 3)^2 - 9 + 2 = (x - 3)^2 - 7$. The turning point occurs when the bracket is $0$ ($x = 3$), giving $y = -7$. Final answer: Form is $(x - 3)^2 - 7$, Turning point is $(3, -7)$."
+      },
+      {
+        "question": "Solve $x^2 + 4x - 1 = 0$ by completing the square. Leave your answer in exact surd form $a \\pm \\sqrt{b}$.",
+        "answer": "Completed square: $(x + 2)^2 - 4 - 1 = 0 \\Rightarrow (x + 2)^2 - 5 = 0$. Rearrange: $(x + 2)^2 = 5 \\Rightarrow x + 2 = \\pm \\sqrt{5}$. Final answer: $x = -2 \\pm \\sqrt{5}$."
+      },
+      {
+        "question": "Write $3x^2 + 12x - 5$ in the form $a(x + b)^2 + c$, where $a$, $b$, and $c$ are integers.",
+        "answer": "Factorise first two terms: $3[x^2 + 4x] - 5$. Complete square inside bracket: $3[(x + 2)^2 - 4] - 5$. Expand outer bracket: $3(x + 2)^2 - 12 - 5$. Final answer: $3(x + 2)^2 - 17$."
+      },
+      {
+        "question": "Solve $2x^2 - 8x - 3 = 0$ by completing the square. Give your answers in the form $p \\pm \\frac{\\sqrt{q}}{2}$.",
+        "answer": "Factorise out $2$: $2[x^2 - 4x] - 3 = 0$. Complete square inside: $2[(x - 2)^2 - 4] - 3 = 0$. Expand: $2(x - 2)^2 - 8 - 3 = 0 \\Rightarrow 2(x - 2)^2 = 11 \\Rightarrow (x - 2)^2 = \\frac{11}{2}$. Square root: $x - 2 = \\pm \\sqrt{\\frac{11}{2}} = \\pm \\frac{\\sqrt{22}}{2}$. Final answer: $x = 2 \\pm \\frac{\\sqrt{22}}{2}$."
+      }
+    ]
+  },
+  {
+    "id": "algebra-algebraic-fractions",
+    "week": 11,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Algebraic fractions",
+    "overview": "An algebraic fraction is simply a fraction where the top (numerator), the bottom (denominator), or both contain algebraic expressions with letters like $x$. Just like numerical fractions, you can simplify, add, subtract, multiply, and divide them by applying standard fraction rules. The most crucial skill for algebraic fractions in Edexcel GCSE Higher Maths is factorisation. Before trying to simplify a fraction or combine terms, you must factorise expressions into single or double brackets. A common mistake is attempting to cancel individual terms directly, such as cancelling an $x^2$ from the top and bottom when it is part of an addition or subtraction; you can only cancel terms that are multiplied as whole factors. For adding and subtracting, you must first find a common denominator by multiplying the denominators together. In Edexcel exams, method marks (M1) are awarded for correct factorisation and finding common denominators, while accuracy marks (A1) are given for the final simplified expression. Note that no formulae for algebraic fractions are provided on the GCSE Higher formula sheet, so memorising factorisation techniques—including the difference of two squares—is essential.",
+    "examples": [
+      {
+        "question": "Simplify fully $\\frac{x^2 - 9}{2x^2 + 5x - 3}$",
+        "solution": "Step 1: Factorise the numerator. The numerator $x^2 - 9$ is a difference of two squares, which factorises to $(x - 3)(x + 3)$ [M1]. Step 2: Factorise the denominator. The quadratic $2x^2 + 5x - 3$ factorises to $(2x - 1)(x + 3)$ [M1]. Step 3: Rewrite the fraction with the factorised expressions: $\\frac{(x - 3)(x + 3)}{(2x - 1)(x + 3)}$. Step 4: Cancel the common factor of $(x + 3)$ from both the numerator and denominator. Step 5: Write down the simplified fraction: $\\frac{x - 3}{2x - 1}$ [A1]."
+      },
+      {
+        "question": "Solve $\\frac{2}{x-1} + \\frac{2}{x+2} = 1$",
+        "solution": "Step 1: Combine the two fractions on the left-hand side over a common denominator, $(x-1)(x+2)$: $\\frac{2(x+2) + 2(x-1)}{(x-1)(x+2)} = 1$ [M1]. Step 2: Expand and simplify the numerator: $2x + 4 + 2x - 2 = 4x + 2$, giving $\\frac{4x + 2}{(x-1)(x+2)} = 1$. Step 3: Multiply both sides by the denominator $(x-1)(x+2)$: $4x + 2 = (x-1)(x+2)$ [M1]. Step 4: Expand the right-hand side: $(x-1)(x+2) = x^2 + x - 2$, so $4x + 2 = x^2 + x - 2$. Step 5: Rearrange into standard quadratic form $x^2 + bx + c = 0$ by subtracting $4x + 2$ from both sides: $x^2 - 3x - 4 = 0$ [M1]. Step 6: Factorise the quadratic equation: $(x - 4)(x + 1) = 0$. Step 7: Solve for $x$: $x = 4$ or $x = -1$ [A1]."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Simplify fully $\\frac{4x^2 - 16}{2x + 4}$",
+        "answer": "Answer: $2(x - 2)$ or $2x - 4$. Working: Factorise numerator: $4(x^2 - 4) = 4(x-2)(x+2)$. Factorise denominator: $2(x+2)$. Fraction becomes $\\frac{4(x-2)(x+2)}{2(x+2)}$. Cancel $(x+2)$ and divide $4$ by $2$ to get $2(x-2)$."
+      },
+      {
+        "question": "Express as a single fraction in its simplest form: $\\frac{3}{x+2} + \\frac{4}{x-3}$",
+        "answer": "Answer: $\\frac{7x - 1}{(x+2)(x-3)}$. Working: Use common denominator $(x+2)(x-3)$. Cross-multiply numerators: $\\frac{3(x-3) + 4(x+2)}{(x+2)(x-3)} = \\frac{3x - 9 + 4x + 8}{(x+2)(x-3)} = \\frac{7x - 1}{(x+2)(x-3)}$."
+      },
+      {
+        "question": "Simplify fully $\\frac{x^2 + 5x + 6}{x^2 - 9}$",
+        "answer": "Answer: $\\frac{x + 2}{x - 3}$. Working: Factorise numerator: $(x+2)(x+3)$. Factorise denominator (difference of two squares): $(x-3)(x+3)$. Cancel common bracket $(x+3)$ to give $\\frac{x+2}{x-3}$."
+      },
+      {
+        "question": "Express as a single fraction in its simplest form: $\\frac{x^2 - 25}{2x} \\div \\frac{x+5}{6x^2}$",
+        "answer": "Answer: $3x(x - 5)$ or $3x^2 - 15x$. Working: Flip the second fraction and multiply: $\\frac{(x-5)(x+5)}{2x} \\times \\frac{6x^2}{x+5}$. Cancel $(x+5)$ from top and bottom, and simplify $\\frac{6x^2}{2x} = 3x$. Result is $3x(x-5)$."
+      },
+      {
+        "question": "Solve the equation $\\frac{6}{x} - \\frac{2}{x-1} = 1$",
+        "answer": "Answer: $x = 2$ or $x = 3$. Working: Combine left side: $\\frac{6(x-1) - 2x}{x(x-1)} = 1 \\Rightarrow \\frac{4x - 6}{x^2 - x} = 1$. Multiply across: $4x - 6 = x^2 - x$. Rearrange to $x^2 - 5x + 6 = 0$. Factorise to $(x-2)(x-3) = 0$, giving solutions $x = 2$ and $x = 3$."
+      }
+    ]
+  },
+  {
+    "id": "algebra-sequences-linear-quadratic-geometric",
+    "week": 12,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Sequences (linear, quadratic, geometric)",
+    "overview": "A sequence is simply an ordered list of numbers following a mathematical rule. In Edexcel GCSE Maths (Higher Tier), students need to master three main types: linear, quadratic, and geometric. A linear sequence changes by adding or subtracting the same number each step, giving an $n^th$ term rule like $dn + c$. A quadratic sequence contains an $n^2$ term; its signature feature is that the difference between the differences (the second difference) is constant. A geometric sequence multiplies or divides by the same factor (called the common ratio) each step, such as $3, 6, 12, 24...$ where each term doubles. Note that no sequence formulae are given on the Higher tier formula sheet; students must memorise the methods entirely. In Edexcel mark schemes, examiners award method marks (M1) for setting up correct working—such as writing out differences or algebraic equations—and accuracy marks (A1) for exact final answers. Parents can support learning by ensuring students write down their step-by-step working rather than trying to calculate rules in their heads.",
+    "examples": [
+      {
+        "question": "Find the $n^th$ term formula for the quadratic sequence: $3, 9, 17, 27, 39, \\dots$",
+        "solution": "Step 1: Find the first differences between consecutive terms.\n$9 - 3 = 6$, $17 - 9 = 8$, $27 - 17 = 10$, $39 - 27 = 12$.\nThe first differences are $6, 8, 10, 12$.\n\nStep 2: Find the second differences.\n$8 - 6 = 2$, $10 - 8 = 2$, $12 - 10 = 2$.\nThe second difference is constant ($+2$). [M1 mark for finding constant second difference]\n\nStep 3: Halve the second difference to find the coefficient of $n^2$.\n$2 \\div 2 = 1$, so the first part of the rule is $1n^2$ (or $n^2$).\n\nStep 4: Subtract $n^2$ values ($1, 4, 9, 16, 25$) from the original sequence.\n$3 - 1 = 2$\n$9 - 4 = 5$\n$17 - 9 = 8$\n$27 - 16 = 11$\n$39 - 25 = 14$\nThis gives a linear sequence: $2, 5, 8, 11, 14$.\n\nStep 5: Find the $n^th$ term of this linear sequence.\nThe sequence increases by $+3$ each time, so it starts with $3n$. The zero term is $2 - 3 = -1$. So the linear part is $3n - 1$. [M1 mark for linear term method]\n\nStep 6: Combine both parts to get the full $n^th$ term formula.\n$n^2 + 3n - 1$. [A1 mark for fully correct answer]"
+      },
+      {
+        "question": "The $1^st$ term of a geometric sequence is $5$ and the $3^rd$ term is $45$.\n(a) Given that all terms in the sequence are positive, find the common ratio $r$.\n(b) Hence, calculate the $6^th$ term of this sequence.",
+        "solution": "Step 1: Write down the general expression for a geometric sequence.\nThe $n^th$ term of a geometric sequence is given by $a \\times r^{n-1}$, where $a$ is the first term and $r$ is the common ratio.\nHere, $a = 5$.\n\nStep 2: Use the $3^rd$ term to set up an equation.\nFor $n = 3$, $5 \\times r^{3-1} = 45$\n$5r^2 = 45$ [M1 mark for setting up equation]\n\nStep 3: Solve for $r$.\n$r^2 = 45 \\div 5 = 9$\n$r = \\sqrt{9} = 3$ (we take the positive square root because all terms are positive).\nAnswer (a): $r = 3$. [A1 mark]\n\nStep 4: Find the $6^th$ term using $n = 6$.\n$6^th\\text{ term} = 5 \\times 3^{6-1} = 5 \\times 3^5$ [M1 mark for method]\n$3^5 = 243$\n$5 \\times 243 = 1215$.\nAnswer (b): $1215$. [A1 mark]"
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Find the $n^th$ term expression for the linear sequence: $7, 13, 19, 25, 31, \\dots$",
+        "answer": "Answer: $6n + 1$.\nWorking: The common difference is $+6$, so the term starts with $6n$. The zero term (before term 1) is $7 - 6 = +1$. Combined: $6n + 1$."
+      },
+      {
+        "question": "A geometric sequence has first term $a = 4$ and common ratio $r = 3$. Find the $5^th$ term of the sequence.",
+        "answer": "Answer: $324$.\nWorking: $n^th\\text{ term} = a \\times r^{n-1} = 4 \\times 3^{5-1} = 4 \\times 3^4 = 4 \\times 81 = 324$."
+      },
+      {
+        "question": "Find the $n^th$ term expression for the quadratic sequence: $2, 9, 20, 35, 54, \\dots$",
+        "answer": "Answer: $2n^2 + n - 1$.\nWorking: 1st differences are $7, 11, 15, 19$. 2nd differences are $4, 4, 4$. Halve 2nd diff: $4 \\div 2 = 2$, giving $2n^2$. Subtracting $2n^2$ ($2, 8, 18, 32, 50$) from original sequence leaves $0, 1, 2, 3, 4$. The $n^th$ term of $0, 1, 2, 3, 4$ is $n - 1$. Total $n^th$ term: $2n^2 + n - 1$."
+      },
+      {
+        "question": "Sequence A has $n^th$ term $3n + 8$. Sequence B has $n^th$ term $7n - 12$. Which term number $n$ has the same value in both sequences, and what is that value?",
+        "answer": "Answer: $n = 5$, Value = $23$.\nWorking: Set $3n + 8 = 7n - 12$. Subtract $3n$: $8 = 4n - 12$. Add $12$: $20 = 4n \\Rightarrow n = 5$. Substitute $n=5$ into sequence A: $3(5) + 8 = 23$."
+      },
+      {
+        "question": "The first three terms of a geometric sequence are $x$, $x + 6$, and $3x + 6$, where $x > 0$. Show that $x = 6$ and state the common ratio.",
+        "answer": "Answer: $x = 6$, Common ratio $r = 2$.\nWorking: Since it is geometric, $\\frac{x+6}{x} = \\frac{3x+6}{x+6}$. Cross-multiply: $(x+6)^2 = x(3x+6) \\Rightarrow x^2 + 12x + 36 = 3x^2 + 6x$. Rearrange to $2x^2 - 6x - 36 = 0 \\Rightarrow x^2 - 3x - 18 = 0$. Factorise: $(x - 6)(x + 3) = 0$. Since $x > 0$, $x = 6$. The terms are $6, 12, 24$, so common ratio $r = 12 \\div 6 = 2$."
+      }
+    ]
+  }
+]

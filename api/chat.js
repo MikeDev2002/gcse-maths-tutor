@@ -48,7 +48,7 @@ async function callGemini(messages) {
   const timeout = setTimeout(() => controller.abort(), 30000);
 
   const response = await fetch(
-    'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:streamGenerateContent?alt=sse',
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse',
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-goog-api-key': API_KEY },
