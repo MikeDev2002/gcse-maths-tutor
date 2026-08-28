@@ -104,32 +104,33 @@
     }
     .wrap { max-width: 760px; margin: 0 auto; }
 
-    /* ---- Home view ---- */
+    /* ---- Home view: Continue card (compact, sits below the tile grid) ---- */
     .continue-card {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
-      border-radius: 18px;
-      padding: 24px 26px;
-      margin-bottom: 28px;
-      box-shadow: 0 10px 30px rgba(79,70,229,0.25);
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin-top: 22px;
+      box-shadow: 0 6px 18px rgba(79,70,229,0.2);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
     }
+    .continue-text { flex: 1; min-width: 200px; }
     .continue-label {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; opacity: 0.85; margin-bottom: 6px;
+      font-size: 0.66rem; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; opacity: 0.85; margin-bottom: 2px;
     }
-    .continue-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; line-height: 1.35; }
+    .continue-title { font-size: 1.02rem; font-weight: 700; line-height: 1.3; }
     .continue-btn {
       background: white; color: var(--primary-dark);
-      border: none; border-radius: 10px;
-      padding: 11px 22px; font-size: 0.92rem; font-weight: 700;
-      cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+      border: none; border-radius: 9px;
+      padding: 9px 16px; font-size: 0.85rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap; flex-shrink: 0;
+      transition: transform 0.15s, box-shadow 0.15s;
     }
     .continue-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
 
-    .all-done {
-      text-align: center; padding: 8px 0 4px;
-    }
-    .all-done .big-tick { font-size: 2.4rem; margin-bottom: 8px; }
+    .all-done { display: flex; align-items: center; gap: 12px; }
+    .all-done .big-tick { font-size: 1.6rem; flex-shrink: 0; }
 
     /* ---- Welcome hero ---- */
     .hero { margin-bottom: 20px; }
@@ -621,24 +622,28 @@
     const heroHTML = `
       <div class="hero">
         <h2>👋 Ready for this week's session?</h2>
-        <p>One topic, worked examples, a few questions to try, and space to ask anything — pick up where you left off below, or head into the full topic list any time.</p>
+        <p>One topic, worked examples, a few questions to try, and space to ask anything — browse the areas below, or jump straight to this week's lesson at the bottom.</p>
       </div>`;
 
     const continueHTML = next
       ? `<div class="continue-card">
-          <div class="continue-label">${statusOf(next.id) === 'started' ? 'Continue — ' : 'Next up — '}Week ${next.week}</div>
-          <div class="continue-title">${next.icon} ${next.subject}: ${next.title}</div>
+          <div class="continue-text">
+            <div class="continue-label">${statusOf(next.id) === 'started' ? 'Continue — ' : 'Next up — '}Week ${next.week}</div>
+            <div class="continue-title">${next.icon} ${next.subject}: ${next.title}</div>
+          </div>
           <button class="continue-btn" data-id="${next.id}">${statusOf(next.id) === 'started' ? 'Continue This Lesson →' : "Start This Week's Lesson →"}</button>
         </div>`
       : `<div class="continue-card">
           <div class="all-done">
-            <div class="big-tick">🎉</div>
-            <div class="continue-title" style="margin-bottom:2px;">All 37 modules complete!</div>
-            <p style="opacity:0.9;font-size:0.85rem;">Revisit any module any time from the topic list below.</p>
+            <span class="big-tick">🎉</span>
+            <div class="continue-text">
+              <div class="continue-title">All 37 modules complete!</div>
+              <div style="opacity:0.9;font-size:0.78rem;">Revisit any module any time from the topic list above.</div>
+            </div>
           </div>
         </div>`;
 
-    appEl.innerHTML = `${heroHTML}${continueHTML}${renderHomeTileGrid()}`;
+    appEl.innerHTML = `${heroHTML}${renderHomeTileGrid()}${continueHTML}`;
 
     appEl.querySelectorAll('[data-id]').forEach(el => {
       el.addEventListener('click', () => openModule(el.dataset.id));
