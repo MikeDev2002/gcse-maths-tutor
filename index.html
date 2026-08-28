@@ -136,20 +136,50 @@
     .hero h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
     .hero p { color: var(--muted); font-size: 0.92rem; line-height: 1.5; max-width: 560px; }
 
-    /* ---- Home page sections (Who this is for / Progress explained / Past papers / Topic areas) ---- */
-    .home-section { margin-bottom: 24px; }
-    .home-section .section-heading {
-      font-size: 0.95rem; font-weight: 700; margin-bottom: 10px;
-      display: flex; align-items: center; gap: 7px;
+    /* ---- Home page tile grid ---- */
+    /* All 6 areas are visible at a glance as compact tiles; five of them
+       (everything except Topic Areas, which is a straight nav link to its
+       own page) expand in place when clicked — .expanded spans the full
+       grid width via grid-column, so it drops below the other tiles rather
+       than distorting the row it started in. */
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
     }
-    .home-section .section-body {
+    .tile {
       background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 18px 20px;
-      font-size: 0.88rem; line-height: 1.65; color: var(--text);
+      border-radius: var(--radius); overflow: hidden;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .home-section .section-body p { margin-bottom: 8px; }
-    .home-section .section-body p:last-child { margin-bottom: 0; }
-    .section-body .prog-explainer { color: var(--muted); margin-bottom: 16px; }
+    .tile:hover { border-color: var(--primary); box-shadow: 0 4px 14px rgba(79,70,229,0.08); }
+    .tile.expanded { grid-column: 1 / -1; border-color: var(--primary); }
+    .tile-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 18px; cursor: pointer;
+    }
+    .tile-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+    .tile-text { flex: 1; min-width: 0; }
+    .tile-title { font-size: 0.92rem; font-weight: 700; margin-bottom: 2px; }
+    .tile-teaser { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .tile-chevron {
+      font-size: 0.75rem; color: var(--muted); flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .tile.expanded .tile-chevron { transform: rotate(180deg); color: var(--primary); }
+    .tile-nav .tile-chevron { font-size: 1.25rem; color: var(--primary); }
+    .tile-detail {
+      padding: 4px 20px 22px; border-top: 1px solid var(--border);
+      margin-top: 2px; font-size: 0.85rem; line-height: 1.6; color: var(--text);
+    }
+    .tile-detail h4 {
+      font-size: 0.85rem; font-weight: 700; margin: 18px 0 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .tile-detail h4:first-child { margin-top: 18px; }
+    .tile-detail p { margin-bottom: 8px; }
+    .tile-detail .prog-explainer { color: var(--muted); }
 
     .papers-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -166,42 +196,9 @@
     .paper-link span { display: block; font-size: 0.72rem; font-weight: 500; opacity: 0.75; margin-top: 2px; }
     .papers-note { font-size: 0.78rem; color: var(--muted); margin-top: 12px; }
 
-    .topics-cta {
-      display: flex; align-items: center; gap: 16px; cursor: pointer;
-      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
-    }
-    .topics-cta:hover {
-      border-color: var(--primary); box-shadow: 0 4px 14px rgba(79,70,229,0.1);
-      transform: translateY(-1px);
-    }
-    .topics-cta-text { flex: 1; }
-    .topics-cta-text strong { display: block; font-size: 0.95rem; margin-bottom: 3px; }
-    .topics-cta-text span { color: var(--muted); font-size: 0.84rem; }
-    .topics-cta-arrow { font-size: 1.4rem; color: var(--primary); flex-shrink: 0; }
-
-    /* ---- Guide (how to use / stuck) ---- */
-    .guide-toggle {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 20px; padding: 8px 16px; font-size: 0.82rem; font-weight: 600;
-      color: var(--primary-dark); cursor: pointer; margin-bottom: 14px;
-      transition: border-color 0.15s, background 0.15s;
-    }
-    .guide-toggle:hover { border-color: var(--primary); background: var(--primary-light); }
-    .guide-toggle .chev { font-size: 0.65rem; transition: transform 0.2s; display: inline-block; }
-    .guide-toggle.open .chev { transform: rotate(180deg); }
-
-    .guide-panel {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 20px 22px; margin-bottom: 24px;
-    }
-    .guide-panel h4 {
-      font-size: 0.88rem; font-weight: 700; margin-bottom: 12px;
-      display: flex; align-items: center; gap: 6px;
-    }
     .guide-steps {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 14px; margin-bottom: 22px;
+      gap: 14px; margin-bottom: 6px;
     }
     .guide-step { font-size: 0.84rem; line-height: 1.5; }
     .guide-step .gs-num {
@@ -573,6 +570,7 @@
   let MODULES = [];
   let currentModule = null;
   let loadError = null;
+  let openTile = null; // which home-page info tile is expanded, if any
 
   async function loadModules() {
     try {
@@ -598,8 +596,9 @@
   }
 
   // ---------- Home view: the landing page ----------
-  // Welcome -> Who this is for / How to use (collapsible) -> Progress
-  // explained -> Past papers -> Topic areas (links through to showTopics()).
+  // Welcome + Continue card up top, then all 6 areas visible at once as a
+  // tile grid below (see HOME_TILES / renderHomeTileGrid) — 5 expand in
+  // place when clicked, Topic Areas links straight through to showTopics().
   function showHome() {
     currentModule = null;
     homeBtn.style.display = 'none';
@@ -616,9 +615,6 @@
 
     const progress = getProgress();
     const statusOf = id => getStatus(progress, id);
-    const completedCount = MODULES.filter(m => statusOf(m.id) === 'completed').length;
-    const startedCount = MODULES.filter(m => statusOf(m.id) === 'started').length;
-    const notStartedCount = MODULES.length - completedCount - startedCount;
     const next = MODULES.find(m => statusOf(m.id) !== 'completed');
 
     // ---- 1. Welcome ----
@@ -642,24 +638,41 @@
           </div>
         </div>`;
 
-    // ---- 2. Who this is for + How to use (collapsible, open by default) ----
-    const guideOpenSetting = localStorage.getItem('tutorGuideOpen');
-    const isGuideOpen = guideOpenSetting === null ? true : guideOpenSetting === 'true';
+    appEl.innerHTML = `${heroHTML}${continueHTML}${renderHomeTileGrid()}`;
 
-    const guideHTML = `
-      <button class="guide-toggle ${isGuideOpen ? 'open' : ''}" id="guideToggle">
-        ℹ️ Who this is for &amp; how to use it <span class="chev">▾</span>
-      </button>
-      <div class="guide-panel" id="guidePanel" ${isGuideOpen ? '' : 'hidden'}>
-        <h4>🙋 Who this is for</h4>
-        <p style="font-size:0.85rem;line-height:1.6;margin-bottom:20px;">
+    appEl.querySelectorAll('[data-id]').forEach(el => {
+      el.addEventListener('click', () => openModule(el.dataset.id));
+    });
+
+    bindHomeTileEvents();
+  }
+
+  // ---- The 6 home-page areas, as a grid of tiles ----
+  // 5 of them (everything but Topic Areas) expand in place when clicked;
+  // Topic Areas is a straight nav link through to showTopics(). Only one
+  // tile is expanded at a time, tracked in the module-level `openTile`.
+  const HOME_TILES = [
+    {
+      key: 'who',
+      icon: '🙋',
+      title: 'Who This Is For',
+      teaser: () => 'A weekly session for a parent and their GCSE student, done together.',
+      detail: () => `
+        <p>
           This is a weekly, one-hour maths session for a parent and their GCSE student to work through <strong>together</strong> —
           not something the student is meant to sit down with alone. It covers the full Edexcel GCSE Maths (Higher tier)
           syllabus, broken into 37 bite-sized weekly topics, so a full year's worth of maths fits into about 6–8 months
           of weekly sessions. Read it side by side: the parent guiding and asking questions, the student working through
           the examples and having a go at the test questions.
-        </p>
-        <h4>📘 A typical session, in four steps</h4>
+        </p>`
+    },
+    {
+      key: 'howto',
+      icon: '📘',
+      title: 'How To Use It',
+      teaser: () => 'Four simple steps each week, plus what to do if you get stuck.',
+      detail: () => `
+        <h4>A typical session, in four steps</h4>
         <div class="guide-steps">
           <div class="guide-step"><span class="gs-num">1</span><strong>Read the Overview</strong><span class="gs-desc">Together, out loud if that helps — no jargon, just the idea.</span></div>
           <div class="guide-step"><span class="gs-num">2</span><strong>Go through the Examples</strong><span class="gs-desc">See exactly how a real Higher-tier question gets solved, step by step.</span></div>
@@ -674,71 +687,100 @@
             <li>Ask the tutor in the Q&amp;A box (type it, or tap 🎤 and just say it) — it already knows which topic you're on.</li>
             <li>Still unsure? Note the question down and talk it through together — that's exactly what these sessions are for.</li>
           </ul>
+        </div>`
+    },
+    {
+      key: 'progress',
+      icon: '📊',
+      title: 'Your Progress',
+      teaser: (c) => `${c.completedCount} completed, ${c.startedCount} in progress, ${c.notStartedCount} not started.`,
+      detail: (c) => `
+        <p class="prog-explainer">Every topic moves through three stages as you work through it: <strong>not started</strong> (untouched so far), <strong>in progress</strong> (opened, but not yet marked done), and <strong>completed</strong> (marked done once you've been through it together). Here's where things stand right now:</p>
+        <div class="status-bar">
+          <div class="status-bar-seg completed" style="width:${(c.completedCount / MODULES.length) * 100}%"></div>
+          <div class="status-bar-seg started" style="width:${(c.startedCount / MODULES.length) * 100}%"></div>
+        </div>
+        <div class="status-legend">
+          <span><span class="li-dot completed"></span>${c.completedCount} Completed</span>
+          <span><span class="li-dot started"></span>${c.startedCount} In progress</span>
+          <span><span class="li-dot not-started"></span>${c.notStartedCount} Not started</span>
+        </div>`
+    },
+    {
+      key: 'papers',
+      icon: '📄',
+      title: 'Past Papers',
+      teaser: () => 'Free official-style papers with mark schemes, for exam practice.',
+      detail: () => `
+        <p>Once you've covered a good number of topics, real past papers are the best way to practise exam technique and timing. Edexcel GCSE Maths (1MA1) Higher tier has three papers — these are free, publicly available copies with mark schemes, hosted by Physics &amp; Maths Tutor:</p>
+        <div class="papers-grid">
+          <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-1/" target="_blank" rel="noopener">Paper 1 <span>Non-calculator</span></a>
+          <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-2/" target="_blank" rel="noopener">Paper 2 <span>Calculator</span></a>
+          <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-3/" target="_blank" rel="noopener">Paper 3 <span>Calculator</span></a>
+        </div>
+        <p class="papers-note">These open in a new tab. They're best used later on, once several topics have been covered — a full paper mixes everything together rather than focusing on one topic.</p>`
+    }
+  ];
+
+  function homeCounts() {
+    const progress = getProgress();
+    const statusOf = id => getStatus(progress, id);
+    const completedCount = MODULES.filter(m => statusOf(m.id) === 'completed').length;
+    const startedCount = MODULES.filter(m => statusOf(m.id) === 'started').length;
+    const notStartedCount = MODULES.length - completedCount - startedCount;
+    return { completedCount, startedCount, notStartedCount };
+  }
+
+  function renderHomeTileGrid() {
+    const counts = homeCounts();
+    const tilesHTML = HOME_TILES.map(t => {
+      const isOpen = openTile === t.key;
+      return `
+        <div class="tile ${isOpen ? 'expanded' : ''}" data-tile="${t.key}">
+          <div class="tile-head">
+            <div class="tile-icon">${t.icon}</div>
+            <div class="tile-text">
+              <div class="tile-title">${t.title}</div>
+              <div class="tile-teaser">${t.teaser(counts)}</div>
+            </div>
+            <div class="tile-chevron">▾</div>
+          </div>
+          ${isOpen ? `<div class="tile-detail">${t.detail(counts)}</div>` : ''}
+        </div>`;
+    }).join('');
+
+    const topicsTileHTML = `
+      <div class="tile tile-nav" id="topicsTile">
+        <div class="tile-head">
+          <div class="tile-icon">📚</div>
+          <div class="tile-text">
+            <div class="tile-title">Topic Areas</div>
+            <div class="tile-teaser">Browse all 37 topics, grouped by subject.</div>
+          </div>
+          <div class="tile-chevron">→</div>
         </div>
       </div>`;
 
-    // ---- 3. Progress bar explained ----
-    const progressHomeHTML = `
-      <div class="home-section">
-        <div class="section-heading">📊 How Your Progress Is Tracked</div>
-        <div class="section-body">
-          <p class="prog-explainer">Every topic below moves through three stages as you work through it: <strong>not started</strong> (untouched so far), <strong>in progress</strong> (opened, but not yet marked done), and <strong>completed</strong> (marked done once you've been through it together). Here's where things stand right now:</p>
-          <div class="status-bar">
-            <div class="status-bar-seg completed" style="width:${(completedCount / MODULES.length) * 100}%"></div>
-            <div class="status-bar-seg started" style="width:${(startedCount / MODULES.length) * 100}%"></div>
-          </div>
-          <div class="status-legend">
-            <span><span class="li-dot completed"></span>${completedCount} Completed</span>
-            <span><span class="li-dot started"></span>${startedCount} In progress</span>
-            <span><span class="li-dot not-started"></span>${notStartedCount} Not started</span>
-          </div>
-        </div>
-      </div>`;
+    return `<div class="tile-grid" id="homeTileGrid">${tilesHTML}${topicsTileHTML}</div>`;
+  }
 
-    // ---- 4. Past papers ----
-    const papersHTML = `
-      <div class="home-section">
-        <div class="section-heading">📄 Past Papers</div>
-        <div class="section-body">
-          <p>Once you've covered a good number of topics, real past papers are the best way to practise exam technique and timing. Edexcel GCSE Maths (1MA1) Higher tier has three papers — these are free, publicly available copies with mark schemes, hosted by Physics &amp; Maths Tutor:</p>
-          <div class="papers-grid">
-            <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-1/" target="_blank" rel="noopener">Paper 1 <span>Non-calculator</span></a>
-            <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-2/" target="_blank" rel="noopener">Paper 2 <span>Calculator</span></a>
-            <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-3/" target="_blank" rel="noopener">Paper 3 <span>Calculator</span></a>
-          </div>
-          <p class="papers-note">These open in a new tab. They're best used later on, once several topics have been covered — a full paper mixes everything together rather than focusing on one topic.</p>
-        </div>
-      </div>`;
-
-    // ---- 5. Topic areas ----
-    const topicsCtaHTML = `
-      <div class="home-section">
-        <div class="section-heading">📚 Topic Areas</div>
-        <div class="section-body topics-cta" id="topicsCta">
-          <div class="topics-cta-text">
-            <strong>Browse all 37 topics</strong>
-            <span>See the full syllabus grouped by subject, with progress for every topic at a glance.</span>
-          </div>
-          <div class="topics-cta-arrow">→</div>
-        </div>
-      </div>`;
-
-    appEl.innerHTML = `${heroHTML}${continueHTML}${guideHTML}${progressHomeHTML}${papersHTML}${topicsCtaHTML}`;
-
-    appEl.querySelectorAll('[data-id]').forEach(el => {
-      el.addEventListener('click', () => openModule(el.dataset.id));
+  function bindHomeTileEvents() {
+    appEl.querySelectorAll('.tile[data-tile]').forEach(tileEl => {
+      tileEl.querySelector('.tile-head').addEventListener('click', () => {
+        const key = tileEl.dataset.tile;
+        openTile = (openTile === key) ? null : key;
+        refreshHomeTileGrid();
+      });
     });
+    const topicsTile = document.getElementById('topicsTile');
+    if (topicsTile) topicsTile.addEventListener('click', showTopics);
+  }
 
-    document.getElementById('topicsCta').addEventListener('click', showTopics);
-
-    const guideToggle = document.getElementById('guideToggle');
-    const guidePanel = document.getElementById('guidePanel');
-    guideToggle.addEventListener('click', () => {
-      const nowOpen = guidePanel.hidden;
-      guidePanel.hidden = !nowOpen;
-      guideToggle.classList.toggle('open', nowOpen);
-      try { localStorage.setItem('tutorGuideOpen', String(nowOpen)); } catch (_) {}
-    });
+  function refreshHomeTileGrid() {
+    const gridEl = document.getElementById('homeTileGrid');
+    if (!gridEl) return;
+    gridEl.outerHTML = renderHomeTileGrid();
+    bindHomeTileEvents();
   }
 
   // ---------- Topics view: the full 37-module syllabus, grouped by subject ----------
