@@ -5,7 +5,17 @@
     "subject": "Number",
     "icon": "🔢",
     "title": "Fractions, decimals & percentages",
-    "overview": "Fractions, decimals, and percentages are simply three different ways of showing a part of a whole quantity. For example, half a pizza can be written as 1/2, 0.5, or 50%. At Higher tier GCSE, students are expected to move effortlessly between these three forms, work with recurring decimals algebraically, and solve reverse percentage problems. Converting recurring decimals (like 0.4545...) to fractions allows us to perform exact calculations without rounding errors. Reverse percentages involve finding an original amount before a price increase or decrease occurred. In the Edexcel exam, examiners award method marks (M1) for setting up the correct algebraic steps or identifying multiplier values, while accuracy marks (A1) are awarded for exact, fully simplified answers. There are no formula sheet aids for fractions, decimals, or percentages on the Higher tier paper, so these key methods must be memorised and practiced until they become second nature.",
+    "overview": {
+      "hook": "Switching between fractions, decimals and percentages is like speaking three dialects of the exact same language.",
+      "keyIdea": "These three forms represent parts of a whole and can be converted easily using place value and $100$. Knowing how to switch between them quickly unlocks trickier GCSE calculator and non-calculator questions.",
+      "keyPoints": [
+        "To convert a percentage to a fraction, put the number over $100$ and simplify.",
+        "To turn a fraction into a decimal, divide the numerator by the denominator.",
+        "Multiply any decimal by $100$ to turn it into a percentage.",
+        "Memorise common equivalents like $\\frac{1}{8} = 0.125 = 12.5\\%$ to save time."
+      ],
+      "examNote": "Conversion skills are rarely tested alone on the Higher tier; instead, expect them embedded inside percentage change, reverse percentages, or ratio problems."
+    },
     "examples": [
       {
         "question": "Prove algebraically that the recurring decimal $0.\\dot{2}\\dot{7}$ can be written as $\\frac{3}{11}$.",
@@ -45,7 +55,17 @@
     "subject": "Number",
     "icon": "🔢",
     "title": "Standard form",
-    "overview": "Standard form (also known as scientific notation) is a standardized way of writing very large or very small numbers using powers of 10. Instead of writing out cumbersome numbers like $45,000,000$ or $0.0000032$, we write them in the format $A \\times 10^n$.\n\nThere are two essential rules to remember:\n1. The number $A$ (the front number) must always be at least $1$ but strictly less than $10$ (written as $1 \\le A < 10$).\n2. The power $n$ must be an integer (a positive or negative whole number). A positive power indicates a large number (10 or greater), whereas a negative power indicates a small decimal between 0 and 1.\n\nIn Edexcel GCSE Maths (Higher tier, 1MA1), students must convert fluently between standard form and ordinary numbers, as well as perform calculations (addition, subtraction, multiplication, division) both with and without a calculator. In non-calculator papers, examiners award method marks (M1) for correctly manipulating the numbers or indices separately, and accuracy marks (A1) for putting the final answer into proper standard form. No standard form formulas are provided on the exam formula sheet, so understanding these index rules is crucial.",
+    "overview": {
+      "hook": "Ever tried reading the distance to the Sun and gotten lost in a sea of zeros?",
+      "keyIdea": "Standard form is a shorthand way to write extremely large or small numbers without counting endless zeros. It always looks like $A \\times 10^n$, where $A$ is between $1$ and $10$, and $n$ is an integer.",
+      "keyPoints": [
+        "The number $A$ must be greater than or equal to $1$ and strictly less than $10$.",
+        "Positive powers of $10$ mean numbers greater than $10$, like $4,500,000 = 4.5 \\times 10^6$.",
+        "Negative powers of $10$ mean decimals smaller than $1$, like $0.0003 = 3 \\times 10^{-4}$.",
+        "Calculators usually display standard form using an $E$ button, such as $4.5 \\text{E} 6$."
+      ],
+      "examNote": "You must memorise how to convert numbers into standard form as this formula is not given on the Higher tier formula sheet."
+    },
     "examples": [
       {
         "question": "Work out $(4 \\times 10^5) \\times (8 \\times 10^3)$. Give your answer in standard form.",
@@ -85,7 +105,17 @@
     "subject": "Number",
     "icon": "🔢",
     "title": "Surds",
-    "overview": "A surd is an exact square root of a number that cannot be written as a whole number or a simple fraction. For instance, $\\sqrt{4}$ is just $2$, so it is not a surd. However, $\\sqrt{2}$ equals $1.41421356...$, an infinite non-repeating decimal. Keeping a number written as $\\sqrt{2}$ keeps the value exact, which is crucial in higher-level mathematics.\n\nIn Edexcel GCSE Higher Tier exams, surds test a student's ability to simplify expressions, expand brackets, and 'rationalise' denominators (removing surds from the bottom of a fraction). Key rules to memorise—as these are not provided on the exam formula sheet—include $\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab}$ and $\\sqrt{a} \\div \\sqrt{b} = \\sqrt{a \\div b}$.\n\nWhen working through exam questions, marks are often split into Method marks (M1) for demonstrating correct steps—such as identifying a square factor like $4, 9, 16,$ or $25$—and Accuracy marks (A1) for giving the final fully simplified answer. Encourage your child to look for the largest square number that fits into the number under the square root.",
+    "overview": {
+      "hook": "Surds are like leaving your answers in exact fractions instead of messy decimals.",
+      "keyIdea": "A surd is a square root that cannot be written as a whole number, like $\\sqrt{2}$. We simplify them by finding square numbers hidden inside.",
+      "keyPoints": [
+        "Use the multiplication rule $\\sqrt{ab} = \\sqrt{a} \\times \\sqrt{b}$.",
+        "Always look for the largest square number factor.",
+        "Rationalise the denominator to remove roots from the bottom of fractions.",
+        "Treat surds like algebraic terms when adding or subtracting."
+      ],
+      "examNote": "Surd rules are not given on the Higher formula sheet, so you must memorise them."
+    },
     "examples": [
       {
         "question": "Simplify fully $\\sqrt{75} + \\sqrt{12}$.",
@@ -125,7 +155,17 @@
     "subject": "Number",
     "icon": "🔢",
     "title": "Laws of indices",
-    "overview": "Indices (or powers) are small numbers written to the top right of a base number or variable, showing how many times it multiplies by itself. In Edexcel GCSE Higher Maths, index laws allow us to simplify complex numbers and algebraic expressions efficiently. None of these laws are provided on the Edexcel formula sheet, so every rule must be memorised. Key rules include: when multiplying terms with the same base, add the indices ($a^m \\times a^n = a^{m+n}$); when dividing, subtract the indices ($a^m \\div a^n = a^{m-n}$); and when raising a power to a power, multiply them ($(a^m)^n = a^{m \\times n}$). Special cases include any non-zero term to the power of zero equaling $1$ ($a^0 = 1$), and negative powers indicating a reciprocal ($a^{-n} = \\frac{1}{a^n}$). Fractional powers represent roots: $a^{\\frac{1}{n}} = \\sqrt[n]{a}$ and $a^{\\frac{m}{n}} = (\\sqrt[n]{a})^m$. In exams, examiners award method marks (M1) for correctly applying an index rule, even if a minor arithmetic error occurs, and accuracy marks (A1) for the correct final value or fully simplified form.",
+    "overview": {
+      "hook": "Indices are just a shorthand way to write giant multiplication chains without losing your mind.",
+      "keyIdea": "Laws of indices let you combine or simplify powers when you are multiplying, dividing, or raising them further. You just need to know how to add, subtract, or multiply the index numbers together.",
+      "keyPoints": [
+        "Multiply terms by adding their powers: $a^m \\times a^n = a^{m+n}$",
+        "Divide terms by subtracting their powers: $a^m \\div a^n = a^{m-n}$",
+        "Raise a power to a power by multiplying them: $(a^m)^n = a^{mn}$",
+        "Any number to the power of zero is one: $a^0 = 1$"
+      ],
+      "examNote": "Laws of indices questions are non-calculator favourites, and none of these rules are given on the formula sheet so you must memorise them."
+    },
     "examples": [
       {
         "question": "Simplify fully $\\frac{4x^3 \\times 3x^5}{6x^2}$.",
@@ -165,7 +205,17 @@
     "subject": "Number",
     "icon": "🔢",
     "title": "Upper & lower bounds",
-    "overview": "When a number is rounded or measured, it is usually not exact. Upper and lower bounds tell us the maximum and minimum possible values that the original number could have been before rounding. For example, if a length is given as $8\\text{ cm}$ correct to the nearest centimetre, the original length could be anything from $7.5\\text{ cm}$ up to (but not quite including) $8.5\\text{ cm}$. We call $7.5\\text{ cm}$ the lower bound and $8.5\\text{ cm}$ the upper bound. In Edexcel GCSE exams, you write this range as an error interval using inequalities: $7.5 \\le \\text{length} < 8.5$.\n\nWhen calculating with bounds, you must think strategically about how to get the maximum or minimum overall result. To make a total as large as possible when adding or multiplying, you combine the upper bounds of all numbers. However, when subtracting or dividing, to get the maximum result you must take the upper bound of the starting number and subtract or divide by the lower bound of the second number (and vice versa for the minimum result). Mastering bounds helps students understand measurement uncertainty and perform accurate real-world calculations.",
+    "overview": {
+      "hook": "Every measurement you take in real life is actually a tiny lie.",
+      "keyIdea": "Because measuring tools like rulers and scales are never infinitely precise, values are always rounded. Upper and lower bounds are the maximum and minimum possible numbers before rounding happened.",
+      "keyPoints": [
+        "Find the degree of accuracy, such as the nearest $1\\text{ cm}$ or $0.1\\text{ g}$.",
+        "Divide this accuracy amount by $2$ to find your plus-or-minus tolerance.",
+        "Add this tolerance to get the upper bound and subtract it to get the lower bound.",
+        "For calculation questions, always use the bounds before doing your sums."
+      ],
+      "examNote": "Bounds formulas are not given on the formula sheet, so you must memorise the rule of halving the unit of accuracy."
+    },
     "examples": [
       {
         "question": "A rectangular field has a length $L = 40\\text{ m}$ rounded to the nearest metre, and a width $W = 25\\text{ m}$ rounded to the nearest metre. Calculate the upper bound for the perimeter of the field.",
@@ -205,7 +255,16 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Expanding & factorising",
-    "overview": "Expanding and factorising are reverse mathematical processes, much like multiplying and dividing. Expanding means removing brackets by multiplying every term inside by the term outside. For double brackets, such as $(x + 2)(x + 3)$, every term in the first bracket must be multiplied by every term in the second. Factorising is the exact opposite: putting an expression back into brackets by finding highest common factors. At Higher tier Edexcel GCSE, students must master expanding double and triple brackets, factorising single brackets fully, factorising simple quadratics ($x^2 + bx + c$), and harder quadratics where the coefficient of $x^2$ is greater than 1 ($ax^2 + bx + c$). Students also need to recognise special algebraic patterns like the Difference of Two Squares ($x^2 - a^2 = (x - a)(x + a)$). In Edexcel exams, clear working earns key method marks (M1) even if a simple arithmetic error occurs, while the final correct simplified answer secures the accuracy mark (A1). Note that factorisation structures are not provided on the exam formula sheet, so these techniques must be memorised and practiced regularly.",
+    "overview": {
+      "hook": "Expanding and factorising are just like packing a suitcase and unpacking it again.",
+      "keyIdea": "Expanding multiplies out brackets to remove them, while factorising does the exact opposite by putting terms back into brackets. You always look for the highest common factor to kickstart the factorising process.",
+      "keyPoints": [
+        "Multiply every term inside the bracket by the outside term.",
+        "Factorising is the reverse of expanding, using the highest common factor.",
+        "Use FOIL or a grid method to expand double brackets like $(x + 2)(x + 3)$."
+      ],
+      "examNote": "Factorising quadratics for M1/A1 marks requires you to memorise how to spot pairs of numbers that add to the middle coefficient and multiply to the end constant."
+    },
     "examples": [
       {
         "question": "Expand and simplify $(2x + 3)(x - 4)$.",
@@ -245,7 +304,17 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Solving equations & inequalities",
-    "overview": "Solving an equation or inequality means finding the unknown value, usually represented by $x$, that makes a mathematical statement true. Think of an equation like a balanced pair of scales: whatever operation you perform on one side (such as adding, subtracting, multiplying, or dividing), you must do to the exact same side to keep it balanced. The goal is to isolate $x$ on one side of the equals sign ($=$). An inequality uses symbols like $<$ (less than), $>$ (greater than), $\\leq$ (less than or equal to), or $\\geq$ (greater than or equal to) instead of an equals sign. You solve inequalities using the exact same steps as linear equations, with one crucial rule to remember: if you multiply or divide both sides by a negative number, you must flip the direction of the inequality sign. In Edexcel GCSE Higher tier exams, examiners look for clear method steps (which earn M1 marks) before awarding accuracy marks (A1) for the final answer. Quadratic equations ($x^2$) often require factorising or using the quadratic formula, which is provided on your exam formula sheet. Mastering these balancing techniques ensures you can confidently tackle linear, quadratic, and inequality problems alike.",
+    "overview": {
+      "hook": "Solving equations is like finding a hidden code where letters stand for mystery numbers.",
+      "keyIdea": "You balance both sides by doing the exact same operation until the letter is completely by itself. For inequalities, remember to flip the sign if you multiply or divide by a negative number.",
+      "keyPoints": [
+        "Whatever you do to one side, you must do to the other.",
+        "Collect all $x$ terms on one side and numbers on the other.",
+        "Open circles on number lines mean strict inequalities like $<$ or $>$.",
+        "Closed circles mean inclusive inequalities like $\\le$ or $\\ge$."
+      ],
+      "examNote": "You must memorise how to show inequality regions on a graph, as these formulas are not on the exam sheet."
+    },
     "examples": [
       {
         "question": "Solve the inequality $3(2x - 5) > 4x + 7$.",
@@ -285,7 +354,17 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Simultaneous equations",
-    "overview": "Simultaneous equations are two or more algebraic equations containing the same unknown variables, usually $x$ and $y$. The word 'simultaneous' means we must find specific values for these variables that make all equations true at the exact same time. For standard linear equations (where variables are not squared), we use the elimination method. This involves multiplying the equations so that the number in front of one variable matches in both equations, allowing us to eliminate it by adding or subtracting the equations. For Higher tier Edexcel GCSE, students also encounter non-linear simultaneous equations, where one equation is quadratic (containing terms like $x^2$ or $y^2$). For these, we use the substitution method: rearrange the linear equation into the form $y = ...$ or $x = ...$ and substitute it into the quadratic equation. In Edexcel mark schemes, M marks (Method marks) are given for correct steps such as eliminating a variable or substituting, while A marks (Accuracy marks) are given for correct final values. Both $x$ and $y$ values must be found to gain full marks. Formulae for factorising quadratics are not provided on the exam sheet, so memorising standard factorisation methods is essential.",
+    "overview": {
+      "hook": "Finding where two secret lines cross is just like solving a double puzzle.",
+      "keyIdea": "Simultaneous equations mean finding the exact $x$ and $y$ values that make two different equations true at the same time. You can solve them by elimination (adding or subtracting the equations) or substitution.",
+      "keyPoints": [
+        "Line up the $x$ and $y$ terms vertically.",
+        "Make coefficients match by multiplying if needed.",
+        "Add or subtract to eliminate one variable.",
+        "Substitute your answer back to find the second value."
+      ],
+      "examNote": "Simultaneous equations are worth 3 to 5 marks on the Edexcel Higher paper, usually requiring clear working out for M1 and A1 marks."
+    },
     "examples": [
       {
         "question": "Solve the simultaneous equations: $3x + 2y = 16$ and $2x - 3y = 2$",
@@ -325,7 +404,17 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Quadratics: factorising & the formula",
-    "overview": "A quadratic equation is an expression where the highest power of $x$ is $x^2$, usually written in the form $ax^2 + bx + c = 0$. Solving it means finding the values of $x$ that make the equation equal to zero. In Edexcel GCSE Maths, there are two primary methods you must master: factorising and using the quadratic formula. Factorising involves putting the expression into two brackets, such as $(x + p)(x + q) = 0$. This method is fast and works best when the solutions are whole numbers or simple fractions. However, when a quadratic cannot be factorised easily, we use the quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. Please note: for the Edexcel Higher Tier (1MA1) exam, students MUST memorise this formula, as it is NOT provided on the formula sheet. In exam mark schemes, examiners award $M$ marks (Method marks, such as $M1$) for correctly setting up brackets or substituting values into the formula, and $A$ marks (Accuracy marks, such as $A1$) for correct final answers. Showing step-by-step working ensures that even if a simple calculation error is made, method marks are still secured.",
+    "overview": {
+      "hook": "Mastering quadratics is like learning the cheat codes to solve shape and puzzle problems in GCSE Maths.",
+      "keyIdea": "A quadratic expression contains an $x^2$ term and can be solved either by factorising into two brackets or using the quadratic formula. These methods find the roots, which are the places where the graph crosses the $x$-axis.",
+      "keyPoints": [
+        "Always set your quadratic equation equal to zero before starting.",
+        "Factorising means finding two numbers that multiply to the end number and add to the middle coefficient.",
+        "The quadratic formula works for every quadratic, even when factorising is impossible.",
+        "Memorise the quadratic formula as it is not given on the Higher formula sheet."
+      ],
+      "examNote": "Examiners award Method marks (M1) for substituting correctly into the formula, so always write out your working clearly even if you make an arithmetic error."
+    },
     "examples": [
       {
         "question": "Solve $x^2 - 5x - 14 = 0$ by factorising.",
@@ -365,7 +454,17 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Completing the square",
-    "overview": "Completing the square is a fundamental algebraic technique used to rewrite quadratic expressions from the standard form $x^2 + bx + c$ into the completed square form $(x + p)^2 + q$. This process is essential because it allows students to easily solve quadratic equations without using the quadratic formula, and it directly reveals the coordinates of the turning point (minimum or maximum vertex) of a quadratic curve. To complete the square for $x^2 + bx + c$, you take half of the coefficient of $x$ (which is $b/2$) to form the bracket $(x + b/2)^2$, subtract the square of that halved value, $(b/2)^2$, and then add the constant $c$. In Edexcel GCSE Maths Higher tier exams, this technique is not included on the formula sheet and must be memorised. Examiners award method marks (M1) for halving the middle coefficient and placing it in the bracket, and accuracy marks (A1) for correctly evaluating the final constant term.",
+    "overview": {
+      "hook": "Turning a messy quadratic into a neat squared bracket is like packing a suitcase to save space.",
+      "keyIdea": "Completing the square rewrites $ax^2 + bx + c$ into the form $a(x + p)^2 + q$. This makes it much easier to solve equations and instantly find the turning point of a parabola.",
+      "keyPoints": [
+        "Halve the coefficient of $x$ to find the number inside the bracket.",
+        "Always subtract the square of that half-value to keep things balanced.",
+        "Expand your completed square bracket to check your working.",
+        "Use this method when factorising is impossible or when finding graph turning points."
+      ],
+      "examNote": "The formula for the coordinates of the turning point using completed square form is not given on the Higher tier formula sheet, so you must know it."
+    },
     "examples": [
       {
         "question": "Express $x^2 + 8x - 5$ in the form $(x + a)^2 + b$, where $a$ and $b$ are integers.",
@@ -405,7 +504,17 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Algebraic fractions",
-    "overview": "An algebraic fraction is simply a fraction where the top (numerator), the bottom (denominator), or both contain algebraic expressions with letters like $x$. Just like numerical fractions, you can simplify, add, subtract, multiply, and divide them by applying standard fraction rules. The most crucial skill for algebraic fractions in Edexcel GCSE Higher Maths is factorisation. Before trying to simplify a fraction or combine terms, you must factorise expressions into single or double brackets. A common mistake is attempting to cancel individual terms directly, such as cancelling an $x^2$ from the top and bottom when it is part of an addition or subtraction; you can only cancel terms that are multiplied as whole factors. For adding and subtracting, you must first find a common denominator by multiplying the denominators together. In Edexcel exams, method marks (M1) are awarded for correct factorisation and finding common denominators, while accuracy marks (A1) are given for the final simplified expression. Note that no formulae for algebraic fractions are provided on the GCSE Higher formula sheet, so memorising factorisation techniques—including the difference of two squares—is essential.",
+    "overview": {
+      "hook": "Algebraic fractions are just normal fractions in disguise, so the same rules apply.",
+      "keyIdea": "To simplify, add, subtract, multiply, or divide algebraic fractions, you use the exact same methods as numerical fractions. The main secret is to factorise every numerator and denominator first so you can cancel out common brackets.",
+      "keyPoints": [
+        "Factorise all quadratic expressions fully before attempting to cancel terms.",
+        "Always find a common denominator when adding or subtracting fractions.",
+        "Multiply numerators together and denominators together for multiplication.",
+        "Keep, change, flip when dividing one algebraic fraction by another."
+      ],
+      "examNote": "This topic is guaranteed on the Higher paper, and you must memorise all factorising methods as no algebraic formulas are provided on the formula sheet."
+    },
     "examples": [
       {
         "question": "Simplify fully $\\frac{x^2 - 9}{2x^2 + 5x - 3}$",
@@ -445,7 +554,17 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Sequences (linear, quadratic, geometric)",
-    "overview": "A sequence is simply an ordered list of numbers following a mathematical rule. In Edexcel GCSE Maths (Higher Tier), students need to master three main types: linear, quadratic, and geometric. A linear sequence changes by adding or subtracting the same number each step, giving an $n^th$ term rule like $dn + c$. A quadratic sequence contains an $n^2$ term; its signature feature is that the difference between the differences (the second difference) is constant. A geometric sequence multiplies or divides by the same factor (called the common ratio) each step, such as $3, 6, 12, 24...$ where each term doubles. Note that no sequence formulae are given on the Higher tier formula sheet; students must memorise the methods entirely. In Edexcel mark schemes, examiners award method marks (M1) for setting up correct working—such as writing out differences or algebraic equations—and accuracy marks (A1) for exact final answers. Parents can support learning by ensuring students write down their step-by-step working rather than trying to calculate rules in their heads.",
+    "overview": {
+      "hook": "Spotting patterns is like cracking a secret code, and GCSE maths loves hiding them in sequences.",
+      "keyIdea": "A sequence is just an ordered list of numbers following a rule. To master them, you need to recognise whether the pattern involves adding, multiplying, or squaring the position.",
+      "keyPoints": [
+        "Linear sequences have a constant first difference.",
+        "Quadratic sequences have a constant second difference.",
+        "Geometric sequences multiply by the same number each time.",
+        "Use the position-to-term rule, often written as $n$."
+      ],
+      "examNote": "You must memorise the methods for finding the $n$-th term, as these formulas are not provided on the Higher tier formula sheet."
+    },
     "examples": [
       {
         "question": "Find the $n^th$ term formula for the quadratic sequence: $3, 9, 17, 27, 39, \\dots$",
@@ -485,7 +604,16 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Functions & iteration",
-    "overview": "Welcome to Functions and Iteration. In GCSE maths, think of a function like a tiny factory machine. You feed a number into it (called the input, usually written as $x$), the machine does some mathematical operations to it, and out pops a new number (called the output). We write this as $f(x)$, which is just a fancy way of saying 'the function of $x$'. For example, if our machine is $f(x) = 2x + 3$, and we feed in $4$, we replace $x$ with $4$ to get $2(4) + 3 = 11$. Sometimes we link functions together, like $fg(x)$, which means you put your number into machine $g$ first, and then feed that exact output straight into machine $f$. An inverse function, written as $f^{-1}(x)$, simply works the machine backwards to undo what it did, returning your original number. Iteration is a clever extension of this idea. Often in real life, we cannot solve tough equations directly, so we use a recurrence relation (a formula like $x_{n+1} = \text{something involving } x_n$). You start with a guess, feed it into the formula to get a better answer, and then feed that new answer back in repeatedly. This is called 'iterating', and you keep going until the numbers settle on a stable value, which gives you an approximate solution to the equation. There is no special formula sheet provided for this topic in the Edexcel Higher exam, so you must memorise how to set up composite functions, find inverses by swapping $x$ and $y$, and how to substitute values into iterative sequences carefully.",
+    "overview": {
+      "hook": "Iteration is like baking a cake and using the result to start your next batch.",
+      "keyIdea": "Function notation like $f(x)$ is just a set of instructions for a number machine. Iteration applies this same rule over and over to find a repeating pattern or solution.",
+      "keyPoints": [
+        "Substitute the input value into the function to get your output.",
+        "For iteration, take your previous answer $x_n$ to find the next term $x_{n+1}$.",
+        "Set up your calculator using the ANS button to speed up repeated steps."
+      ],
+      "examNote": "Iteration formulas are given in the exam question, but you must know how to use your calculator's Ans function efficiently to gain all method marks."
+    },
     "examples": [
       {
         "question": "Given the functions $f(x) = 3x - 2$ and $g(x) = x^2 + 5$, find the value of $fg(4)$.",
@@ -525,7 +653,17 @@
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Algebraic proof",
-    "overview": "Algebraic proof is like being a detective using letters and numbers instead of clues. In mathematics, when we say something is always true, we cannot just test a few numbers and hope for the best; we have to prove it for every possible number in existence. To do this, we use universal algebraic representations. For example, any even number can be written as $2n$ because any whole number multiplied by $2$ always makes an even result. Similarly, an odd number can be written as $2n + 1$. Consecutive numbers follow on from each other, such as $n$, $n + 1$, and $n + 2$. When tackling these questions in the Edexcel GCSE Higher paper, your goal is usually to take a statement, expand any brackets, simplify the expression by collecting like terms, and then factorise it to reveal a hidden multiple. For instance, if you end up with an expression like $2(3n^2 + n)$, you can state that because it has a factor of $2$, it is always a multiple of $2$, and therefore always even. There is no formula sheet provided for algebraic proof in the exam; you must rely entirely on your core algebra skills like expanding brackets and factorising. Examiners love testing this because it checks if you truly understand how algebra works beneath the surface. For parents helping out, just look for clear steps: translating words into algebra, expanding carefully, and pulling out common factors at the end.",
+    "overview": {
+      "hook": "Algebraic proof is like a mathematical magic trick that is always guaranteed to work.",
+      "keyIdea": "Instead of testing numbers one by one, you use algebra to show a statement is true for every single integer. You set up a general expression, expand and simplify it, and factorise to reach your final conclusion.",
+      "keyPoints": [
+        "Represent consecutive integers as $n$, $n+1$, and $n+2$.",
+        "Write even numbers as $2n$ and odd numbers as $2n+1$.",
+        "Expand brackets and simplify carefully by collecting like terms.",
+        "Factorise out the required common factor to complete the proof."
+      ],
+      "examNote": "This topic usually appears as a 4-mark question at the end of a paper and requires a fully written concluding sentence to earn the final accuracy mark."
+    },
     "examples": [
       {
         "question": "Prove algebraically that the sum of any two consecutive integers is always an odd number.",
@@ -565,7 +703,16 @@
     "subject": "Ratio & Proportion",
     "icon": "⚖️",
     "title": "Ratio",
-    "overview": "Ratio is a way of comparing different quantities, showing the relative sizes of two or more values. Think of it like a recipe: if a cordial drink uses a ratio of 1 part juice to 4 parts water, it means for every 1 glass of juice, you need 4 glasses of water. In total, you have 5 parts ($1 + 4$). Understanding how to share an amount into a given ratio, or how to combine and change ratios, is a vital skill in the Edexcel GCSE Higher tier maths exam. A common mistake students make is confusing fractions with ratios; a fraction compares a part to the whole (e.g., $1/5$ is juice), whereas a ratio compares part to part ($1:4$). To solve ratio problems successfully, always start by finding the total number of parts by adding the ratio numbers together. Then, divide the total amount you need to share by this total number of parts to find the value of a single part. Finally, multiply this single part value back up to find each individual share. For higher-level questions, you might need to deal with equivalent ratios or link two different ratios together using a common value, much like finding a common denominator in fractions. Note that ratio formulae are generally not provided on the GCSE formula sheet, so you must memorise the 'find the total parts' method.",
+    "overview": {
+      "hook": "Splitting a bill or mixing squash is ratio in action — it is just comparing parts of a whole.",
+      "keyIdea": "A ratio compares sizes or amounts, showing how one part relates to another. The order of numbers matters completely, so $2:3$ is not the same as $3:2$.",
+      "keyPoints": [
+        "Simplify ratios by dividing all parts by the highest common factor.",
+        "Share a total amount by first finding the total number of ratio parts.",
+        "Use unitary methods to find one part when another part is known."
+      ],
+      "examNote": "Ratio formulae are not given on the Higher formula sheet, so you must memorise how to share in a given ratio."
+    },
     "examples": [
       {
         "question": "A box contains red sweets and green sweets in the ratio $3 : 5$. There are 72 sweets in total in the box. Work out how many green sweets are in the box.",
@@ -605,7 +752,16 @@
     "subject": "Ratio & Proportion",
     "icon": "⚖️",
     "title": "Percentage change",
-    "overview": "Percentage change is a way of measuring how much a quantity has increased or decreased relative to its original starting value. Whether you are looking at a shop sale offering a discount or the yearly rise in house prices, the core idea is always the same: we compare the size of the change to the original amount. To do this, we use a simple formula that you must memorise for your Edexcel Higher exam, as it is not given on the formula sheet: Percentage Change = (Actual Difference / Original Value) multiplied by 100. The 'actual difference' is found by subtracting the two numbers, and the 'original value' is always the starting amount before any change happened—this is the most common trap students fall into, as they accidentally divide by the new value instead. Another powerful way to handle percentage change in GCSE maths is by using decimal multipliers. For an increase, you add the percentage to 100 percent and convert it to a decimal (for example, a 15 percent increase becomes 1.15). For a decrease, you subtract it from 100 percent (so a 12 percent decrease becomes 0.88). In exam questions, particularly on the calculator paper, using multipliers saves time and gets you marks faster. Examiners love testing this with reverse percentage questions or multi-step problems involving depreciation and compound growth. Showing your method clearly by writing out the formula and substituting your numbers will secure method marks (M1), even if a careless arithmetic error creeps in at the end.",
+    "overview": {
+      "hook": "Finding percentage change is just working out how much a price or amount has grown or shrunk.",
+      "keyIdea": "We compare the change in value to the original starting amount. The formula is $\\text{Percentage Change} = \\frac{\\text{Actual Change}}{\\text{Original Value}} \\times 100$.",
+      "keyPoints": [
+        "Always subtract the original value from the new value to find the change.",
+        "Always divide by the original starting amount, never the new total.",
+        "Multiply your decimal answer by 100 to turn it into a percentage."
+      ],
+      "examNote": "This formula is not on the Edexcel formula sheet, so you must memorise it for the exam."
+    },
     "examples": [
       {
         "question": "A bicycle normally costs $£250$. In a sale, it is reduced to $£200$. Work out the percentage decrease in the price of the bicycle.",
@@ -645,7 +801,17 @@
     "subject": "Ratio & Proportion",
     "icon": "⚖️",
     "title": "Compound interest & depreciation",
-    "overview": "Compound interest and depreciation are ways money grows or shrinks over time when the percentage change is applied to the new amount each year, rather than the original starting amount. Imagine you put 100 pounds into a savings account with $10\\%$ compound interest. In the first year, you earn $10$ pounds, making your new total $110$ pounds. In the second year, you do not just earn $10$ pounds again; you earn $10\\%$ of the new total ($110$ pounds), which is $11$ pounds. Your total is now $121$ pounds. This snowball effect is compound interest. Depreciation works the exact same way, but in reverse: an asset like a car loses value by a percentage each year, so it shrinks from its previous value. In GCSE maths, the quickest and best way to solve these problems is by using multipliers. A multiplier is a decimal representing the percentage change. For a $10\\%$ increase, the multiplier is $1.10$. For a $15\\%$ decrease, you subtract $15$ from $100$ to get $85\\%$, giving a multiplier of $0.85$. The general formula is $\\text{Final Value} = \\text{Original} \\times \\text{multiplier}^{\\text{number of years}}$. For GCSE Higher tier, you must memorise how to set up and use these multipliers, as this exact formula is not given on the formula sheet provided in the exam. Examiners love testing this over multiple years, and you will often pick up method marks (M1) just for showing the correct multiplier raised to the correct power.",
+    "overview": {
+      "hook": "Growing money in a bank account works just like a snowball rolling downhill, picking up speed as it goes.",
+      "keyIdea": "Compound interest increases an amount by a percentage each year based on the previous year's total, rather than the original amount. Depreciation works the exact same way, but it decreases the value over time instead.",
+      "keyPoints": [
+        "Identify if the amount is increasing or decreasing.",
+        "Convert the percentage into a multiplier using $1 + \\frac{r}{100}$ or $1 - \\frac{r}{100}$.",
+        "Raise the multiplier to the power of the number of time periods $n$.",
+        "Multiply the original amount by this powered multiplier to find the final value."
+      ],
+      "examNote": "This formula is not on the Edexcel formula sheet, so you must memorise $text{Final Value} = \\text{Original} \\times \\text{multiplier}^n$."
+    },
     "examples": [
       {
         "question": "Emma invests 4000 pounds in a bank account that pays $3.5\\%$ compound interest per year. Work out the total amount in the account after 3 years.",
@@ -685,7 +851,17 @@
     "subject": "Ratio & Proportion",
     "icon": "⚖️",
     "title": "Direct & inverse proportion",
-    "overview": "Proportion is all about how two quantities change in relation to each other. In GCSE maths, you need to master two types: direct proportion and inverse proportion. Direct proportion means that as one value goes up, the other goes up at the exact same steady rate—like earning money where working twice as many hours means getting paid twice as much. Mathematically, we write this as $y = kx$, where $k$ is a special number called the constant of proportionality. Inverse proportion means that as one value goes up, the other goes down—like the time it takes to paint a wall; more people painting means fewer hours needed. Mathematically, this is written as $y = \\frac{k}{x}$. To solve these problems in the Edexcel Higher exam, you follow a foolproof four-step recipe: first, write down the proportional relationship using $y \\propto x$ or $y \\propto \\frac{1}{x}$; second, turn it into an equation by introducing $k$; third, use the numbers given in the question to find $k$; and finally, substitute $k$ back into your formula to answer the final question. Note that these algebraic proportion formulae are NOT given on the Edexcel formula sheet, so you must memorise them! When marking exam questions, examiners typically award method marks (M1) for finding $k$ or setting up the correct equation, and accuracy marks (A1) for the final correct answer.",
+    "overview": {
+      "hook": "Just like doubling your recipe ingredients doubles the cake, some maths rules connect variables in direct lockstep.",
+      "keyIdea": "Direct proportion means two values increase together at a constant rate ($y = kx$). Inverse proportion means as one value goes up, the other goes down at the same rate ($y = \\frac{k}{x}$).",
+      "keyPoints": [
+        "Identify if the relationship is direct or inverse from the context.",
+        "Write the general equation using a constant of proportionality, $k$.",
+        "Substitute given values to find the exact value of $k$.",
+        "Use your complete equation to solve for the unknown value."
+      ],
+      "examNote": "Proportion formulae are not given on the formula sheet, so you must memorise how to set up $y = kx$ and $y = \\frac{k}{x}$ to secure method marks."
+    },
     "examples": [
       {
         "question": "y is directly proportional to the square of x. When x = 3, y = 45. Find the value of y when x = 4.",
@@ -725,7 +901,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Angles & polygons",
-    "overview": "Welcome to our weekly maths session! Today we are looking at angles in polygons, a very popular topic in the Edexcel Higher GCSE exam. A polygon is simply a 2D shape with straight sides, like a triangle, pentagon, or octagon. To master this topic, you only really need to remember two main rules. First, the sum of all the interior (inside) angles in any polygon can be found using the formula $(n - 2) \times 180^\text{o}$, where $n$ is the number of sides. Please note that while you might need to use this formula, for regular polygons you are also given the formula for one exterior angle on the formula sheet: Exterior angle $= 360^\text{o} \text{ / } n$. Second, the exterior and interior angles at any single vertex (corner) always add up to $180^\text{o}$ because they form a straight line. For a regular polygon, all sides and angles are equal, meaning all exterior angles add up to $360^\text{o}$. In the exam, questions will often combine these facts. Examiners love to test if you can move between interior and exterior angles to find the number of sides a shape has, or to find a missing angle in a composite shape. As you work through today with your parent, make sure to write down every step clearly. In Edexcel exams, you often get 'Method' marks (M1) just for showing the correct calculation, even if you make a tiny arithmetic slip at the end. Let us dive into the examples!",
+    "overview": {
+      "hook": "Knowing the secret rule for polygon angles turns a messy shape puzzle into easy arithmetic.",
+      "keyIdea": "The sum of interior and exterior angles lets us decode any polygon. Every extra side adds exactly $180^\\circ$ to the total interior angles.",
+      "keyPoints": [
+        "Sum of interior angles $= (n - 2) \\times 180^\\circ$.",
+        "Sum of exterior angles in any polygon is always $360^\\circ$.",
+        "Interior angle $+$ Exterior angle $= 180^\\circ$ on a straight line.",
+        "Regular polygons have equal sides and equal angles."
+      ],
+      "examNote": "The polygon interior angle formula is not given on the formula sheet, so you must memorise it for the exam."
+    },
     "examples": [
       {
         "question": "Work out the size of each interior angle of a regular octagon.",
@@ -765,7 +951,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Circle theorems",
-    "overview": "Circle theorems are a set of geometric rules that connect angles, radii, tangents and chords inside or touching a circle. Instead of measuring with a protractor, you use logical geometric proofs and algebra to find missing angles or lengths. Circle theorems are a favourite topic in the Edexcel Higher GCSE maths paper, often worth 3 to 5 marks each and frequently combined with triangle geometry or algebra. To master them, you must learn to spot visual patterns in diagrams, such as cyclic quadrilaterals, tangents meeting radii at right angles, or triangles formed inside semicircles. Note that none of the circle theorem rules are given on the formulae sheet provided in the exam; you must memorise all eight core theorems completely. When answering these questions in an exam, the Edexcel mark scheme is very strict. You must state the exact geometric reason for every single step of your working out (for example, writing angle in a semicircle is 90 degrees or opposite angles in a cyclic quadrilateral sum to 180 degrees). Failing to write down these reasons will lose you accuracy marks, even if your final number is correct. During this hour, parents and students should focus on identifying the shape features first, writing down the rule, and then calculating step by step.",
+    "overview": {
+      "hook": "Circle theorems are the secret rules that let you unlock missing angles inside circles.",
+      "keyIdea": "Circles have hidden geometric properties linking angles, radii, and chords. If you spot a specific shape formed by lines touching the circumference, you can instantly find unknown angles using standard rules.",
+      "keyPoints": [
+        "The angle at the centre is twice the angle at the circumference.",
+        "Angles in the same segment subtended by the same arc are equal.",
+        "Opposite angles in a cyclic quadrilateral always add up to $180^\\circ$.",
+        "The angle in a semicircle is always $90^\\circ$."
+      ],
+      "examNote": "Circle theorem formulas are not given on the formula sheet, so you must memorise all eight core rules and be ready to quote them to gain full communication marks."
+    },
     "examples": [
       {
         "question": "The points A, B and C lie on the circumference of a circle with centre O. Angle ABC = 65 degrees. Work out the size of angle AOC. Give a reason for each stage of your working.",
@@ -805,7 +1001,16 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Arc length & sector area",
-    "overview": "Imagine cutting a slice of a round birthday cake. The crust on the outside edge is the arc length, and the flat top surface of the slice is the sector area. Because a full circle has an angle of $360$ degrees, any slice is just a fraction of that full circle. If your slice has an angle of $60$ degrees at the centre, it represents $60$ out of $360$ parts, which simplifies to the fraction $1/6$ of the whole circle. To find the arc length, we first calculate the circumference of the full circle using the formula $\\pi \\times \\text{diameter}$ (or $2\\pi r$), and then multiply that total by our fraction ($\\theta / 360$). To find the sector area, we do the same thing using the full circle area formula, $\\pi r^2$. On the Edexcel Higher tier exam, the formula sheet gives you the circumference and area of a full circle, but you must memorise how to scale them down for a specific angle by multiplying by $\\theta / 360$. Examiners look for clear working: stating the formula, substituting the numbers correctly (M1), and giving the final accurate answer with units (A1). Always check if the question asks for your answer in terms of $\\pi$ or rounded to a specific number of decimal places or significant figures.",
+    "overview": {
+      "hook": "Finding a slice of pizza's crust or area is just working out a fraction of a full circle.",
+      "keyIdea": "Arc length and sector area are simply fractions of the full circle's circumference and area, determined by the angle at the centre. You multiply the full formula by $\\frac{\\theta}{360^{\\circ}}$.",
+      "keyPoints": [
+        "Arc length is a fraction of the circumference: $\\text{Arc length} = \\frac{\\theta}{360} \\times \\pi d$",
+        "Sector area is a fraction of the full circle: $\\text{Sector area} = \\frac{\\theta}{360} \\times \\pi r^2$",
+        "Always check whether the question gives you the radius or the diameter."
+      ],
+      "examNote": "These formulas are not given on the Higher tier formula sheet, so you must memorise them."
+    },
     "examples": [
       {
         "question": "Calculate the arc length of a sector with a radius of $7\\text{ cm}$ and a centre angle of $40^{\\circ}$. Give your answer to $1$ decimal place.",
@@ -845,7 +1050,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Pythagoras' theorem",
-    "overview": "Pythagoras' theorem is a famous and incredibly useful rule used to find missing side lengths in right-angled triangles. If you know any two sides of a right-angled triangle, this rule lets you calculate the exact length of the third side. The rule is based on a simple formula: $a^2 + b^2 = c^2$, where $c$ represents the hypotenuse (the longest side of the triangle, which is always directly opposite the right angle), and $a$ and $b$ are the two shorter sides, called the shorter legs. Think of it like areas of squares drawn on each side of the triangle: the area of the square on the two shorter sides added together equals the area of the square on the longest side. To use this in an exam, remember that if you are trying to find the hypotenuse ($c$), you need to square the two given sides, add them together, and then take the square root of your total. If you are looking for one of the shorter sides, you square the hypotenuse and the other known side, subtract the smaller number from the larger one, and then take the square root. For Edexcel GCSE Higher tier, you must memorise this formula because it is NOT given to you on the formulae sheet at the front of the exam paper. Examiners typically award an M1 mark for showing a correct method (such as squaring numbers and adding or subtracting them) and an A1 mark for reaching the accurate final answer with correct units.",
+    "overview": {
+      "hook": "Knowing two sides of a right-angled triangle always lets you unlock the third.",
+      "keyIdea": "Pythagoras' theorem states that in any right-angled triangle, the square of the hypotenuse equals the sum of the squares of the other two sides. The rule is written as $a^2 + b^2 = c^2$, where $c$ is always the longest side.",
+      "keyPoints": [
+        "The hypotenuse is always the longest side, directly opposite the right angle.",
+        "Use $c = \\sqrt{a^2 + b^2}$ when you need to find the hypotenuse.",
+        "Use $a = \\sqrt{c^2 - b^2}$ when you need to find a shorter side.",
+        "Always check your final answer makes sense by comparing it to the other lengths."
+      ],
+      "examNote": "This formula is not given on the Higher tier formula sheet, so you must memorise it."
+    },
     "examples": [
       {
         "question": "Calculate the length of the hypotenuse $x$ in a right-angled triangle where the two shorter sides are $6$ cm and $8$ cm. Give your answer to 1 decimal place.",
@@ -885,7 +1100,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Trigonometry (SOH CAH TOA)",
-    "overview": "Imagine you have a right-angled triangle. If you know the size of one of the angles (apart from the 90-degree corner) and the length of one side, trigonometry allows you to calculate the lengths of the other sides or find unknown angles. Trigonometry relies on the unchanging ratios between the sides of similar right-angled triangles. To use these ratios, we first need to correctly label the three sides of any right-angled triangle relative to the chosen angle, which we often call theta or x. The longest side, opposite the 90-degree angle, is always the hypotenuse. The side right next to our angle is the adjacent, and the side furthest away is the opposite. To help us remember which ratio connects which sides, we use the famous acronym SOH CAH TOA. This stands for Sin(angle) = Opposite / Hypotenuse, Cos(angle) = Adjacent / Hypotenuse, and Tan(angle) = Opposite / Adjacent. It is vital to know that on the Edexcel Higher tier exam, trigonometric ratios are NOT given on the formula sheet; you must memorise SOH CAH TOA completely. When answering exam questions, you usually earn an M1 mark for substituting numbers into the correct formula and rearranging it, and an A1 mark for the final accurate answer with correct units. Always check your calculator is set to degrees before you begin!",
+    "overview": {
+      "hook": "Ever wondered how to find the height of a tree without climbing it?",
+      "keyIdea": "SOH CAH TOA lets you find missing side lengths or angles in right-angled triangles by connecting an angle to the ratio of two sides. We use $^\\circ$ for angles and decimal multipliers to scale them.",
+      "keyPoints": [
+        "Label the sides relative to the angle: Opposite, Adjacent, and Hypotenuse.",
+        "$\\sin(\\theta) = \\frac{\\text{Opposite}}{\\text{Hypotenuse}}$",
+        "$\\cos(\\theta) = \\frac{\\text{Adjacent}}{\\text{Hypotenuse}}$",
+        "$\\tan(\\theta) = \\frac{\\text{Opposite}}{\\text{Adjacent}}$"
+      ],
+      "examNote": "Trigonometry formulas are not given on the Higher tier formula sheet, so you must memorise SOH CAH TOA."
+    },
     "examples": [
       {
         "question": "Calculate the length of the side marked x in a right-angled triangle where the angle is 35 degrees and the hypotenuse is 12 cm. The side x is opposite the 35-degree angle. Give your answer to 1 decimal place.",
@@ -925,7 +1150,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Sine & cosine rules",
-    "overview": "When you are dealing with triangles that do not have a right angle, Pythagoras' theorem and basic trigonometry (SOH CAH TOA) do not work. Instead, we use the Sine Rule and the Cosine Rule to find missing sides and angles. The Sine Rule uses ratios of opposite sides and angles: $a / \\sin(A) = b / \\sin(B) = c / \\sin(C)$. It is generally used when you know an angle and its opposite side, plus one other side or angle. The Cosine Rule is like a souped-up version of Pythagoras' theorem: $a^2 = b^2 + c^2 - 2bc \\cos(A)$. You use it when you have a 'sandwich' of information, such as two sides and the included angle (SAS), or all three sides (SSS) and you need to find an angle. In your Edexcel Higher GCSE exam, a crucial tip to remember is that the formula sheet gives you both the Sine Rule and the Cosine Rule, but you must know how and when to apply them correctly. Examiners will award M1 marks for showing the correct formula and substitution, and A1 marks for the final accurate answer. Always check your calculator is set to 'Degrees' (Deg) before starting geometry questions, and round your final answers appropriately, usually to 3 significant figures unless stated otherwise.",
+    "overview": {
+      "hook": "Ever wondered how to find the missing sides of a triangle when it is not a right-angle?",
+      "keyIdea": "Right-angled triangles use basic trigonometry like $\\sin$, $\\cos$, and $\\tan$. For triangles that are not right-angled, we use the sine rule and cosine rule instead.",
+      "keyPoints": [
+        "Use the sine rule when you have opposite pairs of sides and angles.",
+        "Use the cosine rule for two sides and an included angle, or three sides.",
+        "Label sides as $a$, $b$, $c$ and matching angles as $A$, $B$, $C$.",
+        "Remember to check if your calculator is set to degrees."
+      ],
+      "examNote": "Neither the sine rule nor the cosine rule formulas are given on the Higher tier formula sheet, so you must memorise them."
+    },
     "examples": [
       {
         "question": "In triangle ABC, side $a = 8\\text{ cm}$, angle $A = 35^\\circ$, and angle $B = 65^\\circ$. Calculate the length of side $b$. Give your answer to 3 significant figures.",
@@ -965,7 +1200,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "3D shapes & volume",
-    "overview": "Welcome to our weekly maths session! Today we are looking at 3D shapes and volume, a vital topic in your Edexcel Higher GCSE course. Volume is simply the amount of 3D space an object takes up, measured in units cubed, like $cm^3$ or $m^3$. For most prisms—shapes that have the same cross-section all the way through like a loaf of bread—finding the volume is straightforward: you calculate the area of the end face and multiply it by the length or height. This gives us the golden rule: Volume = Area of cross-section $\times$ length. Cylinders, cuboids, and triangular prisms all follow this logic. More complex shapes like cones, spheres, and pyramids taper to a point or curve around a centre point, so they require different formulas. It is very important to know which formulas you must memorise and which are given to you. On the Edexcel Higher exam formula sheet at the front of the paper, you are given the volume of a sphere ($V = \\frac{4}{3}\\pi r^3$), the volume of a cone ($V = \\frac{1}{3}\\pi r^2 h$), and the volume of a pyramid ($V = \\frac{1}{3} \\times \\text{base area} \\times \\text{height}$). This means you must memorise simpler ones, like the volume of a cuboid, cylinder, and any basic prism. In exams, questions often test your ability to work backwards from a given volume to find a missing radius or height, or combine shapes into composite solids. Always show your working clearly: examiners award method marks (M1) even if you make a careless arithmetic mistake at the end, provided your strategy is correct.",
+    "overview": {
+      "hook": "Finding the volume of a 3D shape is just stacking flat layers until you fill it up.",
+      "keyIdea": "Volume measures the total 3D space inside an object. For any prism, you simply multiply the area of its cross-section by its length, $V = \\text{cross-section area} \\times \\text{length}$.",
+      "keyPoints": [
+        "Prisms have the same cross-section running all the way through their length.",
+        "Pyramids and cones always include a factor of $\\frac{1}{3}$ in their volume formulas.",
+        "A sphere's volume is given by the formula $V = \\frac{4}{3}\\pi r^3$.",
+        "Always check your units are consistent before calculating."
+      ],
+      "examNote": "The formulas for the volume of a sphere, cone, and pyramid are given on the Higher tier formula sheet."
+    },
     "examples": [
       {
         "question": "A solid metal cylinder has a radius of $4\\text{ cm}$ and a height of $10\\text{ cm}$. Calculate the volume of the cylinder. Give your answer correct to 1 decimal place.",
@@ -1005,7 +1250,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Vectors",
-    "overview": "Welcome to the world of vectors! In mathematics, a vector is a quantity that has both a magnitude (size or length) and a direction. Unlike a normal number, which just tells you how much of something you have, a vector tells you how to get from one point to another on a grid. Imagine giving someone walking directions: you need to tell them both how far to walk and which way to face. In GCSE maths, vectors are written in bold, like $\\mathbf{a}$, or using two capital letters with an arrow on top, like $\\vec{AB}$, which means the journey from point A to point B. Column vectors look like $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$, where the top number tells you how many units to move horizontally (positive is right, negative is left) and the bottom number tells you how many units to move vertically (positive is up, negative is left). You can add vectors together by placing them tip-to-tail, and you can multiply them by a scalar (a normal number), which stretches or shrinks the vector and can reverse its direction. If two vectors are scalar multiples of each other, they are parallel. This means they point in the exact same or exact opposite direction, which is a massive shortcut for geometry proofs on the Edexcel Higher paper. None of the vector geometry formulae are given on the Pearson Edexcel formula sheet, so you must memorise how to navigate shapes and prove parallel lines using ratios.",
+    "overview": {
+      "hook": "Think of vectors like giving someone step-by-step walking directions across a grid.",
+      "keyIdea": "A vector is a quantity with both size and direction. We write them in bold or with an arrow, like $\\vec{AB}$ or $\\mathbf{a}$.",
+      "keyPoints": [
+        "Moving against a vector's direction makes it negative, such as $-\\mathbf{a}$.",
+        "To add vectors, just add their column components: top to top, bottom to bottom.",
+        "Parallel vectors are always exact multiples of each other.",
+        "A column vector is written as \\begin{pmatrix} x \\\\ y \\end{pmatrix} for right/left and up/down."
+      ],
+      "examNote": "Column vectors and geometric proofs appear frequently, and you must know how to factorise expressions to prove points lie on a straight line."
+    },
     "examples": [
       {
         "question": "The vectors $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$. Work out the column vector for $2\\mathbf{a} + 3\\mathbf{b}$.",
@@ -1045,7 +1300,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Transformations",
-    "overview": "Transformations in geometry are ways of moving, resizing, or flipping shapes on a grid without changing their core properties unless specified. In Edexcel GCSE Higher tier maths, you need to master four key transformations: translations, reflections, rotations, and enlargements. A translation slides a shape in a straight line using a column vector like $\\begin{pmatrix} x \\\\ y \\\\end{pmatrix}$, which tells you how far to move left/right and up/down. A reflection flips a shape across a mirror line, such as $y = x$, meaning you count the perpendicular distance from the shape to the line and repeat it on the other side. A rotation turns a shape around a fixed centre of rotation by a specific angle and direction, like $90^\\circ$ clockwise; tracing paper is usually allowed in the exam for this. An enlargement stretches or shrinks a shape from a centre of enlargement by a scale factor. Note that scale factors can be fractions or negative numbers, which flips the shape the other way. For all transformations, full marks require precise descriptions (for example, stating 'reflection', the equation of the mirror line, and ensuring you get M1 for method and A1 for accuracy). The formula sheet does not list transformation rules, so you must memorise how to apply vectors, fractional scale factors, and invariant points. Working methodically with a sharp pencil and a ruler will secure top marks.",
+    "overview": {
+      "hook": "Transformations are like digital photo editing, moving or reshaping figures on a grid.",
+      "keyIdea": "You move shapes around a coordinate grid using four specific rules: translation, reflection, rotation, and enlargement. Every transformed point has a precise mathematical destination.",
+      "keyPoints": [
+        "Translations move shapes using column vectors like $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$.",
+        "Reflections flip shapes across a given mirror line like $y = x$.",
+        "Rotations turn shapes around a specific centre by an angle and direction.",
+        "Enlargements resize shapes from a centre of enlargement using a scale factor."
+      ],
+      "examNote": "Always state the exact full description required for each transformation to secure all available marks, such as the centre of rotation and angle."
+    },
     "examples": [
       {
         "question": "Describe fully the single transformation that maps shape A onto shape B, where shape A has vertices at (1,1), (3,1), (3,3) and shape B has vertices at (-1,-1), (-3,-1), (-3,-3).",
@@ -1085,7 +1350,17 @@
     "subject": "Geometry",
     "icon": "📐",
     "title": "Similarity & congruence",
-    "overview": "Welcome to our home tutoring session on similarity and congruence! In geometry, these two words describe how shapes relate to each other in terms of size and shape. Congruent shapes are identical twins: they have the exact same shape and the exact same size. If you cut one out, it would fit perfectly on top of the other by sliding, flipping, or turning. Similar shapes, on the other hand, are like photographic enlargements. They have the exact same shape (corresponding angles are equal), but different sizes. Think of zooming in on a digital photo; the features stay in proportion, but the overall dimensions get bigger or smaller. For GCSE Higher tier, you need to master two main skills. First, proving congruence using standard triangle tests: Side-Side-Side (SSS), Side-Angle-Side (SAS), Angle-Side-Angle (ASA), and Right-angle-Hypotenuse-Side (RHS). Second, working with similar shapes using a scale factor. If a shape is enlarged by a linear scale factor $k$, its lengths are multiplied by $k$. Crucially, for area you multiply by $k^2$, and for volume you multiply by $k^3$. Remember, linear scale factors are needed for lengths, but areas and volumes scale differently! On the Edexcel formula sheet, you are given formulas for 3D shapes, but you must memorise your circle theorems, triangle rules, and area/volume scaling principles. In exams, questions often award an M1 mark for showing a correct method (like finding the scale factor) and an A1 mark for the accurate final answer.",
+    "overview": {
+      "hook": "Same shape but different sizes is just like zooming in on a digital photo.",
+      "keyIdea": "Congruent shapes are identical in every way, while similar shapes have matching angles and proportional sides. If one shape is an enlargement of another, their sides are multiplied by the same scale factor $k$.",
+      "keyPoints": [
+        "Congruent shapes match completely in both size and shape.",
+        "Similar shapes have equal angles and proportional matching sides.",
+        "Area scale factor is $k^2$ and volume scale factor is $k^3$.",
+        "Always state clear geometric reasons when writing proofs."
+      ],
+      "examNote": "The enlargement scale factor formulas for area and volume are not given on the formula sheet and must be memorised."
+    },
     "examples": [
       {
         "question": "Two triangles, ABC and PQR, are mathematically similar. Triangle ABC has side lengths $AB = 4\\text{ cm}$, $BC = 6\\text{ cm}$, and $AC = 8\\text{ cm}$. The corresponding side $PQ$ on the larger triangle PQR is $12\\text{ cm}$. Calculate the lengths of $QR$ and $PR$.",
@@ -1125,7 +1400,17 @@
     "subject": "Probability",
     "icon": "🎲",
     "title": "Basic probability",
-    "overview": "Probability is the mathematical study of how likely it is that something will happen. Imagine tossing a coin or rolling a dice; we know the possible outcomes, but we cannot predict the exact result of any single throw. In GCSE Maths, probability is always measured on a scale from $0$ to $1$. A probability of $0$ means the event is completely impossible, while a probability of $1$ means it is certain to happen. Everything else lies somewhere in between as a fraction, decimal, or percentage.\n\nTo find the basic probability of a single event happening, we use a simple fraction: the number of successful outcomes we want, divided by the total number of possible outcomes. For example, if you have a bag with $3$ red counters and $2$ blue counters, the total number of outcomes is $5$. The probability of picking a red counter is $3$ out of $5$, written as $\\frac{3}{5}$ or $0.6$.\n\nAnother vital rule in GCSE probability is that the sum of all possible mutually exclusive outcomes must always add up to $1$. This means if the probability of rain tomorrow is $0.2$, the probability that it will not rain must be $1 - 0.2 = 0.8$. This is called finding the 'complementary' probability or the probability of the 'not' event. Edexcel examiners love testing this on non-calculator papers, so always make sure your fractions are simplified and your decimals or percentages are accurate. Note that basic probability rules are foundational and expected to be memorised, as they do not appear on the formula sheet.",
+    "overview": {
+      "hook": "Probability is just guessing with a calculator, but the rules are actually fixed.",
+      "keyIdea": "Probability measures how likely an event is to happen on a scale from $0$ to $1$. You can write it as a fraction, decimal, or percentage.",
+      "keyPoints": [
+        "Probabilities always add up to $1$ or $100\\%$.",
+        "The probability of something not happening is $1$ minus the probability it does happen.",
+        "Probability = \\text{Successful outcomes} \\div \\text{Total possible outcomes}.",
+        "Experimental probability uses real-world data from trials, while theoretical uses maths."
+      ],
+      "examNote": "Probabilities must be written as fractions in their simplest form, decimals, or percentages unless the question specifies otherwise."
+    },
     "examples": [
       {
         "question": "A fair six-sided dice, numbered 1 to 6, is rolled once. Find the probability that the number rolled is: (a) an even number, (b) a prime number.",
@@ -1165,7 +1450,17 @@
     "subject": "Probability",
     "icon": "🎲",
     "title": "Tree diagrams",
-    "overview": "Tree diagrams are a visual way to work out probabilities when multiple things happen one after another, like flipping a coin twice or picking two sweets from a bag. Imagine a tree growing sideways: the start is the trunk, and the different outcomes branch out like leaves. Each set of branches represents one event, and the probabilities of each outcome are written along the branches as fractions or decimals. A golden rule of tree diagrams is that the probabilities on any set of branches coming from a single point must always add up to $1$ (or $100\\%$) because something has to happen! To find the probability of a combined outcome—such as getting a red sweet and then a blue sweet—you follow the branches along and multiply the probabilities together. This is known as the 'AND' rule. If there are different ways to achieve a successful overall result (like getting two matching colours on either the first AND second pick, OR the alternative combination), you calculate the probability of each separate path and then add them together. This is known as the 'OR' rule. In Edexcel GCSE Higher tier exams, tree diagrams often involve 'dependent events' where things are not replaced, meaning the denominator of the fraction decreases for the second set of branches. Note that probability rules are not printed on the Edexcel formula sheet, so you must memorise that 'AND means multiply' and 'OR means add'. Examiners award method marks (M1) for correct multiplication along branches and accuracy marks (A1) for final correct answers.",
+    "overview": {
+      "hook": "Probability without a tree diagram is like trying to navigate a maze blindfolded.",
+      "keyIdea": "Tree diagrams map out all possible outcomes of two or more events happening in sequence. You simply multiply probabilities along the branches and add them down the columns.",
+      "keyPoints": [
+        "Always label every branch with its probability.",
+        "The probabilities on any set of branching paths must sum to $1$.",
+        "Multiply along branches for the probability of both events happening ($A$ and $B$).",
+        "Add outcomes together if there are multiple successful pathways."
+      ],
+      "examNote": "Examiners award method marks (M1) just for drawing the correct structure and placing the correct fractions on the branches, even if your final calculation slips up."
+    },
     "examples": [
       {
         "question": "A bag contains $3$ red counters and $2$ blue counters. A counter is taken at random, its colour is recorded, and it is put back into the bag. Then a second counter is taken at random, and its colour is recorded. Draw a tree diagram and find the probability that both counters are red.",
@@ -1205,7 +1500,17 @@
     "subject": "Probability",
     "icon": "🎲",
     "title": "Venn diagrams & set notation",
-    "overview": "Venn diagrams are visual tools used to sort data and objects into groups, which we call sets. Imagine drawing a big rectangular box called the Universal Set, denoted by the symbol $\\xi$. Inside this box, we draw circles to represent different groups, like people who play football or people who wear glasses. Where these circles overlap is the intersection, meaning things that belong to both groups at the same time. Venn diagrams are a brilliant way to organise information so that we can easily calculate probabilities. To master this topic for your Edexcel Higher GCSE, you must learn the key set notation symbols. The union symbol $\\cup$ means everything in set A OR set B (or both). The intersection symbol $\\cap$ means only the items in both set A AND set B. A little apostrophe, like $A'$, means the complement of A, which is everything outside of set A but still inside the universal box. Finally, $A \\subset B$ means A is a subset of B, meaning every single item in A is also inside B. On the Edexcel Higher exam, you will not be given these set notation symbols on the formula sheet; you must memorise them completely. Questions often combine algebra with Venn diagrams, requiring you to set up and solve linear or quadratic equations to find the unknown values inside the regions. Examiners award M1 marks for setting up the correct algebraic method and A1 marks for accurate final answers.",
+    "overview": {
+      "hook": "Sorting data into Venn diagrams is just like organising your wardrobe by colour and type.",
+      "keyIdea": "Venn diagrams use overlapping circles to sort items into groups called sets. The overlap shows items that belong to more than one group at the same time.",
+      "keyPoints": [
+        "The universal set $\\xi$ contains all the items being considered.",
+        "The intersection $A \\cap B$ represents the items in both $A$ and $B$.",
+        "The union $A \\cup B$ represents all items in $A$, in $B$, or in both.",
+        "The complement $A'$ represents everything that is not in set $A$."
+      ],
+      "examNote": "You must memorise all set notation symbols as they are not provided on the Edexcel formula sheet."
+    },
     "examples": [
       {
         "question": "A gym has 50 members. 30 members use the gym for cardio, 24 members use it for weights, and 6 members use it for neither cardio nor weights. (a) Draw a Venn diagram to represent this information. (b) Find the probability that a randomly chosen member uses both cardio and weights.",
@@ -1245,7 +1550,16 @@
     "subject": "Probability",
     "icon": "🎲",
     "title": "Conditional probability",
-    "overview": "Conditional probability is about how the probability of one event changes if we already know that another event has happened. Imagine you have a bag of different coloured sweets. If you pick one and eat it, the total number of sweets in the bag changes for the second pick. This means the probability for the second pick is 'conditioned' on what happened during the first pick. In GCSE maths, we often show this using probability tree diagrams. When moving along branches of a tree, we multiply the probabilities together. When adding different successful outcomes together, we add the probabilities. A key thing to memorise for Edexcel Higher is the formal conditional probability formula: $P(A \\text{ given } B) = \\frac{P(A \\text{ and } B)}{P(B)}$. However, many exam questions can be answered much more easily by drawing a tree diagram, a Venn diagram, or a two-way frequency table. Always read the question carefully to spot phrases like 'without replacement', as this is the biggest clue that the probabilities will change from one event to the next. In the exam, working out probability without replacement usually earns method marks (M1) even if your final arithmetic has a small slip, so always write down your fractions clearly before calculating.",
+    "overview": {
+      "hook": "Ever noticed how drawing a second sweet changes the chances for the first?",
+      "keyIdea": "Conditional probability means the probability of an event changes because something else has already happened. We often use tree diagrams and fractions to track how the numbers shrink without replacement.",
+      "keyPoints": [
+        "Fractions on the second branch always have a smaller denominator if items are not replaced.",
+        "Multiply probabilities along the branches to find the combined outcome.",
+        "Use the formula $P(A \\text{ given } B) = \\frac{P(A \\text{ and } B)}{P(B)}$ for harder problems."
+      ],
+      "examNote": "Conditional probability questions rarely give you the formula, so you must be confident reading tree diagrams and working with fractions."
+    },
     "examples": [
       {
         "question": "A bag contains 5 red counters and 3 blue counters. A counter is taken at random and not replaced. A second counter is then taken. Work out the probability that both counters are red.",
@@ -1285,7 +1599,17 @@
     "subject": "Statistics",
     "icon": "📊",
     "title": "Averages & range",
-    "overview": "Welcome to Averages and Range! This topic is all about summarising a set of numbers using a single representative value, and measuring how spread out those numbers are. For GCSE Higher tier, there are three main averages you must know: the mean, the median, and the mode, along with one measure of spread: the range. To find the mean, you add up all the numbers in your data set and divide the total by how many numbers there are. To find the median, you must first put all the numbers in order from smallest to largest and find the exact middle number. If there are two numbers in the middle, you add them together and divide by two. The mode is simply the number that appears most often, and remember, a data set can have more than one mode or no mode at all. Finally, the range measures the spread by subtracting the smallest number from the largest number. In Edexcel GCSE exams, questions often get more challenging by giving you information in frequency tables, asking you to work backwards from a given mean, or combining groups of data. It is vital to remember that the formula for the mean of a frequency table is given on the formula sheet, but you must memorise how to find the median position, which is found using $\\frac{n+1}{2}$, where $n$ is the total frequency. Let's dive into some examples to see how these concepts are tested in the exam!",
+    "overview": {
+      "hook": "Knowing how to sum up a whole crowd with a single number is a superpower in statistics.",
+      "keyIdea": "Averages give us a single value to represent a data set, while the range shows how spread out the values are. We look at four main measures: mean, median, mode, and range.",
+      "keyPoints": [
+        "Mean: Add all values together and divide by the total count.",
+        "Median: The middle value when all numbers are put in order.",
+        "Mode: The most frequently occurring value in the data set.",
+        "Range: The difference between the largest and smallest values."
+      ],
+      "examNote": "You must memorise all average and range definitions as formulas are not given on the Higher tier sheet."
+    },
     "examples": [
       {
         "question": "Find the mean, median, mode and range of the following numbers: 4, 12, 7, 4, 9, 15, 11.",
@@ -1325,7 +1649,17 @@
     "subject": "Statistics",
     "icon": "📊",
     "title": "Frequency tables",
-    "overview": "When dealing with large amounts of data, listing every single number individually becomes messy and hard to read. Instead, statisticians use frequency tables to organise data neatly. A frequency table simply tells us how often (the frequency) a certain value or a group of values occurs. In GCSE Statistics, you will often need to calculate averages, such as the mean, median, and mode, directly from these tables. To find the mean from a frequency table, you cannot just add up the values and divide by how many rows there are. Instead, you must multiply each data value ($x$) by its corresponding frequency ($f$) to find the total amount for that group ($fx$). Then, you add up all those totals ($\\sum fx$) and divide by the total number of data points ($\\sum f$, which is the sum of the frequency column). This is known as calculating an estimated mean because, in grouped frequency tables, we do not know the exact individual values, so we use the midpoint of each group as an estimate. Always remember to check your addition carefully, as arithmetic errors are the most common way to lose marks in this topic. On the Edexcel Higher tier exam, questions involving frequency tables often test your ability to handle both discrete data (exact whole numbers) and continuous data (grouped data using inequalities like $10 \\le x < 20$). No formulae for the mean of a frequency table are provided on the GCSE formula sheet, so you must memorise that Estimated Mean = $\\sum fx / \\sum f$. Examiners frequently award method marks (M1) for correctly calculating the $fx$ column and finding totals, even if a minor arithmetic slip is made at the final division stage.",
+    "overview": {
+      "hook": "Frequency tables are just a tidy filing system for messy data.",
+      "keyIdea": "Instead of listing every single number individually, we group them or count how often each value appears. This makes it much easier to calculate averages and find patterns.",
+      "keyPoints": [
+        "Use a tally column to count items accurately.",
+        "Multiply each value by its frequency to find the total sum ($fx$).",
+        "Find the total frequency ($n$) by adding up the frequency column.",
+        "Divide the total sum by the total frequency to find the mean."
+      ],
+      "examNote": "You must memorise how to set up and use frequency tables for the calculator and non-calculator papers."
+    },
     "examples": [
       {
         "question": "The table below shows the number of goals scored by a football team in 20 matches. Calculate the mean number of goals scored per match.",
@@ -1365,7 +1699,17 @@
     "subject": "Statistics",
     "icon": "📊",
     "title": "Cumulative frequency & box plots",
-    "overview": "Cumulative frequency is a way of adding up frequencies as you go along, which allows us to see how many data values lie below a certain point. Imagine you are recording the heights of people in a room; standard frequency tables tell you how many people are in each height band, but cumulative frequency tells you the running total, such as how many people are shorter than 1.6 metres. To do this, we plot points at the upper boundary of each class interval against the cumulative frequency, and join them with a smooth, curving S-shaped line. From this curve, we can easily find important summary values for the data. The most common of these are the median (the middle value, representing 50 percent of the data), the lower quartile (25 percent through the data), and the upper quartile (75 percent through the data). We also look at the interquartile range, which tells us how spread out the middle half of our data is. A box plot (or box and whisker diagram) is a visual way of displaying these exact values, along with the lowest and highest values in the data set. Box plots are brilliant for comparing two different sets of data side by side because you can instantly see which group performed better on average and which group was more consistent. In the Edexcel GCSE exam, remember that you must memorise how to find quartiles from a graph (using one quarter and three quarters of the total frequency), while any standard statistical formulae like the interquartile range will need to be recalled from memory.",
+    "overview": {
+      "hook": "Like a movie trailer that shows you the best bits, cumulative frequency and box plots give you the big picture of your data at a glance.",
+      "keyIdea": "Cumulative frequency means running totals, helping us find the median and quartiles by plotting points at the upper bound. A box plot then turns those values into a neat visual summary showing the range and spread of the data.",
+      "keyPoints": [
+        "Always plot cumulative frequency points at the upper class boundary.",
+        "Join your plotted points with a smooth, curving S-shaped line.",
+        "Find the median at the 50% mark and quartiles at the 25% and 75% marks.",
+        "A box plot requires 5 key values: minimum, lower quartile, median, upper quartile, and maximum."
+      ],
+      "examNote": "You must memorise how to calculate quartiles from a graph and draw a box plot, as these formulas are not given on the formula sheet."
+    },
     "examples": [
       {
         "question": "The cumulative frequency table below shows the weights of 80 parcels. (a) Draw a cumulative frequency graph for this data. (b) Use your graph to find an estimate for the median weight. Weights (kg): 0 to 10 (cf 8), 0 to 20 (cf 22), 0 to 30 (cf 50), 0 to 40 (cf 72), 0 to 50 (cf 80).",
@@ -1405,7 +1749,17 @@
     "subject": "Statistics",
     "icon": "📊",
     "title": "Histograms",
-    "overview": "Imagine you are trying to show the weights of people in a town using a chart. If you use a normal bar chart, every bar has the same width, and the height just tells you how many people are in that group. But what happens if your groups are of different sizes? For example, one group covers people aged $0$ to $10$, but another covers people aged $20$ to $50$. If you just draw bars based on the number of people, the wider groups look massive even if they are not very crowded, which misleads the reader. This is where histograms come in. In a histogram, the most important rule to memorise is that frequency is represented by the AREA of the bar, not the height. Because Area = Width $\\times$ Height, the height of the bar is actually something called the frequency density. To find the frequency density, you must use the formula: Frequency Density = Frequency $\\div$ Class Width. Note that this formula is NOT given to you on the Edexcel formula sheet at the front of the exam paper, so you must learn it off by heart! The class width is simply the difference between the start and end of your group (for example, the class width of $10$ to $25$ is $15$). Once you calculate the frequency density for every group, you plot that on the vertical axis, and your class intervals go on the horizontal axis. In the exam, markers love testing whether you know that finding frequency means calculating the area of a bar. If you see a histogram question, always label your axes, find your class widths, calculate the frequency densities, and remember that multiplying width by height gives you the frequency back again.",
+    "overview": {
+      "hook": "Histograms are like bar charts where the area of the bar matters, not the height.",
+      "keyIdea": "When data is grouped into uneven intervals, frequency is represented by the area of the bar rather than its height. We use the formula $\\text{frequency} = \\text{frequency density} \\times \\text{class width}$.",
+      "keyPoints": [
+        "Frequency density is height, calculated as $\\text{frequency} \\div \\text{class width}$.",
+        "Area of each bar equals the frequency of that group.",
+        "Always label the vertical axis as frequency density, never frequency.",
+        "Class widths do not all need to be equal."
+      ],
+      "examNote": "You must memorise the formula for frequency density as it is not given on the formula sheet."
+    },
     "examples": [
       {
         "question": "The table shows the time, $t$ minutes, taken by 50 students to complete a puzzle. \nTime ($0 < t \\le 10$), Frequency = 10 \nTime ($10 < t \\le 20$), Frequency = 20 \nTime ($20 < t \\le 40$), Frequency = 12 \nTime ($40 < t \\le 60$), Frequency = 8 \nWork out the frequency density for each class interval.",
@@ -1445,7 +1799,17 @@
     "subject": "Statistics",
     "icon": "📊",
     "title": "Scatter graphs & correlation",
-    "overview": "A scatter graph is a visual tool used in statistics to show the relationship between two different variables for the same group of items or people, such as height and weight, or revision time and exam scores. Each piece of data is plotted as a single point on a grid using coordinates ($x$, $y$). When we look at a scatter graph, we are looking for 'correlation', which describes how the two variables are connected. Positive correlation means as one variable increases, the other also increases (like studying more hours to get a higher grade). Negative correlation means as one variable increases, the other decreases (like the age of a car and its resale value). No correlation means there is no relationship at all between the variables. Sometimes, points form a roughly straight trend. When this happens, we can draw a 'line of best fit' through the middle of the points, keeping an equal number of points above and below the line. This line helps us make predictions. We use two key skills in GCSE exams: describing the correlation in context (mentioning both variables, not just saying 'positive') and using the line of best fit to estimate values. Remember to check if an estimate is reliable: estimating within the range of your given data is called 'interpolation' and is reliable, whereas estimating far outside your data range is 'extrapolation' and is usually unreliable because we cannot assume the trend continues indefinitely. There are no formulae to memorise for this topic on the Edexcel formula sheet, so understanding the concepts is vital for securing your marks.",
+    "overview": {
+      "hook": "Ever wondered if studying more actually guarantees higher grades?",
+      "keyIdea": "A scatter graph lets you spot relationships between two different pieces of data by plotting points on a grid. Correlation describes the strength and direction of that relationship.",
+      "keyPoints": [
+        "Positive correlation means as one variable increases, the other also increases.",
+        "Negative correlation means as one variable increases, the other decreases.",
+        "Line of best fit must have a balanced number of points on both sides.",
+        "Interpolation is estimating inside the data range; extrapolation is estimating outside it."
+      ],
+      "examNote": "You must memorise how to draw an accurate line of best fit through the centre of mass for standard marks."
+    },
     "examples": [
       {
         "question": "The scatter graph shows the time spent revising and the test score achieved by 8 students. (a) What type of correlation is shown? (b) A 9th student revises for 4.5 hours. Estimate their test score using a line of best fit.",
