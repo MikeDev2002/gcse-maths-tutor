@@ -58,6 +58,7 @@
       flex-shrink: 0;
       flex-wrap: wrap;
     }
+    header .brand { cursor: pointer; }
     header .brand h1 { font-size: 1.1rem; font-weight: 700; }
     header .brand p { font-size: 0.78rem; opacity: 0.85; margin-top: 1px; }
 
@@ -134,6 +135,49 @@
     .hero { margin-bottom: 20px; }
     .hero h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
     .hero p { color: var(--muted); font-size: 0.92rem; line-height: 1.5; max-width: 560px; }
+
+    /* ---- Home page sections (Who this is for / Progress explained / Past papers / Topic areas) ---- */
+    .home-section { margin-bottom: 24px; }
+    .home-section .section-heading {
+      font-size: 0.95rem; font-weight: 700; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .home-section .section-body {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 20px;
+      font-size: 0.88rem; line-height: 1.65; color: var(--text);
+    }
+    .home-section .section-body p { margin-bottom: 8px; }
+    .home-section .section-body p:last-child { margin-bottom: 0; }
+    .section-body .prog-explainer { color: var(--muted); margin-bottom: 16px; }
+
+    .papers-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px; margin-top: 14px;
+    }
+    .paper-link {
+      display: block; text-decoration: none;
+      background: var(--primary-light); border: 1px solid var(--tutor-border);
+      color: var(--primary-dark); border-radius: 10px;
+      padding: 12px 14px; font-size: 0.85rem; font-weight: 700;
+      text-align: center; transition: background 0.15s, transform 0.15s;
+    }
+    .paper-link:hover { background: #e0e3fd; transform: translateY(-1px); }
+    .paper-link span { display: block; font-size: 0.72rem; font-weight: 500; opacity: 0.75; margin-top: 2px; }
+    .papers-note { font-size: 0.78rem; color: var(--muted); margin-top: 12px; }
+
+    .topics-cta {
+      display: flex; align-items: center; gap: 16px; cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    }
+    .topics-cta:hover {
+      border-color: var(--primary); box-shadow: 0 4px 14px rgba(79,70,229,0.1);
+      transform: translateY(-1px);
+    }
+    .topics-cta-text { flex: 1; }
+    .topics-cta-text strong { display: block; font-size: 0.95rem; margin-bottom: 3px; }
+    .topics-cta-text span { color: var(--muted); font-size: 0.84rem; }
+    .topics-cta-arrow { font-size: 1.4rem; color: var(--primary); flex-shrink: 0; }
 
     /* ---- Guide (how to use / stuck) ---- */
     .guide-toggle {
@@ -433,12 +477,12 @@
 <body>
 
 <header>
-  <div class="brand">
+  <div class="brand" onclick="showHome()" title="Home">
     <h1>GCSE Maths Tutor</h1>
     <p>Edexcel Higher Tier — Weekly Sessions</p>
   </div>
   <div class="header-progress" id="headerProgress"></div>
-  <button class="hbtn" id="homeBtn" onclick="showHome()" style="display:none;">☰ All modules</button>
+  <button class="hbtn" id="homeBtn" onclick="showTopics()" style="display:none;">☰ Topic Areas</button>
 </header>
 
 <main><div class="wrap" id="app"></div></main>
@@ -450,6 +494,14 @@
   const appEl = document.getElementById('app');
   const homeBtn = document.getElementById('homeBtn');
   const headerProgressEl = document.getElementById('headerProgress');
+
+  // main, not window, is the actual scroll container (see the `overflow-y:
+  // auto` on main / `overflow: hidden` on body) — window.scrollTo() is a
+  // no-op here, so every view change resets scroll via this instead.
+  function scrollAppToTop() {
+    const main = document.querySelector('main');
+    if (main) main.scrollTop = 0;
+  }
 
   const KATEX_OPTS = {
     delimiters: [
@@ -474,7 +526,7 @@
       let html;
       try { html = katex.renderToString(math, { displayMode, throwOnError: false }); }
       catch (_) { html = math; }
-      const token = ` MATH${mathBlocks.length} `;
+      const token = ` MATH${mathBlocks.length} `;
       mathBlocks.push(html);
       return token;
     }
@@ -482,7 +534,7 @@
     text = text.replace(/\$([^$\n]+?)\$/g, (_, m) => stash(m, false));
 
     let html = marked.parse(text);
-    html = html.replace(/ MATH(\d+) /g, (_, i) => mathBlocks[Number(i)]);
+    html = html.replace(/ MATH(\d+) /g, (_, i) => mathBlocks[Number(i)]);
     el.innerHTML = html;
   }
 
@@ -545,11 +597,14 @@
       <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>`;
   }
 
-  // ---------- Home view: welcome, guide, progress overview, continue card, syllabus ----------
+  // ---------- Home view: the landing page ----------
+  // Welcome -> Who this is for / How to use (collapsible) -> Progress
+  // explained -> Past papers -> Topic areas (links through to showTopics()).
   function showHome() {
     currentModule = null;
     homeBtn.style.display = 'none';
     updateHeaderProgress();
+    scrollAppToTop();
 
     if (loadError || !MODULES.length) {
       appEl.innerHTML = `<div class="content-missing">
@@ -566,10 +621,11 @@
     const notStartedCount = MODULES.length - completedCount - startedCount;
     const next = MODULES.find(m => statusOf(m.id) !== 'completed');
 
+    // ---- 1. Welcome ----
     const heroHTML = `
       <div class="hero">
         <h2>👋 Ready for this week's session?</h2>
-        <p>One topic, worked examples, a few questions to try, and space to ask anything — pick up where you left off below, or jump to any topic in the full syllabus.</p>
+        <p>One topic, worked examples, a few questions to try, and space to ask anything — pick up where you left off below, or head into the full topic list any time.</p>
       </div>`;
 
     const continueHTML = next
@@ -582,19 +638,27 @@
           <div class="all-done">
             <div class="big-tick">🎉</div>
             <div class="continue-title" style="margin-bottom:2px;">All 37 modules complete!</div>
-            <p style="opacity:0.9;font-size:0.85rem;">Revisit any module below any time.</p>
+            <p style="opacity:0.9;font-size:0.85rem;">Revisit any module any time from the topic list below.</p>
           </div>
         </div>`;
 
-    // Default open for anyone who hasn't chosen to collapse it yet.
+    // ---- 2. Who this is for + How to use (collapsible, open by default) ----
     const guideOpenSetting = localStorage.getItem('tutorGuideOpen');
     const isGuideOpen = guideOpenSetting === null ? true : guideOpenSetting === 'true';
 
     const guideHTML = `
       <button class="guide-toggle ${isGuideOpen ? 'open' : ''}" id="guideToggle">
-        ℹ️ How to use this each week <span class="chev">▾</span>
+        ℹ️ Who this is for &amp; how to use it <span class="chev">▾</span>
       </button>
       <div class="guide-panel" id="guidePanel" ${isGuideOpen ? '' : 'hidden'}>
+        <h4>🙋 Who this is for</h4>
+        <p style="font-size:0.85rem;line-height:1.6;margin-bottom:20px;">
+          This is a weekly, one-hour maths session for a parent and their GCSE student to work through <strong>together</strong> —
+          not something the student is meant to sit down with alone. It covers the full Edexcel GCSE Maths (Higher tier)
+          syllabus, broken into 37 bite-sized weekly topics, so a full year's worth of maths fits into about 6–8 months
+          of weekly sessions. Read it side by side: the parent guiding and asking questions, the student working through
+          the examples and having a go at the test questions.
+        </p>
         <h4>📘 A typical session, in four steps</h4>
         <div class="guide-steps">
           <div class="guide-step"><span class="gs-num">1</span><strong>Read the Overview</strong><span class="gs-desc">Together, out loud if that helps — no jargon, just the idea.</span></div>
@@ -613,19 +677,81 @@
         </div>
       </div>`;
 
-    const progressOverviewHTML = `
-      <div class="progress-overview">
-        <h4>📊 Your Progress</h4>
-        <div class="status-bar">
-          <div class="status-bar-seg completed" style="width:${(completedCount / MODULES.length) * 100}%"></div>
-          <div class="status-bar-seg started" style="width:${(startedCount / MODULES.length) * 100}%"></div>
-        </div>
-        <div class="status-legend">
-          <span><span class="li-dot completed"></span>${completedCount} Completed</span>
-          <span><span class="li-dot started"></span>${startedCount} In progress</span>
-          <span><span class="li-dot not-started"></span>${notStartedCount} Not started</span>
+    // ---- 3. Progress bar explained ----
+    const progressHomeHTML = `
+      <div class="home-section">
+        <div class="section-heading">📊 How Your Progress Is Tracked</div>
+        <div class="section-body">
+          <p class="prog-explainer">Every topic below moves through three stages as you work through it: <strong>not started</strong> (untouched so far), <strong>in progress</strong> (opened, but not yet marked done), and <strong>completed</strong> (marked done once you've been through it together). Here's where things stand right now:</p>
+          <div class="status-bar">
+            <div class="status-bar-seg completed" style="width:${(completedCount / MODULES.length) * 100}%"></div>
+            <div class="status-bar-seg started" style="width:${(startedCount / MODULES.length) * 100}%"></div>
+          </div>
+          <div class="status-legend">
+            <span><span class="li-dot completed"></span>${completedCount} Completed</span>
+            <span><span class="li-dot started"></span>${startedCount} In progress</span>
+            <span><span class="li-dot not-started"></span>${notStartedCount} Not started</span>
+          </div>
         </div>
       </div>`;
+
+    // ---- 4. Past papers ----
+    const papersHTML = `
+      <div class="home-section">
+        <div class="section-heading">📄 Past Papers</div>
+        <div class="section-body">
+          <p>Once you've covered a good number of topics, real past papers are the best way to practise exam technique and timing. Edexcel GCSE Maths (1MA1) Higher tier has three papers — these are free, publicly available copies with mark schemes, hosted by Physics &amp; Maths Tutor:</p>
+          <div class="papers-grid">
+            <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-1/" target="_blank" rel="noopener">Paper 1 <span>Non-calculator</span></a>
+            <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-2/" target="_blank" rel="noopener">Paper 2 <span>Calculator</span></a>
+            <a class="paper-link" href="https://www.physicsandmathstutor.com/past-papers/gcse-maths/edexcel-paper-3/" target="_blank" rel="noopener">Paper 3 <span>Calculator</span></a>
+          </div>
+          <p class="papers-note">These open in a new tab. They're best used later on, once several topics have been covered — a full paper mixes everything together rather than focusing on one topic.</p>
+        </div>
+      </div>`;
+
+    // ---- 5. Topic areas ----
+    const topicsCtaHTML = `
+      <div class="home-section">
+        <div class="section-heading">📚 Topic Areas</div>
+        <div class="section-body topics-cta" id="topicsCta">
+          <div class="topics-cta-text">
+            <strong>Browse all 37 topics</strong>
+            <span>See the full syllabus grouped by subject, with progress for every topic at a glance.</span>
+          </div>
+          <div class="topics-cta-arrow">→</div>
+        </div>
+      </div>`;
+
+    appEl.innerHTML = `${heroHTML}${continueHTML}${guideHTML}${progressHomeHTML}${papersHTML}${topicsCtaHTML}`;
+
+    appEl.querySelectorAll('[data-id]').forEach(el => {
+      el.addEventListener('click', () => openModule(el.dataset.id));
+    });
+
+    document.getElementById('topicsCta').addEventListener('click', showTopics);
+
+    const guideToggle = document.getElementById('guideToggle');
+    const guidePanel = document.getElementById('guidePanel');
+    guideToggle.addEventListener('click', () => {
+      const nowOpen = guidePanel.hidden;
+      guidePanel.hidden = !nowOpen;
+      guideToggle.classList.toggle('open', nowOpen);
+      try { localStorage.setItem('tutorGuideOpen', String(nowOpen)); } catch (_) {}
+    });
+  }
+
+  // ---------- Topics view: the full 37-module syllabus, grouped by subject ----------
+  function showTopics() {
+    currentModule = null;
+    homeBtn.style.display = 'none';
+    updateHeaderProgress();
+    scrollAppToTop();
+
+    if (loadError || !MODULES.length) { showHome(); return; }
+
+    const progress = getProgress();
+    const statusOf = id => getStatus(progress, id);
 
     const subjects = [];
     for (const m of MODULES) {
@@ -654,19 +780,15 @@
         </div>`;
     }).join('');
 
-    appEl.innerHTML = `${heroHTML}${continueHTML}${guideHTML}${progressOverviewHTML}<div class="syllabus">${syllabusHTML}</div>`;
+    appEl.innerHTML = `
+      <button class="back-btn" onclick="showHome()">← Home</button>
+      <div class="module-head">
+        <h2>All 37 Topics</h2>
+      </div>
+      <div class="syllabus">${syllabusHTML}</div>`;
 
     appEl.querySelectorAll('[data-id]').forEach(el => {
       el.addEventListener('click', () => openModule(el.dataset.id));
-    });
-
-    const guideToggle = document.getElementById('guideToggle');
-    const guidePanel = document.getElementById('guidePanel');
-    guideToggle.addEventListener('click', () => {
-      const nowOpen = guidePanel.hidden;
-      guidePanel.hidden = !nowOpen;
-      guideToggle.classList.toggle('open', nowOpen);
-      try { localStorage.setItem('tutorGuideOpen', String(nowOpen)); } catch (_) {}
     });
   }
 
@@ -699,7 +821,7 @@
       </div>`).join('');
 
     appEl.innerHTML = `
-      <button class="back-btn" onclick="showHome()">← All modules</button>
+      <button class="back-btn" onclick="showTopics()">← All Topics</button>
       <div class="module-head">
         <div class="module-meta">Week ${mod.week} · ${mod.subject}</div>
         <h2>${mod.title}</h2>
@@ -768,7 +890,7 @@
     // Wire up the Q&A controls (re-fetched each openModule since we rebuilt the DOM)
     bindQAControls();
 
-    window.scrollTo(0, 0);
+    scrollAppToTop();
   }
 
   function refreshCompleteButton() {
