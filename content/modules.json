@@ -1,7 +1,70 @@
 [
   {
-    "id": "number-fractions-decimals-percentages",
+    "id": "number-factors-multiples-primes-hcf-lcm",
     "week": 1,
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Factors, multiples, primes, HCF & LCM",
+    "keywords": [
+      "LCM",
+      "lowest common multiple",
+      "least common multiple",
+      "HCF",
+      "highest common factor",
+      "greatest common divisor",
+      "prime factorisation",
+      "prime factor decomposition",
+      "product of primes",
+      "factor tree",
+      "prime numbers"
+    ],
+    "overview": {
+      "hook": "Two buses leave together: when do they next line up? That's LCM, and prime factors crack it.",
+      "keyIdea": "Every whole number is either a prime or made by multiplying primes together. Finding these building blocks lets us quickly calculate the Highest Common Factor (HCF) and Lowest Common Multiple (LCM) using prime factor trees or Venn diagrams.",
+      "keyPoints": [
+        "A prime number has only two factors: 1 and itself.",
+        "Always write prime factor products using index form, like $2^3 \\times 3^2$.",
+        "Sort prime factors into a Venn diagram: HCF is the overlap, LCM is everything.",
+        "HCF is the biggest number that divides into both; LCM is the smallest number both divide into."
+      ],
+      "examNote": "Show your factor tree or division working: method marks (M1) are available even if your final answer slips."
+    },
+    "examples": [
+      {
+        "question": "Express 120 as a product of its prime factors in index form.",
+        "solution": "Step 1: Choose any two factors of 120, for example, 10 and 12. Step 2: Split 10 into prime factors 2 and 5. Step 3: Split 12 into 3 and 4, then split 4 into 2 and 2. Step 4: Collect all the circled prime numbers at the ends of the branches: 2, 2, 2, 3, 5. Step 5: Write in index form as $2^3 \\times 3 \\times 5$."
+      },
+      {
+        "question": "Find the HCF and LCM of 72 and 108 using prime factorisation.",
+        "solution": "Step 1: Find prime factors for 72, which is $2^3 \\times 3^2$. Step 2: Find prime factors for 108, which is $2^2 \\times 3^3$. Step 3: Draw a Venn diagram with two circles labelled 72 and 108. Place the shared primes in the intersection: $2^2$ and $3^2$. Step 4: Put the remaining primes in the outer parts: an extra 2 in 72, and an extra 3 in 108. Step 5: HCF is the product of the intersection: $2^2 \\times 3^2 = 4 \\times 9 = 36$. Step 6: LCM is the product of everything in the Venn diagram: $2^3 \\times 3^3 = 8 \\times 27 = 216$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Express 180 as a product of prime factors in index form.",
+        "answer": "$180 = 2^2 \\times 3^2 \\times 5$. Working: $180 \\rightarrow 10 \\times 18 \\rightarrow (2 \\times 5) \\times (2 \\times 9) \\rightarrow (2 \\times 5) \\times (2 \\times 3 \\times 3)$."
+      },
+      {
+        "question": "Find the Highest Common Factor (HCF) of 60 and 84.",
+        "answer": "HCF = 12. Working: $60 = 2^2 \\times 3 \\times 5$ and $84 = 2^2 \\times 3 \\times 7$. The shared prime factors are $2^2 \\times 3 = 12$."
+      },
+      {
+        "question": "Find the Lowest Common Multiple (LCM) of 24 and 36.",
+        "answer": "LCM = 72. Working: $24 = 2^3 \\times 3$ and $36 = 2^2 \\times 3^2$. Taking the highest power of each prime gives $2^3 \\times 3^2 = 8 \\times 9 = 72$."
+      },
+      {
+        "question": "Bus A leaves the station every 15 minutes. Bus B leaves the station every 20 minutes. If they leave together at 8:00 am, what is the next time they will leave together?",
+        "answer": "9:00 am. Working: Find the LCM of 15 and 20. Multiples of 15: 15, 30, 45, 60. Multiples of 20: 20, 40, 60. LCM is 60 minutes, which is 1 hour later than 8:00 am."
+      },
+      {
+        "question": "Given that $A = 2^3 \\times 3^2 \\times 5$ and $B = 2^2 \\times 3^4$, find the LCM of A and B as an ordinary number.",
+        "answer": "3240. Working: LCM takes the highest powers: $2^3 \\times 3^4 \\times 5 = 8 \\times 81 \\times 5 = 40 \\times 81 = 3240$."
+      }
+    ]
+  },
+  {
+    "id": "number-fractions-decimals-percentages",
+    "week": 2,
     "subject": "Number",
     "icon": "🔢",
     "title": "Fractions, decimals & percentages",
@@ -47,11 +110,18 @@
         "question": "After a salary increase of $8\\%$, Maya earns £$34,560$ per year. Work out her salary before the increase.",
         "answer": "$108\\% = 34560$, so decimal multiplier $= 1.08$. Original salary $= 34560 \\div 1.08 = £32,000$."
       }
+    ],
+    "keywords": [
+      "recurring decimals",
+      "terminating decimals",
+      "reverse percentages",
+      "equivalent fractions",
+      "converting fractions"
     ]
   },
   {
     "id": "number-standard-form",
-    "week": 2,
+    "week": 3,
     "subject": "Number",
     "icon": "🔢",
     "title": "Standard form",
@@ -97,11 +167,17 @@
         "question": "Given that $p = 4 \\times 10^6$ and $q = 5 \\times 10^5$, evaluate $\\frac{p^2}{q}$. Give your answer in standard form.",
         "answer": "$3.2 \\times 10^7$. Working: First find $p^2 = (4 \\times 10^6)^2 = 16 \\times 10^{12}$. Then divide by $q$: $\\frac{16 \\times 10^{12}}{5 \\times 10^5} = (16 \\div 5) \\times 10^{12-5} = 3.2 \\times 10^7$."
       }
+    ],
+    "keywords": [
+      "scientific notation",
+      "powers of ten",
+      "very large numbers",
+      "very small numbers"
     ]
   },
   {
     "id": "number-surds",
-    "week": 3,
+    "week": 4,
     "subject": "Number",
     "icon": "🔢",
     "title": "Surds",
@@ -147,11 +223,18 @@
         "question": "Rationalise the denominator of $\\frac{6}{4 - \\sqrt{10}}$. Show your working and write your answer in the form $a + b\\sqrt{10}$.",
         "answer": "$4 + \\sqrt{10}$ (where $a=4$ and $b=1$). Working: Multiply top and bottom by $(4 + \\sqrt{10})$. Numerator: $6(4 + \\sqrt{10}) = 24 + 6\\sqrt{10}$. Denominator: $(4 - \\sqrt{10})(4 + \\sqrt{10}) = 16 - 10 = 6$. Fraction: $\\frac{24 + 6\\sqrt{10}}{6} = 4 + \\sqrt{10}$."
       }
+    ],
+    "keywords": [
+      "rationalising the denominator",
+      "rationalise",
+      "square roots",
+      "simplifying roots",
+      "irrational numbers"
     ]
   },
   {
     "id": "number-laws-of-indices",
-    "week": 4,
+    "week": 5,
     "subject": "Number",
     "icon": "🔢",
     "title": "Laws of indices",
@@ -197,11 +280,19 @@
         "question": "Find the value of $n$ such that $2^n = \\frac{8^4}{4^3}$.",
         "answer": "$n = 6$. Working: Express bases in powers of $2$: $8^4 = (2^3)^4 = 2^{12}$ (M1) and $4^3 = (2^2)^3 = 2^6$ (M1). Divide powers: $2^{12} \\div 2^6 = 2^{12-6} = 2^6$. Therefore $2^n = 2^6$, so $n = 6$ (A1)."
       }
+    ],
+    "keywords": [
+      "powers",
+      "exponents",
+      "negative indices",
+      "fractional indices",
+      "index laws",
+      "zero power"
     ]
   },
   {
     "id": "number-upper-lower-bounds",
-    "week": 5,
+    "week": 6,
     "subject": "Number",
     "icon": "🔢",
     "title": "Upper & lower bounds",
@@ -247,11 +338,18 @@
         "question": "The numbers $a$ and $b$ are given as $a = 4.5$ (to 1 decimal place) and $b = 2.1$ (to 1 decimal place). By calculating bounds, find the value of $x = \\frac{a}{b}$ to a suitable degree of accuracy. Show your working clear to explain your choice.",
         "answer": "Answer: $x = 2$ (to 1 significant figure). Working: Bounds for $a$: $4.45 \\le a < 4.55$. Bounds for $b$: $2.05 \\le b < 2.15$.\nLower Bound of $x = \\frac{4.45}{2.15} = 2.0697...$\nUpper Bound of $x = \\frac{4.55}{2.05} = 2.2195...$\nSince both the lower bound ($2.0697...$) and upper bound ($2.2195...$) round to $2$ to 1 significant figure, the value to a suitable degree of accuracy is $2$."
       }
+    ],
+    "keywords": [
+      "error intervals",
+      "rounding",
+      "truncation",
+      "limits of accuracy",
+      "degree of accuracy"
     ]
   },
   {
     "id": "algebra-expanding-factorising",
-    "week": 6,
+    "week": 7,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Expanding & factorising",
@@ -296,11 +394,19 @@
         "question": "5. Factorise fully $3x^2 + 10x - 8$.",
         "answer": "Working: $a \\times c = 3 \\times (-8) = -24$. Two numbers multiplying to $-24$ and adding to $10$ are $+12$ and $-2$. Rewrite expression: $3x^2 + 12x - 2x - 8 = 3x(x + 4) - 2(x + 4)$. Final answer: $(3x - 2)(x + 4)$ (1 mark for correct split of middle term, 1 mark for correct final answer)."
       }
+    ],
+    "keywords": [
+      "brackets",
+      "multiplying out",
+      "FOIL",
+      "double brackets",
+      "common factor",
+      "difference of two squares"
     ]
   },
   {
     "id": "algebra-solving-equations-inequalities",
-    "week": 7,
+    "week": 8,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Solving equations & inequalities",
@@ -346,11 +452,18 @@
         "question": "Solve the inequality $x^2 - 9 > 0$.",
         "answer": "$x < -3$ or $x > 3$. Working: Factorise as $(x - 3)(x + 3) > 0$. The critical values are $x = 3$ and $x = -3$. Since we want the graph region above zero (positive), $x$ must be less than $-3$ or greater than $3$."
       }
+    ],
+    "keywords": [
+      "linear equations",
+      "unknowns on both sides",
+      "inequality",
+      "number line",
+      "rearranging"
     ]
   },
   {
     "id": "algebra-simultaneous-equations",
-    "week": 8,
+    "week": 9,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Simultaneous equations",
@@ -396,11 +509,16 @@
         "question": "Find the points of intersection between the straight line $y = x + 1$ and the curve $y = x^2 - 2x - 3$",
         "answer": "$(4, 5)$ and $(-1, 0)$. Working: Set equations equal to each other: $x^2 - 2x - 3 = x + 1 \rightarrow x^2 - 3x - 4 = 0$. Factorise: $(x - 4)(x + 1) = 0 \rightarrow x = 4$ or $x = -1$. Find $y$ values using $y = x + 1$: $y = 4 + 1 = 5$ and $y = -1 + 1 = 0$."
       }
+    ],
+    "keywords": [
+      "elimination",
+      "substitution",
+      "two unknowns"
     ]
   },
   {
     "id": "algebra-quadratics-factorising-the-formula",
-    "week": 9,
+    "week": 10,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Quadratics: factorising & the formula",
@@ -446,11 +564,17 @@
         "question": "The area of a rectangle is $15\\text{ cm}^2$. The length of the rectangle is $(x + 4)\\text{ cm}$ and the width is $(x - 1)\\text{ cm}$. Form a quadratic equation and solve it to find the value of $x$ to 2 decimal places.",
         "answer": "Working: Area = length $\\times$ width $\\Rightarrow (x + 4)(x - 1) = 15 \\Rightarrow x^2 + 3x - 4 = 15 \\Rightarrow x^2 + 3x - 19 = 0$ ($M1$). Use formula: $x = \\frac{-3 \\pm \\sqrt{3^2 - 4(1)(-19)}}{2(1)} = \\frac{-3 \\pm \\sqrt{85}}{2}$. $x = \\frac{-3 + 9.2195}{2} = 3.11$ or $x = \\frac{-3 - 9.2195}{2} = -6.11$. Discard negative solution as length must be positive. Answer: $x = 3.11$ ($A1$)."
       }
+    ],
+    "keywords": [
+      "quadratic formula",
+      "quadratic equations",
+      "solving quadratics",
+      "roots of a quadratic"
     ]
   },
   {
     "id": "algebra-completing-the-square",
-    "week": 10,
+    "week": 11,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Completing the square",
@@ -496,11 +620,17 @@
         "question": "Solve $2x^2 - 8x - 3 = 0$ by completing the square. Give your answers in the form $p \\pm \\frac{\\sqrt{q}}{2}$.",
         "answer": "Factorise out $2$: $2[x^2 - 4x] - 3 = 0$. Complete square inside: $2[(x - 2)^2 - 4] - 3 = 0$. Expand: $2(x - 2)^2 - 8 - 3 = 0 \\Rightarrow 2(x - 2)^2 = 11 \\Rightarrow (x - 2)^2 = \\frac{11}{2}$. Square root: $x - 2 = \\pm \\sqrt{\\frac{11}{2}} = \\pm \\frac{\\sqrt{22}}{2}$. Final answer: $x = 2 \\pm \\frac{\\sqrt{22}}{2}$."
       }
+    ],
+    "keywords": [
+      "turning point",
+      "vertex",
+      "minimum point",
+      "perfect square"
     ]
   },
   {
     "id": "algebra-algebraic-fractions",
-    "week": 11,
+    "week": 12,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Algebraic fractions",
@@ -546,11 +676,16 @@
         "question": "Solve the equation $\\frac{6}{x} - \\frac{2}{x-1} = 1$",
         "answer": "Answer: $x = 2$ or $x = 3$. Working: Combine left side: $\\frac{6(x-1) - 2x}{x(x-1)} = 1 \\Rightarrow \\frac{4x - 6}{x^2 - x} = 1$. Multiply across: $4x - 6 = x^2 - x$. Rearrange to $x^2 - 5x + 6 = 0$. Factorise to $(x-2)(x-3) = 0$, giving solutions $x = 2$ and $x = 3$."
       }
+    ],
+    "keywords": [
+      "rational expressions",
+      "common denominator",
+      "cross multiply"
     ]
   },
   {
     "id": "algebra-sequences-linear-quadratic-geometric",
-    "week": 12,
+    "week": 13,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Sequences (linear, quadratic, geometric)",
@@ -596,11 +731,20 @@
         "question": "The first three terms of a geometric sequence are $x$, $x + 6$, and $3x + 6$, where $x > 0$. Show that $x = 6$ and state the common ratio.",
         "answer": "Answer: $x = 6$, Common ratio $r = 2$.\nWorking: Since it is geometric, $\\frac{x+6}{x} = \\frac{3x+6}{x+6}$. Cross-multiply: $(x+6)^2 = x(3x+6) \\Rightarrow x^2 + 12x + 36 = 3x^2 + 6x$. Rearrange to $2x^2 - 6x - 36 = 0 \\Rightarrow x^2 - 3x - 18 = 0$. Factorise: $(x - 6)(x + 3) = 0$. Since $x > 0$, $x = 6$. The terms are $6, 12, 24$, so common ratio $r = 12 \\div 6 = 2$."
       }
+    ],
+    "keywords": [
+      "nth term",
+      "arithmetic sequence",
+      "term to term",
+      "position to term",
+      "Fibonacci",
+      "common difference",
+      "common ratio"
     ]
   },
   {
     "id": "algebra-functions-iteration",
-    "week": 13,
+    "week": 14,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Functions & iteration",
@@ -645,11 +789,19 @@
         "question": "Given that $f(x) = 3x + 5$ and $g(x) = 2x - 1$, find the value of $x$ for which $f(x) = g(x)$.",
         "answer": "Set the two function expressions equal to each other: $3x + 5 = 2x - 1$. Subtract $2x$ from both sides: $x + 5 = -1$. Subtract $5$ from both sides: $x = -6$. Final Answer: $x = -6$."
       }
+    ],
+    "keywords": [
+      "inverse function",
+      "composite function",
+      "f(x)",
+      "function notation",
+      "function machine",
+      "iterative formula"
     ]
   },
   {
     "id": "algebra-algebraic-proof",
-    "week": 14,
+    "week": 15,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Algebraic proof",
@@ -695,11 +847,18 @@
         "question": "Prove algebraically that the difference between the squares of two consecutive integers is equal to the sum of those two integers.",
         "answer": "Let integers be $n$ and $n+1$. Difference of squares $= (n + 1)^2 - n^2 = (n^2 + 2n + 1) - n^2 = 2n + 1$. The sum of the integers is $n + (n + 1) = 2n + 1$. Since both equal $2n + 1$, they are equal. (M1 for setting up difference of squares and sum, M1 for expanding and simplifying both sides, A1 for showing they are identical)."
       }
+    ],
+    "keywords": [
+      "proof",
+      "proving",
+      "show that",
+      "consecutive integers",
+      "odd and even numbers"
     ]
   },
   {
     "id": "ratio-proportion-ratio",
-    "week": 15,
+    "week": 16,
     "subject": "Ratio & Proportion",
     "icon": "⚖️",
     "title": "Ratio",
@@ -744,11 +903,17 @@
         "question": "Aaliyah and Ben share some money in the ratio $2 : 5$. Ben receives £36 more than Aaliyah. How much money does Aaliyah receive?",
         "answer": "Difference in parts = $5 - 2 = 3$ parts. These 3 parts equal £36, so 1 part = $36 \\div 3 = £12$. Aaliyah has 2 parts, so she receives $2 \\times 12 = £24$. (Answer: £24)"
       }
+    ],
+    "keywords": [
+      "sharing in a ratio",
+      "dividing in a ratio",
+      "simplifying ratios",
+      "unitary method"
     ]
   },
   {
     "id": "ratio-proportion-percentage-change",
-    "week": 16,
+    "week": 17,
     "subject": "Ratio & Proportion",
     "icon": "⚖️",
     "title": "Percentage change",
@@ -793,11 +958,18 @@
         "question": "A stock of computers is worth $£15,000$. Each year, the value depreciates by $20\\%$ compared to its value the previous year. Work out the value of the computers after 2 years.",
         "answer": "Multiplier for a $20\\%$ decrease is $0.80$. Apply this twice for 2 years (compound depreciation). Calculation: $15000 \\times 0.80 \\times 0.80 = 15000 \\times 0.64 = 9600$. Answer: $£9,600$."
       }
+    ],
+    "keywords": [
+      "percentage increase",
+      "percentage decrease",
+      "profit and loss",
+      "multiplier",
+      "reverse percentage"
     ]
   },
   {
     "id": "ratio-proportion-compound-interest-depreciation",
-    "week": 17,
+    "week": 18,
     "subject": "Ratio & Proportion",
     "icon": "⚖️",
     "title": "Compound interest & depreciation",
@@ -843,11 +1015,18 @@
         "question": "A laptop loses $15\\%$ of its value in the first year, and a further $10\\%$ of its reduced value in the second year. If it was bought for 800 pounds, what is it worth after 2 years?",
         "answer": "Answer: 612 pounds. Working: First year multiplier is $0.85$, second year multiplier is $0.90$. Calculation: $800 \\times 0.85 \\times 0.90 = 612$ pounds."
       }
+    ],
+    "keywords": [
+      "growth and decay",
+      "exponential growth",
+      "multiplier",
+      "savings",
+      "interest rate"
     ]
   },
   {
     "id": "ratio-proportion-direct-inverse-proportion",
-    "week": 18,
+    "week": 19,
     "subject": "Ratio & Proportion",
     "icon": "⚖️",
     "title": "Direct & inverse proportion",
@@ -893,11 +1072,18 @@
         "question": "y is inversely proportional to the square of x. If y = 2 when x = 4, find the value of y when x = 8.",
         "answer": "y = 0.5 (or 1/2). Working: y = k/x^2 -> 2 = k/(4^2) -> 2 = k/16 -> k = 32. Equation: y = 32/x^2. When x = 8, y = 32/(8^2) = 32/64 = 0.5."
       }
+    ],
+    "keywords": [
+      "directly proportional",
+      "inversely proportional",
+      "proportional to",
+      "constant of proportionality",
+      "varies as"
     ]
   },
   {
     "id": "geometry-angles-polygons",
-    "week": 19,
+    "week": 20,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Angles & polygons",
@@ -943,11 +1129,20 @@
         "question": "A polygon has interior angles that sum to $1980^\text{o}$. How many sides does the polygon have?",
         "answer": "Answer: $13$ sides. Working: Set up the equation $(n - 2) \times 180 = 1980$. Divide by $180$: $n - 2 = 11$. Add $2$: $n = 13$."
       }
+    ],
+    "keywords": [
+      "interior angles",
+      "exterior angles",
+      "parallel lines",
+      "alternate angles",
+      "corresponding angles",
+      "angles in a triangle",
+      "regular polygons"
     ]
   },
   {
     "id": "geometry-circle-theorems",
-    "week": 20,
+    "week": 21,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Circle theorems",
@@ -993,11 +1188,20 @@
         "question": "TP is a tangent to a circle at point P. O is the centre of the circle. The point Q lies on the circle such that angle OPQ = 40 degrees. Find angle TPQ.",
         "answer": "Answer: 50 degrees. Working: The radius meets the tangent at 90 degrees, so angle OPT = 90 degrees. Angle TPQ = angle OPT - angle OPQ = 90 - 40 = 50 degrees."
       }
+    ],
+    "keywords": [
+      "tangent",
+      "chord",
+      "cyclic quadrilateral",
+      "alternate segment",
+      "semicircle",
+      "angle at the centre",
+      "angle at the circumference"
     ]
   },
   {
     "id": "geometry-arc-length-sector-area",
-    "week": 21,
+    "week": 22,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Arc length & sector area",
@@ -1042,11 +1246,18 @@
         "question": "Calculate the exact perimeter of a semi-circle with a diameter of $14\\text{ cm}$. Give your answer in terms of $\\pi$.",
         "answer": "Perimeter of a semi-circle is half the circumference plus the diameter. Circumference of full circle $= \\pi \\times 14 = 14\\pi$. Half circumference $= 7\\pi$. Add diameter: $7\\pi + 14$. Answer: $(7\\pi + 14)\\text{ cm}$."
       }
+    ],
+    "keywords": [
+      "sector",
+      "arc",
+      "area of a circle",
+      "circumference",
+      "pi"
     ]
   },
   {
     "id": "geometry-pythagoras-theorem",
-    "week": 22,
+    "week": 23,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Pythagoras' theorem",
@@ -1092,11 +1303,17 @@
         "question": "A ladder $10$ metres long leans against a vertical wall. The bottom of the ladder is $3$ metres away from the base of the wall. How high up the wall does the ladder reach? Give your answer to 2 decimal places.",
         "answer": "Working: The ladder is the hypotenuse ($10$), distance from wall is one short side ($3$), height up the wall is $h$. $3^2 + h^2 = 10^2$, so $9 + h^2 = 100$. $h^2 = 100 - 9 = 91$. $h = \\sqrt{91} = 9.5393...$ Answer: $9.54$ metres."
       }
+    ],
+    "keywords": [
+      "right-angled triangle",
+      "hypotenuse",
+      "a squared plus b squared",
+      "pythagorean"
     ]
   },
   {
     "id": "geometry-trigonometry-soh-cah-toa",
-    "week": 23,
+    "week": 24,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Trigonometry (SOH CAH TOA)",
@@ -1142,11 +1359,24 @@
         "question": "A vertical flagpole stands on horizontal ground. A wire is attached to the top of the flagpole and anchored to the ground $5\\text{ m}$ away from the base. The wire makes an angle of $65^\\circ$ with the ground. Calculate the height of the flagpole, $h$. Give your answer to 3 significant figures.",
         "answer": "Answer: $10.7\\text{ m}$. Working: Here, the ground distance ($5\\text{ m}$) is adjacent to the $65^\\circ$ angle, and the height $h$ is opposite. Using TOA, $\\tan(65^\\circ) = \\frac{h}{5}$. So $h = 5 \\times \\tan(65^\\circ) = 5 \\times 2.1445... = 10.722...$, which rounds to $10.7\\text{ m}$."
       }
+    ],
+    "keywords": [
+      "SOHCAHTOA",
+      "trig",
+      "sine",
+      "cosine",
+      "tangent",
+      "sin",
+      "cos",
+      "tan",
+      "right-angled triangle",
+      "angle of elevation",
+      "exact trig values"
     ]
   },
   {
     "id": "geometry-sine-cosine-rules",
-    "week": 24,
+    "week": 25,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Sine & cosine rules",
@@ -1192,11 +1422,18 @@
         "question": "A boat sails from port P on a bearing of $050^\\circ$ for $12\\text{ km}$ to point Q, then on a bearing of $110^\\circ$ for $15\\text{ km}$ to point R. Calculate the straight-line distance from P to R. Give your answer to 3 significant figures.",
         "answer": "First find the interior angle at Q using parallel line rules. The angle inside triangle PQR at vertex Q is $180^\\circ - 50^\\circ + 110^\\circ$ logic, yielding $120^\\circ$ (or draw a sketch showing alternate angles: $50^\\circ$ inside, remaining angle is $180 - (50+?)$). Let's use Cosine Rule with sides $12$ and $15$, included angle $120^\\circ$. Working: $PR^2 = 12^2 + 15^2 - (2 \\times 12 \\times 15 \\times \\cos(120^\\circ)) = 144 + 225 - (360 \\times -0.5) = 369 + 180 = 549$. $PR = \\sqrt{549} = 23.43$. Final Answer: $23.4\\text{ km}$."
       }
+    ],
+    "keywords": [
+      "sine rule",
+      "cosine rule",
+      "trig",
+      "area of a triangle",
+      "non-right-angled triangles"
     ]
   },
   {
     "id": "geometry-3d-shapes-volume",
-    "week": 25,
+    "week": 26,
     "subject": "Geometry",
     "icon": "📐",
     "title": "3D shapes & volume",
@@ -1242,11 +1479,21 @@
         "question": "A metal cylinder has a volume of $500\\text{ cm}^3$ and a height of $10\\text{ cm}$. Work out the radius of the cylinder. Give your answer correct to 3 significant figures.",
         "answer": "Using $V = \\pi r^2 h$, substitute knowns: $500 = \\pi \\times r^2 \\times 10$. Rearrange for $r^2$: $r^2 = \\frac{500}{10\\pi} = \\frac{50}{\\pi} \\approx 15.915$. Then $r = \\sqrt{15.915} \\approx 3.9893...$ To 3 sig figs: $3.99\\text{ cm}$. (Mark: M1 for rearranging formula, M1 for square root step, A1 for $3.99$)."
       }
+    ],
+    "keywords": [
+      "surface area",
+      "cylinder",
+      "cone",
+      "sphere",
+      "pyramid",
+      "prism",
+      "frustum",
+      "cuboid"
     ]
   },
   {
     "id": "geometry-vectors",
-    "week": 26,
+    "week": 27,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Vectors",
@@ -1292,11 +1539,19 @@
         "question": "OAE is a triangle. $B$ is the midpoint of $OA$ and $C$ is the point on $AE$ such that $AC : CE = 1 : 2$. $\\vec{OA} = 6\\mathbf{a}$ and $\\vec{OE} = 6\\mathbf{e}$. Express $\\vec{BC}$ in terms of $\\mathbf{a}$ and $\\mathbf{e}$.",
         "answer": "Find $\\vec{AE} = -6\\mathbf{a} + 6\\mathbf{e}$. Since $AC : CE = 1 : 2$, $\\vec{AC} = \\frac{1}{3}\\vec{AE} = -2\\mathbf{a} + 2\\mathbf{e}$. Now find $\\vec{BC}$: we know $\\vec{OB} = 3\\mathbf{a}$ (midpoint), so $\\vec{BC} = -\\vec{OB} + \\vec{OA} + \\vec{AC} = -3\\mathbf{a} + 6\\mathbf{a} + (-2\\mathbf{a} + 2\\mathbf{e}) = \\mathbf{a} + 2\\mathbf{e}$."
       }
+    ],
+    "keywords": [
+      "column vectors",
+      "magnitude",
+      "scalar",
+      "parallel vectors",
+      "vector proof",
+      "resultant"
     ]
   },
   {
     "id": "geometry-transformations",
-    "week": 27,
+    "week": 28,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Transformations",
@@ -1342,11 +1597,19 @@
         "question": "Triangle P is mapped to triangle Q by a transformation matrix, which is equivalent to an enlargement of scale factor $-0.5$ about the origin. If the area of triangle P is $24 \\text{ cm}^2$, find the area of triangle Q.",
         "answer": "Answer: 6 cm^2. Working: Area scale factor is the square of the linear scale factor. Linear scale factor is $-0.5$, so area scale factor is $(-0.5)^2 = 0.25$ (or $1/4$). New area = $24 \\times 0.25 = 6 \\text{ cm}^2$."
       }
+    ],
+    "keywords": [
+      "rotation",
+      "reflection",
+      "translation",
+      "enlargement",
+      "scale factor",
+      "centre of enlargement"
     ]
   },
   {
     "id": "geometry-similarity-congruence",
-    "week": 28,
+    "week": 29,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Similarity & congruence",
@@ -1392,11 +1655,21 @@
         "question": "A container has a capacity of $4\\text{ litres}$ and a surface area of $300\\text{ cm}^2$. A mathematically similar container has a surface area of $1200\\text{ cm}^2$. Work out the capacity of the larger container in litres.",
         "answer": "32 litres. Working: Area scale factor = $1200 / 300 = 4$. Linear scale factor = square root of $4 = 2$. Volume scale factor = $2^3 = 8$. Capacity = $4 \\times 8 = 32\\text{ litres}$."
       }
+    ],
+    "keywords": [
+      "similar shapes",
+      "similar triangles",
+      "congruent triangles",
+      "SSS",
+      "SAS",
+      "ASA",
+      "RHS",
+      "scale factor"
     ]
   },
   {
     "id": "probability-basic-probability",
-    "week": 29,
+    "week": 30,
     "subject": "Probability",
     "icon": "🎲",
     "title": "Basic probability",
@@ -1442,11 +1715,21 @@
         "question": "A biased spinner has four sections: A, B, C and D. The probabilities of landing on A, B and C are 0.2, 0.35 and 0.15 respectively. The spinner is spun 200 times. Work out an estimate for the number of times it lands on D.",
         "answer": "Answer: 60 times. Working: First find P(D) = 1 - (0.2 + 0.35 + 0.15) = 1 - 0.7 = 0.3. Then multiply by the number of trials: 0.3 x 200 = 60."
       }
+    ],
+    "keywords": [
+      "chance",
+      "likelihood",
+      "probability scale",
+      "relative frequency",
+      "expected frequency",
+      "mutually exclusive",
+      "sample space",
+      "outcomes"
     ]
   },
   {
     "id": "probability-tree-diagrams",
-    "week": 30,
+    "week": 31,
     "subject": "Probability",
     "icon": "🎲",
     "title": "Tree diagrams",
@@ -1492,11 +1775,17 @@
         "question": "A bag has $x$ counters, of which $3$ are red and the rest are blue. Two counters are taken at random without replacement. The probability that both counters are red is $\\frac{1}{15}$. Form an equation in $x$ and solve it to find the total number of counters.",
         "answer": "P(First red) = 3/x. P(Second red given first red) = 2/(x - 1). Equation: (3/x) x (2/(x - 1)) = 1/15. This simplifies to 6 / (x^2 - x) = 1/15. Cross multiply: 90 = x^2 - x. Rearrange into quadratic: x^2 - x - 90 = 0. Factorise: (x - 10)(x + 9) = 0. Since x must be positive, x = 10. Final Answer: 10."
       }
+    ],
+    "keywords": [
+      "with replacement",
+      "without replacement",
+      "independent events",
+      "branches"
     ]
   },
   {
     "id": "probability-venn-diagrams-set-notation",
-    "week": 31,
+    "week": 32,
     "subject": "Probability",
     "icon": "🎲",
     "title": "Venn diagrams & set notation",
@@ -1542,11 +1831,19 @@
         "question": "A Venn diagram has universal set $\\xi$. Set A has $x$ elements, Set B has $15$ elements, the intersection has $4$ elements, and neither has $2$ elements. If the total universal set has $30$ elements, set up an equation and solve for $x$.",
         "answer": "Answer: x = 17. Working: Only A is $x - 4$. Only B is $15 - 4 = 11$. Intersection is 4. Neither is 2. Total = $(x - 4) + 4 + 11 + 2 = 30$. Simplify: $x + 13 = 30$, so $x = 17$."
       }
+    ],
+    "keywords": [
+      "set notation",
+      "sets",
+      "union",
+      "intersection",
+      "complement",
+      "universal set"
     ]
   },
   {
     "id": "probability-conditional-probability",
-    "week": 32,
+    "week": 33,
     "subject": "Probability",
     "icon": "🎲",
     "title": "Conditional probability",
@@ -1591,11 +1888,16 @@
         "question": "Card A has numbers 1, 2, 3, 4. Card B has numbers 3, 4, 5, 6, 7. One card is chosen at random from Card A, and its number is added to a number chosen at random from Card B. Given that the sum is greater than 8, find the probability that the number chosen from Card A was a 4.",
         "answer": "Answer: 3/4. Working: List pairs summing > 8 where Card A is 4: (4,5)=9, (4,6)=10, (4,7)=11 (3 outcomes). Pairs summing > 8 where Card A is 3: (3,6)=9, (3,7)=10 (2 outcomes). Total outcomes with sum > 8 is 5. Outcomes where Card A is 4 and sum > 8 is 3. P(Card A is 4 | sum > 8) = 3/5."
       }
+    ],
+    "keywords": [
+      "given that",
+      "dependent events",
+      "two-way tables"
     ]
   },
   {
     "id": "statistics-averages-range",
-    "week": 33,
+    "week": 34,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Averages & range",
@@ -1641,11 +1943,17 @@
         "question": "The mean of three numbers is 7. When a fourth number is added, the new mean is 9. What is the value of the fourth number?",
         "answer": "Sum of first three numbers = 3 * 7 = 21. Sum of all four numbers = 4 * 9 = 36. Fourth number = 36 - 21 = 15. (Award marks: M1 for sum of 3 numbers, M1 for sum of 4 numbers, A1 for 15)."
       }
+    ],
+    "keywords": [
+      "mean",
+      "median",
+      "mode",
+      "average"
     ]
   },
   {
     "id": "statistics-frequency-tables",
-    "week": 34,
+    "week": 35,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Frequency tables",
@@ -1691,11 +1999,19 @@
         "question": "In a class test, the mean score of 12 boys was 15. The mean score of 18 girls was 20. Work out the overall mean score for the whole class.",
         "answer": "Total score for boys = 12 x 15 = 180. Total score for girls = 18 x 20 = 360. Total score for whole class = 180 + 360 = 540. Total number of students = 12 + 18 = 30. Overall mean = 540 / 30 = 18."
       }
+    ],
+    "keywords": [
+      "grouped data",
+      "grouped frequency",
+      "estimate of the mean",
+      "modal class",
+      "class interval",
+      "midpoints"
     ]
   },
   {
     "id": "statistics-cumulative-frequency-box-plots",
-    "week": 35,
+    "week": 36,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Cumulative frequency & box plots",
@@ -1741,11 +2057,19 @@
         "question": "Company A has a median salary of 28,000 pounds and an interquartile range of 4,000 pounds. Company B has a median salary of 26,000 pounds and an interquartile range of 1,500 pounds. Compare the two companies in terms of average salary and consistency.",
         "answer": "Answer: Company A has a higher average salary (£28,000 compared to £26,000). Company B is more consistent (or has less variation in salaries) because its interquartile range is smaller (£1,500 compared to £4,000)."
       }
+    ],
+    "keywords": [
+      "box and whisker",
+      "interquartile range",
+      "IQR",
+      "quartiles",
+      "lower quartile",
+      "upper quartile"
     ]
   },
   {
     "id": "statistics-histograms",
-    "week": 36,
+    "week": 37,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Histograms",
@@ -1791,11 +2115,16 @@
         "question": "A histogram is drawn for a set of data. The total frequency for the histogram is 100. A bar representing the interval $100 < x \\le 150$ has a width of 5 cm and a height of 4 cm. If the total area of all bars combined is 50 cm^2, calculate the total frequency represented by a bar of area 12 cm^2.",
         "answer": "Answer: 24. \nWorking: Total frequency = 100 corresponding to a total histogram area of 50 cm^2. Therefore, scale is $100 \\div 50 = 2$ items per cm^2. For a bar with an area of 12 cm^2, frequency = $12 \\times 2 = 24$."
       }
+    ],
+    "keywords": [
+      "frequency density",
+      "class width",
+      "unequal class widths"
     ]
   },
   {
     "id": "statistics-scatter-graphs-correlation",
-    "week": 37,
+    "week": 38,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Scatter graphs & correlation",
@@ -1841,6 +2170,14 @@
         "question": "A student uses a line of best fit to estimate the height of a sunflower after 50 days of growth, where the original data only recorded measurements up to 30 days. What term describes this type of estimation, and is it likely to be reliable?",
         "answer": "Extrapolation; it is not likely to be reliable. Working: Identifying 'extrapolation' gets the first mark, and stating it is unreliable because it is outside the range of original data gets the second mark."
       }
+    ],
+    "keywords": [
+      "line of best fit",
+      "positive correlation",
+      "negative correlation",
+      "outliers",
+      "interpolation",
+      "extrapolation"
     ]
   }
 ]

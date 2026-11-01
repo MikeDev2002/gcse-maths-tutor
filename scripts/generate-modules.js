@@ -40,12 +40,11 @@ if (!API_KEY) {
 
 const OUTPUT_PATH = path.join(__dirname, '..', 'content', 'modules.json');
 
-// Same 6 subjects / 37 sub-topics as the app's existing topic list —
-// this defines the week-by-week order (Number 1-5, Algebra 6-14,
-// Ratio & Proportion 15-18, Geometry 19-28, Probability 29-32, Statistics 33-37).
+// This defines the week-by-week order (Number 1-6, Algebra 7-15,
+// Ratio & Proportion 16-19, Geometry 20-29, Probability 30-33, Statistics 34-38).
 const SUBJECTS = [
   { name: 'Number', icon: '🔢', subs: [
-    'Fractions, decimals & percentages', 'Standard form', 'Surds',
+    'Factors, multiples, primes, HCF & LCM', 'Fractions, decimals & percentages', 'Standard form', 'Surds',
     'Laws of indices', 'Upper & lower bounds'
   ]},
   { name: 'Algebra', icon: '🧮', subs: [
@@ -70,13 +69,63 @@ const SUBJECTS = [
   ]}
 ];
 
+// Other words people use for each topic, so the app's search finds the right
+// lesson even when the term isn't in the title (e.g. "IQR", "nth term").
+// Only list what the lesson actually teaches: if a topic has no lesson, search
+// should say so rather than send someone to the wrong one.
+const KEYWORDS = {
+  'Factors, multiples, primes, HCF & LCM': ['LCM', 'lowest common multiple', 'least common multiple', 'HCF', 'highest common factor', 'greatest common divisor', 'prime factorisation', 'prime factor decomposition', 'product of primes', 'factor tree', 'prime numbers'],
+  'Fractions, decimals & percentages': ['recurring decimals', 'terminating decimals', 'reverse percentages', 'equivalent fractions', 'converting fractions'],
+  'Standard form': ['scientific notation', 'powers of ten', 'very large numbers', 'very small numbers'],
+  'Surds': ['rationalising the denominator', 'rationalise', 'square roots', 'simplifying roots', 'irrational numbers'],
+  'Laws of indices': ['powers', 'exponents', 'negative indices', 'fractional indices', 'index laws', 'zero power'],
+  'Upper & lower bounds': ['error intervals', 'rounding', 'truncation', 'limits of accuracy', 'degree of accuracy'],
+  'Expanding & factorising': ['brackets', 'multiplying out', 'FOIL', 'double brackets', 'common factor', 'difference of two squares'],
+  'Solving equations & inequalities': ['linear equations', 'unknowns on both sides', 'inequality', 'number line', 'rearranging'],
+  'Simultaneous equations': ['elimination', 'substitution', 'two unknowns'],
+  'Quadratics: factorising & the formula': ['quadratic formula', 'quadratic equations', 'solving quadratics', 'roots of a quadratic'],
+  'Completing the square': ['turning point', 'vertex', 'minimum point', 'perfect square'],
+  'Algebraic fractions': ['rational expressions', 'common denominator', 'cross multiply'],
+  'Sequences (linear, quadratic, geometric)': ['nth term', 'arithmetic sequence', 'term to term', 'position to term', 'Fibonacci', 'common difference', 'common ratio'],
+  'Functions & iteration': ['inverse function', 'composite function', 'f(x)', 'function notation', 'function machine', 'iterative formula'],
+  'Algebraic proof': ['proof', 'proving', 'show that', 'consecutive integers', 'odd and even numbers'],
+  'Ratio': ['sharing in a ratio', 'dividing in a ratio', 'simplifying ratios', 'unitary method'],
+  'Percentage change': ['percentage increase', 'percentage decrease', 'profit and loss', 'multiplier', 'reverse percentage'],
+  'Compound interest & depreciation': ['growth and decay', 'exponential growth', 'multiplier', 'savings', 'interest rate'],
+  'Direct & inverse proportion': ['directly proportional', 'inversely proportional', 'proportional to', 'constant of proportionality', 'varies as'],
+  'Angles & polygons': ['interior angles', 'exterior angles', 'parallel lines', 'alternate angles', 'corresponding angles', 'angles in a triangle', 'regular polygons'],
+  'Circle theorems': ['tangent', 'chord', 'cyclic quadrilateral', 'alternate segment', 'semicircle', 'angle at the centre', 'angle at the circumference'],
+  'Arc length & sector area': ['sector', 'arc', 'area of a circle', 'circumference', 'pi'],
+  "Pythagoras' theorem": ['right-angled triangle', 'hypotenuse', 'a squared plus b squared', 'pythagorean'],
+  'Trigonometry (SOH CAH TOA)': ['SOHCAHTOA', 'trig', 'sine', 'cosine', 'tangent', 'sin', 'cos', 'tan', 'right-angled triangle', 'angle of elevation', 'exact trig values'],
+  'Sine & cosine rules': ['sine rule', 'cosine rule', 'trig', 'area of a triangle', 'non-right-angled triangles'],
+  '3D shapes & volume': ['surface area', 'cylinder', 'cone', 'sphere', 'pyramid', 'prism', 'frustum', 'cuboid'],
+  'Vectors': ['column vectors', 'magnitude', 'scalar', 'parallel vectors', 'vector proof', 'resultant'],
+  'Transformations': ['rotation', 'reflection', 'translation', 'enlargement', 'scale factor', 'centre of enlargement'],
+  'Similarity & congruence': ['similar shapes', 'similar triangles', 'congruent triangles', 'SSS', 'SAS', 'ASA', 'RHS', 'scale factor'],
+  'Basic probability': ['chance', 'likelihood', 'probability scale', 'relative frequency', 'expected frequency', 'mutually exclusive', 'sample space', 'outcomes'],
+  'Tree diagrams': ['with replacement', 'without replacement', 'independent events', 'branches'],
+  'Venn diagrams & set notation': ['set notation', 'sets', 'union', 'intersection', 'complement', 'universal set'],
+  'Conditional probability': ['given that', 'dependent events', 'two-way tables'],
+  'Averages & range': ['mean', 'median', 'mode', 'average'],
+  'Frequency tables': ['grouped data', 'grouped frequency', 'estimate of the mean', 'modal class', 'class interval', 'midpoints'],
+  'Cumulative frequency & box plots': ['box and whisker', 'interquartile range', 'IQR', 'quartiles', 'lower quartile', 'upper quartile'],
+  'Histograms': ['frequency density', 'class width', 'unequal class widths'],
+  'Scatter graphs & correlation': ['line of best fit', 'positive correlation', 'negative correlation', 'outliers', 'interpolation', 'extrapolation']
+};
+
+// Extra direction for topics whose title alone doesn't pin down the scope.
+const SCOPE_NOTES = {
+  'Factors, multiples, primes, HCF & LCM': 'Cover: writing a number as a product of prime factors in index form (e.g. $360 = 2^3 \\times 3^2 \\times 5$), then using prime factors or a Venn diagram to find the HCF and LCM, including at least one worded problem where the student must recognise that LCM or HCF is needed (e.g. two buses leaving a station together, or cutting ribbons into equal lengths).'
+};
+
 function buildModuleList() {
   const modules = [];
   let week = 1;
   for (const subject of SUBJECTS) {
     for (const title of subject.subs) {
       const id = `${subject.name}-${title}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      modules.push({ id, week: week++, subject: subject.name, icon: subject.icon, title });
+      modules.push({ id, week: week++, subject: subject.name, icon: subject.icon, title, keywords: KEYWORDS[title] || [] });
     }
   }
   return modules;
@@ -86,8 +135,14 @@ const RESPONSE_SCHEMA = {
   type: 'object',
   properties: {
     overview: {
-      type: 'string',
-      description: 'Plain-English explanation of the concept, 150-250 words, written so both a Year 10 student AND a parent without a strong maths background can follow it.'
+      type: 'object',
+      properties: {
+        hook: { type: 'string', description: 'One short, punchy, relatable sentence that makes someone want to read on. No jargon. Under 20 words.' },
+        keyIdea: { type: 'string', description: 'The core concept in plain English, 2 short sentences maximum, clear to both a Year 10 student and a parent without a strong maths background. Use $...$ for any inline maths.' },
+        keyPoints: { type: 'array', description: 'Exactly 3 or 4 short, scannable bullet points covering the need-to-know facts, rules, or steps. Each under 16 words. Use $...$ for any inline maths.', items: { type: 'string' } },
+        examNote: { type: 'string', description: 'One sentence of Edexcel exam technique: what mark-scheme language to expect (M1/A1), or whether the relevant formula is given on the Higher tier formula sheet or must be memorised.' }
+      },
+      required: ['hook', 'keyIdea', 'keyPoints', 'examNote']
     },
     examples: {
       type: 'array',
@@ -124,8 +179,10 @@ This lesson will be used by a PARENT sitting down with their daughter for one fo
 
 Use British spellings (factorise, recognise, colour, centre). Use $...$ for inline maths and keep notation simple (x^2, sqrt(), fractions written clearly). Where relevant, mention Edexcel mark-scheme language (M1 for method, A1 for accuracy) and note which formulae are given on the Higher tier formula sheet versus which must be memorised.
 
+${SCOPE_NOTES[mod.title] || ''}
+
 Provide:
-1. An overview of the concept (150-250 words, clear to both student and parent).
+1. A quick overview, clear to both student and parent: a one-line hook, the core idea in 2 sentences, 3-4 short key points, and one exam-technique note.
 2. Exactly 2 fully worked examples of increasing difficulty, each with the full step-by-step solution a student would need to show for exam marks.
 3. Exactly 5 practice test questions of mixed difficulty in authentic Edexcel exam style, each with the correct final answer and brief working so the parent can mark it accurately.`;
 }
@@ -182,10 +239,16 @@ async function main() {
   const existing = loadExisting();
   const byId = new Map(existing.map(m => [m.id, m]));
 
+  // Keep every existing module's week number and keywords in line with the
+  // list above, so adding a topic renumbers the rest without regenerating them.
+  for (const mod of allModules) {
+    if (byId.has(mod.id)) byId.set(mod.id, { ...byId.get(mod.id), ...mod });
+  }
+
   console.log(`Generating ${targets.length} module(s) (weeks ${fromWeek}-${toWeek})...`);
 
   for (const mod of targets) {
-    process.stdout.write(`  Week ${mod.week}/37 — ${mod.subject}: ${mod.title} ... `);
+    process.stdout.write(`  Week ${mod.week}/${allModules.length} — ${mod.subject}: ${mod.title} ... `);
     try {
       const content = await callGemini(buildPrompt(mod));
       byId.set(mod.id, { ...mod, ...content });

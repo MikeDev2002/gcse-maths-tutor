@@ -120,7 +120,7 @@ async function main() {
   console.log(`Regenerating overview for ${targets.length} module(s) (weeks ${fromWeek}-${toWeek})...`);
 
   for (const mod of targets) {
-    process.stdout.write(`  Week ${mod.week}/37 — ${mod.subject}: ${mod.title} ... `);
+    process.stdout.write(`  Week ${mod.week}/${modules.length} — ${mod.subject}: ${mod.title} ... `);
     try {
       const overview = await callGemini(buildPrompt(mod));
       mod.overview = overview;

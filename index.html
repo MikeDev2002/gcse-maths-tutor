@@ -57,6 +57,8 @@
       box-shadow: 0 2px 10px rgba(79,70,229,0.25);
       flex-shrink: 0;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 20;
     }
     header .brand { cursor: pointer; }
     header .brand h1 { font-size: 1.1rem; font-weight: 700; }
@@ -96,6 +98,44 @@
       white-space: nowrap;
     }
     .hbtn:hover { background: rgba(255,255,255,0.3); }
+
+    /* ---- Search (in the header, so it's reachable from every page) ---- */
+    .header-search { position: relative; flex: 1 1 220px; max-width: 380px; }
+    #searchInput {
+      width: 100%; padding: 7px 12px;
+      background: rgba(255,255,255,0.18); color: white;
+      border: 1px solid rgba(255,255,255,0.35); border-radius: 8px;
+      font-size: 0.85rem; font-family: inherit; outline: none;
+      transition: background 0.15s;
+    }
+    #searchInput::placeholder { color: rgba(255,255,255,0.85); }
+    #searchInput:focus { background: white; color: var(--text); border-color: white; }
+    #searchInput:focus::placeholder { color: var(--muted); }
+    .search-results {
+      position: absolute; top: calc(100% + 6px); left: 0;
+      width: min(440px, calc(100vw - 40px)); max-height: min(65vh, 460px);
+      overflow-y: auto; background: var(--surface); color: var(--text);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(30,41,59,0.22);
+    }
+    .search-results[hidden] { display: none; }
+    .sr-item { padding: 10px 14px; cursor: pointer; border-bottom: 1px solid var(--border); }
+    .sr-item:last-child { border-bottom: none; }
+    .sr-item:hover, .sr-item.active { background: var(--primary-light); }
+    .sr-title { font-size: 0.9rem; font-weight: 700; line-height: 1.35; }
+    .sr-meta { font-size: 0.72rem; font-weight: 600; color: var(--primary-dark); margin: 2px 0; }
+    .sr-snippet { font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+    .sr-label { font-weight: 700; }
+    .search-results mark { background: #fef3c7; color: inherit; border-radius: 2px; }
+    .sr-empty, .sr-more { padding: 14px; font-size: 0.84rem; line-height: 1.5; color: var(--muted); }
+    .sr-more { padding: 8px 14px; font-size: 0.75rem; }
+    @media (max-width: 820px) {
+      /* Own row below the title, sharing it with the Topic Areas button */
+      .header-search { order: 5; flex: 1 1 50%; max-width: none; }
+      .hbtn { order: 6; }
+      #searchInput { font-size: 16px; } /* stops iPhones zooming in on focus */
+      .search-results { width: calc(100vw - 40px); }
+    }
 
     main {
       flex: 1;
@@ -517,6 +557,10 @@
     <h1>GCSE Maths Tutor</h1>
     <p>Edexcel Higher Tier — Weekly Sessions</p>
   </div>
+  <div class="header-search" role="search">
+    <input id="searchInput" type="search" placeholder="Search topics, e.g. LCM" aria-label="Search all lessons" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="searchResults">
+    <div class="search-results" id="searchResults" role="listbox" hidden></div>
+  </div>
   <div class="header-progress" id="headerProgress"></div>
   <button class="hbtn" id="homeBtn" onclick="showTopics()" style="display:none;">☰ Topic Areas</button>
 </header>
@@ -555,6 +599,9 @@
   // (via katex.renderToString, stashed behind placeholder tokens) means
   // marked never sees raw LaTeX source at all, so this can't happen —
   // important here since percent signs appear constantly in GCSE maths.
+  // The placeholders use private-use characters, not spaces: marked trims
+  // spaces at the start of list items, which would leave the placeholder
+  // showing as text.
   function renderMd(el, text) {
     text = text || '';
     const mathBlocks = [];
@@ -562,7 +609,7 @@
       let html;
       try { html = katex.renderToString(math, { displayMode, throwOnError: false }); }
       catch (_) { html = math; }
-      const token = ` MATH${mathBlocks.length} `;
+      const token = `${mathBlocks.length}`;
       mathBlocks.push(html);
       return token;
     }
@@ -570,7 +617,7 @@
     text = text.replace(/\$([^$\n]+?)\$/g, (_, m) => stash(m, false));
 
     let html = marked.parse(text);
-    html = html.replace(/ MATH(\d+) /g, (_, i) => mathBlocks[Number(i)]);
+    html = html.replace(/(\d+)/g, (_, i) => mathBlocks[Number(i)]);
     el.innerHTML = html;
   }
 
@@ -632,6 +679,7 @@
       loadError = err;
       MODULES = [];
     }
+    searchIndex = MODULES.map(buildSearchEntry);
     showHome();
   }
 
@@ -689,7 +737,7 @@
           <div class="all-done">
             <span class="big-tick">🎉</span>
             <div class="continue-text">
-              <div class="continue-title">All 37 modules complete!</div>
+              <div class="continue-title">All ${MODULES.length} modules complete!</div>
               <div style="opacity:0.9;font-size:0.78rem;">Revisit any module any time from the topic list above.</div>
             </div>
           </div>
@@ -717,9 +765,8 @@
       detail: () => `
         <p>
           This is a weekly, one-hour maths session for a parent and their GCSE student to work through <strong>together</strong> —
-          not something the student is meant to sit down with alone. It covers the full Edexcel GCSE Maths (Higher tier)
-          syllabus, broken into 37 bite-sized weekly topics, so a full year's worth of maths fits into about 6–8 months
-          of weekly sessions. Read it side by side: the parent guiding and asking questions, the student working through
+          not something the student is meant to sit down with alone. It follows Edexcel GCSE Maths (Higher tier),
+          broken into ${MODULES.length} bite-sized topics, one a session. Read it side by side: the parent guiding and asking questions, the student working through
           the examples and having a go at the test questions.
         </p>`
     },
@@ -767,7 +814,7 @@
       key: 'papers',
       icon: '📄',
       title: 'Past Papers',
-      teaser: () => 'Free official-style papers with mark schemes, for exam practice.',
+      teaser: () => 'Real past papers with mark schemes, for exam practice.',
       detail: () => `
         <p>Once you've covered a good number of topics, real past papers are the best way to practise exam technique and timing. Edexcel GCSE Maths (1MA1) Higher tier has three papers — these are free, publicly available copies with mark schemes, hosted by Physics &amp; Maths Tutor:</p>
         <div class="papers-grid">
@@ -812,7 +859,7 @@
           <div class="tile-icon">📚</div>
           <div class="tile-text">
             <div class="tile-title">Topic Areas</div>
-            <div class="tile-teaser">Browse all 37 topics, grouped by subject.</div>
+            <div class="tile-teaser">Browse all ${MODULES.length} topics, grouped by subject.</div>
           </div>
           <div class="tile-chevron">→</div>
         </div>
@@ -840,7 +887,7 @@
     bindHomeTileEvents();
   }
 
-  // ---------- Topics view: the full 37-module syllabus, grouped by subject ----------
+  // ---------- Topics view: the full syllabus, grouped by subject ----------
   function showTopics() {
     currentModule = null;
     homeBtn.style.display = 'none';
@@ -882,12 +929,210 @@
     appEl.innerHTML = `
       <button class="back-btn" onclick="showHome()">← Home</button>
       <div class="module-head">
-        <h2>All 37 Topics</h2>
+        <h2>All ${MODULES.length} Topics</h2>
       </div>
       <div class="syllabus">${syllabusHTML}</div>`;
 
     appEl.querySelectorAll('[data-id]').forEach(el => {
       el.addEventListener('click', () => openModule(el.dataset.id));
+    });
+  }
+
+  // ---------- Search ----------
+  // Finds lessons by title, by the keywords in modules.json (other words for
+  // the topic, like "IQR") and by the lesson text itself. Test-question
+  // answers are left out so a search can never show a student the answer.
+  const SEARCH_MAX_RESULTS = 12;
+  const SEARCH_STOPWORDS = new Set('a an and are about can do does explain find for help how i in is lesson me my of on out the to topic what where which with work'.split(' '));
+  const MATHS_SYMBOLS = { times: '×', div: '÷', pm: '±', le: '≤', leq: '≤', ge: '≥', geq: '≥', neq: '≠', approx: '≈', pi: 'π', theta: 'θ', cup: '∪', cap: '∩', circ: '°', rightarrow: '→', Rightarrow: '→', sin: 'sin', cos: 'cos', tan: 'tan' };
+  let searchIndex = [];
+  let searchActive = -1;
+
+  function escapeHtml(text) {
+    return String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  // Lesson text as plain words: LaTeX would otherwise spoil both matching and
+  // the preview line under each result.
+  function plainText(text) {
+    let s = String(text || '').replace(/\*\*/g, '').replace(/\$/g, '');
+    for (let i = 0; i < 3; i++) s = s.replace(/\\frac\{([^{}]*)\}\{([^{}]*)\}/g, '$1/$2');
+    return s
+      .replace(/\\sqrt\[(\w+)\]\{([^{}]*)\}/g, '$1√$2')
+      .replace(/\\sqrt\{([^{}]*)\}/g, '√$1')
+      .replace(/\^\\circ/g, '°')
+      .replace(/\\%/g, '%')
+      .replace(/\\[,;! ]/g, ' ')
+      .replace(/\\(?:text|dot|bar|vec|mathbf|overrightarrow)\{([^{}]*)\}/g, '$1')
+      .replace(/\\([a-zA-Z]+)/g, (_, name) => MATHS_SYMBOLS[name] || '')
+      .replace(/[{}]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function buildSearchEntry(mod) {
+    const o = mod.overview;
+    const overviewParts = o && typeof o === 'object'
+      ? [o.hook, o.keyIdea, ...(o.keyPoints || []), o.examNote]
+      : [o];
+    const body = [
+      ...overviewParts.map(text => ({ label: 'Overview', text: plainText(text) })),
+      ...(mod.examples || []).flatMap(ex => [ex.question, ex.solution].map(text => ({ label: 'Worked example', text: plainText(text) }))),
+      ...(mod.testQuestions || []).map(tq => ({ label: 'Test question', text: plainText(tq.question) }))
+    ];
+    return { mod, keywords: mod.keywords || [], body };
+  }
+
+  // "LCMs" should find "LCM", and "how do I find the lcm" should too.
+  function searchTokens(query) {
+    return (query.toLowerCase().match(/[a-z0-9]+/g) || [])
+      .filter(word => !SEARCH_STOPWORDS.has(word))
+      .map(word => (word.length > 3 && word.endsWith('s') && !word.endsWith('ss')) ? word.slice(0, -1) : word);
+  }
+
+  // Short terms must match a whole word, so "sin" doesn't find "since" and
+  // "pi" doesn't find "picture". Longer ones match the start of a word.
+  function tokenPattern(token) {
+    return token.length <= 3 ? `\\b${token}s?\\b` : `\\b${token}`;
+  }
+
+  function searchPreview(entry, patterns) {
+    let best = null, bestCount = 0;
+    for (const part of entry.body) {
+      const count = patterns.filter(re => re.test(part.text)).length;
+      if (count > bestCount) { best = part; bestCount = count; }
+    }
+    if (best) {
+      const index = best.text.search(patterns.find(re => re.test(best.text)));
+      const start = Math.max(0, best.text.lastIndexOf(' ', Math.max(0, index - 40)));
+      const end = Math.min(best.text.length, index + 90);
+      const excerpt = (start > 0 ? '…' : '') + best.text.slice(start, end).trim() + (end < best.text.length ? '…' : '');
+      return { label: best.label, text: excerpt };
+    }
+    const keyword = entry.keywords.find(k => patterns.some(re => re.test(k)));
+    return keyword ? { label: 'Covers', text: keyword } : { label: '', text: entry.body[0] ? entry.body[0].text : '' };
+  }
+
+  function searchLessons(query) {
+    const tokens = searchTokens(query);
+    if (!tokens.length) return { tokens, results: [] };
+    const patterns = tokens.map(t => new RegExp(tokenPattern(t), 'i'));
+    const phrase = tokens.join(' ');
+    const normalise = text => text.toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+
+    const results = [];
+    for (const entry of searchIndex) {
+      let score = 0;
+      for (const re of patterns) {
+        const weight = re.test(entry.mod.title) ? 100
+          : entry.keywords.some(k => re.test(k)) ? 60
+          : re.test(entry.mod.subject) ? 25
+          : entry.body.some(p => p.label === 'Overview' && re.test(p.text)) ? 12
+          : entry.body.some(p => re.test(p.text)) ? 6
+          : 0;
+        if (!weight) { score = 0; break; } // every word searched for must appear
+        score += weight;
+      }
+      if (!score) continue;
+      if (tokens.length > 1 && [entry.mod.title, ...entry.keywords].some(t => normalise(t).includes(phrase))) score += 100;
+      results.push({ entry, score, preview: searchPreview(entry, patterns) });
+    }
+    results.sort((a, b) => b.score - a.score || a.entry.mod.week - b.entry.mod.week);
+    return { tokens, results };
+  }
+
+  function highlightMatches(text, tokens) {
+    const re = new RegExp(tokens.map(tokenPattern).join('|'), 'gi');
+    let html = '', last = 0;
+    for (const match of text.matchAll(re)) {
+      if (!match[0]) continue;
+      html += escapeHtml(text.slice(last, match.index)) + '<mark>' + escapeHtml(match[0]) + '</mark>';
+      last = match.index + match[0].length;
+    }
+    return html + escapeHtml(text.slice(last));
+  }
+
+  function closeSearch() {
+    const box = document.getElementById('searchResults');
+    const input = document.getElementById('searchInput');
+    box.hidden = true;
+    searchActive = -1;
+    input.setAttribute('aria-expanded', 'false');
+    input.removeAttribute('aria-activedescendant');
+  }
+
+  function renderSearch() {
+    const input = document.getElementById('searchInput');
+    const box = document.getElementById('searchResults');
+    const query = input.value.trim();
+    searchActive = -1;
+    input.removeAttribute('aria-activedescendant');
+    if (!query) { closeSearch(); return; }
+
+    const { tokens, results } = searchLessons(query);
+    const progress = getProgress();
+    const statusLabels = { started: ' · In progress', completed: ' · Completed ✓' };
+    const items = results.slice(0, SEARCH_MAX_RESULTS).map(({ entry, preview }, i) => {
+      const m = entry.mod;
+      const label = preview.label ? `<span class="sr-label">${preview.label}:</span> ` : '';
+      return `
+        <div class="sr-item" role="option" id="sr-${i}" data-search-id="${m.id}">
+          <div class="sr-title">${highlightMatches(m.title, tokens)}</div>
+          <div class="sr-meta">Week ${m.week} · ${escapeHtml(m.subject)}${statusLabels[getStatus(progress, m.id)] || ''}</div>
+          <div class="sr-snippet">${label}${highlightMatches(preview.text, tokens)}</div>
+        </div>`;
+    }).join('');
+    const more = results.length > SEARCH_MAX_RESULTS
+      ? `<div class="sr-more">Showing the best ${SEARCH_MAX_RESULTS} of ${results.length}. Add another word to narrow it down.</div>` : '';
+
+    box.innerHTML = items
+      ? items + more
+      : `<div class="sr-empty">No lesson covers “${escapeHtml(query)}” yet. Try a different word, or ask the tutor in the Ask a Question box inside any lesson.</div>`;
+    box.hidden = false;
+    box.scrollTop = 0;
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  function moveSearchActive(step) {
+    const input = document.getElementById('searchInput');
+    const items = [...document.querySelectorAll('.sr-item')];
+    if (!items.length) return;
+    if (items[searchActive]) items[searchActive].classList.remove('active');
+    searchActive = (searchActive + step + items.length) % items.length;
+    items[searchActive].classList.add('active');
+    items[searchActive].scrollIntoView({ block: 'nearest' });
+    input.setAttribute('aria-activedescendant', items[searchActive].id);
+  }
+
+  function openSearchResult(id) {
+    const input = document.getElementById('searchInput');
+    input.value = '';
+    input.blur();
+    closeSearch();
+    openModule(id);
+  }
+
+  function bindSearch() {
+    const input = document.getElementById('searchInput');
+    const box = document.getElementById('searchResults');
+    input.addEventListener('input', renderSearch);
+    input.addEventListener('focus', renderSearch);
+    input.addEventListener('keydown', e => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); if (box.hidden) renderSearch(); moveSearchActive(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); moveSearchActive(-1); }
+      else if (e.key === 'Escape') { closeSearch(); }
+      else if (e.key === 'Enter') {
+        e.preventDefault();
+        const item = document.querySelectorAll('.sr-item')[Math.max(searchActive, 0)];
+        if (item) openSearchResult(item.dataset.searchId);
+      }
+    });
+    box.addEventListener('click', e => {
+      const item = e.target.closest('[data-search-id]');
+      if (item) openSearchResult(item.dataset.searchId);
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.header-search')) closeSearch();
     });
   }
 
@@ -1190,6 +1435,7 @@
     inputEl.focus();
   }
 
+  bindSearch();
   loadModules();
 </script>
 
