@@ -1089,7 +1089,12 @@
         score += weight;
       }
       if (!score) continue;
-      if (tokens.length > 1 && [entry.mod.title, ...entry.keywords].some(t => normalise(t).includes(phrase))) score += 100;
+      // Several words must turn up together, not scattered around the lesson,
+      // or "two-way tables" finds any lesson that happens to say "two" and "way".
+      const titleAndKeywords = [entry.mod.title, ...entry.keywords].join(' ');
+      const places = [titleAndKeywords, ...entry.body.map(p => p.text)];
+      if (!places.some(text => patterns.every(re => re.test(text)))) continue;
+      if (tokens.length > 1 &&[entry.mod.title, ...entry.keywords].some(t => normalise(t).includes(phrase))) score += 100;
       results.push({ entry, score, preview: searchPreview(entry, patterns) });
     }
     results.sort((a, b) => b.score - a.score || a.entry.mod.week - b.entry.mod.week);

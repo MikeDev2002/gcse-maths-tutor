@@ -190,7 +190,7 @@
         "Raise a power to a power by multiplying them: $(a^m)^n = a^{mn}$",
         "Any number to the power of zero is one: $a^0 = 1$"
       ],
-      "examNote": "Laws of indices questions are non-calculator favourites, and none of these rules are given on the formula sheet so you must memorise them."
+      "examNote": "Laws of indices questions are non-calculator favourites, and none of these rules are given on the exam aid so you must memorise them."
     },
     "examples": [
       {
@@ -248,7 +248,7 @@
         "Negative powers of $10$ mean decimals smaller than $1$, like $0.0003 = 3 \\times 10^{-4}$.",
         "Calculators usually display standard form using an $E$ button, such as $4.5 \\text{E} 6$."
       ],
-      "examNote": "You must memorise how to convert numbers into standard form as this formula is not given on the Higher tier formula sheet."
+      "examNote": "You must memorise how to convert numbers into standard form as this formula is not given on the exam aid."
     },
     "examples": [
       {
@@ -304,7 +304,7 @@
         "Rationalise the denominator to remove roots from the bottom of fractions.",
         "Treat surds like algebraic terms when adding or subtracting."
       ],
-      "examNote": "Surd rules are not given on the Higher formula sheet, so you must memorise them."
+      "examNote": "Surd rules are not given on the exam aid, so you must memorise them."
     },
     "examples": [
       {
@@ -360,7 +360,7 @@
         "Share a total amount by first finding the total number of ratio parts.",
         "Use unitary methods to find one part when another part is known."
       ],
-      "examNote": "Ratio formulae are not given on the Higher formula sheet, so you must memorise how to share in a given ratio."
+      "examNote": "Ratio formulae are not given on the exam aid, so you must memorise how to share in a given ratio."
     },
     "examples": [
       {
@@ -415,7 +415,7 @@
         "Always divide by the original starting amount, never the new total.",
         "Multiply your decimal answer by 100 to turn it into a percentage."
       ],
-      "examNote": "This formula is not on the Edexcel formula sheet, so you must memorise it for the exam."
+      "examNote": "This formula is not on the exam aid, so you must memorise it for the exam."
     },
     "examples": [
       {
@@ -452,9 +452,7 @@
     "keywords": [
       "percentage increase",
       "percentage decrease",
-      "profit and loss",
-      "multiplier",
-      "reverse percentage"
+      "multiplier"
     ]
   },
   {
@@ -477,7 +475,7 @@
     "examples": [
       {
         "question": "Emma invests 4000 pounds in a bank account that pays $3.5\\%$ compound interest per year. Work out the total amount in the account after 3 years.",
-        "solution": "Step 1: Convert the percentage increase into a decimal multiplier. Since it is compound interest, we add $3.5\\%$ to $100\\%$, giving $103.5\\%$. As a decimal, this is $103.5 / 100 = 1.035$. Step 2: Set up the compound interest calculation using the formula $\\text{Final Amount} = \\text{Original} \\times \\text{multiplier}^{\\text{years}}$. Here, the original amount is $4000$ and the number of years is $3$. So we write $4000 \\times 1.035^3$. Step 3: Evaluate the expression using a calculator. $1.035^3 \\approx 1.1136$. Multiply this by $4000$ to get $4454.4925$. Step 4: Round appropriately to money (2 decimal places). The total amount is 4454.49 pounds (Award M1 for $4000 \\times 1.035^3$ and A1 for the correct answer)."
+        "solution": "Step 1: Convert the percentage increase into a decimal multiplier. Since it is compound interest, we add $3.5\\%$ to $100\\%$, giving $103.5\\%$. As a decimal, this is $103.5 / 100 = 1.035$. Step 2: Set up the compound interest calculation using the formula $\\text{Final Amount} = \\text{Original} \\times \\text{multiplier}^{\\text{years}}$. Here, the original amount is $4000$ and the number of years is $3$. So we write $4000 \\times 1.035^3$. Step 3: Evaluate the expression using a calculator. $1.035^3 = 1.108717...$. Multiply this by $4000$ to get $4434.8715$. Step 4: Round appropriately to money (2 decimal places). The total amount is 4434.87 pounds (Award M1 for $4000 \\times 1.035^3$ and A1 for the correct answer)."
       },
       {
         "question": "A new car is bought for 25000 pounds. Its value depreciates by $18\\%$ each year. Find the value of the car after 4 years, giving your answer to the nearest pound.",
@@ -487,7 +485,7 @@
     "testQuestions": [
       {
         "question": "Mark invests 6000 pounds at a compound interest rate of $2\\%$ per annum. Calculate the total value of the investment after 5 years. Give your answer to the nearest penny.",
-        "answer": "Answer: 6624.45 pounds. Working: Multiplier is $1.02$. Calculation: $6000 \\times 1.02^5 = 6624.446...$ Round to 2 decimal places."
+        "answer": "Answer: 6624.48 pounds. Working: Multiplier is $1.02$. Calculation: $6000 \\times 1.02^5 = 6624.4848...$ Round to 2 decimal places."
       },
       {
         "question": "A boat was purchased for 18000 pounds. Each year, its value depreciates by $12\\%$. Work out the value of the boat after 3 years.",
@@ -495,7 +493,7 @@
       },
       {
         "question": "Ali deposits 500 pounds into a savings account. The account pays compound interest of $4\\%$ for the first year and $2.5\\%$ for each subsequent year. Work out the total amount in the account after 3 years.",
-        "answer": "Answer: 541.25 pounds. Working: Year 1 multiplier is $1.04$, Years 2 and 3 multiplier is $1.025$. Calculation: $500 \\times 1.04 \\times 1.025^2 = 541.25$ pounds."
+        "answer": "Answer: 546.33 pounds (to the nearest penny). Working: Year 1 multiplier is $1.04$, Years 2 and 3 multiplier is $1.025$. Calculation: $500 \\times 1.04 \\times 1.025^2 = 546.325$."
       },
       {
         "question": "The population of a town increases by $3\\%$ every year. In 2020, the population was 50000. What is the expected population in 2025? Give your answer to the nearest whole number.",
@@ -522,14 +520,14 @@
     "title": "Direct & inverse proportion",
     "overview": {
       "hook": "Just like doubling your recipe ingredients doubles the cake, some maths rules connect variables in direct lockstep.",
-      "keyIdea": "Direct proportion means two values increase together at a constant rate ($y = kx$). Inverse proportion means as one value goes up, the other goes down at the same rate ($y = \\frac{k}{x}$).",
+      "keyIdea": "Direct proportion means two values increase together at a constant rate ($y = kx$). Inverse proportion means that when one value doubles, the other halves ($y = \\frac{k}{x}$).",
       "keyPoints": [
         "Identify if the relationship is direct or inverse from the context.",
         "Write the general equation using a constant of proportionality, $k$.",
         "Substitute given values to find the exact value of $k$.",
         "Use your complete equation to solve for the unknown value."
       ],
-      "examNote": "Proportion formulae are not given on the formula sheet, so you must memorise how to set up $y = kx$ and $y = \\frac{k}{x}$ to secure method marks."
+      "examNote": "Proportion formulae are not given on the exam aid, so you must memorise how to set up $y = kx$ and $y = \\frac{k}{x}$ to secure method marks."
     },
     "examples": [
       {
@@ -538,7 +536,7 @@
       },
       {
         "question": "p is inversely proportional to the cube root of q. When q = 8, p = 12. Find the value of q when p = 3.",
-        "solution": "Step 1: Write down the proportionality statement. Since p is inversely proportional to the cube root of q, we write $p \\propto \\frac{1}{\\text{root}[3]{q}}$ or $p \\propto \\frac{1}{q^{1/3}}$. Step 2: Introduce the constant $k$ to form the equation: $p = \\frac{k}{\\text{root}[3]{q}}$. Step 3: Substitute the given values ($q = 8$ and $p = 12$) to find $k$. We know that the cube root of 8 is 2 (since $2 \\times 2 \\times 2 = 8$). So, $12 = \\frac{k}{2}$. Multiply both sides by 2 to find $k$: $k = 24$. Step 4: Write the completed equation: $p = \\frac{24}{\\text{root}[3]{q}}$. Step 5: Find $q$ when $p = 3$. Substitute $p = 3$ into the equation: $3 = \\frac{24}{\\text{root}[3]{q}}$. Rearrange to solve for the cube root of $q$: $\\text{root}[3]{q} = \\frac{24}{3}$, which simplifies to $\\text{root}[3]{q} = 8$. Step 6: To find $q$, cube both sides of the equation ($q = 8^3$). Calculating $8 \\times 8 \\times 8$ gives $512$. Final Answer: $q = 512$."
+        "solution": "Step 1: Write down the proportionality statement. Since p is inversely proportional to the cube root of q, we write $p \\propto \\frac{1}{\\sqrt[3]{q}}$ or $p \\propto \\frac{1}{q^{1/3}}$. Step 2: Introduce the constant $k$ to form the equation: $p = \\frac{k}{\\sqrt[3]{q}}$. Step 3: Substitute the given values ($q = 8$ and $p = 12$) to find $k$. We know that the cube root of 8 is 2 (since $2 \\times 2 \\times 2 = 8$). So, $12 = \\frac{k}{2}$. Multiply both sides by 2 to find $k$: $k = 24$. Step 4: Write the completed equation: $p = \\frac{24}{\\sqrt[3]{q}}$. Step 5: Find $q$ when $p = 3$. Substitute $p = 3$ into the equation: $3 = \\frac{24}{\\sqrt[3]{q}}$. Rearrange to solve for the cube root of $q$: $\\sqrt[3]{q} = \\frac{24}{3}$, which simplifies to $\\sqrt[3]{q} = 8$. Step 6: To find $q$, cube both sides of the equation ($q = 8^3$). Calculating $8 \\times 8 \\times 8$ gives $512$. Final Answer: $q = 512$."
       }
     ],
     "testQuestions": [
@@ -598,7 +596,7 @@
     },
     "examples": [
       {
-        "question": "A solid metal block has a mass of 540 g and a volume of 200 cm^3. Work out the density of the metal in g/cm^3.",
+        "question": "A solid metal block has a mass of 540 g and a volume of $200\\text{ cm}^3$. Work out the density of the metal in g/cm^3.",
         "solution": "Step 1: Write down the formula for density. Density = Mass / Volume. Step 2: Substitute the given values into the formula. Density = 540 / 200. Step 3: Calculate the final answer. Density = 2.7 g/cm^3."
       },
       {
@@ -612,11 +610,11 @@
         "answer": "12 km/h. Working: Time = 1.25 hours (or 75 minutes). Speed = Distance / Time = 15 / 1.25 = 12."
       },
       {
-        "question": "A wooden block has a density of 0.6 g/cm^3 and a volume of 450 cm^3. Work out the mass of the block.",
+        "question": "A wooden block has a density of 0.6 g/cm^3 and a volume of $450\\text{ cm}^3$. Work out the mass of the block.",
         "answer": "270 g. Working: Mass = Density x Volume = 0.6 x 450 = 270."
       },
       {
-        "question": "A box exerts a force of 120 N on a table. The area of contact is 0.4 m^2. Calculate the pressure in N/m^2.",
+        "question": "A box exerts a force of 120 N on a table. The area of contact is $0.4\\text{ m}^2$. Calculate the pressure in N/m^2.",
         "answer": "300 N/m^2. Working: Pressure = Force / Area = 120 / 0.4 = 300."
       },
       {
@@ -624,8 +622,8 @@
         "answer": "72 km/h. Working: Multiply by 3.6 (or convert 20 m to 0.02 km and 1 s to 1/3600 h, giving 20 x 3600 / 1000 = 72)."
       },
       {
-        "question": "Liquid A has a density of 0.8 g/cm^3. Liquid B has a density of 1.1 g/cm^3. 300 cm^3 of Liquid A is mixed with 200 cm^3 of Liquid B to make Liquid C. Work out the density of Liquid C.",
-        "answer": "0.92 g/cm^3. Working: Mass A = 0.8 x 300 = 240 g. Mass B = 1.1 x 200 = 220 g. Total mass = 460 g. Total volume = 500 cm^3. Density = 460 / 500 = 0.92 g/cm^3."
+        "question": "Liquid A has a density of 0.8 g/cm^3. Liquid B has a density of 1.1 g/cm^3. $300\\text{ cm}^3$ of Liquid A is mixed with $200\\text{ cm}^3$ of Liquid B to make Liquid C. Work out the density of Liquid C.",
+        "answer": "0.92 g/cm^3. Working: Mass A = 0.8 x 300 = 240 g. Mass B = 1.1 x 200 = 220 g. Total mass = 460 g. Total volume = $500\\text{ cm}^3$. Density = 460 / 500 = 0.92 g/cm^3."
       }
     ]
   },
@@ -644,7 +642,7 @@
         "Add this tolerance to get the upper bound and subtract it to get the lower bound.",
         "For calculation questions, always use the bounds before doing your sums."
       ],
-      "examNote": "Bounds formulas are not given on the formula sheet, so you must memorise the rule of halving the unit of accuracy."
+      "examNote": "Bounds formulas are not given on the exam aid, so you must memorise the rule of halving the unit of accuracy."
     },
     "examples": [
       {
@@ -653,7 +651,7 @@
       },
       {
         "question": "The force $F$ applied to an object is $68.5\\text{ N}$ correct to 1 decimal place. The area $A$ over which the force acts is $4.2\\text{ m}^2$ correct to 2 significant figures. Pressure is given by $P = \\frac{F}{A}$.\n(a) Calculate the lower bound for $P$. Give your answer to 3 decimal places.\n(b) By considering bounds, write down the value of $P$ to a suitable degree of accuracy.",
-        "solution": "1. Find the bounds for $F$ (rounded to 1 d.p. = $0.1$, half unit = $0.05$):\nLB of $F = 68.45\\text{ N}$, UB of $F = 68.55\\text{ N}$\n\n2. Find the bounds for $A$ (rounded to 2 s.f., so rounded to nearest $0.1$, half unit = $0.05$):\nLB of $A = 4.15\\text{ m}^2$, UB of $A = 4.25\\text{ m}^2$\n\n3. Calculate Part (a): To make $P = \\frac{F}{A}$ as small as possible (lower bound), divide the lower bound of $F$ by the upper bound of $A$ (M1):\n$\\text{LB of } P = \\frac{68.45}{4.25} = 16.105882... \\approx 16.106\\text{ N/m}^2$ (A1).\n\n4. Calculate Part (b): First find the upper bound of $P$ by dividing UB of $F$ by LB of $A$:\n$\\text{UB of } P = \\frac{68.55}{4.15} = 16.518072...$\n\n5. Compare both bounds: LB = $16.1058...$ and UB = $16.5180...$.\nBoth bounds round to $16$ when rounded to 2 significant figures (or to the nearest integer). Therefore, $P = 16\\text{ N/m}^2$ to a suitable degree of accuracy."
+        "solution": "1. Find the bounds for $F$ (rounded to 1 d.p. = $0.1$, half unit = $0.05$):\nLB of $F = 68.45\\text{ N}$, UB of $F = 68.55\\text{ N}$\n\n2. Find the bounds for $A$ (rounded to 2 s.f., so rounded to nearest $0.1$, half unit = $0.05$):\nLB of $A = 4.15\\text{ m}^2$, UB of $A = 4.25\\text{ m}^2$\n\n3. Calculate Part (a): To make $P = \\frac{F}{A}$ as small as possible (lower bound), divide the lower bound of $F$ by the upper bound of $A$ (M1):\n$\\text{LB of } P = \\frac{68.45}{4.25} = 16.105882... \\approx 16.106\\text{ N/m}^2$ (A1).\n\n4. Calculate Part (b): First find the upper bound of $P$ by dividing UB of $F$ by LB of $A$:\n$\\text{UB of } P = \\frac{68.55}{4.15} = 16.518072...$\n\n5. Compare both bounds: LB = $16.1058...$ and UB = $16.5180...$.\nTo 2 significant figures the bounds give $16$ and $17$, which disagree. To 1 significant figure both give $20$. Therefore, $P = 20\\text{ N/m}^2$ (to 1 significant figure) is a suitable degree of accuracy."
       }
     ],
     "testQuestions": [
@@ -674,7 +672,7 @@
         "answer": "$4.8 \\le m < 4.9$. Working: Truncation means any digits after 1 decimal place were simply removed. Thus, $m$ can be anything from $4.8$ up to, but not including, $4.9$."
       },
       {
-        "question": "The numbers $a$ and $b$ are given as $a = 4.5$ (to 1 decimal place) and $b = 2.1$ (to 1 decimal place). By calculating bounds, find the value of $x = \\frac{a}{b}$ to a suitable degree of accuracy. Show your working clear to explain your choice.",
+        "question": "The numbers $a$ and $b$ are given as $a = 4.5$ (to 1 decimal place) and $b = 2.1$ (to 1 decimal place). By calculating bounds, find the value of $x = \\frac{a}{b}$ to a suitable degree of accuracy. Show your working to explain your choice.",
         "answer": "Answer: $x = 2$ (to 1 significant figure). Working: Bounds for $a$: $4.45 \\le a < 4.55$. Bounds for $b$: $2.05 \\le b < 2.15$.\nLower Bound of $x = \\frac{4.45}{2.15} = 2.0697...$\nUpper Bound of $x = \\frac{4.55}{2.05} = 2.2195...$\nSince both the lower bound ($2.0697...$) and upper bound ($2.2195...$) round to $2$ to 1 significant figure, the value to a suitable degree of accuracy is $2$."
       }
     ],
@@ -758,7 +756,7 @@
         "Open circles on number lines mean strict inequalities like $<$ or $>$.",
         "Closed circles mean inclusive inequalities like $\\le$ or $\\ge$."
       ],
-      "examNote": "You must memorise how to show inequality regions on a graph, as these formulas are not on the exam sheet."
+      "examNote": "Method marks (M1) are available for expanding and collecting terms correctly, so show each step, and flip the sign if you multiply or divide by a negative."
     },
     "examples": [
       {
@@ -871,7 +869,7 @@
         "Expand your completed square bracket to check your working.",
         "Use this method when factorising is impossible or when finding graph turning points."
       ],
-      "examNote": "The formula for the coordinates of the turning point using completed square form is not given on the Higher tier formula sheet, so you must know it."
+      "examNote": "The formula for the coordinates of the turning point using completed square form is not given on the exam aid, so you must know it."
     },
     "examples": [
       {
@@ -1033,8 +1031,7 @@
       "y-intercept",
       "parallel lines",
       "perpendicular lines",
-      "linear graphs",
-      "midpoint"
+      "linear graphs"
     ],
     "week": 8,
     "overview": {
@@ -1271,35 +1268,35 @@
         "Linear sequences have a constant first difference.",
         "Quadratic sequences have a constant second difference.",
         "Geometric sequences multiply by the same number each time.",
-        "Use the position-to-term rule, often written as $n$."
+        "The position-to-term rule, or $n$th term, gives any term from its position $n$."
       ],
-      "examNote": "You must memorise the methods for finding the $n$-th term, as these formulas are not provided on the Higher tier formula sheet."
+      "examNote": "You must memorise the methods for finding the $n$-th term, as these formulas are not provided on the exam aid."
     },
     "examples": [
       {
-        "question": "Find the $n^th$ term formula for the quadratic sequence: $3, 9, 17, 27, 39, \\dots$",
-        "solution": "Step 1: Find the first differences between consecutive terms.\n$9 - 3 = 6$, $17 - 9 = 8$, $27 - 17 = 10$, $39 - 27 = 12$.\nThe first differences are $6, 8, 10, 12$.\n\nStep 2: Find the second differences.\n$8 - 6 = 2$, $10 - 8 = 2$, $12 - 10 = 2$.\nThe second difference is constant ($+2$). [M1 mark for finding constant second difference]\n\nStep 3: Halve the second difference to find the coefficient of $n^2$.\n$2 \\div 2 = 1$, so the first part of the rule is $1n^2$ (or $n^2$).\n\nStep 4: Subtract $n^2$ values ($1, 4, 9, 16, 25$) from the original sequence.\n$3 - 1 = 2$\n$9 - 4 = 5$\n$17 - 9 = 8$\n$27 - 16 = 11$\n$39 - 25 = 14$\nThis gives a linear sequence: $2, 5, 8, 11, 14$.\n\nStep 5: Find the $n^th$ term of this linear sequence.\nThe sequence increases by $+3$ each time, so it starts with $3n$. The zero term is $2 - 3 = -1$. So the linear part is $3n - 1$. [M1 mark for linear term method]\n\nStep 6: Combine both parts to get the full $n^th$ term formula.\n$n^2 + 3n - 1$. [A1 mark for fully correct answer]"
+        "question": "Find the $n^{th}$ term formula for the quadratic sequence: $3, 9, 17, 27, 39, \\dots$",
+        "solution": "Step 1: Find the first differences between consecutive terms.\n$9 - 3 = 6$, $17 - 9 = 8$, $27 - 17 = 10$, $39 - 27 = 12$.\nThe first differences are $6, 8, 10, 12$.\n\nStep 2: Find the second differences.\n$8 - 6 = 2$, $10 - 8 = 2$, $12 - 10 = 2$.\nThe second difference is constant ($+2$). [M1 mark for finding constant second difference]\n\nStep 3: Halve the second difference to find the coefficient of $n^2$.\n$2 \\div 2 = 1$, so the first part of the rule is $1n^2$ (or $n^2$).\n\nStep 4: Subtract $n^2$ values ($1, 4, 9, 16, 25$) from the original sequence.\n$3 - 1 = 2$\n$9 - 4 = 5$\n$17 - 9 = 8$\n$27 - 16 = 11$\n$39 - 25 = 14$\nThis gives a linear sequence: $2, 5, 8, 11, 14$.\n\nStep 5: Find the $n^{th}$ term of this linear sequence.\nThe sequence increases by $+3$ each time, so it starts with $3n$. The zero term is $2 - 3 = -1$. So the linear part is $3n - 1$. [M1 mark for linear term method]\n\nStep 6: Combine both parts to get the full $n^{th}$ term formula.\n$n^2 + 3n - 1$. [A1 mark for fully correct answer]"
       },
       {
-        "question": "The $1^st$ term of a geometric sequence is $5$ and the $3^rd$ term is $45$.\n(a) Given that all terms in the sequence are positive, find the common ratio $r$.\n(b) Hence, calculate the $6^th$ term of this sequence.",
-        "solution": "Step 1: Write down the general expression for a geometric sequence.\nThe $n^th$ term of a geometric sequence is given by $a \\times r^{n-1}$, where $a$ is the first term and $r$ is the common ratio.\nHere, $a = 5$.\n\nStep 2: Use the $3^rd$ term to set up an equation.\nFor $n = 3$, $5 \\times r^{3-1} = 45$\n$5r^2 = 45$ [M1 mark for setting up equation]\n\nStep 3: Solve for $r$.\n$r^2 = 45 \\div 5 = 9$\n$r = \\sqrt{9} = 3$ (we take the positive square root because all terms are positive).\nAnswer (a): $r = 3$. [A1 mark]\n\nStep 4: Find the $6^th$ term using $n = 6$.\n$6^th\\text{ term} = 5 \\times 3^{6-1} = 5 \\times 3^5$ [M1 mark for method]\n$3^5 = 243$\n$5 \\times 243 = 1215$.\nAnswer (b): $1215$. [A1 mark]"
+        "question": "The $1^{st}$ term of a geometric sequence is $5$ and the $3^{rd}$ term is $45$.\n(a) Given that all terms in the sequence are positive, find the common ratio $r$.\n(b) Hence, calculate the $6^{th}$ term of this sequence.",
+        "solution": "Step 1: Write down the general expression for a geometric sequence.\nThe $n^{th}$ term of a geometric sequence is given by $a \\times r^{n-1}$, where $a$ is the first term and $r$ is the common ratio.\nHere, $a = 5$.\n\nStep 2: Use the $3^{rd}$ term to set up an equation.\nFor $n = 3$, $5 \\times r^{3-1} = 45$\n$5r^2 = 45$ [M1 mark for setting up equation]\n\nStep 3: Solve for $r$.\n$r^2 = 45 \\div 5 = 9$\n$r = \\sqrt{9} = 3$ (we take the positive square root because all terms are positive).\nAnswer (a): $r = 3$. [A1 mark]\n\nStep 4: Find the $6^{th}$ term using $n = 6$.\n$6^{th}\\text{ term} = 5 \\times 3^{6-1} = 5 \\times 3^5$ [M1 mark for method]\n$3^5 = 243$\n$5 \\times 243 = 1215$.\nAnswer (b): $1215$. [A1 mark]"
       }
     ],
     "testQuestions": [
       {
-        "question": "Find the $n^th$ term expression for the linear sequence: $7, 13, 19, 25, 31, \\dots$",
+        "question": "Find the $n^{th}$ term expression for the linear sequence: $7, 13, 19, 25, 31, \\dots$",
         "answer": "Answer: $6n + 1$.\nWorking: The common difference is $+6$, so the term starts with $6n$. The zero term (before term 1) is $7 - 6 = +1$. Combined: $6n + 1$."
       },
       {
-        "question": "A geometric sequence has first term $a = 4$ and common ratio $r = 3$. Find the $5^th$ term of the sequence.",
-        "answer": "Answer: $324$.\nWorking: $n^th\\text{ term} = a \\times r^{n-1} = 4 \\times 3^{5-1} = 4 \\times 3^4 = 4 \\times 81 = 324$."
+        "question": "A geometric sequence has first term $a = 4$ and common ratio $r = 3$. Find the $5^{th}$ term of the sequence.",
+        "answer": "Answer: $324$.\nWorking: $n^{th}\\text{ term} = a \\times r^{n-1} = 4 \\times 3^{5-1} = 4 \\times 3^4 = 4 \\times 81 = 324$."
       },
       {
-        "question": "Find the $n^th$ term expression for the quadratic sequence: $2, 9, 20, 35, 54, \\dots$",
-        "answer": "Answer: $2n^2 + n - 1$.\nWorking: 1st differences are $7, 11, 15, 19$. 2nd differences are $4, 4, 4$. Halve 2nd diff: $4 \\div 2 = 2$, giving $2n^2$. Subtracting $2n^2$ ($2, 8, 18, 32, 50$) from original sequence leaves $0, 1, 2, 3, 4$. The $n^th$ term of $0, 1, 2, 3, 4$ is $n - 1$. Total $n^th$ term: $2n^2 + n - 1$."
+        "question": "Find the $n^{th}$ term expression for the quadratic sequence: $2, 9, 20, 35, 54, \\dots$",
+        "answer": "Answer: $2n^2 + n - 1$.\nWorking: 1st differences are $7, 11, 15, 19$. 2nd differences are $4, 4, 4$. Halve 2nd diff: $4 \\div 2 = 2$, giving $2n^2$. Subtracting $2n^2$ ($2, 8, 18, 32, 50$) from original sequence leaves $0, 1, 2, 3, 4$. The $n^{th}$ term of $0, 1, 2, 3, 4$ is $n - 1$. Total $n^{th}$ term: $2n^2 + n - 1$."
       },
       {
-        "question": "Sequence A has $n^th$ term $3n + 8$. Sequence B has $n^th$ term $7n - 12$. Which term number $n$ has the same value in both sequences, and what is that value?",
+        "question": "Sequence A has $n^{th}$ term $3n + 8$. Sequence B has $n^{th}$ term $7n - 12$. Which term number $n$ has the same value in both sequences, and what is that value?",
         "answer": "Answer: $n = 5$, Value = $23$.\nWorking: Set $3n + 8 = 7n - 12$. Subtract $3n$: $8 = 4n - 12$. Add $12$: $20 = 4n \\Rightarrow n = 5$. Substitute $n=5$ into sequence A: $3(5) + 8 = 23$."
       },
       {
@@ -1340,7 +1337,7 @@
       },
       {
         "question": "Show that the equation $x^3 - 4x - 1 = 0$ can be rearranged into the iteration formula $x_{n+1} = \\sqrt[3]{4x_n + 1}$. Starting with $x_1 = 2$, find the values of $x_2$ and $x_3$ to 3 decimal places.",
-        "solution": "Step 1: Rearrange the original equation $x^3 - 4x - 1 = 0$ to isolate an $x$ term. Add $4x$ and $1$ to both sides to get $x^3 = 4x + 1$. Step 2: Take the cube root of both sides to get $x = \\sqrt[3]{4x + 1}$. By adding subscript $n$ to represent the current term and $n+1$ for the next term, we get our iteration formula: $x_{n+1} = \\sqrt[3]{4x_n + 1}$ (M1 mark for valid rearrangement). Step 3: Substitute the first guess $x_1 = 2$ into the formula to find $x_2$. $x_2 = \\sqrt[3]{4(2) + 1} = \\sqrt[3]{8 + 1} = \\sqrt[3]{9} = 2.080083...$ Rounding to 3 decimal places gives $x_2 = 2.080$ (M1 mark for substituting $x_1$). Step 4: Substitute $x_2 = 2.080083...$ into the formula to find $x_3$. $x_3 = \\sqrt[3]{4(2.080083...) + 1} = \\sqrt[3]{8.32033... + 1} = \\sqrt[3]{9.32033...} = 2.10515...$ Rounding to 3 decimal places gives $x_3 = 2.105$ (A1 mark for accurate evaluation). Final Answer: $x_2 = 2.080$, $x_3 = 2.105$."
+        "solution": "Step 1: Rearrange the original equation $x^3 - 4x - 1 = 0$ to isolate an $x$ term. Add $4x$ and $1$ to both sides to get $x^3 = 4x + 1$. Step 2: Take the cube root of both sides to get $x = \\sqrt[3]{4x + 1}$. By adding subscript $n$ to represent the current term and $n+1$ for the next term, we get our iteration formula: $x_{n+1} = \\sqrt[3]{4x_n + 1}$ (M1 mark for valid rearrangement). Step 3: Substitute the first guess $x_1 = 2$ into the formula to find $x_2$. $x_2 = \\sqrt[3]{4(2) + 1} = \\sqrt[3]{8 + 1} = \\sqrt[3]{9} = 2.080083...$ Rounding to 3 decimal places gives $x_2 = 2.080$ (M1 mark for substituting $x_1$). Step 4: Substitute $x_2 = 2.080083...$ into the formula to find $x_3$. $x_3 = \\sqrt[3]{4(2.080083...) + 1} = \\sqrt[3]{8.32033... + 1} = \\sqrt[3]{9.32033...} = 2.10447...$ Rounding to 3 decimal places gives $x_3 = 2.104$ (A1 mark for accurate evaluation). Final Answer: $x_2 = 2.080$, $x_3 = 2.104$."
       }
     ],
     "testQuestions": [
@@ -1446,7 +1443,7 @@
         "Interior angle $+$ Exterior angle $= 180^\\circ$ on a straight line.",
         "Regular polygons have equal sides and equal angles."
       ],
-      "examNote": "The polygon interior angle formula is not given on the formula sheet, so you must memorise it for the exam."
+      "examNote": "The polygon interior angle formula is not given on the exam aid, so you must memorise it for the exam."
     },
     "examples": [
       {
@@ -1483,10 +1480,6 @@
     "keywords": [
       "interior angles",
       "exterior angles",
-      "parallel lines",
-      "alternate angles",
-      "corresponding angles",
-      "angles in a triangle",
       "regular polygons"
     ]
   },
@@ -1614,7 +1607,6 @@
       "trapezium",
       "parallelogram",
       "triangle area",
-      "rhombus",
       "compound shapes"
     ],
     "week": 12,
@@ -1681,7 +1673,7 @@
     "examples": [
       {
         "question": "Calculate the arc length of a sector with a radius of $7\\text{ cm}$ and a centre angle of $40^{\\circ}$. Give your answer to $1$ decimal place.",
-        "solution": "Step 1: Write down the formula for arc length. Arc length $= \\frac{\\theta}{360} \\times 2 \\pi r$. Note that $2 \\pi r$ is the circumference formula given on your formula sheet. Step 2: Substitute the given values into the formula. Here, $\\theta = 40$ and radius $r = 7$. Arc length $= \\frac{40}{360} \\times 2 \\times \\pi \\times 7$. Step 3: Simplify the fraction and calculate. $\\frac{40}{360}$ simplifies to $\\frac{1}{9}$. So, Arc length $= \\frac{1}{9} \\times 14 \\pi$. Step 4: Evaluate this on your calculator. $14 \\times \\pi \\div 9 = 4.8869...$ Step 5: Round your final answer to $1$ decimal place. Arc length $= 4.9\\text{ cm}$. (Award M1 for substituting correctly into the formula, and A1 for the correct rounded answer)."
+        "solution": "Step 1: Write down the formula for arc length. Arc length $= \\frac{\\theta}{360} \\times 2 \\pi r$. Note that $2 \\pi r$ is the circumference formula given on your exam aid. Step 2: Substitute the given values into the formula. Here, $\\theta = 40$ and radius $r = 7$. Arc length $= \\frac{40}{360} \\times 2 \\times \\pi \\times 7$. Step 3: Simplify the fraction and calculate. $\\frac{40}{360}$ simplifies to $\\frac{1}{9}$. So, Arc length $= \\frac{1}{9} \\times 14 \\pi$. Step 4: Evaluate this on your calculator. $14 \\times \\pi \\div 9 = 4.8869...$ Step 5: Round your final answer to $1$ decimal place. Arc length $= 4.9\\text{ cm}$. (Award M1 for substituting correctly into the formula, and A1 for the correct rounded answer)."
       },
       {
         "question": "A sector of a circle has a radius of $12\\text{ mm}$ and a sector area of $30\\pi\\text{ mm}^2$. Find the exact size of the angle $\\theta$ at the centre of the sector.",
@@ -1768,13 +1760,11 @@
       }
     ],
     "keywords": [
-      "surface area",
       "cylinder",
       "cone",
       "sphere",
       "pyramid",
       "prism",
-      "frustum",
       "cuboid"
     ]
   },
@@ -1798,7 +1788,7 @@
     "examples": [
       {
         "question": "Calculate the length of the hypotenuse $x$ in a right-angled triangle where the two shorter sides are $6$ cm and $8$ cm. Give your answer to 1 decimal place.",
-        "solution": "Step 1: Write down the formula for Pythagoras' theorem: $a^2 + b^2 = c^2$. Step 2: Identify the sides. Here, $a = 6$, $b = 8$, and the hypotenuse is $c$ (which is $x$). Step 3: Substitute the numbers into the formula: $6^2 + 8^2 = x^2$. Step 4: Calculate the squares: $36 + 64 = x^2$. Step 5: Add the values together: $100 = x^2$. Step 6: Take the square root of both sides to find $x$: $x = \\sqrt{100} = 10$. Final Answer: $x = 10$ cm."
+        "solution": "Step 1: Write down the formula for Pythagoras' theorem: $a^2 + b^2 = c^2$. Step 2: Identify the sides. Here, $a = 6$, $b = 8$, and the hypotenuse is $c$ (which is $x$). Step 3: Substitute the numbers into the formula: $6^2 + 8^2 = x^2$. Step 4: Calculate the squares: $36 + 64 = x^2$. Step 5: Add the values together: $100 = x^2$. Step 6: Take the square root of both sides to find $x$: $x = \\sqrt{100} = 10$. Final Answer: $x = 10.0$ cm (to 1 decimal place)."
       },
       {
         "question": "A right-angled triangle has a hypotenuse of $15$ cm and one shorter side of $9$ cm. Find the length of the other shorter side, labeled $y$. Give your answer to 3 significant figures.",
@@ -1842,7 +1832,7 @@
     "title": "Trigonometry (SOH CAH TOA)",
     "overview": {
       "hook": "Ever wondered how to find the height of a tree without climbing it?",
-      "keyIdea": "SOH CAH TOA lets you find missing side lengths or angles in right-angled triangles by connecting an angle to the ratio of two sides. We use $^\\circ$ for angles and decimal multipliers to scale them.",
+      "keyIdea": "SOH CAH TOA lets you find missing side lengths or angles in right-angled triangles by connecting an angle to the ratio of two sides. If you know a side and an angle, or two sides, you can find what's missing.",
       "keyPoints": [
         "Label the sides relative to the angle: Opposite, Adjacent, and Hypotenuse.",
         "$\\sin(\\theta) = \\frac{\\text{Opposite}}{\\text{Hypotenuse}}$",
@@ -1864,10 +1854,10 @@
     "testQuestions": [
       {
         "question": "A right-angled triangle has an angle of $42^\\circ$. The side adjacent to this angle is $9\\text{ cm}$. Calculate the length of the hypotenuse $x$. Give your answer to 3 significant figures.",
-        "answer": "Answer: $12.1\\text{ cm}$. Working: Using CAH, $\\cos(42^\\circ) = \\frac{9}{x}$. Rearrange to $x = \\frac{9}{\\cos(42^\\circ)} = 12.128...$, which rounds to $12.1\\text{ cm}$."
+        "answer": "Answer: $12.1\\text{ cm}$. Working: Using CAH, $\\cos(42^\\circ) = \\frac{9}{x}$. Rearrange to $x = \\frac{9}{\\cos(42^\\circ)} = 12.110...$, which rounds to $12.1\\text{ cm}$."
       },
       {
-        "question": "Calculate the size of angle $theta$ in a right-angled triangle where the opposite side is $14\\text{ cm}$ and the adjacent side is $8\\text{ cm}$. Give your answer to 1 decimal place.",
+        "question": "Calculate the size of angle $\\theta$ in a right-angled triangle where the opposite side is $14\\text{ cm}$ and the adjacent side is $8\\text{ cm}$. Give your answer to 1 decimal place.",
         "answer": "Answer: $60.3^\\circ$. Working: Using TOA, $\\tan(\\theta) = \\frac{14}{8}$. Therefore, $\\theta = \\tan^{-1}(\\frac{14}{8}) = 60.255...^\\circ$, which rounds to $60.3^\\circ$."
       },
       {
@@ -1892,9 +1882,7 @@
       "sin",
       "cos",
       "tan",
-      "right-angled triangle",
-      "angle of elevation",
-      "exact trig values"
+      "right-angled triangle"
     ]
   },
   {
@@ -1939,18 +1927,17 @@
       },
       {
         "question": "In triangle ABC, angle $A = 50^\\circ$, side $a = 10\\text{ cm}$, and side $b = 12\\text{ cm}$. Calculate the possible size of angle $B$. Give your answer to 1 decimal place.",
-        "answer": "Using Sine Rule: $\\sin(B) / 12 = \\sin(50^\\circ) / 10$. Working: $\\sin(B) = (12 \\times \\sin(50^\\circ)) / 10 = (12 \\times 0.7660) / 10 = 0.9192$. $B = \\sin^{-1}(0.9192) = 66.8^\\circ$. (Note: Edexcel occasionally accepts the obtuse pair $180 - 66.8 = 113.2^\\circ$ depending on diagram context, but acute is standard primary answer). Final Answer: $66.8^\\circ$."
+        "answer": "Answer: $66.8^\\circ$. Working: Using the sine rule, $\\frac{\\sin B}{12} = \\frac{\\sin 50^\\circ}{10}$, so $\\sin B = \\frac{12 \\times \\sin 50^\\circ}{10} = 0.9192...$ and $B = \\sin^{-1}(0.9192...) = 66.8^\\circ$. Because $a$ is shorter than $b$, an obtuse angle of $180^\\circ - 66.8^\\circ = 113.2^\\circ$ is also possible if the triangle allows it, so check any diagram given."
       },
       {
         "question": "A boat sails from port P on a bearing of $050^\\circ$ for $12\\text{ km}$ to point Q, then on a bearing of $110^\\circ$ for $15\\text{ km}$ to point R. Calculate the straight-line distance from P to R. Give your answer to 3 significant figures.",
-        "answer": "First find the interior angle at Q using parallel line rules. The angle inside triangle PQR at vertex Q is $180^\\circ - 50^\\circ + 110^\\circ$ logic, yielding $120^\\circ$ (or draw a sketch showing alternate angles: $50^\\circ$ inside, remaining angle is $180 - (50+?)$). Let's use Cosine Rule with sides $12$ and $15$, included angle $120^\\circ$. Working: $PR^2 = 12^2 + 15^2 - (2 \\times 12 \\times 15 \\times \\cos(120^\\circ)) = 144 + 225 - (360 \\times -0.5) = 369 + 180 = 549$. $PR = \\sqrt{549} = 23.43$. Final Answer: $23.4\\text{ km}$."
+        "answer": "Answer: $23.4$ km. Working: The bearing of P from Q is the back bearing, $050^\\circ + 180^\\circ = 230^\\circ$. The angle inside the triangle at Q is $230^\\circ - 110^\\circ = 120^\\circ$. Using the cosine rule with sides $12$ and $15$ and included angle $120^\\circ$: $PR^2 = 12^2 + 15^2 - 2 \\times 12 \\times 15 \\times \\cos 120^\\circ = 369 + 180 = 549$. $PR = \\sqrt{549} = 23.43...$"
       }
     ],
     "keywords": [
       "sine rule",
       "cosine rule",
       "trig",
-      "area of a triangle",
       "non-right-angled triangles"
     ]
   },
@@ -1969,7 +1956,7 @@
         "Area scale factor is $k^2$ and volume scale factor is $k^3$.",
         "Always state clear geometric reasons when writing proofs."
       ],
-      "examNote": "The enlargement scale factor formulas for area and volume are not given on the formula sheet and must be memorised."
+      "examNote": "The enlargement scale factor formulas for area and volume are not given on the exam aid and must be memorised."
     },
     "examples": [
       {
@@ -1988,7 +1975,7 @@
       },
       {
         "question": "Two similar vases have heights of $6\\text{ cm}$ and $18\\text{ cm}$. If the smaller vase has a volume of $50\\text{ cm}^3$, calculate the volume of the larger vase.",
-        "answer": "1350 cm^3. Working: Linear scale factor = $18 / 6 = 3$. Volume scale factor = $3^3 = 27$. Volume of larger vase = $50 \\times 27 = 1350\\text{ cm}^3$."
+        "answer": "$1350\\text{ cm}^3$. Working: Linear scale factor = $18 / 6 = 3$. Volume scale factor = $3^3 = 27$. Volume of larger vase = $50 \\times 27 = 1350\\text{ cm}^3$."
       },
       {
         "question": "Shape A and Shape B are mathematically similar. The area of Shape A is $24\\text{ cm}^2$ and the area of Shape B is $96\\text{ cm}^2$. If a side length of Shape A is $4\\text{ cm}$, find the length of the corresponding side on Shape B.",
@@ -2060,7 +2047,7 @@
       },
       {
         "question": "Triangle P is mapped to triangle Q by an enlargement of scale factor $-0.5$ about the origin. The area of triangle P is $24 \\text{ cm}^2$. Find the area of triangle Q.",
-        "answer": "Answer: 6 cm^2. Working: Area scale factor is the square of the linear scale factor. Linear scale factor is $-0.5$, so area scale factor is $(-0.5)^2 = 0.25$ (or $1/4$). New area = $24 \\times 0.25 = 6 \\text{ cm}^2$."
+        "answer": "Answer: $6\\text{ cm}^2$. Working: Area scale factor is the square of the linear scale factor. Linear scale factor is $-0.5$, so area scale factor is $(-0.5)^2 = 0.25$ (or $1/4$). New area = $24 \\times 0.25 = 6 \\text{ cm}^2$."
       }
     ],
     "keywords": [
@@ -2143,9 +2130,10 @@
         "The angle at the centre is twice the angle at the circumference.",
         "Angles in the same segment subtended by the same arc are equal.",
         "Opposite angles in a cyclic quadrilateral always add up to $180^\\circ$.",
-        "The angle in a semicircle is always $90^\\circ$."
+        "The angle in a semicircle is always $90^\\circ$.",
+        "A radius meets a tangent at $90^\\circ$, and the angle between a tangent and a chord equals the angle in the alternate segment."
       ],
-      "examNote": "Circle theorem formulas are not given on the formula sheet, so you must memorise all eight core rules and be ready to quote them to gain full communication marks."
+      "examNote": "None of the circle theorems are on the exam aid, so learn them, and write the reason in words when a question asks for it."
     },
     "examples": [
       {
@@ -2154,21 +2142,21 @@
       },
       {
         "question": "A, B, C and D are points on the circumference of a circle. AC is a diameter of the circle. Angle CAB = 38 degrees. Angle CAD = 25 degrees. Work out the size of angle BCD. You must show all your working.",
-        "solution": "Step 1: Find angle ABC by using the circle theorem that the angle in a semicircle is 90 degrees. Since AC is a diameter, triangle ABC is right-angled at B. Therefore, angle ABC = 90 degrees. Step 2: Find angle BCA within triangle ABC. The angles in a triangle sum to 180 degrees. Angle BCA = 180 - 90 - 38 = 52 degrees. Step 3: Find angle ACD. Triangle ADC also has AC as a diameter, so angle ADC = 90 degrees. In triangle ADC, angle ACD = 180 - 90 - 25 = 65 degrees. Step 4: Combine the parts to find angle BCD. Angle BCD = angle BCA + angle ACD = 52 + 65 = 117 degrees. Alternatively, notice ABCD is a cyclic quadrilateral, so opposite angles sum to 180 degrees. Angle ADC = 25 + 38 = 63 degrees, so angle BCD = 180 - 63 = 117 degrees. Answer: 117 degrees."
+        "solution": "Step 1: Find angle ABC by using the circle theorem that the angle in a semicircle is 90 degrees. Since AC is a diameter, triangle ABC is right-angled at B. Therefore, angle ABC = 90 degrees. Step 2: Find angle BCA within triangle ABC. The angles in a triangle sum to 180 degrees. Angle BCA = 180 - 90 - 38 = 52 degrees. Step 3: Find angle ACD. Triangle ADC also has AC as a diameter, so angle ADC = 90 degrees. In triangle ADC, angle ACD = 180 - 90 - 25 = 65 degrees. Step 4: Combine the parts to find angle BCD. Angle BCD = angle BCA + angle ACD = 52 + 65 = 117 degrees. Alternatively, notice ABCD is a cyclic quadrilateral, so opposite angles sum to 180 degrees. Angle BAD = 38 + 25 = 63 degrees, so angle BCD = 180 - 63 = 117 degrees. Answer: 117 degrees."
       }
     ],
     "testQuestions": [
       {
-        "question": "A, B and C are points on a circle, centre O. TA and TC are tangents to the circle. Angle ATC = 54 degrees. Work out the size of angle ABC. Give reasons.",
+        "question": "A, B and C are points on a circle, centre O, with B on the major arc AC. TA and TC are tangents to the circle. Angle ATC = 54 degrees. Work out the size of angle ABC. Give reasons.",
         "answer": "Answer: 63 degrees. Working: Tangents from a point are equal in length, so triangle ATC is isosceles. Angle TAC = angle TCA = (180 - 54)/2 = 63 degrees. Angle OAT = 90 degrees (radius meets tangent at 90 degrees). Angle OAC = 90 - 63 = 27 degrees. Angle AOC = 180 - 54 = 126 degrees (angles in quadrilateral sum to 360 or opposite angles supplementary). Angle at centre is twice angle at circumference, so angle ABC = 126 / 2 = 63 degrees."
       },
       {
         "question": "P, Q, R and S are points on the circumference of a circle. PR is a diameter. Angle PRQ = 32 degrees. Work out the size of angle PSQ.",
-        "answer": "Answer: 58 degrees. Working: Angle PQR = 90 degrees (angle in a semicircle). Angle QPR = 180 - 90 - 32 = 58 degrees. Angle PSQ = angle PRQ = 58 degrees (angles in the same segment are equal)."
+        "answer": "Answer: 32 degrees. Working: Angle PSQ and angle PRQ are both subtended by the chord PQ from the same side, so they are angles in the same segment and are equal. Angle PSQ = angle PRQ = 32 degrees."
       },
       {
         "question": "A, B, C and D are points on a circle. AB is parallel to DC. Angle ABC = 72 degrees. Find angle ADC and angle BCD.",
-        "answer": "Answer: Angle ADC = 108 degrees, Angle BCD = 72 degrees. Working: ABCD is a cyclic quadrilateral and parallel lines create allied (co-interior) angles. Angle BCD = 180 - 72 = 108 degrees (allied angles sum to 180). Opposite angles in a cyclic quadrilateral sum to 180, so angle ADC = 180 - 72 = 108 degrees."
+        "answer": "Answer: Angle ADC = 108 degrees, Angle BCD = 108 degrees. Working: AB is parallel to DC, so angle ABC and angle BCD are co-interior and add up to 180: angle BCD = 180 - 72 = 108 degrees. ABCD is a cyclic quadrilateral, so opposite angles add up to 180: angle ADC = 180 - 72 = 108 degrees."
       },
       {
         "question": "AB is a chord of a circle with centre O and radius 10 cm. The distance from the centre O to the chord AB is 6 cm. Work out the length of the chord AB.",
@@ -2298,10 +2286,8 @@
       "chance",
       "likelihood",
       "probability scale",
-      "relative frequency",
       "expected frequency",
       "mutually exclusive",
-      "sample space",
       "outcomes"
     ]
   },
@@ -2432,7 +2418,7 @@
         "The union $A \\cup B$ represents all items in $A$, in $B$, or in both.",
         "The complement $A'$ represents everything that is not in set $A$."
       ],
-      "examNote": "You must memorise all set notation symbols as they are not provided on the Edexcel formula sheet."
+      "examNote": "You must memorise all set notation symbols as they are not provided on the exam aid."
     },
     "examples": [
       {
@@ -2455,11 +2441,11 @@
       },
       {
         "question": "A bag contains counters numbered 1 to 10. Set X = prime numbers, Set Y = square numbers. Draw a Venn diagram and find $P(X \\cap Y)$.",
-        "answer": "Answer: 1/10 or 0.1. Working: Primes = $\\{2, 3, 5, 7\\}$, Squares = $\\{1, 4, 9\\}$. There is no overlap between primes and squares for numbers 1-10. Intersection is empty, so probability is 0/10 = 0."
+        "answer": "Answer: 0. Working: Primes = $\\{2, 3, 5, 7\\}$, Squares = $\\{1, 4, 9\\}$. No number from 1 to 10 is both prime and square, so the intersection is empty and $P(X \\cap Y) = 0$."
       },
       {
         "question": "In a class of 30 students, 18 play rugby, 12 play cricket, and 4 play neither. A student is picked at random. Find the probability that they play rugby given that they play cricket.",
-        "answer": "Answer: 5/12. Working: Total inside = 26. $18 + 12 = 30$, so overlap = $30 - 26 = 4$ play both. Given they play cricket (denominator 12), the probability they also play rugby is 4/12 which simplifies to 1/3."
+        "answer": "Answer: $\\frac{1}{3}$. Working: 26 students play at least one sport. $18 + 12 = 30$, so $30 - 26 = 4$ play both. Given that they play cricket (12 students), the probability they also play rugby is $\\frac{4}{12} = \\frac{1}{3}$."
       },
       {
         "question": "A Venn diagram has universal set $\\xi$. Set A has $x$ elements, Set B has $15$ elements, the intersection has $4$ elements, and neither has $2$ elements. If the total universal set has $30$ elements, set up an equation and solve for $x$.",
@@ -2519,14 +2505,13 @@
         "answer": "Answer: $\\frac{1}{3}$. Working: P(Heads and Red) $= 0.5 \\times \\frac{2}{5} = \\frac{2}{10}$. P(Tails and Red) $= 0.5 \\times \\frac{4}{5} = \\frac{4}{10}$. Total P(Red) $= \\frac{6}{10}$. P(Heads given Red) $= \\frac{2}{10} \\div \\frac{6}{10} = \\frac{1}{3}$."
       },
       {
-        "question": "Card A has numbers 1, 2, 3, 4. Card B has numbers 3, 4, 5, 6, 7. One card is chosen at random from Card A, and its number is added to a number chosen at random from Card B. Given that the sum is greater than 8, find the probability that the number chosen from Card A was a 4.",
-        "answer": "Answer: 3/4. Working: List pairs summing > 8 where Card A is 4: (4,5)=9, (4,6)=10, (4,7)=11 (3 outcomes). Pairs summing > 8 where Card A is 3: (3,6)=9, (3,7)=10 (2 outcomes). Total outcomes with sum > 8 is 5. Outcomes where Card A is 4 and sum > 8 is 3. P(Card A is 4 | sum > 8) = 3/5."
+        "question": "Set A contains the numbers 1, 2, 3, 4. Set B contains the numbers 3, 4, 5, 6, 7. One number is chosen at random from each set and the two numbers are added. Given that the sum is greater than 8, find the probability that the number chosen from Set A was a 4.",
+        "answer": "Answer: $\\frac{1}{2}$. Working: All 20 pairs are equally likely. Pairs with a sum greater than 8 are (2,7), (3,6), (3,7), (4,5), (4,6), (4,7), which is 6 pairs. Of these, 3 have a 4 from Set A. Probability $= \\frac{3}{6} = \\frac{1}{2}$."
       }
     ],
     "keywords": [
       "given that",
-      "dependent events",
-      "two-way tables"
+      "dependent events"
     ]
   },
   {
@@ -2544,7 +2529,7 @@
         "Mode: The most frequently occurring value in the data set.",
         "Range: The difference between the largest and smallest values."
       ],
-      "examNote": "You must memorise all average and range definitions as formulas are not given on the Higher tier sheet."
+      "examNote": "You must memorise all average and range definitions as formulas are not given on the exam aid."
     },
     "examples": [
       {
@@ -2604,7 +2589,7 @@
     },
     "examples": [
       {
-        "question": "The table below shows the number of goals scored by a football team in 20 matches. Calculate the mean number of goals scored per match.",
+        "question": "The table below shows the number of goals scored by a football team in 20 matches. Goals: 0 (Frequency 5), 1 (Frequency 7), 2 (Frequency 6), 3 (Frequency 2). Calculate the mean number of goals scored per match.",
         "solution": "Step 1: Understand what the table represents. We have the number of goals ($x$) and the number of matches ($f$). Step 2: Add an extra column to your working for $fx$ (goals multiplied by frequency). Step 3: Calculate the $fx$ values for each row. For 0 goals: $0 \\times 5 = 0$. For 1 goal: $1 \\times 7 = 7$. For 2 goals: $2 \\times 6 = 12$. For 3 goals: $3 \\times 2 = 6$. Step 4: Find the total frequency ($\\sum f$) and the total of the $fx$ column ($\\sum fx$). $\\sum f = 5 + 7 + 6 + 2 = 20$ matches. $\\sum fx = 0 + 7 + 12 + 6 = 25$. Step 5: Divide the total $fx$ by the total frequency to find the mean. Mean = $25 / 20 = 1.25$ goals. Award M1 for calculating $fx$ correctly and A1 for the final correct answer of $1.25$."
       },
       {
@@ -2614,11 +2599,11 @@
     ],
     "testQuestions": [
       {
-        "question": "A shop records the number of umbrellas sold each day over 30 days. Goals: 0 (Frequency 4), 1 (Frequency 12), 2 (Frequency 9), 3 (Frequency 5). Work out the mean number of umbrellas sold per day.",
+        "question": "A shop records the number of umbrellas sold each day over 30 days. Umbrellas sold: 0 (Frequency 4), 1 (Frequency 12), 2 (Frequency 9), 3 (Frequency 5). Work out the mean number of umbrellas sold per day.",
         "answer": "Total frequency = 4 + 12 + 9 + 5 = 30. Total fx = (0x4) + (1x12) + (2x9) + (3x5) = 0 + 12 + 18 + 15 = 45. Mean = 45 / 30 = 1.5 umbrellas."
       },
       {
-        "question": "The table shows the heights ($h$ cm) of 40 sunflower plants: $100 \\le h < 120$ (Frequency 5), $120 \\le h < 140$ (Frequency 18), $140 \\le h < 165$ (Frequency 12), $160 \\le h < 180$ (Frequency 5). Calculate an estimate for the mean height.",
+        "question": "The table shows the heights ($h$ cm) of 40 sunflower plants: $100 \\le h < 120$ (Frequency 5), $120 \\le h < 140$ (Frequency 18), $140 \\le h < 160$ (Frequency 12), $160 \\le h < 180$ (Frequency 5). Calculate an estimate for the mean height.",
         "answer": "Midpoints are 110, 130, 150, 170. fx values: 110x5=550, 130x18=2340, 150x12=1800, 170x5=850. Sum of fx = 550 + 2340 + 1800 + 850 = 5540. Estimated mean = 5540 / 40 = 138.5 cm."
       },
       {
@@ -2718,7 +2703,7 @@
         "Find the median at the 50% mark and quartiles at the 25% and 75% marks.",
         "A box plot requires 5 key values: minimum, lower quartile, median, upper quartile, and maximum."
       ],
-      "examNote": "You must memorise how to calculate quartiles from a graph and draw a box plot, as these formulas are not given on the formula sheet."
+      "examNote": "You must memorise how to calculate quartiles from a graph and draw a box plot, as these formulas are not given on the exam aid."
     },
     "examples": [
       {
@@ -2733,7 +2718,7 @@
     "testQuestions": [
       {
         "question": "The table gives information about the times, in minutes, taken by 60 people to complete a puzzle. 0 < t <= 10 (frequency 5), 10 < t <= 20 (frequency 12), 20 < t <= 30 (frequency 23), 30 < t <= 40 (frequency 14), 40 < t <= 50 (frequency 6). Work out an estimate for the number of people who took more than 35 minutes.",
-        "answer": "Answer: 11 people. Working: First find upper boundaries and cumulative frequencies: 10(5), 20(17), 30(40), 40(54), 50(60). Plot or interpolate at 35 minutes. At 35 mins, cumulative frequency is approximately 49. Total people (60) minus 49 = 11 people who took more than 35 minutes. (Allow answers between 10 and 13)."
+        "answer": "Answer: about 13 people. Working: First find upper boundaries and cumulative frequencies: 10(5), 20(17), 30(40), 40(54), 50(60). 35 minutes is halfway between 30 and 40, so the cumulative frequency is about $40 + \\frac{14}{2} = 47$. Total people (60) minus 47 = 13 people took more than 35 minutes. (A smooth curve may read slightly differently, so allow answers from 11 to 15.)"
       },
       {
         "question": "A box plot shows that for a set of test scores, the minimum is 10, the lower quartile is 28, the median is 45, the upper quartile is 60, and the maximum is 85. Calculate the interquartile range.",
@@ -2776,7 +2761,7 @@
         "Always label the vertical axis as frequency density, never frequency.",
         "Class widths do not all need to be equal."
       ],
-      "examNote": "You must memorise the formula for frequency density as it is not given on the formula sheet."
+      "examNote": "You must memorise the formula for frequency density as it is not given on the exam aid."
     },
     "examples": [
       {
@@ -2784,8 +2769,8 @@
         "solution": "Step 1: Understand that for histograms, Frequency Density = Frequency $\\div$ Class Width. Step 2: Calculate the class width for each interval by subtracting the lower boundary from the upper boundary. For $0 < t \\le 10$, width $= 10 - 0 = 10$. For $10 < t \\le 20$, width $= 20 - 10 = 10$. For $20 < t \\le 40$, width $= 40 - 20 = 20$. For $40 < t \\le 60$, width $= 60 - 40 = 20$. Step 3: Divide the frequency by the class width for each group. Group 1: $10 \\div 10 = 1$. Group 2: $20 \\div 10 = 2$. Group 3: $12 \\div 20 = 0.6$. Group 4: $8 \\div 20 = 0.4$. (Award M1 for finding at least three correct class widths or frequency densities, and A1 for all four correct frequency densities)."
       },
       {
-        "question": "A histogram is drawn to show the weights, $w$ kg, of parcels. One bar represents parcels with a weight between 5 kg and 10 kg. This bar has a width of 5 cm, a height of 8 cm, and represents 40 parcels. Another bar has a class width of 10 kg and a height of 3 cm. Work out the number of parcels represented by this second bar.",
-        "solution": "Step 1: Recognise that frequency equals the area of the bar on a histogram (Frequency = Width $\\times$ Frequency Density). In this context, the grid height and width represent the scaled drawing, but we can also use the relationship between area and frequency directly. Step 2: Find the scale factor between area and frequency. For the first bar, the class width is $10 - 5 = 5$, but we are given its dimensions on the chart. Height on chart = 8 cm, and the class width scale might be implied, or we can use the frequency density directly. Let's use the standard formula: Frequency Density = Height on chart = 8. Class width = 5. So Frequency Density = $40 \\div 5 = 8$. This tells us that 1 unit of area represents a specific frequency. Alternatively, use ratio: Area of first bar = Width $\\times$ Height = $5 \\times 8 = 40$ units of area, which matches 40 parcels, meaning 1 unit of chart area equals 1 parcel. Step 3: Now look at the second bar. Its class width is 10 kg and its height is 3 cm. Area of the second bar on the chart = Class width $\\times$ Frequency Density (height) = $10 \\times 3 = 30$ units of area. Step 4: Since 1 unit of area equals 1 parcel (from our scale check), the second bar represents 30 parcels. (Award M1 for calculating the area or using Frequency = Width $\\times$ Height correctly, and A1 for the final answer of 30)."
+        "question": "A histogram shows the weights of parcels. The bar for 5 kg to 10 kg has a height of 8 cm and represents 40 parcels. Another bar has a class width of 10 kg and a height of 3 cm. Work out the number of parcels represented by this second bar.",
+        "solution": "Step 1: Find the frequency density of the first bar. Its class width is $10 - 5 = 5$, so frequency density $= 40 \\div 5 = 8$. Step 2: Compare this with its height. A height of 8 cm shows a frequency density of 8, so 1 cm of height represents a frequency density of 1. Step 3: The second bar has a height of 3 cm, so its frequency density is 3. Step 4: Frequency $=$ class width $\\times$ frequency density $= 10 \\times 3 = 30$ parcels. (Award M1 for using frequency $=$ class width $\\times$ frequency density, and A1 for 30.)"
       }
     ],
     "testQuestions": [
@@ -2798,16 +2783,16 @@
         "answer": "Answer: 10. \nWorking: Frequency Density = Frequency $\\div$ Class Width. Therefore, Class Width = Frequency $\\div$ Frequency Density $= 46 \\div 4.6 = 10$."
       },
       {
-        "question": "The table shows the speeds of cars on a road. \nSpeed ($s$ mph) | Frequency \n$20 < s \\le 30$ | 12 \n$30 < s \\le 50$ | 40 \n$50 < s \\le 60$ | 15 \nFind the frequency represented by the interval $30 < s \\le 50$ if a histogram is drawn where the vertical axis is Frequency Density.",
-        "answer": "Answer: 40. \nWorking: The question gives the frequency directly in the table as 40. (Be careful not to confuse frequency with frequency density!)."
+        "question": "The table shows the speeds of cars on a road. $20 < s \\le 30$ (Frequency 12), $30 < s \\le 50$ (Frequency 40), $50 < s \\le 60$ (Frequency 15). Work out the frequency density for the interval $30 < s \\le 50$.",
+        "answer": "Answer: 2. Working: Class width $= 50 - 30 = 20$. Frequency density $=$ frequency $\\div$ class width $= 40 \\div 20 = 2$."
       },
       {
         "question": "On a histogram, the bar for the interval $0 < t \\le 5$ has a height of 5 cm and represents 20 items. Another bar has a class width of 10 and a height of 3 cm. Find the number of items this second bar represents.",
         "answer": "Answer: 24. Working: First bar: frequency density $= 20 \\div 5 = 4$, shown by a height of 5 cm, so 1 cm represents $4 \\div 5 = 0.8$. Second bar: frequency density $= 3 \\times 0.8 = 2.4$. Frequency $=$ class width $\\times$ frequency density $= 10 \\times 2.4 = 24$."
       },
       {
-        "question": "A histogram is drawn for a set of data. The total frequency for the histogram is 100. A bar representing the interval $100 < x \\le 150$ has a width of 5 cm and a height of 4 cm. If the total area of all bars combined is 50 cm^2, calculate the total frequency represented by a bar of area 12 cm^2.",
-        "answer": "Answer: 24. \nWorking: Total frequency = 100 corresponding to a total histogram area of 50 cm^2. Therefore, scale is $100 \\div 50 = 2$ items per cm^2. For a bar with an area of 12 cm^2, frequency = $12 \\times 2 = 24$."
+        "question": "A histogram is drawn for a set of data. The total frequency for the histogram is 100. The total area of all the bars is $50\\text{ cm}^2$. Calculate the frequency represented by a bar of area $12\\text{ cm}^2$.",
+        "answer": "Answer: 24. \nWorking: Total frequency = 100 corresponding to a total histogram area of $50\\text{ cm}^2$. Therefore, scale is $100 \\div 50 = 2$ items per cm^2. For a bar with an area of $12\\text{ cm}^2$, frequency = $12 \\times 2 = 24$."
       }
     ],
     "keywords": [
@@ -2831,15 +2816,15 @@
         "Line of best fit must have a balanced number of points on both sides.",
         "Interpolation is estimating inside the data range; extrapolation is estimating outside it."
       ],
-      "examNote": "You must memorise how to draw an accurate line of best fit through the centre of mass for standard marks."
+      "examNote": "Draw your line of best fit with a ruler, with about the same number of points on each side."
     },
     "examples": [
       {
-        "question": "The scatter graph shows the time spent revising and the test score achieved by 8 students. (a) What type of correlation is shown? (b) A 9th student revises for 4.5 hours. Estimate their test score using a line of best fit.",
-        "solution": "1. For part (a), look at the overall pattern of the crosses. As time spent revising increases from left to right, the test scores go up. Therefore, the correlation is positive correlation. (Award 1 mark for stating 'positive correlation' in context). 2. For part (b), first draw a straight line of best fit that passes centrally through the data points, with roughly the same number of points above and below the line. 3. Locate 4.5 hours on the horizontal axis ($x$-axis). 4. Move vertically up from 4.5 until you hit your line of best fit. 5. Move horizontally across to the vertical axis ($y$-axis) to read off the estimated test score. Reading from a sensible line of best fit gives an answer around 65 marks. (Award M1 for drawing a suitable line of best fit or showing a reading at 4.5, and A1 for an answer in the acceptable range of 62 to 68)."
+        "question": "Eight students record their revision time in hours and their test score: (1, 25), (2, 35), (2.5, 40), (3, 48), (3.5, 50), (4, 60), (5, 70), (6, 80). (a) What type of correlation does a scatter graph of this data show? (b) A 9th student revises for 4.5 hours. Estimate their test score using a line of best fit.",
+        "solution": "1. Plot the points. For part (a), look at the overall pattern of the crosses. As time spent revising increases from left to right, the test scores go up. Therefore, the correlation is positive correlation. (Award 1 mark for stating 'positive correlation' in context). 2. For part (b), first draw a straight line of best fit that passes centrally through the data points, with roughly the same number of points above and below the line. 3. Locate 4.5 hours on the horizontal axis ($x$-axis). 4. Move vertically up from 4.5 until you hit your line of best fit. 5. Move horizontally across to the vertical axis ($y$-axis) to read off the estimated test score. Reading from a sensible line of best fit gives an answer around 65 marks. (Award M1 for drawing a suitable line of best fit or showing a reading at 4.5, and A1 for an answer in the acceptable range of 62 to 68)."
       },
       {
-        "question": "A scientist measures the temperature ($T$, in degrees Celsius) and the depth ($d$, in metres) inside a borehole. She records the following data and plots a scatter graph. A student states: 'The scatter graph shows that increasing the depth causes the temperature to increase, and if we go down 1000 metres, the temperature will be exactly 100 degrees Celsius.' Explain why the student's statement is flawed.",
+        "question": "A scientist measures the temperature ($T$, in degrees Celsius) and the depth ($d$, in metres) inside a borehole, at depths down to 200 metres, and plots a scatter graph showing strong positive correlation. A student states: 'The scatter graph shows that increasing the depth causes the temperature to increase, and if we go down 1000 metres, the temperature will be exactly 100 degrees Celsius.' Explain why the student's statement is flawed.",
         "solution": "1. Break the student's statement down into two parts: causation and extrapolation. 2. First, address the causation aspect: correlation does not equal causation. Just because there is a strong positive correlation between depth and temperature does not automatically mean that increasing depth *causes* the temperature to rise; there could be a third underlying factor. (Award 1 mark for explaining that correlation does not mean causation). 3. Second, address the prediction aspect: the data points plotted only cover depths up to 200 metres. Estimating for a depth of 1000 metres requires going far beyond the range of the given data, which is known as extrapolation. Extrapolation is unreliable because we do not know if the linear trend continues indefinitely. (Award 1 mark for identifying extrapolation beyond the given data range)."
       }
     ],
@@ -2869,7 +2854,6 @@
       "line of best fit",
       "positive correlation",
       "negative correlation",
-      "outliers",
       "interpolation",
       "extrapolation"
     ]
