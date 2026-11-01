@@ -285,6 +285,17 @@
     .li-dot.started { background: #f59e0b; }
     .li-dot.not-started { background: #cbd5e1; }
 
+    .guide-pace { margin: 16px 0 0; color: var(--muted); }
+    .view-toggle {
+      display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 20px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    }
+    .view-toggle button {
+      border: none; background: none; border-radius: 7px; padding: 7px 14px;
+      font-size: 0.84rem; font-weight: 600; color: var(--muted); cursor: pointer;
+    }
+    .view-toggle button.active { background: var(--primary); color: white; }
+
     .subject-group { margin-bottom: 22px; }
     .subject-heading {
       font-size: 0.95rem; font-weight: 700; color: var(--muted);
@@ -457,6 +468,14 @@
     }
     .complete-btn:hover { opacity: 0.92; }
     .complete-btn.already-done { background: var(--muted); cursor: default; }
+
+    .next-lesson-btn {
+      display: block; width: 100%; margin-top: 10px; padding: 12px 14px;
+      background: var(--surface); color: var(--primary-dark);
+      border: 1.5px solid var(--primary); border-radius: var(--radius);
+      font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: background 0.15s;
+    }
+    .next-lesson-btn:hover { background: var(--primary-light); }
 
     /* ---- Q&A (chat) ---- */
     .qa-section .m-section-hint {
@@ -723,15 +742,16 @@
       </div>`;
 
     // Sits just above the continue bar, below the tile grid.
-    const readyHTML = `<p class="session-intro">Ready for this week's session? One topic, worked examples, a few questions to try, and space to ask anything.</p>`;
+    const readyHTML = `<p class="session-intro">Ready for this week's session? Two or three topics, each with worked examples, questions to try, and space to ask anything.</p>`;
 
+    const nextPlace = next ? weekPlace(next) : null;
     const continueHTML = next
       ? `<div class="continue-card">
           <div class="continue-text">
-            <div class="continue-label">${statusOf(next.id) === 'started' ? 'Continue — ' : 'Next up — '}Week ${next.week}</div>
+            <div class="continue-label">${statusOf(next.id) === 'started' ? 'Continue — ' : 'Next up — '}Week ${next.week}, lesson ${nextPlace.position} of ${nextPlace.total}</div>
             <div class="continue-title">${next.icon} ${next.subject}: ${next.title}</div>
           </div>
-          <button class="continue-btn" data-id="${next.id}">${statusOf(next.id) === 'started' ? 'Continue This Lesson →' : "Start This Week's Lesson →"}</button>
+          <button class="continue-btn" data-id="${next.id}">${statusOf(next.id) === 'started' ? 'Continue This Lesson →' : 'Start This Lesson →'}</button>
         </div>`
       : `<div class="continue-card">
           <div class="all-done">
@@ -766,7 +786,7 @@
         <p>
           This is a weekly, one-hour maths session for a parent and their GCSE student to work through <strong>together</strong> —
           not something the student is meant to sit down with alone. It follows Edexcel GCSE Maths (Higher tier),
-          broken into ${MODULES.length} bite-sized topics, one a session. Read it side by side: the parent guiding and asking questions, the student working through
+          with ${MODULES.length} topics grouped into ${weekCount()} weekly sessions of about an hour. Read it side by side: the parent guiding and asking questions, the student working through
           the examples and having a go at the test questions.
         </p>`
     },
@@ -774,15 +794,16 @@
       key: 'howto',
       icon: '📘',
       title: 'How To Use It',
-      teaser: () => 'Four simple steps each week, plus what to do if you get stuck.',
+      teaser: () => 'Four simple steps for each topic, plus what to do if you get stuck.',
       detail: () => `
-        <h4>A typical session, in four steps</h4>
+        <h4>Each topic, in four steps</h4>
         <div class="guide-steps">
           <div class="guide-step"><span class="gs-num">1</span><strong>Read the Overview</strong><span class="gs-desc">Together, out loud if that helps — no jargon, just the idea.</span></div>
           <div class="guide-step"><span class="gs-num">2</span><strong>Go through the Examples</strong><span class="gs-desc">See exactly how a real Higher-tier question gets solved, step by step.</span></div>
           <div class="guide-step"><span class="gs-num">3</span><strong>Try the Test Questions</strong><span class="gs-desc">Have a go, then reveal the answer to check the working.</span></div>
           <div class="guide-step"><span class="gs-num">4</span><strong>Ask if anything's unclear</strong><span class="gs-desc">Use the Q&amp;A box any time — mid-lesson or after.</span></div>
         </div>
+        <p class="guide-pace">Each week has two or three topics, so allow about 20–30 minutes for each. Short of time? Do the worked examples and the first few test questions, then come back to the rest.</p>
         <h4>🆘 If you get stuck</h4>
         <div class="guide-stuck">
           Getting stuck is normal — it usually just means the next idea is worth slowing down for.
@@ -826,6 +847,17 @@
     }
   ];
 
+  function weekCount() {
+    return Math.max(...MODULES.map(m => m.week));
+  }
+
+  // Where a lesson sits within its week, e.g. lesson 2 of 3.
+  function weekPlace(mod) {
+    const lessons = MODULES.filter(m => m.week === mod.week);
+    const index = lessons.indexOf(mod);
+    return { position: index + 1, total: lessons.length, next: lessons[index + 1] };
+  }
+
   function homeCounts() {
     const progress = getProgress();
     const statusOf = id => getStatus(progress, id);
@@ -859,7 +891,7 @@
           <div class="tile-icon">📚</div>
           <div class="tile-text">
             <div class="tile-title">Topic Areas</div>
-            <div class="tile-teaser">Browse all ${MODULES.length} topics, grouped by subject.</div>
+            <div class="tile-teaser">The ${weekCount()}-week plan, or browse all ${MODULES.length} topics by subject.</div>
           </div>
           <div class="tile-chevron">→</div>
         </div>
@@ -887,7 +919,20 @@
     bindHomeTileEvents();
   }
 
-  // ---------- Topics view: the full syllabus, grouped by subject ----------
+  // ---------- Topics view: the weekly plan, or the same lessons by subject ----------
+  let topicsView = 'week';
+
+  function moduleRowHTML(m, status, marker) {
+    const checkGlyph = status === 'completed' ? '✓' : status === 'started' ? '●' : '';
+    const statusLabel = status === 'started' ? '<span class="mr-status-label">In progress</span>' : '';
+    return `
+      <div class="module-row" data-id="${m.id}" data-status="${status}">
+        <div class="mr-week">${marker}</div>
+        <div class="mr-title">${m.title}${statusLabel}</div>
+        <div class="mr-check">${checkGlyph}</div>
+      </div>`;
+  }
+
   function showTopics() {
     currentModule = null;
     homeBtn.style.display = 'none';
@@ -898,43 +943,53 @@
 
     const progress = getProgress();
     const statusOf = id => getStatus(progress, id);
+    const next = MODULES.find(m => statusOf(m.id) !== 'completed');
 
-    const subjects = [];
+    const groups = [];
     for (const m of MODULES) {
-      let group = subjects.find(s => s.name === m.subject);
-      if (!group) { group = { name: m.subject, icon: m.icon, items: [] }; subjects.push(group); }
+      const key = topicsView === 'week' ? m.week : m.subject;
+      let group = groups.find(g => g.key === key);
+      if (!group) {
+        group = topicsView === 'week'
+          ? { key, heading: `Week ${m.week}`, items: [] }
+          : { key, heading: `${m.icon} ${m.subject}`, items: [] };
+        groups.push(group);
+      }
       group.items.push(m);
     }
 
-    const syllabusHTML = subjects.map(group => {
+    const listHTML = groups.map(group => {
       const doneCount = group.items.filter(m => statusOf(m.id) === 'completed').length;
-      const rows = group.items.map(m => {
-        const status = statusOf(m.id);
-        const checkGlyph = status === 'completed' ? '✓' : status === 'started' ? '●' : '';
-        const statusLabel = status === 'started' ? '<span class="mr-status-label">In progress</span>' : '';
-        return `
-        <div class="module-row" data-id="${m.id}" data-status="${status}">
-          <div class="mr-week">${m.week}</div>
-          <div class="mr-title">${m.title}${statusLabel}</div>
-          <div class="mr-check">${checkGlyph}</div>
-        </div>`;
-      }).join('');
+      const upNext = topicsView === 'week' && next && next.week === group.key ? '<span class="mr-status-label">Up next</span>' : '';
+      const rows = group.items.map(m =>
+        moduleRowHTML(m, statusOf(m.id), topicsView === 'week' ? m.icon : m.week)
+      ).join('');
       return `
         <div class="subject-group">
-          <div class="subject-heading">${group.icon} ${group.name} <span class="sh-count">${doneCount}/${group.items.length}</span></div>
+          <div class="subject-heading">${group.heading}${upNext} <span class="sh-count">${doneCount}/${group.items.length}</span></div>
           ${rows}
         </div>`;
     }).join('');
+
+    const toggleButton = (view, label) =>
+      `<button data-topics-view="${view}" aria-pressed="${topicsView === view}" class="${topicsView === view ? 'active' : ''}">${label}</button>`;
 
     appEl.innerHTML = `
       <button class="back-btn" onclick="showHome()">← Home</button>
       <div class="module-head">
         <h2>All ${MODULES.length} Topics</h2>
       </div>
-      <div class="syllabus">${syllabusHTML}</div>`;
+      <div class="view-toggle">
+        ${toggleButton('week', `${weekCount()}-week plan`)}
+        ${toggleButton('subject', 'By subject')}
+      </div>
+      <div class="syllabus">${listHTML}</div>`;
 
     appEl.querySelectorAll('[data-id]').forEach(el => {
       el.addEventListener('click', () => openModule(el.dataset.id));
+    });
+    appEl.querySelectorAll('[data-topics-view]').forEach(el => {
+      el.addEventListener('click', () => { topicsView = el.dataset.topicsView; showTopics(); });
     });
   }
 
@@ -1151,6 +1206,8 @@
       setModuleStatus(mod.id, 'started');
     }
 
+    const place = weekPlace(mod);
+
     const examplesHTML = (mod.examples || []).map(ex => `
       <div class="example-card">
         <div class="ex-q"></div>
@@ -1167,7 +1224,7 @@
     appEl.innerHTML = `
       <button class="back-btn" onclick="showTopics()">← All Topics</button>
       <div class="module-head">
-        <div class="module-meta">Week ${mod.week} · ${mod.subject}</div>
+        <div class="module-meta">Week ${mod.week}, lesson ${place.position} of ${place.total} · ${mod.subject}</div>
         <h2>${mod.title}</h2>
       </div>
 
@@ -1197,6 +1254,7 @@
       </section>
 
       <button class="complete-btn" id="completeBtn">✓ Mark this module complete</button>
+      ${place.next ? `<button class="next-lesson-btn" data-id="${place.next.id}">Next this week: ${place.next.title} →</button>` : ''}
 
       <section class="m-section qa-section" style="margin-top:34px;">
         <h3>💬 Ask a Question</h3>
@@ -1251,6 +1309,8 @@
 
     refreshCompleteButton();
     document.getElementById('completeBtn').addEventListener('click', markComplete);
+    const nextLessonBtn = appEl.querySelector('.next-lesson-btn');
+    if (nextLessonBtn) nextLessonBtn.addEventListener('click', () => openModule(nextLessonBtn.dataset.id));
 
     // Wire up the Q&A controls (re-fetched each openModule since we rebuilt the DOM)
     bindQAControls();

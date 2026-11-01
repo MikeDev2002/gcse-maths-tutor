@@ -1,5 +1,61 @@
 [
   {
+    "id": "number-order-of-operations-bidmas",
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Order of operations (BIDMAS)",
+    "keywords": [
+      "BODMAS",
+      "PEMDAS",
+      "order of calculations",
+      "calculating in the right order"
+    ],
+    "week": 1,
+    "overview": {
+      "hook": "Same numbers, different order, different answer: BIDMAS keeps you on the right one.",
+      "keyIdea": "BIDMAS tells you the exact order to calculate things: Brackets, Indices, Division and Multiplication, Addition and Subtraction. If you get the order wrong, even a simple sum will give you the wrong answer.",
+      "keyPoints": [
+        "Always work out Brackets first, starting from the innermost set.",
+        "Calculate Indices (powers and roots) before doing any multiplication or division.",
+        "Multiplication and Division have equal priority; work left to right.",
+        "Addition and Subtraction have equal priority; work left to right."
+      ],
+      "examNote": "Examiners award M1 for showing correct intermediate steps and A1 for the correct final answer, so always show your working clearly."
+    },
+    "examples": [
+      {
+        "question": "Work out $15 - 3 \\times (4^2 - 10) $",
+        "solution": "Step 1: Look inside the brackets first. Inside the brackets, we have an index and subtraction: $4^2 - 10$. Work out the index $4^2 = 16$. Step 2: Complete the bracket calculation: $16 - 10 = 6$. The expression is now $15 - 3 \\times 6$. Step 3: Do the multiplication before subtraction: $3 \\times 6 = 18$. The expression is now $15 - 18$. Step 4: Complete the subtraction: $15 - 18 = -3$. Final Answer: $-3$."
+      },
+      {
+        "question": "Evaluate $\\frac{20 - 2^3}{3 + \\sqrt{25}} $",
+        "solution": "Step 1: Treat the numerator and denominator as if they are inside hidden brackets. Simplify the numerator top part first. Work out the index $2^3 = 8$. Step 2: Finish the numerator: $20 - 8 = 12$. Step 3: Now simplify the denominator bottom part. Work out the square root $\\sqrt{25} = 5$. Step 4: Finish the denominator: $3 + 5 = 8$. Step 5: Divide the numerator by the denominator: $\\frac{12}{8}$. Simplify the fraction to $\\frac{3}{2}$ or $1.5$. Final Answer: $1.5$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Work out $3 + 5 \\times 2 - 4 $",
+        "answer": "Answer: 9. Working: Do multiplication first ($5 \\times 2 = 10$), then addition and subtraction left to right ($3 + 10 - 4 = 9$)."
+      },
+      {
+        "question": "Work out $24 ÷ (8 - 2) + 3^2 $",
+        "answer": "Answer: 13. Working: Brackets first ($8 - 2 = 6$), then index ($3^2 = 9$), then division ($24 ÷ 6 = 4$), then addition ($4 + 9 = 13$)."
+      },
+      {
+        "question": "Calculate $\\frac{-5 + (-3)^2}{2 \\times (-2)} $",
+        "answer": "Answer: -1. Working: Numerator: $(-3)^2 = 9$, then $-5 + 9 = 4$. Denominator: $2 \\times -2 = -4$. Fraction: $4 ÷ (-4) = -1$."
+      },
+      {
+        "question": "Work out $12 - 2[5 + 3(4 - 1)] $",
+        "answer": "Answer: $-16$. Working: Innermost brackets ($4 - 1 = 3$), then multiplication inside the square brackets ($3 \\times 3 = 9$), then addition inside the square brackets ($5 + 9 = 14$), then multiplication ($2 \\times 14 = 28$), finally subtraction ($12 - 28 = -16$)."
+      },
+      {
+        "question": "Insert brackets into the expression $5 \\times 4 + 2 - 1$ to make the total equal to 29.",
+        "answer": "Answer: $5 \\times (4 + 2) - 1$. Working: Brackets make $(4 + 2) = 6$, then $5 \\times 6 = 30$, then $30 - 1 = 29$."
+      }
+    ]
+  },
+  {
     "id": "number-factors-multiples-primes-hcf-lcm",
     "week": 1,
     "subject": "Number",
@@ -64,7 +120,7 @@
   },
   {
     "id": "number-fractions-decimals-percentages",
-    "week": 2,
+    "week": 1,
     "subject": "Number",
     "icon": "🔢",
     "title": "Fractions, decimals & percentages",
@@ -120,121 +176,8 @@
     ]
   },
   {
-    "id": "number-standard-form",
-    "week": 3,
-    "subject": "Number",
-    "icon": "🔢",
-    "title": "Standard form",
-    "overview": {
-      "hook": "Ever tried reading the distance to the Sun and gotten lost in a sea of zeros?",
-      "keyIdea": "Standard form is a shorthand way to write extremely large or small numbers without counting endless zeros. It always looks like $A \\times 10^n$, where $A$ is between $1$ and $10$, and $n$ is an integer.",
-      "keyPoints": [
-        "The number $A$ must be greater than or equal to $1$ and strictly less than $10$.",
-        "Positive powers of $10$ mean numbers greater than $10$, like $4,500,000 = 4.5 \\times 10^6$.",
-        "Negative powers of $10$ mean decimals smaller than $1$, like $0.0003 = 3 \\times 10^{-4}$.",
-        "Calculators usually display standard form using an $E$ button, such as $4.5 \\text{E} 6$."
-      ],
-      "examNote": "You must memorise how to convert numbers into standard form as this formula is not given on the Higher tier formula sheet."
-    },
-    "examples": [
-      {
-        "question": "Work out $(4 \\times 10^5) \\times (8 \\times 10^3)$. Give your answer in standard form.",
-        "solution": "Step 1: Rearrange the expression to group the numbers and the powers of $10$ together:\n$(4 \\times 8) \\times (10^5 \\times 10^3)$\n\nStep 2: Multiply the ordinary numbers:\n$4 \\times 8 = 32$\n\nStep 3: Multiply the powers of $10$ using the index law $10^a \\times 10^b = 10^{a+b}$:\n$10^5 \\times 10^3 = 10^{5+3} = 10^8$ (This step earns an M1 method mark).\n\nStep 4: Combine the two results:\n$32 \\times 10^8$\n\nStep 5: Adjust to valid standard form. The front number $32$ is not between $1$ and $10$. Rewrite $32$ as $3.2 \\times 10^1$.\n\nStep 6: Simplify the final power of $10$:\n$3.2 \\times 10^1 \\times 10^8 = 3.2 \\times 10^9$ (This earns the A1 accuracy mark)."
-      },
-      {
-        "question": "The distance from Earth to the Sun is $1.5 \\times 10^8$ km. The speed of light is $3 \\times 10^5$ km/s. Calculate the time taken, in seconds, for light to travel from the Sun to Earth. Give your answer in standard form.",
-        "solution": "Step 1: Use the speed-distance-time formula $\\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}}$:\n$\\text{Time} = \\frac{1.5 \\times 10^8}{3 \\times 10^5}$\n\nStep 2: Separate the calculation into numbers and powers of $10$:\n$\\left(\\frac{1.5}{3}\\right) \\times \\left(\\frac{10^8}{10^5}\\right)$\n\nStep 3: Divide the ordinary numbers:\n$\\frac{1.5}{3} = 0.5$ (This earns an M1 method mark for correct division strategy).\n\nStep 4: Divide the powers of $10$ using the index law $10^a \\div 10^b = 10^{a-b}$:\n$10^8 \\div 10^5 = 10^{8-5} = 10^3$\n\nStep 5: Combine the components:\n$0.5 \\times 10^3$\n\nStep 6: Convert to valid standard form. The front number $0.5$ is less than $1$, so rewrite $0.5$ as $5 \\times 10^{-1}$.\n\nStep 7: Simplify the powers of $10$:\n$5 \\times 10^{-1} \\times 10^3 = 5 \\times 10^{-1+3} = 5 \\times 10^2$ seconds (This earns the A1 accuracy mark)."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "Write $0.000456$ in standard form.",
-        "answer": "$4.56 \\times 10^{-4}$. Working: Move the decimal point 4 places to the right to get $4.56$ (which is between $1$ and $10$). Because $0.000456$ is a small number, the power of $10$ is negative."
-      },
-      {
-        "question": "Work out $(3 \\times 10^{-4}) + (5.2 \\times 10^{-3})$. Give your answer in standard form.",
-        "answer": "$5.5 \\times 10^{-3}$. Working: Change to matching powers of $10$: $3 \\times 10^{-4} = 0.3 \\times 10^{-3}$. Add the front numbers: $(0.3 + 5.2) \\times 10^{-3} = 5.5 \\times 10^{-3}$."
-      },
-      {
-        "question": "Work out $(6 \\times 10^7) \\div (1.2 \\times 10^{-3})$. Give your answer in standard form.",
-        "answer": "$5 \\times 10^{10}$. Working: Divide front numbers: $6 \\div 1.2 = 5$. Subtract powers: $7 - (-3) = 10$. Combine to get $5 \\times 10^{10}$."
-      },
-      {
-        "question": "A container has a mass of $2.4 \\times 10^4$ grams. The mass of a microscopic particle inside is $8 \\times 10^{-6}$ grams. How many times heavier is the container than the particle? Give your answer in standard form.",
-        "answer": "$3 \\times 10^9$. Working: Divide mass of container by particle mass: $(2.4 \\times 10^4) \\div (8 \\times 10^{-6}) = (2.4 \\div 8) \\times 10^{4 - (-6)} = 0.3 \\times 10^{10}$. Adjust to standard form: $0.3 \\times 10^{10} = 3 \\times 10^9$."
-      },
-      {
-        "question": "Given that $p = 4 \\times 10^6$ and $q = 5 \\times 10^5$, evaluate $\\frac{p^2}{q}$. Give your answer in standard form.",
-        "answer": "$3.2 \\times 10^7$. Working: First find $p^2 = (4 \\times 10^6)^2 = 16 \\times 10^{12}$. Then divide by $q$: $\\frac{16 \\times 10^{12}}{5 \\times 10^5} = (16 \\div 5) \\times 10^{12-5} = 3.2 \\times 10^7$."
-      }
-    ],
-    "keywords": [
-      "scientific notation",
-      "powers of ten",
-      "very large numbers",
-      "very small numbers"
-    ]
-  },
-  {
-    "id": "number-surds",
-    "week": 4,
-    "subject": "Number",
-    "icon": "🔢",
-    "title": "Surds",
-    "overview": {
-      "hook": "Surds are like leaving your answers in exact fractions instead of messy decimals.",
-      "keyIdea": "A surd is a square root that cannot be written as a whole number, like $\\sqrt{2}$. We simplify them by finding square numbers hidden inside.",
-      "keyPoints": [
-        "Use the multiplication rule $\\sqrt{ab} = \\sqrt{a} \\times \\sqrt{b}$.",
-        "Always look for the largest square number factor.",
-        "Rationalise the denominator to remove roots from the bottom of fractions.",
-        "Treat surds like algebraic terms when adding or subtracting."
-      ],
-      "examNote": "Surd rules are not given on the Higher formula sheet, so you must memorise them."
-    },
-    "examples": [
-      {
-        "question": "Simplify fully $\\sqrt{75} + \\sqrt{12}$.",
-        "solution": "1. Identify the largest square factor for each number: $75 = 25 \\times 3$ and $12 = 4 \\times 3$. (M1)\n2. Rewrite the first surd: $\\sqrt{75} = \\sqrt{25 \\times 3} = \\sqrt{25} \\times \\sqrt{3} = 5\\sqrt{3}$.\n3. Rewrite the second surd: $\\sqrt{12} = \\sqrt{4 \\times 3} = \\sqrt{4} \\times \\sqrt{3} = 2\\sqrt{3}$.\n4. Add the simplified surds together like algebraic terms: $5\\sqrt{3} + 2\\sqrt{3} = 7\\sqrt{3}$. (A1)"
-      },
-      {
-        "question": "Rationalise the denominator of $\\frac{14}{3 + \\sqrt{2}}$ and simplify fully.",
-        "solution": "1. Multiply both the top and bottom of the fraction by the expression with the sign changed, $(3 - \\sqrt{2})$. (M1)\n2. Multiply the numerator: $14 \\times (3 - \\sqrt{2}) = 42 - 14\\sqrt{2}$.\n3. Multiply the denominator using double brackets: $(3 + \\sqrt{2})(3 - \\sqrt{2}) = 9 - 3\\sqrt{2} + 3\\sqrt{2} - 2 = 7$. (M1)\n4. Write as a single fraction: $\\frac{42 - 14\\sqrt{2}}{7}$.\n5. Divide every term in the numerator by $7$: $6 - 2\\sqrt{2}$. (A1)"
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "Simplify fully $\\sqrt{48}$.",
-        "answer": "$4\\sqrt{3}$. Working: $\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$."
-      },
-      {
-        "question": "Expand and simplify $(2 + \\sqrt{3})(5 - \\sqrt{3})$.",
-        "answer": "$7 + 3\\sqrt{3}$. Working: Expand brackets: $2(5) - 2\\sqrt{3} + 5\\sqrt{3} - (\\sqrt{3} \\times \\sqrt{3}) = 10 + 3\\sqrt{3} - 3 = 7 + 3\\sqrt{3}$."
-      },
-      {
-        "question": "Rationalise the denominator of $\\frac{10}{\\sqrt{5}}$ and give your answer in its simplest form.",
-        "answer": "$2\\sqrt{5}$. Working: Multiply top and bottom by $\\sqrt{5}$: $\\frac{10 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$."
-      },
-      {
-        "question": "Simplify fully $\\sqrt{18} + \\sqrt{50} - \\sqrt{8}$.",
-        "answer": "$6\\sqrt{2}$. Working: $\\sqrt{18} = 3\\sqrt{2}$, $\\sqrt{50} = 5\\sqrt{2}$, $\\sqrt{8} = 2\\sqrt{2}$. Combined: $3\\sqrt{2} + 5\\sqrt{2} - 2\\sqrt{2} = 6\\sqrt{2}$."
-      },
-      {
-        "question": "Rationalise the denominator of $\\frac{6}{4 - \\sqrt{10}}$. Show your working and write your answer in the form $a + b\\sqrt{10}$.",
-        "answer": "$4 + \\sqrt{10}$ (where $a=4$ and $b=1$). Working: Multiply top and bottom by $(4 + \\sqrt{10})$. Numerator: $6(4 + \\sqrt{10}) = 24 + 6\\sqrt{10}$. Denominator: $(4 - \\sqrt{10})(4 + \\sqrt{10}) = 16 - 10 = 6$. Fraction: $\\frac{24 + 6\\sqrt{10}}{6} = 4 + \\sqrt{10}$."
-      }
-    ],
-    "keywords": [
-      "rationalising the denominator",
-      "rationalise",
-      "square roots",
-      "simplifying roots",
-      "irrational numbers"
-    ]
-  },
-  {
     "id": "number-laws-of-indices",
-    "week": 5,
+    "week": 2,
     "subject": "Number",
     "icon": "🔢",
     "title": "Laws of indices",
@@ -291,8 +234,404 @@
     ]
   },
   {
+    "id": "number-standard-form",
+    "week": 2,
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Standard form",
+    "overview": {
+      "hook": "Ever tried reading the distance to the Sun and gotten lost in a sea of zeros?",
+      "keyIdea": "Standard form is a shorthand way to write extremely large or small numbers without counting endless zeros. It always looks like $A \\times 10^n$, where $A$ is between $1$ and $10$, and $n$ is an integer.",
+      "keyPoints": [
+        "The number $A$ must be greater than or equal to $1$ and strictly less than $10$.",
+        "Positive powers of $10$ mean numbers greater than $10$, like $4,500,000 = 4.5 \\times 10^6$.",
+        "Negative powers of $10$ mean decimals smaller than $1$, like $0.0003 = 3 \\times 10^{-4}$.",
+        "Calculators usually display standard form using an $E$ button, such as $4.5 \\text{E} 6$."
+      ],
+      "examNote": "You must memorise how to convert numbers into standard form as this formula is not given on the Higher tier formula sheet."
+    },
+    "examples": [
+      {
+        "question": "Work out $(4 \\times 10^5) \\times (8 \\times 10^3)$. Give your answer in standard form.",
+        "solution": "Step 1: Rearrange the expression to group the numbers and the powers of $10$ together:\n$(4 \\times 8) \\times (10^5 \\times 10^3)$\n\nStep 2: Multiply the ordinary numbers:\n$4 \\times 8 = 32$\n\nStep 3: Multiply the powers of $10$ using the index law $10^a \\times 10^b = 10^{a+b}$:\n$10^5 \\times 10^3 = 10^{5+3} = 10^8$ (This step earns an M1 method mark).\n\nStep 4: Combine the two results:\n$32 \\times 10^8$\n\nStep 5: Adjust to valid standard form. The front number $32$ is not between $1$ and $10$. Rewrite $32$ as $3.2 \\times 10^1$.\n\nStep 6: Simplify the final power of $10$:\n$3.2 \\times 10^1 \\times 10^8 = 3.2 \\times 10^9$ (This earns the A1 accuracy mark)."
+      },
+      {
+        "question": "The distance from Earth to the Sun is $1.5 \\times 10^8$ km. The speed of light is $3 \\times 10^5$ km/s. Calculate the time taken, in seconds, for light to travel from the Sun to Earth. Give your answer in standard form.",
+        "solution": "Step 1: Use the speed-distance-time formula $\\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}}$:\n$\\text{Time} = \\frac{1.5 \\times 10^8}{3 \\times 10^5}$\n\nStep 2: Separate the calculation into numbers and powers of $10$:\n$\\left(\\frac{1.5}{3}\\right) \\times \\left(\\frac{10^8}{10^5}\\right)$\n\nStep 3: Divide the ordinary numbers:\n$\\frac{1.5}{3} = 0.5$ (This earns an M1 method mark for correct division strategy).\n\nStep 4: Divide the powers of $10$ using the index law $10^a \\div 10^b = 10^{a-b}$:\n$10^8 \\div 10^5 = 10^{8-5} = 10^3$\n\nStep 5: Combine the components:\n$0.5 \\times 10^3$\n\nStep 6: Convert to valid standard form. The front number $0.5$ is less than $1$, so rewrite $0.5$ as $5 \\times 10^{-1}$.\n\nStep 7: Simplify the powers of $10$:\n$5 \\times 10^{-1} \\times 10^3 = 5 \\times 10^{-1+3} = 5 \\times 10^2$ seconds (This earns the A1 accuracy mark)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Write $0.000456$ in standard form.",
+        "answer": "$4.56 \\times 10^{-4}$. Working: Move the decimal point 4 places to the right to get $4.56$ (which is between $1$ and $10$). Because $0.000456$ is a small number, the power of $10$ is negative."
+      },
+      {
+        "question": "Work out $(3 \\times 10^{-4}) + (5.2 \\times 10^{-3})$. Give your answer in standard form.",
+        "answer": "$5.5 \\times 10^{-3}$. Working: Change to matching powers of $10$: $3 \\times 10^{-4} = 0.3 \\times 10^{-3}$. Add the front numbers: $(0.3 + 5.2) \\times 10^{-3} = 5.5 \\times 10^{-3}$."
+      },
+      {
+        "question": "Work out $(6 \\times 10^7) \\div (1.2 \\times 10^{-3})$. Give your answer in standard form.",
+        "answer": "$5 \\times 10^{10}$. Working: Divide front numbers: $6 \\div 1.2 = 5$. Subtract powers: $7 - (-3) = 10$. Combine to get $5 \\times 10^{10}$."
+      },
+      {
+        "question": "A container has a mass of $2.4 \\times 10^4$ grams. The mass of a microscopic particle inside is $8 \\times 10^{-6}$ grams. How many times heavier is the container than the particle? Give your answer in standard form.",
+        "answer": "$3 \\times 10^9$. Working: Divide mass of container by particle mass: $(2.4 \\times 10^4) \\div (8 \\times 10^{-6}) = (2.4 \\div 8) \\times 10^{4 - (-6)} = 0.3 \\times 10^{10}$. Adjust to standard form: $0.3 \\times 10^{10} = 3 \\times 10^9$."
+      },
+      {
+        "question": "Given that $p = 4 \\times 10^6$ and $q = 5 \\times 10^5$, evaluate $\\frac{p^2}{q}$. Give your answer in standard form.",
+        "answer": "$3.2 \\times 10^7$. Working: First find $p^2 = (4 \\times 10^6)^2 = 16 \\times 10^{12}$. Then divide by $q$: $\\frac{16 \\times 10^{12}}{5 \\times 10^5} = (16 \\div 5) \\times 10^{12-5} = 3.2 \\times 10^7$."
+      }
+    ],
+    "keywords": [
+      "scientific notation",
+      "powers of ten",
+      "very large numbers",
+      "very small numbers"
+    ]
+  },
+  {
+    "id": "number-surds",
+    "week": 2,
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Surds",
+    "overview": {
+      "hook": "Surds are like leaving your answers in exact fractions instead of messy decimals.",
+      "keyIdea": "A surd is a square root that cannot be written as a whole number, like $\\sqrt{2}$. We simplify them by finding square numbers hidden inside.",
+      "keyPoints": [
+        "Use the multiplication rule $\\sqrt{ab} = \\sqrt{a} \\times \\sqrt{b}$.",
+        "Always look for the largest square number factor.",
+        "Rationalise the denominator to remove roots from the bottom of fractions.",
+        "Treat surds like algebraic terms when adding or subtracting."
+      ],
+      "examNote": "Surd rules are not given on the Higher formula sheet, so you must memorise them."
+    },
+    "examples": [
+      {
+        "question": "Simplify fully $\\sqrt{75} + \\sqrt{12}$.",
+        "solution": "1. Identify the largest square factor for each number: $75 = 25 \\times 3$ and $12 = 4 \\times 3$. (M1)\n2. Rewrite the first surd: $\\sqrt{75} = \\sqrt{25 \\times 3} = \\sqrt{25} \\times \\sqrt{3} = 5\\sqrt{3}$.\n3. Rewrite the second surd: $\\sqrt{12} = \\sqrt{4 \\times 3} = \\sqrt{4} \\times \\sqrt{3} = 2\\sqrt{3}$.\n4. Add the simplified surds together like algebraic terms: $5\\sqrt{3} + 2\\sqrt{3} = 7\\sqrt{3}$. (A1)"
+      },
+      {
+        "question": "Rationalise the denominator of $\\frac{14}{3 + \\sqrt{2}}$ and simplify fully.",
+        "solution": "1. Multiply both the top and bottom of the fraction by the expression with the sign changed, $(3 - \\sqrt{2})$. (M1)\n2. Multiply the numerator: $14 \\times (3 - \\sqrt{2}) = 42 - 14\\sqrt{2}$.\n3. Multiply the denominator using double brackets: $(3 + \\sqrt{2})(3 - \\sqrt{2}) = 9 - 3\\sqrt{2} + 3\\sqrt{2} - 2 = 7$. (M1)\n4. Write as a single fraction: $\\frac{42 - 14\\sqrt{2}}{7}$.\n5. Divide every term in the numerator by $7$: $6 - 2\\sqrt{2}$. (A1)"
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Simplify fully $\\sqrt{48}$.",
+        "answer": "$4\\sqrt{3}$. Working: $\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$."
+      },
+      {
+        "question": "Expand and simplify $(2 + \\sqrt{3})(5 - \\sqrt{3})$.",
+        "answer": "$7 + 3\\sqrt{3}$. Working: Expand brackets: $2(5) - 2\\sqrt{3} + 5\\sqrt{3} - (\\sqrt{3} \\times \\sqrt{3}) = 10 + 3\\sqrt{3} - 3 = 7 + 3\\sqrt{3}$."
+      },
+      {
+        "question": "Rationalise the denominator of $\\frac{10}{\\sqrt{5}}$ and give your answer in its simplest form.",
+        "answer": "$2\\sqrt{5}$. Working: Multiply top and bottom by $\\sqrt{5}$: $\\frac{10 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$."
+      },
+      {
+        "question": "Simplify fully $\\sqrt{18} + \\sqrt{50} - \\sqrt{8}$.",
+        "answer": "$6\\sqrt{2}$. Working: $\\sqrt{18} = 3\\sqrt{2}$, $\\sqrt{50} = 5\\sqrt{2}$, $\\sqrt{8} = 2\\sqrt{2}$. Combined: $3\\sqrt{2} + 5\\sqrt{2} - 2\\sqrt{2} = 6\\sqrt{2}$."
+      },
+      {
+        "question": "Rationalise the denominator of $\\frac{6}{4 - \\sqrt{10}}$. Show your working and write your answer in the form $a + b\\sqrt{10}$.",
+        "answer": "$4 + \\sqrt{10}$ (where $a=4$ and $b=1$). Working: Multiply top and bottom by $(4 + \\sqrt{10})$. Numerator: $6(4 + \\sqrt{10}) = 24 + 6\\sqrt{10}$. Denominator: $(4 - \\sqrt{10})(4 + \\sqrt{10}) = 16 - 10 = 6$. Fraction: $\\frac{24 + 6\\sqrt{10}}{6} = 4 + \\sqrt{10}$."
+      }
+    ],
+    "keywords": [
+      "rationalising the denominator",
+      "rationalise",
+      "square roots",
+      "simplifying roots",
+      "irrational numbers"
+    ]
+  },
+  {
+    "id": "ratio-proportion-ratio",
+    "week": 3,
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Ratio",
+    "overview": {
+      "hook": "Splitting a bill or mixing squash is ratio in action — it is just comparing parts of a whole.",
+      "keyIdea": "A ratio compares sizes or amounts, showing how one part relates to another. The order of numbers matters completely, so $2:3$ is not the same as $3:2$.",
+      "keyPoints": [
+        "Simplify ratios by dividing all parts by the highest common factor.",
+        "Share a total amount by first finding the total number of ratio parts.",
+        "Use unitary methods to find one part when another part is known."
+      ],
+      "examNote": "Ratio formulae are not given on the Higher formula sheet, so you must memorise how to share in a given ratio."
+    },
+    "examples": [
+      {
+        "question": "A box contains red sweets and green sweets in the ratio $3 : 5$. There are 72 sweets in total in the box. Work out how many green sweets are in the box.",
+        "solution": "Step 1: Find the total number of parts in the ratio. Add $3$ (red) and $5$ (green) together: $3 + 5 = 8$ total parts. (M1 for adding parts). Step 2: Find the value of one single part by dividing the total number of sweets by the total number of parts: $72 \\div 8 = 9$. This means $1$ part represents $9$ sweets. (M1 for dividing total by parts). Step 3: Multiply the value of one part by the number of parts for green sweets. The green sweets are represented by $5$ parts, so $5 \\times 9 = 45$. (A1 for the correct answer of 45)."
+      },
+      {
+        "question": "In a school, the ratio of boys to girls is $4 : 7$. The ratio of staff to students (boys and girls combined) is $2 : 15$. There are 60 staff members in the school. Work out the total number of people (staff and students) in the school.",
+        "solution": "Step 1: Use the information about the staff to find the total number of students. The ratio of staff to students is $2 : 15$. Since there are 60 staff members, we find the multiplier by doing $60 \\div 2 = 30$. (M1 for finding multiplier). Step 2: Multiply the student parts by 30 to find the total number of students. The student parts equal $15$, so $15 \\times 30 = 450$ students. (M1 for total students). Step 3: Find the total number of people in the school by adding the staff and students together. Total people = $60$ (staff) $+ 450$ (students) $= 510$. (A1 for final answer 510)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Share £120 in the ratio $3 : 5$. Calculate the value of the larger share.",
+        "answer": "Total parts = $3 + 5 = 8$. One part = $120 \\div 8 = £15$. Larger share = $5 \\times 15 = £75$. (Answer: £75)"
+      },
+      {
+        "question": "In a bag of marbles, the ratio of blue to yellow is $4 : 3$. If there are 24 blue marbles, how many yellow marbles are there?",
+        "answer": "4 parts = 24 marbles. One part = $24 \\div 4 = 6$ marbles. Yellow marbles = $3 \\times 6 = 18$. (Answer: 18 yellow marbles)"
+      },
+      {
+        "question": "A recipe uses flour, butter and sugar in the ratio $5 : 3 : 2$. If you use 150g of butter, what is the total weight of the mixture?",
+        "answer": "3 parts = 150g, so 1 part = $150 \\div 3 = 50$g. Total parts = $5 + 3 + 2 = 10$ parts. Total weight = $10 \\times 50\\text{g} = 500\\text{g}$. (Answer: 500g)"
+      },
+      {
+        "question": "The ratio of men to women at a conference is $5 : 4$. There are 135 people at the conference in total. How many more men are there than women?",
+        "answer": "Total parts = $5 + 4 = 9$. One part = $135 \\div 9 = 15$. Difference in parts = $5 - 4 = 1$ part. Therefore, there are $1 \\times 15 = 15$ more men. (Alternatively: Men = 75, Women = 60, $75 - 60 = 15$). (Answer: 15)"
+      },
+      {
+        "question": "Aaliyah and Ben share some money in the ratio $2 : 5$. Ben receives £36 more than Aaliyah. How much money does Aaliyah receive?",
+        "answer": "Difference in parts = $5 - 2 = 3$ parts. These 3 parts equal £36, so 1 part = $36 \\div 3 = £12$. Aaliyah has 2 parts, so she receives $2 \\times 12 = £24$. (Answer: £24)"
+      }
+    ],
+    "keywords": [
+      "sharing in a ratio",
+      "dividing in a ratio",
+      "simplifying ratios",
+      "unitary method"
+    ]
+  },
+  {
+    "id": "ratio-proportion-percentage-change",
+    "week": 3,
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Percentage change",
+    "overview": {
+      "hook": "Finding percentage change is just working out how much a price or amount has grown or shrunk.",
+      "keyIdea": "We compare the change in value to the original starting amount. The formula is $\\text{Percentage Change} = \\frac{\\text{Actual Change}}{\\text{Original Value}} \\times 100$.",
+      "keyPoints": [
+        "Always subtract the original value from the new value to find the change.",
+        "Always divide by the original starting amount, never the new total.",
+        "Multiply your decimal answer by 100 to turn it into a percentage."
+      ],
+      "examNote": "This formula is not on the Edexcel formula sheet, so you must memorise it for the exam."
+    },
+    "examples": [
+      {
+        "question": "A bicycle normally costs $£250$. In a sale, it is reduced to $£200$. Work out the percentage decrease in the price of the bicycle.",
+        "solution": "Step 1: Find the actual difference between the original price and the sale price. $250 - 200 = 50$. The price went down by $£50$. Step 2: Identify the original value. The original price before the sale was $£250$. Step 3: Put the numbers into the percentage change formula: $\\text{Percentage Decrease} = ( \\text{Difference} / \\text{Original} ) \\times 100$. Step 4: Substitute the values: $(50 / 250) \\times 100$. Step 5: Calculate the result. $50 / 250 = 0.2$, and $0.2 \\times 100 = 20$. The final answer is a $20\\%$ decrease."
+      },
+      {
+        "question": "In 2020, a rare painting was valued at $£1,200$. By 2023, its value had increased by $35\\%$. Work out the value of the painting in 2023.",
+        "solution": "Step 1: Recognise that this is a percentage increase problem where we need to find the final value using a multiplier. Step 2: Convert the percentage increase into a decimal multiplier. Start with $100\\%$ and add the $35\\%$, giving $135\\%$. Convert this to a decimal by dividing by $100$, which gives $1.35$. Step 3: Multiply the original value by the decimal multiplier to find the new value. Calculation: $1200 \\times 1.35$. Step 4: Perform the multiplication. $1200 \\times 1 = 1200$, and $1200 \\times 0.35 = 420$. Adding these together gives $1200 + 420 = 1620$. The final value of the painting in 2023 is $£1620$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A shop increases the price of a television from $£400$ to $£460$. Work out the percentage increase.",
+        "answer": "Difference is $460 - 400 = 60$. Original price is $400$. Calculation: $(60 / 400) \\times 100 = 15\\%$. Answer: $15\\%$."
+      },
+      {
+        "question": "In a chemistry experiment, the volume of a liquid decreases from $80\\text{ ml}$ to $68\\text{ ml}$. Calculate the percentage decrease.",
+        "answer": "Difference is $80 - 68 = 12$. Original volume is $80$. Calculation: $(12 / 80) \\times 100 = 0.15 \\times 100 = 15\\%$. Answer: $15\\%$ decrease."
+      },
+      {
+        "question": "A house was bought for $£220,000$. Over five years, its value appreciates by $18\\%$. Work out the new value of the house.",
+        "answer": "Use a multiplier for an $18\\%$ increase, which is $1.18$. Calculation: $220000 \\times 1.18 = 259600$. Answer: $£259,600$."
+      },
+      {
+        "question": "Tom's weight changes from $75\\text{ kg}$ to $72\\text{ kg}$. Work out the percentage change in Tom's weight, giving your answer to 1 decimal place.",
+        "answer": "Difference is $75 - 72 = 3$. Original weight is $75$. Calculation: $(3 / 75) \\times 100 = 0.04 \\times 100 = 4\\%$. Answer: $4.0\\%$ decrease."
+      },
+      {
+        "question": "A stock of computers is worth $£15,000$. Each year, the value depreciates by $20\\%$ compared to its value the previous year. Work out the value of the computers after 2 years.",
+        "answer": "Multiplier for a $20\\%$ decrease is $0.80$. Apply this twice for 2 years (compound depreciation). Calculation: $15000 \\times 0.80 \\times 0.80 = 15000 \\times 0.64 = 9600$. Answer: $£9,600$."
+      }
+    ],
+    "keywords": [
+      "percentage increase",
+      "percentage decrease",
+      "profit and loss",
+      "multiplier",
+      "reverse percentage"
+    ]
+  },
+  {
+    "id": "ratio-proportion-compound-interest-depreciation",
+    "week": 3,
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Compound interest & depreciation",
+    "overview": {
+      "hook": "Growing money in a bank account works just like a snowball rolling downhill, picking up speed as it goes.",
+      "keyIdea": "Compound interest increases an amount by a percentage each year based on the previous year's total, rather than the original amount. Depreciation works the exact same way, but it decreases the value over time instead.",
+      "keyPoints": [
+        "Identify if the amount is increasing or decreasing.",
+        "Convert the percentage into a multiplier using $1 + \\frac{r}{100}$ or $1 - \\frac{r}{100}$.",
+        "Raise the multiplier to the power of the number of time periods $n$.",
+        "Multiply the original amount by this powered multiplier to find the final value."
+      ],
+      "examNote": "The compound interest formula is on the exam aid. For depreciation, adapt it by using $1 - \\frac{r}{100}$ as the multiplier."
+    },
+    "examples": [
+      {
+        "question": "Emma invests 4000 pounds in a bank account that pays $3.5\\%$ compound interest per year. Work out the total amount in the account after 3 years.",
+        "solution": "Step 1: Convert the percentage increase into a decimal multiplier. Since it is compound interest, we add $3.5\\%$ to $100\\%$, giving $103.5\\%$. As a decimal, this is $103.5 / 100 = 1.035$. Step 2: Set up the compound interest calculation using the formula $\\text{Final Amount} = \\text{Original} \\times \\text{multiplier}^{\\text{years}}$. Here, the original amount is $4000$ and the number of years is $3$. So we write $4000 \\times 1.035^3$. Step 3: Evaluate the expression using a calculator. $1.035^3 \\approx 1.1136$. Multiply this by $4000$ to get $4454.4925$. Step 4: Round appropriately to money (2 decimal places). The total amount is 4454.49 pounds (Award M1 for $4000 \\times 1.035^3$ and A1 for the correct answer)."
+      },
+      {
+        "question": "A new car is bought for 25000 pounds. Its value depreciates by $18\\%$ each year. Find the value of the car after 4 years, giving your answer to the nearest pound.",
+        "solution": "Step 1: Convert the percentage depreciation (decrease) into a decimal multiplier. Subtract $18$ from $100$ to get $82\\%$. As a decimal, this is $82 / 100 = 0.82$. Step 2: Set up the depreciation calculation. The original value is $25000$ and the time period is $4$ years. The calculation is $25000 \\times 0.82^4$. Step 3: Calculate the power first. $0.82^4 \\approx 0.4521216$. Step 4: Multiply by the original value: $25000 \\times 0.4521216 = 11303.04$. Step 5: Read the question carefully to check the rounding requirement. It asks for the nearest pound. Answer: 11303 pounds (Award M1 for $25000 \\times 0.82^4$ and A1 for the correct rounded answer)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Mark invests 6000 pounds at a compound interest rate of $2\\%$ per annum. Calculate the total value of the investment after 5 years. Give your answer to the nearest penny.",
+        "answer": "Answer: 6624.45 pounds. Working: Multiplier is $1.02$. Calculation: $6000 \\times 1.02^5 = 6624.446...$ Round to 2 decimal places."
+      },
+      {
+        "question": "A boat was purchased for 18000 pounds. Each year, its value depreciates by $12\\%$. Work out the value of the boat after 3 years.",
+        "answer": "Answer: £12,266.50 (to the nearest penny). Working: The multiplier is $0.88$. $18000 \\times 0.88^3 = 18000 \\times 0.681472 = 12266.496$."
+      },
+      {
+        "question": "Ali deposits 500 pounds into a savings account. The account pays compound interest of $4\\%$ for the first year and $2.5\\%$ for each subsequent year. Work out the total amount in the account after 3 years.",
+        "answer": "Answer: 541.25 pounds. Working: Year 1 multiplier is $1.04$, Years 2 and 3 multiplier is $1.025$. Calculation: $500 \\times 1.04 \\times 1.025^2 = 541.25$ pounds."
+      },
+      {
+        "question": "The population of a town increases by $3\\%$ every year. In 2020, the population was 50000. What is the expected population in 2025? Give your answer to the nearest whole number.",
+        "answer": "Answer: 57964. Working: Number of years from 2020 to 2025 is $5$. Multiplier is $1.03$. Calculation: $50000 \\times 1.03^5 = 57963.7...$ Round to the nearest whole number to get 57964."
+      },
+      {
+        "question": "A laptop loses $15\\%$ of its value in the first year, and a further $10\\%$ of its reduced value in the second year. If it was bought for 800 pounds, what is it worth after 2 years?",
+        "answer": "Answer: 612 pounds. Working: First year multiplier is $0.85$, second year multiplier is $0.90$. Calculation: $800 \\times 0.85 \\times 0.90 = 612$ pounds."
+      }
+    ],
+    "keywords": [
+      "growth and decay",
+      "exponential growth",
+      "multiplier",
+      "savings",
+      "interest rate"
+    ]
+  },
+  {
+    "id": "ratio-proportion-direct-inverse-proportion",
+    "week": 4,
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Direct & inverse proportion",
+    "overview": {
+      "hook": "Just like doubling your recipe ingredients doubles the cake, some maths rules connect variables in direct lockstep.",
+      "keyIdea": "Direct proportion means two values increase together at a constant rate ($y = kx$). Inverse proportion means as one value goes up, the other goes down at the same rate ($y = \\frac{k}{x}$).",
+      "keyPoints": [
+        "Identify if the relationship is direct or inverse from the context.",
+        "Write the general equation using a constant of proportionality, $k$.",
+        "Substitute given values to find the exact value of $k$.",
+        "Use your complete equation to solve for the unknown value."
+      ],
+      "examNote": "Proportion formulae are not given on the formula sheet, so you must memorise how to set up $y = kx$ and $y = \\frac{k}{x}$ to secure method marks."
+    },
+    "examples": [
+      {
+        "question": "y is directly proportional to the square of x. When x = 3, y = 45. Find the value of y when x = 4.",
+        "solution": "Step 1: Write down the proportionality statement. Since y is directly proportional to the square of x, we write $y \\propto x^2$. Step 2: Introduce the constant of proportionality, $k$, to turn it into an equation: $y = kx^2$. Step 3: Find the value of $k$ by substituting the given values ($x = 3$ and $y = 45$) into the equation. This gives $45 = k(3^2)$, which simplifies to $45 = 9k$. Divide both sides by 9 to get $k = 5$. Step 4: Rewrite your full equation with the value of $k$: $y = 5x^2$. Step 5: Use this equation to find $y$ when $x = 4$. Substitute $x = 4$ into the formula: $y = 5(4^2)$. Work out the square first: $4^2 = 16$. Then multiply by 5: $y = 5 \\times 16 = 80$. Final Answer: $y = 80$."
+      },
+      {
+        "question": "p is inversely proportional to the cube root of q. When q = 8, p = 12. Find the value of q when p = 3.",
+        "solution": "Step 1: Write down the proportionality statement. Since p is inversely proportional to the cube root of q, we write $p \\propto \\frac{1}{\\text{root}[3]{q}}$ or $p \\propto \\frac{1}{q^{1/3}}$. Step 2: Introduce the constant $k$ to form the equation: $p = \\frac{k}{\\text{root}[3]{q}}$. Step 3: Substitute the given values ($q = 8$ and $p = 12$) to find $k$. We know that the cube root of 8 is 2 (since $2 \\times 2 \\times 2 = 8$). So, $12 = \\frac{k}{2}$. Multiply both sides by 2 to find $k$: $k = 24$. Step 4: Write the completed equation: $p = \\frac{24}{\\text{root}[3]{q}}$. Step 5: Find $q$ when $p = 3$. Substitute $p = 3$ into the equation: $3 = \\frac{24}{\\text{root}[3]{q}}$. Rearrange to solve for the cube root of $q$: $\\text{root}[3]{q} = \\frac{24}{3}$, which simplifies to $\\text{root}[3]{q} = 8$. Step 6: To find $q$, cube both sides of the equation ($q = 8^3$). Calculating $8 \\times 8 \\times 8$ gives $512$. Final Answer: $q = 512$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "y is directly proportional to x. When x = 5, y = 35. Find the formula for y in terms of x.",
+        "answer": "y = 7x. Working: y = kx -> 35 = 5k -> k = 7."
+      },
+      {
+        "question": "m is inversely proportional to n. When n = 4, m = 12. Find the value of m when n = 8.",
+        "answer": "m = 6. Working: m = k/n -> 12 = k/4 -> k = 48. Equation is m = 48/n. When n = 8, m = 48/8 = 6."
+      },
+      {
+        "question": "A is directly proportional to the square root of B. When B = 36, A = 18. Find A when B = 100.",
+        "answer": "A = 30. Working: A = k*sqrt(B) -> 18 = k*sqrt(36) -> 18 = 6k -> k = 3. Equation: A = 3*sqrt(B). When B = 100, A = 3*sqrt(100) = 3 * 10 = 30."
+      },
+      {
+        "question": "The time (T minutes) it takes to empty a pool is inversely proportional to the number of pumps operating (n). If 3 pumps take 40 minutes, how long do 5 pumps take?",
+        "answer": "24 minutes. Working: T = k/n -> 40 = k/3 -> k = 120. Equation: T = 120/n. For 5 pumps, T = 120/5 = 24."
+      },
+      {
+        "question": "y is inversely proportional to the square of x. If y = 2 when x = 4, find the value of y when x = 8.",
+        "answer": "y = 0.5 (or 1/2). Working: y = k/x^2 -> 2 = k/(4^2) -> 2 = k/16 -> k = 32. Equation: y = 32/x^2. When x = 8, y = 32/(8^2) = 32/64 = 0.5."
+      }
+    ],
+    "keywords": [
+      "directly proportional",
+      "inversely proportional",
+      "proportional to",
+      "constant of proportionality",
+      "varies as"
+    ]
+  },
+  {
+    "id": "ratio-proportion-speed-density-pressure",
+    "subject": "Ratio & Proportion",
+    "icon": "⚖️",
+    "title": "Speed, density & pressure",
+    "keywords": [
+      "compound measures",
+      "compound units",
+      "speed distance time",
+      "mass",
+      "force",
+      "unit conversion"
+    ],
+    "week": 4,
+    "overview": {
+      "hook": "One formula triangle gives you three formulas: cover up what you need and read off the rest.",
+      "keyIdea": "Compound measures link two different quantities, like distance and time for speed. You just need to memorise the formula triangles to know whether to multiply or divide.",
+      "keyPoints": [
+        "Speed = Distance / Time",
+        "Density = Mass / Volume",
+        "Pressure = Force / Area",
+        "Always check your units match before calculating"
+      ],
+      "examNote": "None of these three formulae are on the Edexcel Higher exam aid, so you must learn all three."
+    },
+    "examples": [
+      {
+        "question": "A solid metal block has a mass of 540 g and a volume of 200 cm^3. Work out the density of the metal in g/cm^3.",
+        "solution": "Step 1: Write down the formula for density. Density = Mass / Volume. Step 2: Substitute the given values into the formula. Density = 540 / 200. Step 3: Calculate the final answer. Density = 2.7 g/cm^3."
+      },
+      {
+        "question": "A car travels at an average speed of 72 km/h. Convert this speed into metres per second (m/s).",
+        "solution": "Step 1: Convert kilometres to metres. 72 km = 72000 m. Step 2: Convert hours to seconds. 1 hour = 3600 seconds. Step 3: Divide the distance in metres by the time in seconds. Speed = 72000 / 3600 = 20 m/s."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A runner covers a distance of 15 km in 1 hour and 15 minutes. Work out their average speed in km/h.",
+        "answer": "12 km/h. Working: Time = 1.25 hours (or 75 minutes). Speed = Distance / Time = 15 / 1.25 = 12."
+      },
+      {
+        "question": "A wooden block has a density of 0.6 g/cm^3 and a volume of 450 cm^3. Work out the mass of the block.",
+        "answer": "270 g. Working: Mass = Density x Volume = 0.6 x 450 = 270."
+      },
+      {
+        "question": "A box exerts a force of 120 N on a table. The area of contact is 0.4 m^2. Calculate the pressure in N/m^2.",
+        "answer": "300 N/m^2. Working: Pressure = Force / Area = 120 / 0.4 = 300."
+      },
+      {
+        "question": "A train travels at 20 m/s. Work out its speed in km/h.",
+        "answer": "72 km/h. Working: Multiply by 3.6 (or convert 20 m to 0.02 km and 1 s to 1/3600 h, giving 20 x 3600 / 1000 = 72)."
+      },
+      {
+        "question": "Liquid A has a density of 0.8 g/cm^3. Liquid B has a density of 1.1 g/cm^3. 300 cm^3 of Liquid A is mixed with 200 cm^3 of Liquid B to make Liquid C. Work out the density of Liquid C.",
+        "answer": "0.92 g/cm^3. Working: Mass A = 0.8 x 300 = 240 g. Mass B = 1.1 x 200 = 220 g. Total mass = 460 g. Total volume = 500 cm^3. Density = 460 / 500 = 0.92 g/cm^3."
+      }
+    ]
+  },
+  {
     "id": "number-upper-lower-bounds",
-    "week": 6,
+    "week": 4,
     "subject": "Number",
     "icon": "🔢",
     "title": "Upper & lower bounds",
@@ -349,7 +688,7 @@
   },
   {
     "id": "algebra-expanding-factorising",
-    "week": 7,
+    "week": 5,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Expanding & factorising",
@@ -375,23 +714,23 @@
     ],
     "testQuestions": [
       {
-        "question": "1. Expand and simplify $x(3x - 4) + 2(x + 5)$.",
+        "question": "Expand and simplify $x(3x - 4) + 2(x + 5)$.",
         "answer": "Working: Expand first bracket to get $3x^2 - 4x$. Expand second bracket to get $2x + 10$. Combine: $3x^2 - 4x + 2x + 10 = 3x^2 - 2x + 10$. Final answer: $3x^2 - 2x + 10$ (1 mark for correct expansion of either bracket, 1 mark for correct final answer)."
       },
       {
-        "question": "2. Factorise fully $12x^2 y - 18xy^2$.",
+        "question": "Factorise fully $12x^2 y - 18xy^2$.",
         "answer": "Working: Find highest common factor of numbers (12 and 18) which is 6. Find common variables, which are $x$ and $y$. Take $6xy$ outside: $6xy(2x - 3y)$. Final answer: $6xy(2x - 3y)$ (1 mark for $6xy$ outside or partial factorisation, 1 mark for fully correct answer)."
       },
       {
-        "question": "3. Factorise $x^2 - 9x + 20$.",
-        "answer": "Working: Find two numbers that multiply to $+20$ and add to $-9$. The numbers are $-4$ and $-5$. Final answer: $(x - 4)(x - 5)$ (2 marks; 1 mark for $(x \n\\pm 4)(x \\pm 5)$ with incorrect signs)."
+        "question": "Factorise $x^2 - 9x + 20$.",
+        "answer": "Working: Find two numbers that multiply to $+20$ and add to $-9$. The numbers are $-4$ and $-5$. Final answer: $(x - 4)(x - 5)$ (2 marks; 1 mark for $(x \\pm 4)(x \\pm 5)$ with incorrect signs)."
       },
       {
-        "question": "4. Factorise $16x^2 - 25$.",
+        "question": "Factorise $16x^2 - 25$.",
         "answer": "Working: Recognise as the Difference of Two Squares ($a^2 - b^2$). $\\sqrt{16x^2} = 4x$ and $\\sqrt{25} = 5$. Final answer: $(4x + 5)(4x - 5)$ (1 mark)."
       },
       {
-        "question": "5. Factorise fully $3x^2 + 10x - 8$.",
+        "question": "Factorise fully $3x^2 + 10x - 8$.",
         "answer": "Working: $a \\times c = 3 \\times (-8) = -24$. Two numbers multiplying to $-24$ and adding to $10$ are $+12$ and $-2$. Rewrite expression: $3x^2 + 12x - 2x - 8 = 3x(x + 4) - 2(x + 4)$. Final answer: $(3x - 2)(x + 4)$ (1 mark for correct split of middle term, 1 mark for correct final answer)."
       }
     ],
@@ -406,7 +745,7 @@
   },
   {
     "id": "algebra-solving-equations-inequalities",
-    "week": 8,
+    "week": 5,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Solving equations & inequalities",
@@ -462,63 +801,8 @@
     ]
   },
   {
-    "id": "algebra-simultaneous-equations",
-    "week": 9,
-    "subject": "Algebra",
-    "icon": "🧮",
-    "title": "Simultaneous equations",
-    "overview": {
-      "hook": "Finding where two secret lines cross is just like solving a double puzzle.",
-      "keyIdea": "Simultaneous equations mean finding the exact $x$ and $y$ values that make two different equations true at the same time. You can solve them by elimination (adding or subtracting the equations) or substitution.",
-      "keyPoints": [
-        "Line up the $x$ and $y$ terms vertically.",
-        "Make coefficients match by multiplying if needed.",
-        "Add or subtract to eliminate one variable.",
-        "Substitute your answer back to find the second value."
-      ],
-      "examNote": "Simultaneous equations are worth 3 to 5 marks on the Edexcel Higher paper, usually requiring clear working out for M1 and A1 marks."
-    },
-    "examples": [
-      {
-        "question": "Solve the simultaneous equations: $3x + 2y = 16$ and $2x - 3y = 2$",
-        "solution": "Step 1: Label the equations. Equation (1): $3x + 2y = 16$. Equation (2): $2x - 3y = 2$. Step 2: Make the coefficients of $y$ equal by multiplying Equation (1) by 3 and Equation (2) by 2. This gives Equation (3): $9x + 6y = 48$ and Equation (4): $4x - 6y = 4$. Step 3: Add Equation (3) and Equation (4) to eliminate $y$ (M1 mark). $(9x + 4x) + (6y - 6y) = 48 + 4 \rightarrow 13x = 52$. Step 4: Solve for $x$. Divide both sides by 13: $x = 4$ (A1 mark). Step 5: Substitute $x = 4$ back into Equation (1) to find $y$ (M1 mark). $3(4) + 2y = 16 \rightarrow 12 + 2y = 16 \rightarrow 2y = 4 \rightarrow y = 2$. Step 6: Write down the final paired answer (A1 mark): $x = 4, y = 2$."
-      },
-      {
-        "question": "Solve the simultaneous equations: $x^2 + y^2 = 25$ and $y = x + 1$",
-        "solution": "Step 1: Notice that one equation is linear ($y = x + 1$) and one is quadratic ($x^2 + y^2 = 25$). Use substitution. Step 2: Substitute $y = x + 1$ into $x^2 + y^2 = 25$ (M1 mark). $x^2 + (x + 1)^2 = 25$. Step 3: Expand the bracket correctly: $(x + 1)^2 = x^2 + 2x + 1$. So the equation becomes $x^2 + x^2 + 2x + 1 = 25 \rightarrow 2x^2 + 2x + 1 = 25$. Step 4: Rearrange into standard quadratic form $ax^2 + bx + c = 0$ by subtracting 25 from both sides: $2x^2 + 2x - 24 = 0$. Step 5: Simplify by dividing the whole equation by 2: $x^2 + x - 12 = 0$. Step 6: Factorise the quadratic (M1 mark): $(x + 4)(x - 3) = 0$. This gives $x = -4$ or $x = 3$. Step 7: Find the corresponding $y$ values using $y = x + 1$ (M1 mark). When $x = 3$: $y = 3 + 1 = 4$. When $x = -4$: $y = -4 + 1 = -3$. Step 8: Pair the answers clearly (A1 mark): $x = 3, y = 4$ and $x = -4, y = -3$."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "Solve the simultaneous equations: $4x + 3y = 18$ and $4x - y = 10$",
-        "answer": "$x = 3, y = 2$. Working: Subtract second equation from first: $3y - (-y) = 18 - 10 \rightarrow 4y = 8 \rightarrow y = 2$. Substitute $y = 2$ into first equation: $4x + 3(2) = 18 \rightarrow 4x + 6 = 18 \rightarrow 4x = 12 \rightarrow x = 3$."
-      },
-      {
-        "question": "Solve the simultaneous equations: $3x + 5y = 19$ and $2x + 3y = 12$",
-        "answer": "$x = 3, y = 2$. Working: Multiply first equation by 2 ($6x + 10y = 38$) and second equation by 3 ($6x + 9y = 36$). Subtract to get $y = 2$. Substitute $y = 2$ into second equation: $2x + 6 = 12 \rightarrow 2x = 6 \rightarrow x = 3$."
-      },
-      {
-        "question": "At a cinema, 2 adult tickets and 3 child tickets cost £31. Also, 3 adult tickets and 2 child tickets cost £34. Find the cost of an adult ticket and a child ticket.",
-        "answer": "Adult ticket = £8, Child ticket = £5. Working: Let $a$ = adult and $c$ = child. $2a + 3c = 31$ and $3a + 2c = 34$. Multiply first by 3 ($6a + 9c = 93$) and second by 2 ($6a + 4c = 68$). Subtract: $5c = 25 \rightarrow c = 5$. Substitute $c = 5$: $2a + 15 = 31 \rightarrow 2a = 16 \rightarrow a = 8$."
-      },
-      {
-        "question": "Solve the simultaneous equations: $y = 2x + 1$ and $x^2 + y^2 = 10$",
-        "answer": "$x = 1, y = 3$ and $x = -1.8, y = -2.6$. Working: Substitute $y = 2x + 1$ into circle equation: $x^2 + (2x + 1)^2 = 10 \rightarrow x^2 + 4x^2 + 4x + 1 = 10 \rightarrow 5x^2 + 4x - 9 = 0$. Factorise: $(5x + 9)(x - 1) = 0 \rightarrow x = 1$ or $x = -1.8$. Substitute back to find $y$: $y = 2(1) + 1 = 3$ and $y = 2(-1.8) + 1 = -2.6$."
-      },
-      {
-        "question": "Find the points of intersection between the straight line $y = x + 1$ and the curve $y = x^2 - 2x - 3$",
-        "answer": "$(4, 5)$ and $(-1, 0)$. Working: Set equations equal to each other: $x^2 - 2x - 3 = x + 1 \rightarrow x^2 - 3x - 4 = 0$. Factorise: $(x - 4)(x + 1) = 0 \rightarrow x = 4$ or $x = -1$. Find $y$ values using $y = x + 1$: $y = 4 + 1 = 5$ and $y = -1 + 1 = 0$."
-      }
-    ],
-    "keywords": [
-      "elimination",
-      "substitution",
-      "two unknowns"
-    ]
-  },
-  {
     "id": "algebra-quadratics-factorising-the-formula",
-    "week": 10,
+    "week": 6,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Quadratics: factorising & the formula",
@@ -529,7 +813,7 @@
         "Always set your quadratic equation equal to zero before starting.",
         "Factorising means finding two numbers that multiply to the end number and add to the middle coefficient.",
         "The quadratic formula works for every quadratic, even when factorising is impossible.",
-        "Memorise the quadratic formula as it is not given on the Higher formula sheet."
+        "The quadratic formula is on the exam aid, so focus on substituting into it carefully."
       ],
       "examNote": "Examiners award Method marks (M1) for substituting correctly into the formula, so always write out your working clearly even if you make an arithmetic error."
     },
@@ -574,7 +858,7 @@
   },
   {
     "id": "algebra-completing-the-square",
-    "week": 11,
+    "week": 6,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Completing the square",
@@ -629,8 +913,63 @@
     ]
   },
   {
+    "id": "algebra-simultaneous-equations",
+    "week": 7,
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Simultaneous equations",
+    "overview": {
+      "hook": "Finding where two secret lines cross is just like solving a double puzzle.",
+      "keyIdea": "Simultaneous equations mean finding the exact $x$ and $y$ values that make two different equations true at the same time. You can solve them by elimination (adding or subtracting the equations) or substitution.",
+      "keyPoints": [
+        "Line up the $x$ and $y$ terms vertically.",
+        "Make coefficients match by multiplying if needed.",
+        "Add or subtract to eliminate one variable.",
+        "Substitute your answer back to find the second value."
+      ],
+      "examNote": "Simultaneous equations are worth 3 to 5 marks on the Edexcel Higher paper, usually requiring clear working out for M1 and A1 marks."
+    },
+    "examples": [
+      {
+        "question": "Solve the simultaneous equations: $3x + 2y = 16$ and $2x - 3y = 2$",
+        "solution": "Step 1: Label the equations. Equation (1): $3x + 2y = 16$. Equation (2): $2x - 3y = 2$. Step 2: Make the coefficients of $y$ equal by multiplying Equation (1) by 3 and Equation (2) by 2. This gives Equation (3): $9x + 6y = 48$ and Equation (4): $4x - 6y = 4$. Step 3: Add Equation (3) and Equation (4) to eliminate $y$ (M1 mark). $(9x + 4x) + (6y - 6y) = 48 + 4 \\rightarrow 13x = 52$. Step 4: Solve for $x$. Divide both sides by 13: $x = 4$ (A1 mark). Step 5: Substitute $x = 4$ back into Equation (1) to find $y$ (M1 mark). $3(4) + 2y = 16 \\rightarrow 12 + 2y = 16 \\rightarrow 2y = 4 \\rightarrow y = 2$. Step 6: Write down the final paired answer (A1 mark): $x = 4, y = 2$."
+      },
+      {
+        "question": "Solve the simultaneous equations: $x^2 + y^2 = 25$ and $y = x + 1$",
+        "solution": "Step 1: Notice that one equation is linear ($y = x + 1$) and one is quadratic ($x^2 + y^2 = 25$). Use substitution. Step 2: Substitute $y = x + 1$ into $x^2 + y^2 = 25$ (M1 mark). $x^2 + (x + 1)^2 = 25$. Step 3: Expand the bracket correctly: $(x + 1)^2 = x^2 + 2x + 1$. So the equation becomes $x^2 + x^2 + 2x + 1 = 25 \\rightarrow 2x^2 + 2x + 1 = 25$. Step 4: Rearrange into standard quadratic form $ax^2 + bx + c = 0$ by subtracting 25 from both sides: $2x^2 + 2x - 24 = 0$. Step 5: Simplify by dividing the whole equation by 2: $x^2 + x - 12 = 0$. Step 6: Factorise the quadratic (M1 mark): $(x + 4)(x - 3) = 0$. This gives $x = -4$ or $x = 3$. Step 7: Find the corresponding $y$ values using $y = x + 1$ (M1 mark). When $x = 3$: $y = 3 + 1 = 4$. When $x = -4$: $y = -4 + 1 = -3$. Step 8: Pair the answers clearly (A1 mark): $x = 3, y = 4$ and $x = -4, y = -3$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Solve the simultaneous equations: $4x + 3y = 18$ and $4x - y = 10$",
+        "answer": "$x = 3, y = 2$. Working: Subtract second equation from first: $3y - (-y) = 18 - 10 \\rightarrow 4y = 8 \\rightarrow y = 2$. Substitute $y = 2$ into first equation: $4x + 3(2) = 18 \\rightarrow 4x + 6 = 18 \\rightarrow 4x = 12 \\rightarrow x = 3$."
+      },
+      {
+        "question": "Solve the simultaneous equations: $3x + 5y = 19$ and $2x + 3y = 12$",
+        "answer": "$x = 3, y = 2$. Working: Multiply first equation by 2 ($6x + 10y = 38$) and second equation by 3 ($6x + 9y = 36$). Subtract to get $y = 2$. Substitute $y = 2$ into second equation: $2x + 6 = 12 \\rightarrow 2x = 6 \\rightarrow x = 3$."
+      },
+      {
+        "question": "At a cinema, 2 adult tickets and 3 child tickets cost £31. Also, 3 adult tickets and 2 child tickets cost £34. Find the cost of an adult ticket and a child ticket.",
+        "answer": "Adult ticket = £8, Child ticket = £5. Working: Let $a$ = adult and $c$ = child. $2a + 3c = 31$ and $3a + 2c = 34$. Multiply first by 3 ($6a + 9c = 93$) and second by 2 ($6a + 4c = 68$). Subtract: $5c = 25 \\rightarrow c = 5$. Substitute $c = 5$: $2a + 15 = 31 \\rightarrow 2a = 16 \\rightarrow a = 8$."
+      },
+      {
+        "question": "Solve the simultaneous equations: $y = 2x + 1$ and $x^2 + y^2 = 10$",
+        "answer": "$x = 1, y = 3$ and $x = -1.8, y = -2.6$. Working: Substitute $y = 2x + 1$ into circle equation: $x^2 + (2x + 1)^2 = 10 \\rightarrow x^2 + 4x^2 + 4x + 1 = 10 \\rightarrow 5x^2 + 4x - 9 = 0$. Factorise: $(5x + 9)(x - 1) = 0 \\rightarrow x = 1$ or $x = -1.8$. Substitute back to find $y$: $y = 2(1) + 1 = 3$ and $y = 2(-1.8) + 1 = -2.6$."
+      },
+      {
+        "question": "Find the points of intersection between the straight line $y = x + 1$ and the curve $y = x^2 - 2x - 3$",
+        "answer": "$(4, 5)$ and $(-1, 0)$. Working: Set equations equal to each other: $x^2 - 2x - 3 = x + 1 \\rightarrow x^2 - 3x - 4 = 0$. Factorise: $(x - 4)(x + 1) = 0 \\rightarrow x = 4$ or $x = -1$. Find $y$ values using $y = x + 1$: $y = 4 + 1 = 5$ and $y = -1 + 1 = 0$."
+      }
+    ],
+    "keywords": [
+      "elimination",
+      "substitution",
+      "two unknowns"
+    ]
+  },
+  {
     "id": "algebra-algebraic-fractions",
-    "week": 12,
+    "week": 7,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Algebraic fractions",
@@ -643,7 +982,7 @@
         "Multiply numerators together and denominators together for multiplication.",
         "Keep, change, flip when dividing one algebraic fraction by another."
       ],
-      "examNote": "This topic is guaranteed on the Higher paper, and you must memorise all factorising methods as no algebraic formulas are provided on the formula sheet."
+      "examNote": "No algebra formulas are on the exam aid, so have your factorising methods ready."
     },
     "examples": [
       {
@@ -684,8 +1023,244 @@
     ]
   },
   {
+    "id": "algebra-straight-line-graphs",
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Straight-line graphs",
+    "keywords": [
+      "gradient",
+      "y = mx + c",
+      "y-intercept",
+      "parallel lines",
+      "perpendicular lines",
+      "linear graphs",
+      "midpoint"
+    ],
+    "week": 8,
+    "overview": {
+      "hook": "Two points are all you need to write the equation of any straight line.",
+      "keyIdea": "Every straight line can be written as $y = mx + c$, where $m$ is the steepness and $c$ is where it crosses the vertical axis. By knowing two points, you can unlock the entire equation of the line.",
+      "keyPoints": [
+        "Gradient $m$ is calculated as change in $y$ divided by change in $x$.",
+        "The value $c$ is the $y$-intercept where the line crosses the vertical axis.",
+        "Parallel lines share the exact same gradient.",
+        "Perpendicular gradients multiply to give $-1$, so you flip the fraction and change the sign."
+      ],
+      "examNote": "The gradient formula and $y = mx + c$ are not on the Edexcel Higher exam aid, so you must learn them."
+    },
+    "examples": [
+      {
+        "question": "Find the equation of the straight line that passes through the points $(1, 5)$ and $(3, 11)$.",
+        "solution": "1. Find the gradient $m$ using the formula $(y_2 - y_1) / (x_2 - x_1)$. Here, $m = (11 - 5) / (3 - 1) = 6 / 2 = 3$. So $y = 3x + c$. 2. Substitute one of the points, say $(1, 5)$, into the equation to find $c$. $5 = 3(1) + c$, which gives $5 = 3 + c$, so $c = 2$. 3. Write out the final equation: $y = 3x + 2$."
+      },
+      {
+        "question": "Find the equation of the line that is perpendicular to $2y = 4x + 6$ and passes through the point $(4, -1)$.",
+        "solution": "1. Rearrange the given line into $y = mx + c$ form by dividing by 2: $y = 2x + 3$. The gradient is $2$. 2. Find the perpendicular gradient by taking the negative reciprocal: flip $2$ to $1/2$ and change the sign to get $-1/2$. So the new equation is $y = -1/2 x + c$. 3. Substitute the point $(4, -1)$ into the equation to find $c$. $-1 = -1/2(4) + c$, which means $-1 = -2 + c$, giving $c = 1$. 4. Write out the final equation: $y = -0.5x + 1$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Find the gradient of the line joining the points $(2, 3)$ and $(6, 11)$.",
+        "answer": "Gradient = 2. Working: $(11 - 3) / (6 - 2) = 8 / 4 = 2$."
+      },
+      {
+        "question": "A line has the equation $3y - 6x = 12$. State its gradient and $y$-intercept.",
+        "answer": "Gradient = 2, $y$-intercept = 4. Working: Rearrange to $3y = 6x + 12$, then divide by 3 to get $y = 2x + 4$."
+      },
+      {
+        "question": "Find the equation of the line passing through $(-2, 1)$ and $(4, 13)$.",
+        "answer": "Equation: $y = 2x + 5$. Working: $m = (13 - 1) / (4 - (-2)) = 12 / 6 = 2$. Using $(4, 13)$ gives $13 = 2(4) + c$, so $c = 5$."
+      },
+      {
+        "question": "Line A has the equation $y = -4x + 7$. Line B is parallel to Line A and passes through $(0, -3)$. Write down the equation of Line B.",
+        "answer": "Equation: $y = -4x - 3$. Working: Parallel lines have the same gradient, so $m = -4$. The $y$-intercept is given as $-3$, so $c = -3$."
+      },
+      {
+        "question": "Find the equation of the line perpendicular to $y = 3x - 2$ that passes through the point $(6, 5)$.",
+        "answer": "Equation: $y = -1/3 x + 7$. Working: Perpendicular gradient is $-1/3$. Substitute $(6, 5)$ into $y = -1/3 x + c$: $5 = -1/3(6) + c$, so $5 = -2 + c$, giving $c = 7$."
+      }
+    ]
+  },
+  {
+    "id": "algebra-quadratic-cubic-other-curved-graphs",
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Quadratic, cubic & other curved graphs",
+    "keywords": [
+      "parabola",
+      "cubic graphs",
+      "reciprocal graphs",
+      "exponential graphs",
+      "trig graphs",
+      "turning point",
+      "roots",
+      "sketching graphs"
+    ],
+    "week": 8,
+    "overview": {
+      "hook": "Curves appear all over GCSE Maths, and knowing their shapes is an easy way to pick up marks.",
+      "keyIdea": "Different algebra equations make distinct curve shapes on a graph, like smiles, squiggles, or steep slopes. We can read important points like intercepts and turning points straight from the equation or table of values.",
+      "keyPoints": [
+        "Quadratic graphs ($y = ax^2 + \\dots$) form a U-shape or n-shape parabola with one turning point.",
+        "Cubic graphs ($y = x^3 + \\dots$) form an S-shape curve that flattens in the middle.",
+        "Reciprocal graphs ($y = k/x$) form two curved branches in opposite quadrants that never touch the axes.",
+        "Exponential graphs ($y = ka^x$) shoot upwards rapidly and cross the y-axis at $(0, k)$.",
+        "Trig graphs: $y = \\sin x$ and $y = \\cos x$ are waves between $-1$ and $1$, repeating every $360^\\circ$."
+      ],
+      "examNote": "None of these graph shapes are on the exam aid, so learn what each one looks like."
+    },
+    "examples": [
+      {
+        "question": "Write down the coordinates of the turning point of the quadratic graph $y = x^2 - 6x + 8$ and state whether it is a minimum or maximum.",
+        "solution": "Step 1: Recognise the coefficient of $x^2$ is positive ($+1$), so the parabola is a U-shape and has a minimum turning point. Step 2: Complete the square for the quadratic expression: $x^2 - 6x + 8 = (x - 3)^2 - 9 + 8 = (x - 3)^2 - 1$. Step 3: Read off the turning point coordinates by setting the squared bracket to zero ($x = 3$) and taking the constant ($y = -1$). The minimum turning point is $(3, -1)$."
+      },
+      {
+        "question": "A curve has the equation $y = x^3 - 3x + 2$. Find the coordinates where the curve crosses the y-axis and find any points where it touches or crosses the x-axis by factorising.",
+        "solution": "Step 1: Find the y-intercept by setting $x = 0$, giving $y = 0^3 - 3(0) + 2 = 2$, so the y-intercept is $(0, 2)$. Step 2: Find the x-intercepts by setting $y = 0$: $x^3 - 3x + 2 = 0$. Test small integer values for roots; when $x = 1$, $1^3 - 3(1) + 2 = 0$, so $(x - 1)$ is a factor. Step 3: Use algebraic division or inspection to factorise the cubic fully: $(x - 1)(x^2 + x - 2) = 0$, which further factorises to $(x - 1)(x - 1)(x + 2) = 0$. Step 4: Solve for $x$ to find the x-intercepts: $x = 1$ (a repeated root where the curve touches the x-axis) and $x = -2$ (where it crosses). The points are $(1, 0)$ and $(-2, 0)$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "What is the maximum value of $y = \\sin x$, and at what value of $x$ between $0^\\circ$ and $360^\\circ$ does it occur?",
+        "answer": "Maximum value $1$, at $x = 90^\\circ$."
+      },
+      {
+        "question": "Find the coordinates of the y-intercept for the exponential graph given by $y = 5 \\times 2^x$.",
+        "answer": "Substitute $x = 0$: $y = 5 \\times 2^0 = 5 \\times 1 = 5$. Coordinates are $(0, 5)$."
+      },
+      {
+        "question": "A quadratic graph has equation $y = -x^2 + 4x + 5$. Does it have a maximum or a minimum turning point?",
+        "answer": "Maximum. The coefficient of $x^2$ is negative ($-1$), meaning the parabola is an n-shape with a peak."
+      },
+      {
+        "question": "The reciprocal graph $y = \\frac{k}{x}$ passes through the point $(2, 6)$. Find the value of $k$.",
+        "answer": "Substitute $x = 2$ and $y = 6$ into the equation: $6 = \\frac{k}{2}$, so $k = 12$."
+      },
+      {
+        "question": "Find the coordinates of the turning point of the quadratic curve $y = (x + 4)^2 - 7$.",
+        "answer": "Read directly from completed square form $(x + p)^2 + q$ where turning point is $(-p, q)$. Answer: $(-4, -7)$."
+      }
+    ]
+  },
+  {
+    "id": "algebra-transforming-graphs",
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Transforming graphs",
+    "keywords": [
+      "y = f(x) + a",
+      "y = f(x + a)",
+      "translating graphs",
+      "reflecting graphs",
+      "graph transformations"
+    ],
+    "week": 9,
+    "overview": {
+      "hook": "Move or flip any graph just by changing one small part of its equation.",
+      "keyIdea": "Transforming graphs means moving or flipping an existing curve $y = f(x)$ without changing its shape. Numbers inside the function bracket affect the $x$-coordinates horizontally, while numbers outside affect the $y$-coordinates vertically.",
+      "keyPoints": [
+        "$f(x) + a$: translates the graph vertically by $a$ units.",
+        "$f(x + a)$: translates the graph horizontally by $-a$ units.",
+        "$-f(x)$: reflects the graph in the $x$-axis.",
+        "$f(-x)$: reflects the graph in the $y$-axis."
+      ],
+      "examNote": "None of these rules are on the exam aid, so you must learn all four."
+    },
+    "examples": [
+      {
+        "question": "The point $(3, 4)$ lies on the curve $y = f(x)$. Find the new coordinates of this point on the curve $y = f(x) - 5$.",
+        "solution": "Step 1: Identify the transformation. Subtracting $5$ is outside the function bracket, so it affects the $y$-coordinate. Step 2: Apply the rule to the coordinates. The $x$-coordinate remains unchanged at $3$. Subtract $5$ from the $y$-coordinate: $4 - 5 = -1$. Step 3: State the final coordinates. The new point is $(3, -1)$."
+      },
+      {
+        "question": "The point $(-2, 6)$ lies on the curve $y = f(x)$. Find the new coordinates of this point on the curve $y = f(x + 3) \\text{ and } y = -f(x)$.",
+        "solution": "Step 1: Deal with $y = f(x + 3)$. This is inside the function bracket, so it affects the $x$-coordinate by moving it in the opposite direction. Subtract $3$ from the $x$-coordinate: $-2 - 3 = -5$. The $y$-coordinate stays $6$, giving $(-5, 6)$. Step 2: Deal with $y = -f(x)$. This is outside the function bracket, so it reflects the graph in the $x$-axis, changing the sign of the $y$-coordinate. The $x$-coordinate stays $-2$, and the $y$-coordinate becomes $-6$, giving $(-2, -6)$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "The point $(5, 2)$ is on the graph of $y = f(x)$. Find its new coordinates on $y = f(x) + 7$.",
+        "answer": "$(5, 9)$. Adding $7$ is outside the function, so add $7$ to the $y$-coordinate ($2 + 7 = 9$). The $x$-coordinate stays $5$."
+      },
+      {
+        "question": "The point $(-4, 3)$ is on the graph of $y = f(x)$. Find its new coordinates on $y = f(x - 2)$.",
+        "answer": "$(-2, 3)$. Subtracting $2$ inside the bracket affects the $x$-coordinate oppositely, so add $2$ to $x$ ($-4 + 2 = -2$). The $y$-coordinate stays $3$."
+      },
+      {
+        "question": "The point $(1, -5)$ is on the graph of $y = f(x)$. Find its new coordinates on $y = -f(x)$.",
+        "answer": "$(1, 5)$. The negative sign outside multiplies the $y$-coordinate by $-1$, turning $-5$ into $5$. The $x$-coordinate stays $1$."
+      },
+      {
+        "question": "The point $(6, 8)$ is on the graph of $y = f(x)$. Find its new coordinates on $y = f(-x)$.",
+        "answer": "$(-6, 8)$. The negative sign inside multiplies the $x$-coordinate by $-1$, turning $6$ into $-6$. The $y$-coordinate stays $8$."
+      },
+      {
+        "question": "The point $(3, 2)$ lies on $y = f(x)$. Find the coordinates of this point on the transformed graph $y = f(x - 1) + 4$.",
+        "answer": "$(4, 6)$. The $-1$ inside moves the $x$-coordinate right by $1$ ($3 + 1 = 4$). The $+4$ outside moves the $y$-coordinate up by $4$ ($2 + 4 = 6$). Final answer is $(4, 6)$."
+      }
+    ]
+  },
+  {
+    "id": "algebra-area-under-a-curve-rates-of-change",
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Area under a curve & rates of change",
+    "keywords": [
+      "distance-time graphs",
+      "velocity-time graphs",
+      "speed-time graphs",
+      "acceleration",
+      "gradient of a curve",
+      "trapeziums under a curve",
+      "tangent to a curve"
+    ],
+    "week": 9,
+    "overview": {
+      "hook": "How steep a graph is tells you the speed; the space underneath tells you the distance.",
+      "keyIdea": "On a graph, the gradient (steepness) of a curve at a single point shows the rate of change, while the area underneath the curve shows the total accumulated amount, like distance travelled. Because curves are tricky, we estimate these by drawing tangents for gradients and splitting areas into trapeziums.",
+      "keyPoints": [
+        "Gradient of a curve at a point = gradient of the tangent drawn at that exact point.",
+        "Area under a curve can be estimated by splitting the space into vertical strips shaped like trapeziums.",
+        "Trapezium area formula is $\\frac{1}{2}(a + b)h$, where $a$ and $b$ are parallel sides and $h$ is width.",
+        "Velocity-time graph: gradient is acceleration, and area under the graph is total distance."
+      ],
+      "examNote": "The area of a trapezium is on the exam aid, but splitting the graph into strips and drawing tangents is up to you."
+    },
+    "examples": [
+      {
+        "question": "A particle moves such that its velocity $v$ m/s at time $t$ seconds is given by the table: t = 0, v = 2; t = 1, v = 5; t = 2, v = 10; t = 3, v = 17. Use 3 strips of equal width 1 to estimate the total distance travelled by the particle in the first 3 seconds.",
+        "solution": "Step 1: Split the graph into 3 trapeziums, each of width $1$ (the gap between the times). Step 2: The parallel sides of each trapezium are the velocities at each end. Using $\\frac{1}{2}(a + b)h$: first trapezium $\\frac{1}{2}(2 + 5) \\times 1 = 3.5$. Step 3: Second trapezium $\\frac{1}{2}(5 + 10) \\times 1 = 7.5$. Step 4: Third trapezium $\\frac{1}{2}(10 + 17) \\times 1 = 13.5$. Step 5: Add them to estimate the distance: $3.5 + 7.5 + 13.5 = 24.5$ metres. (M1 for a correct method, A1 for $24.5$.)"
+      },
+      {
+        "question": "A curve has coordinates: x = 0, y = 1; x = 1, y = 3; x = 2, y = 7; x = 3, y = 15; x = 4, y = 31. Estimate the area under the curve between x = 0 and x = 4 using 4 strips of equal width.",
+        "solution": "Step 1: The $x$-values go up in 1s, so use 4 trapeziums of width $1$. Step 2: Using $\\frac{1}{2}(a + b)h$ with the $y$-values as parallel sides: $\\frac{1}{2}(1 + 3) \\times 1 = 2$. Step 3: $\\frac{1}{2}(3 + 7) \\times 1 = 5$. Step 4: $\\frac{1}{2}(7 + 15) \\times 1 = 11$. Step 5: $\\frac{1}{2}(15 + 31) \\times 1 = 23$. Step 6: Add them: $2 + 5 + 11 + 23 = 41$. The estimated area is $41$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A velocity-time graph is a straight line from $(0, 4)$ to $(5, 19)$, with time in seconds and velocity in m/s. Work out the acceleration.",
+        "answer": "$3$ m/s$^2$. Working: Acceleration is the gradient: $(19 - 4) \\div (5 - 0) = 15 \\div 5 = 3$."
+      },
+      {
+        "question": "A tangent is drawn to a curve at the point where $x = 2$. The tangent passes through $(1, 3)$ and $(4, 12)$. Estimate the gradient of the curve at $x = 2$.",
+        "answer": "$3$. Working: The gradient of the tangent estimates the gradient of the curve: $(12 - 3) \\div (4 - 1) = 9 \\div 3 = 3$."
+      },
+      {
+        "question": "The curve $y = x^2$ has points $(0, 0)$, $(1, 1)$, $(2, 4)$ and $(3, 9)$. Use 3 strips of width 1 to estimate the area under the curve between $x = 0$ and $x = 3$.",
+        "answer": "$9.5$. Working: $\\frac{1}{2}(0 + 1) + \\frac{1}{2}(1 + 4) + \\frac{1}{2}(4 + 9) = 0.5 + 2.5 + 6.5 = 9.5$."
+      },
+      {
+        "question": "A runner's speed in m/s is given by the table: t = 0, v = 0; t = 0.5, v = 4; t = 1.0, v = 7; t = 1.5, v = 9; t = 2.0, v = 10. Estimate the distance covered in 2 seconds using 4 strips.",
+        "answer": "$12.5$ metres. Working: Each strip has width $0.5$: $\\frac{1}{2}(0 + 4)(0.5) + \\frac{1}{2}(4 + 7)(0.5) + \\frac{1}{2}(7 + 9)(0.5) + \\frac{1}{2}(9 + 10)(0.5) = 1 + 2.75 + 4 + 4.75 = 12.5$."
+      },
+      {
+        "question": "Water flows into an empty tank. The rate of flow R in litres/minute is: t = 0, R = 2; t = 3, R = 5; t = 6, R = 11; t = 9, R = 20. Estimate the volume of water in the tank after 9 minutes using 3 strips.",
+        "answer": "$81$ litres. Working: Each strip has width $3$: $\\frac{1}{2}(2 + 5)(3) + \\frac{1}{2}(5 + 11)(3) + \\frac{1}{2}(11 + 20)(3) = 10.5 + 24 + 46.5 = 81$."
+      }
+    ]
+  },
+  {
     "id": "algebra-sequences-linear-quadratic-geometric",
-    "week": 13,
+    "week": 10,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Sequences (linear, quadratic, geometric)",
@@ -744,7 +1319,7 @@
   },
   {
     "id": "algebra-functions-iteration",
-    "week": 14,
+    "week": 10,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Functions & iteration",
@@ -801,7 +1376,7 @@
   },
   {
     "id": "algebra-algebraic-proof",
-    "week": 15,
+    "week": 10,
     "subject": "Algebra",
     "icon": "🧮",
     "title": "Algebraic proof",
@@ -841,7 +1416,7 @@
       },
       {
         "question": "Prove that if you square any odd number, the result is always odd.",
-        "answer": "Let the odd number be $2n + 1$. Square it: $(2n + 1)^2 = 4n^2 + 4n + 1$. Factorise the first two terms: $2(2n^2 + 2n) + 1$. Since an even term $2(2n^2 + 2n)$ plus $1$ is always odd, the result is odd. (M1 for defining odd number, M1 for expanding square, A1 for writing as $2(\text{something}) + 1$)."
+        "answer": "Let the odd number be $2n + 1$. Square it: $(2n + 1)^2 = 4n^2 + 4n + 1$. Factorise the first two terms: $2(2n^2 + 2n) + 1$. Since an even term $2(2n^2 + 2n)$ plus $1$ is always odd, the result is odd. (M1 for defining odd number, M1 for expanding square, A1 for writing as $2(\\text{something}) + 1$)."
       },
       {
         "question": "Prove algebraically that the difference between the squares of two consecutive integers is equal to the sum of those two integers.",
@@ -857,233 +1432,8 @@
     ]
   },
   {
-    "id": "ratio-proportion-ratio",
-    "week": 16,
-    "subject": "Ratio & Proportion",
-    "icon": "⚖️",
-    "title": "Ratio",
-    "overview": {
-      "hook": "Splitting a bill or mixing squash is ratio in action — it is just comparing parts of a whole.",
-      "keyIdea": "A ratio compares sizes or amounts, showing how one part relates to another. The order of numbers matters completely, so $2:3$ is not the same as $3:2$.",
-      "keyPoints": [
-        "Simplify ratios by dividing all parts by the highest common factor.",
-        "Share a total amount by first finding the total number of ratio parts.",
-        "Use unitary methods to find one part when another part is known."
-      ],
-      "examNote": "Ratio formulae are not given on the Higher formula sheet, so you must memorise how to share in a given ratio."
-    },
-    "examples": [
-      {
-        "question": "A box contains red sweets and green sweets in the ratio $3 : 5$. There are 72 sweets in total in the box. Work out how many green sweets are in the box.",
-        "solution": "Step 1: Find the total number of parts in the ratio. Add $3$ (red) and $5$ (green) together: $3 + 5 = 8$ total parts. (M1 for adding parts). Step 2: Find the value of one single part by dividing the total number of sweets by the total number of parts: $72 \\div 8 = 9$. This means $1$ part represents $9$ sweets. (M1 for dividing total by parts). Step 3: Multiply the value of one part by the number of parts for green sweets. The green sweets are represented by $5$ parts, so $5 \\times 9 = 45$. (A1 for the correct answer of 45)."
-      },
-      {
-        "question": "In a school, the ratio of boys to girls is $4 : 7$. The ratio of staff to students (boys and girls combined) is $2 : 15$. There are 60 staff members in the school. Work out the total number of people (staff and students) in the school.",
-        "solution": "Step 1: Use the information about the staff to find the total number of students. The ratio of staff to students is $2 : 15$. Since there are 60 staff members, we find the multiplier by doing $60 \\div 2 = 30$. (M1 for finding multiplier). Step 2: Multiply the student parts by 30 to find the total number of students. The student parts equal $15$, so $15 \\times 30 = 450$ students. (M1 for total students). Step 3: Find the total number of people in the school by adding the staff and students together. Total people = $60$ (staff) $+ 450$ (students) $= 510$. (A1 for final answer 510)."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "Share £120 in the ratio $3 : 5$. Calculate the value of the larger share.",
-        "answer": "Total parts = $3 + 5 = 8$. One part = $120 \\div 8 = £15$. Larger share = $5 \\times 15 = £75$. (Answer: £75)"
-      },
-      {
-        "question": "In a bag of marbles, the ratio of blue to yellow is $4 : 3$. If there are 24 blue marbles, how many yellow marbles are there?",
-        "answer": "4 parts = 24 marbles. One part = $24 \\div 4 = 6$ marbles. Yellow marbles = $3 \\times 6 = 18$. (Answer: 18 yellow marbles)"
-      },
-      {
-        "question": "A recipe uses flour, butter and sugar in the ratio $5 : 3 : 2$. If you use 150g of butter, what is the total weight of the mixture?",
-        "answer": "3 parts = 150g, so 1 part = $150 \\div 3 = 50$g. Total parts = $5 + 3 + 2 = 10$ parts. Total weight = $10 \\times 50\\text{g} = 500\\text{g}$. (Answer: 500g)"
-      },
-      {
-        "question": "The ratio of men to women at a conference is $5 : 4$. There are 135 people at the conference in total. How many more men are there than women?",
-        "answer": "Total parts = $5 + 4 = 9$. One part = $135 \\div 9 = 15$. Difference in parts = $5 - 4 = 1$ part. Therefore, there are $1 \\times 15 = 15$ more men. (Alternatively: Men = 75, Women = 60, $75 - 60 = 15$). (Answer: 15)"
-      },
-      {
-        "question": "Aaliyah and Ben share some money in the ratio $2 : 5$. Ben receives £36 more than Aaliyah. How much money does Aaliyah receive?",
-        "answer": "Difference in parts = $5 - 2 = 3$ parts. These 3 parts equal £36, so 1 part = $36 \\div 3 = £12$. Aaliyah has 2 parts, so she receives $2 \\times 12 = £24$. (Answer: £24)"
-      }
-    ],
-    "keywords": [
-      "sharing in a ratio",
-      "dividing in a ratio",
-      "simplifying ratios",
-      "unitary method"
-    ]
-  },
-  {
-    "id": "ratio-proportion-percentage-change",
-    "week": 17,
-    "subject": "Ratio & Proportion",
-    "icon": "⚖️",
-    "title": "Percentage change",
-    "overview": {
-      "hook": "Finding percentage change is just working out how much a price or amount has grown or shrunk.",
-      "keyIdea": "We compare the change in value to the original starting amount. The formula is $\\text{Percentage Change} = \\frac{\\text{Actual Change}}{\\text{Original Value}} \\times 100$.",
-      "keyPoints": [
-        "Always subtract the original value from the new value to find the change.",
-        "Always divide by the original starting amount, never the new total.",
-        "Multiply your decimal answer by 100 to turn it into a percentage."
-      ],
-      "examNote": "This formula is not on the Edexcel formula sheet, so you must memorise it for the exam."
-    },
-    "examples": [
-      {
-        "question": "A bicycle normally costs $£250$. In a sale, it is reduced to $£200$. Work out the percentage decrease in the price of the bicycle.",
-        "solution": "Step 1: Find the actual difference between the original price and the sale price. $250 - 200 = 50$. The price went down by $£50$. Step 2: Identify the original value. The original price before the sale was $£250$. Step 3: Put the numbers into the percentage change formula: $\\text{Percentage Decrease} = ( \\text{Difference} / \\text{Original} ) \\times 100$. Step 4: Substitute the values: $(50 / 250) \\times 100$. Step 5: Calculate the result. $50 / 250 = 0.2$, and $0.2 \\times 100 = 20$. The final answer is a $20\\%$ decrease."
-      },
-      {
-        "question": "In 2020, a rare painting was valued at $£1,200$. By 2023, its value had increased by $35\\%$. Work out the value of the painting in 2023.",
-        "solution": "Step 1: Recognise that this is a percentage increase problem where we need to find the final value using a multiplier. Step 2: Convert the percentage increase into a decimal multiplier. Start with $100\\%$ and add the $35\\%$, giving $135\\%$. Convert this to a decimal by dividing by $100$, which gives $1.35$. Step 3: Multiply the original value by the decimal multiplier to find the new value. Calculation: $1200 \\times 1.35$. Step 4: Perform the multiplication. $1200 \\times 1 = 1200$, and $1200 \\times 0.35 = 420$. Adding these together gives $1200 + 420 = 1620$. The final value of the painting in 2023 is $£1620$."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "A shop increases the price of a television from $£400$ to $£460$. Work out the percentage increase.",
-        "answer": "Difference is $460 - 400 = 60$. Original price is $400$. Calculation: $(60 / 400) \\times 100 = 15\\%$. Answer: $15\\%$."
-      },
-      {
-        "question": "In a chemistry experiment, the volume of a liquid decreases from $80\\text{ ml}$ to $68\\text{ ml}$. Calculate the percentage decrease.",
-        "answer": "Difference is $80 - 68 = 12$. Original volume is $80$. Calculation: $(12 / 80) \\times 100 = 0.15 \\times 100 = 15\\%$. Answer: $15\\%$ decrease."
-      },
-      {
-        "question": "A house was bought for $£220,000$. Over five years, its value appreciates by $18\\%$. Work out the new value of the house.",
-        "answer": "Use a multiplier for an $18\\%$ increase, which is $1.18$. Calculation: $220000 \\times 1.18 = 259600$. Answer: $£259,600$."
-      },
-      {
-        "question": "Tom's weight changes from $75\\text{ kg}$ to $72\\text{ kg}$. Work out the percentage change in Tom's weight, giving your answer to 1 decimal place.",
-        "answer": "Difference is $75 - 72 = 3$. Original weight is $75$. Calculation: $(3 / 75) \\times 100 = 0.04 \\times 100 = 4\\%$. Answer: $4.0\\%$ decrease."
-      },
-      {
-        "question": "A stock of computers is worth $£15,000$. Each year, the value depreciates by $20\\%$ compared to its value the previous year. Work out the value of the computers after 2 years.",
-        "answer": "Multiplier for a $20\\%$ decrease is $0.80$. Apply this twice for 2 years (compound depreciation). Calculation: $15000 \\times 0.80 \\times 0.80 = 15000 \\times 0.64 = 9600$. Answer: $£9,600$."
-      }
-    ],
-    "keywords": [
-      "percentage increase",
-      "percentage decrease",
-      "profit and loss",
-      "multiplier",
-      "reverse percentage"
-    ]
-  },
-  {
-    "id": "ratio-proportion-compound-interest-depreciation",
-    "week": 18,
-    "subject": "Ratio & Proportion",
-    "icon": "⚖️",
-    "title": "Compound interest & depreciation",
-    "overview": {
-      "hook": "Growing money in a bank account works just like a snowball rolling downhill, picking up speed as it goes.",
-      "keyIdea": "Compound interest increases an amount by a percentage each year based on the previous year's total, rather than the original amount. Depreciation works the exact same way, but it decreases the value over time instead.",
-      "keyPoints": [
-        "Identify if the amount is increasing or decreasing.",
-        "Convert the percentage into a multiplier using $1 + \\frac{r}{100}$ or $1 - \\frac{r}{100}$.",
-        "Raise the multiplier to the power of the number of time periods $n$.",
-        "Multiply the original amount by this powered multiplier to find the final value."
-      ],
-      "examNote": "This formula is not on the Edexcel formula sheet, so you must memorise $text{Final Value} = \\text{Original} \\times \\text{multiplier}^n$."
-    },
-    "examples": [
-      {
-        "question": "Emma invests 4000 pounds in a bank account that pays $3.5\\%$ compound interest per year. Work out the total amount in the account after 3 years.",
-        "solution": "Step 1: Convert the percentage increase into a decimal multiplier. Since it is compound interest, we add $3.5\\%$ to $100\\%$, giving $103.5\\%$. As a decimal, this is $103.5 / 100 = 1.035$. Step 2: Set up the compound interest calculation using the formula $\\text{Final Amount} = \\text{Original} \\times \\text{multiplier}^{\\text{years}}$. Here, the original amount is $4000$ and the number of years is $3$. So we write $4000 \\times 1.035^3$. Step 3: Evaluate the expression using a calculator. $1.035^3 \\approx 1.1136$. Multiply this by $4000$ to get $4454.4925$. Step 4: Round appropriately to money (2 decimal places). The total amount is 4454.49 pounds (Award M1 for $4000 \\times 1.035^3$ and A1 for the correct answer)."
-      },
-      {
-        "question": "A new car is bought for 25000 pounds. Its value depreciates by $18\\%$ each year. Find the value of the car after 4 years, giving your answer to the nearest pound.",
-        "solution": "Step 1: Convert the percentage depreciation (decrease) into a decimal multiplier. Subtract $18$ from $100$ to get $82\\%$. As a decimal, this is $82 / 100 = 0.82$. Step 2: Set up the depreciation calculation. The original value is $25000$ and the time period is $4$ years. The calculation is $25000 \\times 0.82^4$. Step 3: Calculate the power first. $0.82^4 \\approx 0.4521216$. Step 4: Multiply by the original value: $25000 \\times 0.4521216 = 11303.04$. Step 5: Read the question carefully to check the rounding requirement. It asks for the nearest pound. Answer: 11303 pounds (Award M1 for $25000 \\times 0.82^4$ and A1 for the correct rounded answer)."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "Mark invests 6000 pounds at a compound interest rate of $2\\%$ per annum. Calculate the total value of the investment after 5 years. Give your answer to the nearest penny.",
-        "answer": "Answer: 6624.45 pounds. Working: Multiplier is $1.02$. Calculation: $6000 \\times 1.02^5 = 6624.446...$ Round to 2 decimal places."
-      },
-      {
-        "question": "A boat was purchased for 18000 pounds. Each year, its value depreciates by $12\\%$. Work out the value of the boat after 3 years.",
-        "answer": "Answer: 12282.55 pounds. Working: Multiplier is $0.88$. Calculation: $18000 \\times 0.88^3 = 18000 \\times 0.681472 = 12266.496$. Wait, let us recalculate carefully: $0.88^3 = 0.681472$, multiplied by $18000 = 12266.496$, so 12266.50 pounds."
-      },
-      {
-        "question": "Ali deposits 500 pounds into a savings account. The account pays compound interest of $4\\%$ for the first year and $2.5\\%$ for each subsequent year. Work out the total amount in the account after 3 years.",
-        "answer": "Answer: 541.25 pounds. Working: Year 1 multiplier is $1.04$, Years 2 and 3 multiplier is $1.025$. Calculation: $500 \\times 1.04 \\times 1.025^2 = 541.25$ pounds."
-      },
-      {
-        "question": "The population of a town increases by $3\\%$ every year. In 2020, the population was 50000. What is the expected population in 2025? Give your answer to the nearest whole number.",
-        "answer": "Answer: 57964. Working: Number of years from 2020 to 2025 is $5$. Multiplier is $1.03$. Calculation: $50000 \\times 1.03^5 = 57963.7...$ Round to the nearest whole number to get 57964."
-      },
-      {
-        "question": "A laptop loses $15\\%$ of its value in the first year, and a further $10\\%$ of its reduced value in the second year. If it was bought for 800 pounds, what is it worth after 2 years?",
-        "answer": "Answer: 612 pounds. Working: First year multiplier is $0.85$, second year multiplier is $0.90$. Calculation: $800 \\times 0.85 \\times 0.90 = 612$ pounds."
-      }
-    ],
-    "keywords": [
-      "growth and decay",
-      "exponential growth",
-      "multiplier",
-      "savings",
-      "interest rate"
-    ]
-  },
-  {
-    "id": "ratio-proportion-direct-inverse-proportion",
-    "week": 19,
-    "subject": "Ratio & Proportion",
-    "icon": "⚖️",
-    "title": "Direct & inverse proportion",
-    "overview": {
-      "hook": "Just like doubling your recipe ingredients doubles the cake, some maths rules connect variables in direct lockstep.",
-      "keyIdea": "Direct proportion means two values increase together at a constant rate ($y = kx$). Inverse proportion means as one value goes up, the other goes down at the same rate ($y = \\frac{k}{x}$).",
-      "keyPoints": [
-        "Identify if the relationship is direct or inverse from the context.",
-        "Write the general equation using a constant of proportionality, $k$.",
-        "Substitute given values to find the exact value of $k$.",
-        "Use your complete equation to solve for the unknown value."
-      ],
-      "examNote": "Proportion formulae are not given on the formula sheet, so you must memorise how to set up $y = kx$ and $y = \\frac{k}{x}$ to secure method marks."
-    },
-    "examples": [
-      {
-        "question": "y is directly proportional to the square of x. When x = 3, y = 45. Find the value of y when x = 4.",
-        "solution": "Step 1: Write down the proportionality statement. Since y is directly proportional to the square of x, we write $y \\propto x^2$. Step 2: Introduce the constant of proportionality, $k$, to turn it into an equation: $y = kx^2$. Step 3: Find the value of $k$ by substituting the given values ($x = 3$ and $y = 45$) into the equation. This gives $45 = k(3^2)$, which simplifies to $45 = 9k$. Divide both sides by 9 to get $k = 5$. Step 4: Rewrite your full equation with the value of $k$: $y = 5x^2$. Step 5: Use this equation to find $y$ when $x = 4$. Substitute $x = 4$ into the formula: $y = 5(4^2)$. Work out the square first: $4^2 = 16$. Then multiply by 5: $y = 5 \\times 16 = 80$. Final Answer: $y = 80$."
-      },
-      {
-        "question": "p is inversely proportional to the cube root of q. When q = 8, p = 12. Find the value of q when p = 3.",
-        "solution": "Step 1: Write down the proportionality statement. Since p is inversely proportional to the cube root of q, we write $p \\propto \\frac{1}{\\text{root}[3]{q}}$ or $p \\propto \\frac{1}{q^{1/3}}$. Step 2: Introduce the constant $k$ to form the equation: $p = \\frac{k}{\\text{root}[3]{q}}$. Step 3: Substitute the given values ($q = 8$ and $p = 12$) to find $k$. We know that the cube root of 8 is 2 (since $2 \\times 2 \\times 2 = 8$). So, $12 = \\frac{k}{2}$. Multiply both sides by 2 to find $k$: $k = 24$. Step 4: Write the completed equation: $p = \\frac{24}{\\text{root}[3]{q}}$. Step 5: Find $q$ when $p = 3$. Substitute $p = 3$ into the equation: $3 = \\frac{24}{\\text{root}[3]{q}}$. Rearrange to solve for the cube root of $q$: $\\text{root}[3]{q} = \\frac{24}{3}$, which simplifies to $\\text{root}[3]{q} = 8$. Step 6: To find $q$, cube both sides of the equation ($q = 8^3$). Calculating $8 \\times 8 \\times 8$ gives $512$. Final Answer: $q = 512$."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "y is directly proportional to x. When x = 5, y = 35. Find the formula for y in terms of x.",
-        "answer": "y = 7x. Working: y = kx -> 35 = 5k -> k = 7."
-      },
-      {
-        "question": "m is inversely proportional to n. When n = 4, m = 12. Find the value of m when n = 8.",
-        "answer": "m = 6. Working: m = k/n -> 12 = k/4 -> k = 48. Equation is m = 48/n. When n = 8, m = 48/8 = 6."
-      },
-      {
-        "question": "A is directly proportional to the square root of B. When B = 36, A = 18. Find A when B = 100.",
-        "answer": "A = 30. Working: A = k*sqrt(B) -> 18 = k*sqrt(36) -> 18 = 6k -> k = 3. Equation: A = 3*sqrt(B). When B = 100, A = 3*sqrt(100) = 3 * 10 = 30."
-      },
-      {
-        "question": "The time (T minutes) it takes to empty a pool is inversely proportional to the number of pumps operating (n). If 3 pumps take 40 minutes, how long do 5 pumps take?",
-        "answer": "24 minutes. Working: T = k/n -> 40 = k/3 -> k = 120. Equation: T = 120/n. For 5 pumps, T = 120/5 = 24."
-      },
-      {
-        "question": "y is inversely proportional to the square of x. If y = 2 when x = 4, find the value of y when x = 8.",
-        "answer": "y = 0.5 (or 1/2). Working: y = k/x^2 -> 2 = k/(4^2) -> 2 = k/16 -> k = 32. Equation: y = 32/x^2. When x = 8, y = 32/(8^2) = 32/64 = 0.5."
-      }
-    ],
-    "keywords": [
-      "directly proportional",
-      "inversely proportional",
-      "proportional to",
-      "constant of proportionality",
-      "varies as"
-    ]
-  },
-  {
     "id": "geometry-angles-polygons",
-    "week": 20,
+    "week": 11,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Angles & polygons",
@@ -1101,33 +1451,33 @@
     "examples": [
       {
         "question": "Work out the size of each interior angle of a regular octagon.",
-        "solution": "Step 1: Identify the number of sides of the shape. An octagon has $8$ sides, so $n = 8$. Step 2: Calculate the sum of all the interior angles using the formula $(n - 2) \times 180^\text{o}$. Substitute $n = 8$ into the formula: $(8 - 2) \times 180^\text{o} = 6 \times 180^\text{o}$. Step 3: Multiply to find the total sum. $6 \times 180^\text{o} = 1080^\text{o}$. (This gives you an M1 method mark). Step 4: Since it is a regular octagon, all $8$ interior angles are equal. Divide the total sum by the number of sides: $1080^\text{o} \text{ / } 8 = 135^\text{o}$. (This gives the A1 accuracy mark). Final Answer: Each interior angle is $135^\text{o}$."
+        "solution": "Step 1: Identify the number of sides of the shape. An octagon has $8$ sides, so $n = 8$. Step 2: Calculate the sum of all the interior angles using the formula $(n - 2) \\times 180^\\circ$. Substitute $n = 8$ into the formula: $(8 - 2) \\times 180^\\circ = 6 \\times 180^\\circ$. Step 3: Multiply to find the total sum. $6 \\times 180^\\circ = 1080^\\circ$. (This gives you an M1 method mark). Step 4: Since it is a regular octagon, all $8$ interior angles are equal. Divide the total sum by the number of sides: $1080^\\circ \\text{ / } 8 = 135^\\circ$. (This gives the A1 accuracy mark). Final Answer: Each interior angle is $135^\\circ$."
       },
       {
-        "question": "The size of each exterior angle of a regular polygon is $20^\text{o}$. Work out the number of sides of the polygon.",
-        "solution": "Step 1: Recall the rule that the sum of all exterior angles in any convex polygon is always $360^\text{o}$. Step 2: Use the formula for the number of sides of a regular polygon, which is given on the formula sheet: Number of sides $= 360^\text{o} \text{ / (size of one exterior angle)}$. (Awarded M1 for identifying this approach). Step 3: Substitute the given exterior angle into the formula: Number of sides $= 360^\text{o} \text{ / } 20^\text{o}$. Step 4: Calculate the final value. $360 \text{ / } 20 = 36 \text{ / } 2 = 18$. (Awarded A1 for the correct answer). Final Answer: The polygon has $18$ sides."
+        "question": "The size of each exterior angle of a regular polygon is $20^\\circ$. Work out the number of sides of the polygon.",
+        "solution": "Step 1: Recall the rule that the sum of all exterior angles in any convex polygon is always $360^\\circ$. Step 2: All the exterior angles of a regular polygon are equal, so number of sides $= 360^\\circ \\div$ one exterior angle. This is not on the exam aid. (Awarded M1 for identifying this approach). Step 3: Substitute the given exterior angle into the formula: Number of sides $= 360^\\circ \\div 20^\\circ$. Step 4: Calculate the final value. $360 \\div 20 = 18$. (Awarded A1 for the correct answer). Final Answer: The polygon has $18$ sides."
       }
     ],
     "testQuestions": [
       {
         "question": "Calculate the sum of the interior angles of a 12-sided polygon (dodecagon).",
-        "answer": "Answer: $1800^\text{o}$. Working: Use $(n - 2) \times 180^\text{o}$. Here $n = 12$, so $(12 - 2) \times 180 = 10 \times 180 = 1800^\text{o}$."
+        "answer": "Answer: $1800^\\circ$. Working: Use $(n - 2) \\times 180^\\circ$. Here $n = 12$, so $(12 - 2) \\times 180 = 10 \\times 180 = 1800^\\circ$."
       },
       {
-        "question": "Each interior angle of a regular polygon is $160^\text{o}$. Work out how many sides the polygon has.",
-        "answer": "Answer: $18$ sides. Working: Exterior angle $= 180^\text{o} - 160^\text{o} = 20^\text{o}$. Number of sides $= 360^\text{o} \text{ / } 20^\text{o} = 18$."
+        "question": "Each interior angle of a regular polygon is $160^\\circ$. Work out how many sides the polygon has.",
+        "answer": "Answer: $18$ sides. Working: Exterior angle $= 180^\\circ - 160^\\circ = 20^\\circ$. Number of sides $= 360^\\circ \\text{ / } 20^\\circ = 18$."
       },
       {
         "question": "A regular polygon has $10$ sides. Work out the size of one of its exterior angles.",
-        "answer": "Answer: $36^\text{o}$. Working: Exterior angle $= 360^\text{o} \text{ / } n$. Substitute $n = 10$, giving $360 \text{ / } 10 = 36^\text{o}$."
+        "answer": "Answer: $36^\\circ$. Working: Exterior angle $= 360^\\circ \\text{ / } n$. Substitute $n = 10$, giving $360 \\text{ / } 10 = 36^\\circ$."
       },
       {
         "question": "The interior angle of a regular polygon is five times the size of its exterior angle. Work out the number of sides of the polygon.",
-        "answer": "Answer: $12$ sides. Working: Let exterior angle be $x$. Interior angle is $5x$. Since they sum to $180^\text{o}$, $x + 5x = 180^\text{o}$, so $6x = 180^\text{o}$, giving $x = 30^\text{o}$ (the exterior angle). Number of sides $= 360 \text{ / } 30 = 12$."
+        "answer": "Answer: $12$ sides. Working: Let exterior angle be $x$. Interior angle is $5x$. Since they sum to $180^\\circ$, $x + 5x = 180^\\circ$, so $6x = 180^\\circ$, giving $x = 30^\\circ$ (the exterior angle). Number of sides $= 360 \\text{ / } 30 = 12$."
       },
       {
-        "question": "A polygon has interior angles that sum to $1980^\text{o}$. How many sides does the polygon have?",
-        "answer": "Answer: $13$ sides. Working: Set up the equation $(n - 2) \times 180 = 1980$. Divide by $180$: $n - 2 = 11$. Add $2$: $n = 13$."
+        "question": "A polygon has interior angles that sum to $1980^\\circ$. How many sides does the polygon have?",
+        "answer": "Answer: $13$ sides. Working: Set up the equation $(n - 2) \\times 180 = 1980$. Divide by $180$: $n - 2 = 11$. Add $2$: $n = 13$."
       }
     ],
     "keywords": [
@@ -1141,67 +1491,180 @@
     ]
   },
   {
-    "id": "geometry-circle-theorems",
-    "week": 21,
+    "id": "geometry-bearings-scale-drawings",
     "subject": "Geometry",
     "icon": "📐",
-    "title": "Circle theorems",
+    "title": "Bearings & scale drawings",
+    "keywords": [
+      "three-figure bearings",
+      "scale",
+      "maps",
+      "compass directions",
+      "back bearings"
+    ],
+    "week": 11,
     "overview": {
-      "hook": "Circle theorems are the secret rules that let you unlock missing angles inside circles.",
-      "keyIdea": "Circles have hidden geometric properties linking angles, radii, and chords. If you spot a specific shape formed by lines touching the circumference, you can instantly find unknown angles using standard rules.",
+      "hook": "Start from north, turn clockwise, use three digits: that's bearings sorted.",
+      "keyIdea": "Bearings are directions measured clockwise from north, always written using three digits like $045^\\circ$. Scale drawings use a ratio to relate map distances to real-world distances.",
       "keyPoints": [
-        "The angle at the centre is twice the angle at the circumference.",
-        "Angles in the same segment subtended by the same arc are equal.",
-        "Opposite angles in a cyclic quadrilateral always add up to $180^\\circ$.",
-        "The angle in a semicircle is always $90^\\circ$."
+        "Always measure bearings clockwise from the North line.",
+        "Always write your final bearing answer using exactly three digits.",
+        "Back bearings are found by adding $180^\\circ$ (if less than $180^\\circ$) or subtracting $180^\\circ$ (if greater than $180^\\circ$).",
+        "Multiply map distance by the scale factor to find the real-world distance."
       ],
-      "examNote": "Circle theorem formulas are not given on the formula sheet, so you must memorise all eight core rules and be ready to quote them to gain full communication marks."
+      "examNote": "Nothing about bearings is on the exam aid, so learn the three-figure rule and the $180^\\circ$ back-bearing rule."
     },
     "examples": [
       {
-        "question": "The points A, B and C lie on the circumference of a circle with centre O. Angle ABC = 65 degrees. Work out the size of angle AOC. Give a reason for each stage of your working.",
-        "solution": "Step 1: Identify the relationship between the angle at the circumference (ABC) and the angle at the centre (AOC). Both angles subtend the same arc AC. Step 2: State the relevant circle theorem rule. The angle subtended by an arc at the centre is twice the angle subtended at the circumference. Step 3: Perform the calculation. Angle AOC = 2 * angle ABC. So, Angle AOC = 2 * 65 degrees = 130 degrees. Step 4: Write down the final answer with reasons clearly for the examiner to award full marks. Answer: 130 degrees, with reason: The angle at the centre is twice the angle at the circumference."
+        "question": "Town B is 12 km due east of Town A. Town C is 12 km due south of Town B. Find the bearing of C from A, and then the bearing of A from C.",
+        "solution": "Step 1: Sketch it: A, then B 12 km to the east, then C 12 km directly below B. This makes a right-angled triangle with the right angle at B. Step 2: The two shorter sides are equal, so angle BAC is $45^\\circ$. Step 3: The bearing of C from A is measured clockwise from north. East is $090^\\circ$, and C is a further $45^\\circ$ round, so the bearing is $090^\\circ + 45^\\circ = 135^\\circ$. Step 4: The bearing of A from C is the back bearing. Since $135^\\circ$ is less than $180^\\circ$, add $180^\\circ$: $135^\\circ + 180^\\circ = 315^\\circ$. Final Answer: $135^\\circ$ and $315^\\circ$."
       },
       {
-        "question": "A, B, C and D are points on the circumference of a circle. AC is a diameter of the circle. Angle CAB = 38 degrees. Angle CAD = 25 degrees. Work out the size of angle BCD. You must show all your working.",
-        "solution": "Step 1: Find angle ABC by using the circle theorem that the angle in a semicircle is 90 degrees. Since AC is a diameter, triangle ABC is right-angled at B. Therefore, angle ABC = 90 degrees. Step 2: Find angle BCA within triangle ABC. The angles in a triangle sum to 180 degrees. Angle BCA = 180 - 90 - 38 = 52 degrees. Step 3: Find angle ACD. Triangle ADC also has AC as a diameter, so angle ADC = 90 degrees. In triangle ADC, angle ACD = 180 - 90 - 25 = 65 degrees. Step 4: Combine the parts to find angle BCD. Angle BCD = angle BCA + angle ACD = 52 + 65 = 117 degrees. Alternatively, notice ABCD is a cyclic quadrilateral, so opposite angles sum to 180 degrees. Angle ADC = 25 + 38 = 63 degrees, so angle BCD = 180 - 63 = 117 degrees. Answer: 117 degrees."
+        "question": "A map has a scale of 1 cm to 4 km. Point P is 12.5 cm away from Point Q on the map. Find the actual distance in kilometres. If the bearing of Q from P is $065^\\circ$, find the back bearing of P from Q.",
+        "solution": "Step 1: Calculate the actual distance by multiplying the map distance by the scale factor. Actual distance = $12.5 \\text{ cm} \\times 4 \\text{ km/cm} = 50 \\text{ km}$. Step 2: Identify the bearing of Q from P, which is given as $065^\\circ$. Step 3: Calculate the back bearing of P from Q. Since the angle is less than $180^\\circ$, add $180^\\circ$: $065^\\circ + 180^\\circ = 245^\\circ$. Final Answer: Actual distance is $50 \\text{ km}$ and back bearing is $245^\\circ$."
       }
     ],
     "testQuestions": [
       {
-        "question": "A, B and C are points on a circle, centre O. TA and TC are tangents to the circle. Angle ATC = 54 degrees. Work out the size of angle ABC. Give reasons.",
-        "answer": "Answer: 63 degrees. Working: Tangents from a point are equal in length, so triangle ATC is isosceles. Angle TAC = angle TCA = (180 - 54)/2 = 63 degrees. Angle OAT = 90 degrees (radius meets tangent at 90 degrees). Angle OAC = 90 - 63 = 27 degrees. Angle AOC = 180 - 54 = 126 degrees (angles in quadrilateral sum to 360 or opposite angles supplementary). Angle at centre is twice angle at circumference, so angle ABC = 126 / 2 = 63 degrees."
+        "question": "Write the bearing of South-West as a three-figure bearing.",
+        "answer": "South is $180^\\circ$ and West is $270^\\circ$, so South-West is exactly halfway between them: $180 + 45 = 225^\\circ$."
       },
       {
-        "question": "P, Q, R and S are points on the circumference of a circle. PR is a diameter. Angle PRQ = 32 degrees. Work out the size of angle PSQ.",
-        "answer": "Answer: 58 degrees. Working: Angle PQR = 90 degrees (angle in a semicircle). Angle QPR = 180 - 90 - 32 = 58 degrees. Angle PSQ = angle PRQ = 58 degrees (angles in the same segment are equal)."
+        "question": "The bearing of ship A from ship B is $115^\\circ$. Work out the bearing of ship B from ship A.",
+        "answer": "Since the bearing is less than $180^\\circ$, add $180^\\circ$. $115^\\circ + 180^\\circ = 295^\\circ$."
       },
       {
-        "question": "A, B, C and D are points on a circle. AB is parallel to DC. Angle ABC = 72 degrees. Find angle ADC and angle BCD.",
-        "answer": "Answer: Angle ADC = 108 degrees, Angle BCD = 72 degrees. Working: ABCD is a cyclic quadrilateral and parallel lines create allied (co-interior) angles. Angle BCD = 180 - 72 = 108 degrees (allied angles sum to 180). Opposite angles in a cyclic quadrilateral sum to 180, so angle ADC = 180 - 72 = 108 degrees."
+        "question": "On a map with a scale of 1 cm to 25 km, two towns are 6.4 cm apart. What is the actual distance between the towns in km?",
+        "answer": "Multiply map distance by scale: $6.4 \\times 25 = 160 \\text{ km}$."
       },
       {
-        "question": "AB is a chord of a circle with centre O and radius 10 cm. The distance from the centre O to the chord AB is 6 cm. Work out the length of the chord AB.",
-        "answer": "Answer: 16 cm. Working: The perpendicular from the centre of a circle to a chord bisects the chord. This forms a right-angled triangle with hypotenuse equal to the radius (10 cm) and one shorter side equal to 6 cm. Using Pythagoras theorem: x^2 = 10^2 - 6^2 = 100 - 36 = 64. So x = sqrt(64) = 8 cm. Total length of chord AB = 8 * 2 = 16 cm."
+        "question": "The bearing of town X from town Y is $240^\\circ$. Work out the bearing of town Y from town X.",
+        "answer": "Since the bearing is greater than $180^\\circ$, subtract $180^\\circ$. $240^\\circ - 180^\\circ = 060^\\circ$ (or $60^\\circ$ written as a three-figure bearing)."
       },
       {
-        "question": "TP is a tangent to a circle at point P. O is the centre of the circle. The point Q lies on the circle such that angle OPQ = 40 degrees. Find angle TPQ.",
-        "answer": "Answer: 50 degrees. Working: The radius meets the tangent at 90 degrees, so angle OPT = 90 degrees. Angle TPQ = angle OPT - angle OPQ = 90 - 40 = 50 degrees."
+        "question": "A helicopter flies from base on a bearing of $052^\\circ$ for 45 km. Using a scale of 1 cm to 15 km, what is the distance on the map in centimetres?",
+        "answer": "Divide actual distance by the scale factor: $45 \\div 15 = 3 \\text{ cm}$."
+      }
+    ]
+  },
+  {
+    "id": "geometry-constructions-loci",
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Constructions & loci",
+    "keywords": [
+      "locus",
+      "perpendicular bisector",
+      "angle bisector",
+      "compasses",
+      "ruler and compass",
+      "equidistant"
+    ],
+    "week": 11,
+    "overview": {
+      "hook": "All you need is a ruler, a pair of compasses and a sharp pencil.",
+      "keyIdea": "Constructions are exact geometric drawings created using sharp pencil lines, a ruler, and a pair of compasses. Loci (plural of locus) describe the exact path or region formed by a moving point that follows a specific rule.",
+      "keyPoints": [
+        "Always leave your compass arcs visible; never rub them out.",
+        "A perpendicular bisector cuts a line exactly in half at $90^\\circ$.",
+        "An angle bisector cuts an angle exactly in half.",
+        "Common loci include fixed distances from points, lines, and between two lines."
+      ],
+      "examNote": "Edexcel examiners award method marks (M1) for correct construction arcs intersecting properly, and accuracy marks (A1) for the final straight lines drawn with a ruler."
+    },
+    "examples": [
+      {
+        "question": "Construct the perpendicular bisector of the line segment $AB$ of length 8 cm.",
+        "solution": "1. Draw a straight line segment $AB$ measuring 8 cm using a ruler. 2. Set your compass to a radius greater than half the distance $AB$ (e.g., 5 cm). 3. Place the compass point on $A$ and draw an arc above and below the line. 4. Keeping the exact same compass radius, place the compass point on $B$ and draw arcs above and below the line so they intersect your first two arcs. 5. Use a ruler to join the two points where the arcs intersect with a straight line."
+      },
+      {
+        "question": "Construct the angle bisector of angle $XYZ$ where $XYZ = 60^\\circ$.",
+        "solution": "1. Draw the angle $XYZ$ measuring $60^\\circ$ using a protractor and ruler. 2. Place the compass point on vertex $Y$ and draw an arc that cuts both line arms $YX$ and $YZ$. Label these intersection points $P$ and $Q$. 3. Place the compass point on $P$ and draw an arc inside the angle. 4. Without changing the compass width, place the compass point on $Q$ and draw an arc that crosses your previous arc. 5. Draw a straight line from vertex $Y$ through the intersection of these two arcs."
       }
     ],
+    "testQuestions": [
+      {
+        "question": "Construct the perpendicular bisector of a line segment $PQ$ of length 7 cm.",
+        "answer": "A straight line crossing $PQ$ at its exact midpoint (3.5 cm) at a $90^\\circ$ angle, with visible crossing arcs centered at $P$ and $Q$ above and below the line."
+      },
+      {
+        "question": "A goat is tied to a post in the corner of a square field by a 5 m rope. Draw the locus of the points the goat can reach inside the field.",
+        "answer": "A quarter-circle of radius 5 m centered at the corner post inside the field, showing the boundary of the region the goat can graze."
+      },
+      {
+        "question": "Construct an angle bisector for an angle of $80^\\circ$.",
+        "answer": "A straight line dividing the $80^\\circ$ angle into two equal $40^\\circ$ angles, originating from the vertex, supported by clearly drawn construction arcs on the arms and inside the angle."
+      },
+      {
+        "question": "Construct a triangle $ABC$ with sides $AB = 7$ cm, $BC = 6$ cm, and $AC = 5$ cm using a ruler and compasses.",
+        "answer": "A triangle where side $AB$ (7 cm) is drawn first, then an arc of radius 6 cm from $B$ intersects an arc of radius 5 cm from $A$ to form vertex $C$."
+      },
+      {
+        "question": "A treasure is buried in a field. It is equidistant from two trees, point $A$ and point $B$, and also exactly 4 m away from a straight path $EF$. Describe the construction method to find the treasure.",
+        "answer": "Construct the perpendicular bisector between points $A$ and $B$, and construct parallel lines at a distance of 4 m on either side of path $EF$. The treasure is located where the perpendicular bisector intersects the 4 m parallel lines."
+      }
+    ]
+  },
+  {
+    "id": "geometry-area-perimeter-of-2d-shapes",
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Area & perimeter of 2D shapes",
     "keywords": [
-      "tangent",
-      "chord",
-      "cyclic quadrilateral",
-      "alternate segment",
-      "semicircle",
-      "angle at the centre",
-      "angle at the circumference"
+      "trapezium",
+      "parallelogram",
+      "triangle area",
+      "rhombus",
+      "compound shapes"
+    ],
+    "week": 12,
+    "overview": {
+      "hook": "Split any awkward shape into rectangles and triangles, and the area takes care of itself.",
+      "keyIdea": "Perimeter is the total distance all the way around the outside of a shape. Area is the total amount of flat space inside the shape, measured in square units like $cm^2$.",
+      "keyPoints": [
+        "Perimeter: add up the lengths of all outer sides around the shape.",
+        "Rectangle & Parallelogram Area: base multiplied by perpendicular height ($b \\times h$).",
+        "Trapezium Area: half the sum of the parallel sides multiplied by height, $\\frac{1}{2}(a+b)h$.",
+        "Compound shapes: split the complex shape into simpler rectangles or triangles and add or subtract."
+      ],
+      "examNote": "The trapezium formula is on the Edexcel exam aid, but triangle and parallelogram formulas must be learned."
+    },
+    "examples": [
+      {
+        "question": "Calculate the area of a trapezium with a top parallel side of 5 cm, a bottom parallel side of 9 cm, and a perpendicular height of 4 cm.",
+        "solution": "Step 1: Identify the formula for the area of a trapezium, which is $\\frac{1}{2}(a+b)h$. Step 2: Substitute the given values into the formula where $a=5$, $b=9$, and $h=4$. This gives $\\frac{1}{2}(5 + 9) \\times 4$. Step 3: Add the parallel sides together: $5 + 9 = 14$. Step 4: Multiply by half of the height or evaluate: $\\frac{1}{2} \\times 14 \\times 4 = 7 \\times 4 = 28$. Final Answer: $28$ $cm^2$."
+      },
+      {
+        "question": "Find the total area of an L-shaped compound shape. The bottom base is 10 cm long, the full left-hand vertical height is 8 cm, the top horizontal cut-in is 6 cm, and the top-right vertical edge is 3 cm. The thickness of the vertical stem is 4 cm.",
+        "solution": "Step 1: Split the L-shape vertically into two simpler rectangles. Rectangle A on the left has a width of 4 cm and a full height of 8 cm. Rectangle B on the right has a width of $10 - 4 = 6$ cm and a height of 3 cm. Step 2: Calculate the area of Rectangle A by multiplying width by height: $4 \\times 8 = 32$ $cm^2$ (M1 for method). Step 3: Calculate the area of Rectangle B by multiplying its width by its height: $6 \\times 3 = 18$ $cm^2$ (M1 for method). Step 4: Add the two areas together to find the total compound area: $32 + 18 = 50$ $cm^2$ (A1 for accuracy). Final Answer: $50$ $cm^2$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Calculate the perimeter of a regular hexagon where each side measures 7 cm.",
+        "answer": "A regular hexagon has 6 equal sides. Perimeter = $6 \\times 7 = 42$ cm."
+      },
+      {
+        "question": "Find the area of a parallelogram with a base of 12 cm and a perpendicular height of 5 cm.",
+        "answer": "Area = base $\\times$ perpendicular height = $12 \\times 5 = 60$ $cm^2$."
+      },
+      {
+        "question": "Calculate the area of a triangle with a base of 10 cm and a perpendicular height of 6 cm.",
+        "answer": "Area = $\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times 10 \\times 6 = 30$ $cm^2$."
+      },
+      {
+        "question": "A rectangle has a width of $x$ cm and a length that is 3 cm longer than its width. Write down an expression for its perimeter in terms of $x$.",
+        "answer": "Width = $x$, Length = $x + 3$. Perimeter = $x + x + (x + 3) + (x + 3) = 4x + 6$ cm."
+      },
+      {
+        "question": "A trapezium has parallel sides of length 6 cm and 10 cm, and an area of 48 $cm^2$. Find its perpendicular height.",
+        "answer": "Area = $\\frac{1}{2}(a+b)h$. $48 = \\frac{1}{2}(6 + 10) \\times h$. $48 = 8h$. $h = 48 / 8 = 6$ cm."
+      }
     ]
   },
   {
     "id": "geometry-arc-length-sector-area",
-    "week": 22,
+    "week": 12,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Arc length & sector area",
@@ -1213,7 +1676,7 @@
         "Sector area is a fraction of the full circle: $\\text{Sector area} = \\frac{\\theta}{360} \\times \\pi r^2$",
         "Always check whether the question gives you the radius or the diameter."
       ],
-      "examNote": "These formulas are not given on the Higher tier formula sheet, so you must memorise them."
+      "examNote": "The circumference and area of a circle are on the exam aid, but the sector fraction $\\frac{\\theta}{360}$ isn't, so learn how to use it."
     },
     "examples": [
       {
@@ -1256,8 +1719,68 @@
     ]
   },
   {
+    "id": "geometry-3d-shapes-volume",
+    "week": 12,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "3D shapes & volume",
+    "overview": {
+      "hook": "Finding the volume of a 3D shape is just stacking flat layers until you fill it up.",
+      "keyIdea": "Volume measures the total 3D space inside an object. For any prism, you simply multiply the area of its cross-section by its length, $V = \\text{cross-section area} \\times \\text{length}$.",
+      "keyPoints": [
+        "Prisms have the same cross-section running all the way through their length.",
+        "Pyramids and cones always include a factor of $\\frac{1}{3}$ in their volume formulas.",
+        "A sphere's volume is given by the formula $V = \\frac{4}{3}\\pi r^3$.",
+        "Always check your units are consistent before calculating."
+      ],
+      "examNote": "Only the volume of a prism is on the exam aid. Sphere, cone and pyramid formulas are normally printed in the question when you need them."
+    },
+    "examples": [
+      {
+        "question": "A solid metal cylinder has a radius of $4\\text{ cm}$ and a height of $10\\text{ cm}$. Calculate the volume of the cylinder. Give your answer correct to 1 decimal place.",
+        "solution": "Step 1: Recall the formula for the volume of a cylinder. The cross-section is a circle, so the area is $\\pi r^2$, and we multiply by the height $h$. A cylinder is a prism, and the exam aid gives prism volume as area of cross-section times length. Formula: $V = \\pi r^2 h$. Step 2: Substitute the given values into the formula. Here, radius $r = 4$ and height $h = 10$. So, $V = \\pi \\times (4)^2 \\times 10$. Step 3: Evaluate the expression step by step. First square the radius: $(4)^2 = 16$. Then multiply by 10: $16 \\times 10 = 160$. So $V = 160\\pi$. Step 4: Convert to a decimal using a calculator. $160 \\times \\pi \\approx 502.65482...$. Step 5: Round correctly to 1 decimal place. The second decimal digit is 5, so round up. Answer: $502.7\\text{ cm}^3$ (Award M1 for substituting into $\\pi r^2 h$, and A1 for the correct rounded answer)."
+      },
+      {
+        "question": "A solid composite shape is made from a hemisphere attached to a solid cylinder. The cylinder has a radius of $3\\text{ cm}$ and a height of $8\\text{ cm}$. The hemisphere has the same radius of $3\\text{ cm}$. Calculate the total volume of the solid. Give your answer in terms of $\\pi$.",
+        "solution": "Step 1: Break the composite shape down into its individual parts. The total volume is the volume of the cylinder plus the volume of the hemisphere. Step 2: Find the volume of the cylinder. Formula is $V = \\pi r^2 h$. Substituting $r = 3$ and $h = 8$: $V_{\\text{cylinder}} = \\pi \\times (3)^2 \\times 8 = \\pi \\times 9 \\times 8 = 72\\pi$. Step 3: Find the volume of the hemisphere. The volume of a sphere is $V = \\frac{4}{3}\\pi r^3$. A hemisphere is half of a sphere, so we multiply by $\\frac{1}{2}$ or divide by 2. Formula: $V_{\\text{hemisphere}} = \\frac{2}{3}\\pi r^3$. Step 4: Substitute $r = 3$ into the hemisphere formula. $V_{\\text{hemisphere}} = \\frac{2}{3} \\times \\pi \\times (3)^3$. Since $3^3 = 27$, we have $V_{\\text{hemisphere}} = \\frac{2}{3} \\times \\pi \\times 27 = 18\\pi$. Step 5: Add both volumes together to find the total volume. Total volume = $72\\pi + 18\\pi = 90\\pi$. Answer: $90\\pi\\text{ cm}^3$ (Award M1 for finding the volume of either the cylinder or hemisphere correctly, M1 for adding them, and A1 for $90\\pi$)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Calculate the volume of a cuboid with length $7\\text{ cm}$, width $4\\text{ cm}$ and height $5\\text{ cm}$.",
+        "answer": "Volume = length $\\times$ width $\\times$ height = $7 \\times 4 \\times 5 = 140\\text{ cm}^3$. (Mark: 1 mark for correct answer with unit)."
+      },
+      {
+        "question": "A solid sphere has a radius of $6\\text{ cm}$. Work out the volume of the sphere. Give your answer correct to 1 decimal place. (The volume of a sphere is $V = \\frac{4}{3}\\pi r^3$).",
+        "answer": "$V = \\frac{4}{3} \\times \\pi \\times 6^3 = \\frac{4}{3} \\times \\pi \\times 216 = 288\\pi \\approx 904.778...$ Round to 1 decimal place: $904.8\\text{ cm}^3$. (Mark: M1 for $\\frac{4}{3}\\pi(6)^3$, A1 for $904.8$)."
+      },
+      {
+        "question": "A triangular prism has a cross-section which is a right-angled triangle with base $5\\text{ cm}$ and perpendicular height $8\\text{ cm}$. The length of the prism is $12\\text{ cm}$. Calculate the volume of the prism.",
+        "answer": "Area of cross-section (triangle) = $\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times 5 \\times 8 = 20\\text{ cm}^2$. Volume = Area $\\times$ length = $20 \\times 12 = 240\\text{ cm}^3$. (Mark: M1 for triangle area, M1 for multiplying by length 12, A1 for $240$)."
+      },
+      {
+        "question": "A solid cone has a base radius of $5\\text{ cm}$ and a vertical height of $12\\text{ cm}$. Calculate the volume of the cone. Give your answer in terms of $\\pi$. (The volume of a cone is $V = \\frac{1}{3}\\pi r^2 h$).",
+        "answer": "$V = \\frac{1}{3} \\times \\pi \\times 5^2 \\times 12 = \\frac{1}{3} \\times \\pi \\times 25 \\times 12 = 25 \\times 4 \\times \\pi = 100\\pi$. Answer: $100\\pi\\text{ cm}^3$. (Mark: M1 for correct substitution into formula, A1 for $100\\pi$)."
+      },
+      {
+        "question": "A metal cylinder has a volume of $500\\text{ cm}^3$ and a height of $10\\text{ cm}$. Work out the radius of the cylinder. Give your answer correct to 3 significant figures.",
+        "answer": "Using $V = \\pi r^2 h$, substitute knowns: $500 = \\pi \\times r^2 \\times 10$. Rearrange for $r^2$: $r^2 = \\frac{500}{10\\pi} = \\frac{50}{\\pi} \\approx 15.915$. Then $r = \\sqrt{15.915} \\approx 3.9893...$ To 3 sig figs: $3.99\\text{ cm}$. (Mark: M1 for rearranging formula, M1 for square root step, A1 for $3.99$)."
+      }
+    ],
+    "keywords": [
+      "surface area",
+      "cylinder",
+      "cone",
+      "sphere",
+      "pyramid",
+      "prism",
+      "frustum",
+      "cuboid"
+    ]
+  },
+  {
     "id": "geometry-pythagoras-theorem",
-    "week": 23,
+    "week": 13,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Pythagoras' theorem",
@@ -1270,7 +1793,7 @@
         "Use $a = \\sqrt{c^2 - b^2}$ when you need to find a shorter side.",
         "Always check your final answer makes sense by comparing it to the other lengths."
       ],
-      "examNote": "This formula is not given on the Higher tier formula sheet, so you must memorise it."
+      "examNote": "Pythagoras' theorem is on the exam aid, but you must spot when to use it and rearrange it to find a shorter side."
     },
     "examples": [
       {
@@ -1297,7 +1820,7 @@
       },
       {
         "question": "An isosceles triangle has a base of $10$ cm and equal sides of $13$ cm. Calculate the vertical height of the triangle. Give your answer to 3 significant figures.",
-        "answer": "Working: Splitting the isosceles triangle down the middle creates a right-angled triangle with a hypotenuse of $13$ and a base of $5$ ($10 \\div 2$). $5^2 + h^2 = 13^2$, so $25 + h^2 = 169$. $h^2 = 169 - 25 = 144$. Wait, exact square root is $12$. Answer: $12.0$ cm."
+        "answer": "Answer: $12.0$ cm. Working: Splitting the isosceles triangle down the middle creates a right-angled triangle with a hypotenuse of $13$ and a base of $5$ ($10 \\div 2$). $5^2 + h^2 = 13^2$, so $25 + h^2 = 169$ and $h^2 = 144$, giving $h = 12$."
       },
       {
         "question": "A ladder $10$ metres long leans against a vertical wall. The bottom of the ladder is $3$ metres away from the base of the wall. How high up the wall does the ladder reach? Give your answer to 2 decimal places.",
@@ -1313,7 +1836,7 @@
   },
   {
     "id": "geometry-trigonometry-soh-cah-toa",
-    "week": 24,
+    "week": 13,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Trigonometry (SOH CAH TOA)",
@@ -1326,7 +1849,7 @@
         "$\\cos(\\theta) = \\frac{\\text{Adjacent}}{\\text{Hypotenuse}}$",
         "$\\tan(\\theta) = \\frac{\\text{Opposite}}{\\text{Adjacent}}$"
       ],
-      "examNote": "Trigonometry formulas are not given on the Higher tier formula sheet, so you must memorise SOH CAH TOA."
+      "examNote": "The trig ratios are on the exam aid, but you need to label the sides and choose the right one yourself."
     },
     "examples": [
       {
@@ -1376,7 +1899,7 @@
   },
   {
     "id": "geometry-sine-cosine-rules",
-    "week": 25,
+    "week": 14,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Sine & cosine rules",
@@ -1389,7 +1912,7 @@
         "Label sides as $a$, $b$, $c$ and matching angles as $A$, $B$, $C$.",
         "Remember to check if your calculator is set to degrees."
       ],
-      "examNote": "Neither the sine rule nor the cosine rule formulas are given on the Higher tier formula sheet, so you must memorise them."
+      "examNote": "Both rules and the area formula $\\frac{1}{2}ab\\sin C$ are on the exam aid. Choosing the right one is what earns the marks."
     },
     "examples": [
       {
@@ -1432,184 +1955,8 @@
     ]
   },
   {
-    "id": "geometry-3d-shapes-volume",
-    "week": 26,
-    "subject": "Geometry",
-    "icon": "📐",
-    "title": "3D shapes & volume",
-    "overview": {
-      "hook": "Finding the volume of a 3D shape is just stacking flat layers until you fill it up.",
-      "keyIdea": "Volume measures the total 3D space inside an object. For any prism, you simply multiply the area of its cross-section by its length, $V = \\text{cross-section area} \\times \\text{length}$.",
-      "keyPoints": [
-        "Prisms have the same cross-section running all the way through their length.",
-        "Pyramids and cones always include a factor of $\\frac{1}{3}$ in their volume formulas.",
-        "A sphere's volume is given by the formula $V = \\frac{4}{3}\\pi r^3$.",
-        "Always check your units are consistent before calculating."
-      ],
-      "examNote": "The formulas for the volume of a sphere, cone, and pyramid are given on the Higher tier formula sheet."
-    },
-    "examples": [
-      {
-        "question": "A solid metal cylinder has a radius of $4\\text{ cm}$ and a height of $10\\text{ cm}$. Calculate the volume of the cylinder. Give your answer correct to 1 decimal place.",
-        "solution": "Step 1: Recall the formula for the volume of a cylinder. The cross-section is a circle, so the area is $\\pi r^2$, and we multiply by the height $h$. This formula is NOT on the formula sheet and must be memorised. Formula: $V = \\pi r^2 h$. Step 2: Substitute the given values into the formula. Here, radius $r = 4$ and height $h = 10$. So, $V = \\pi \\times (4)^2 \\times 10$. Step 3: Evaluate the expression step by step. First square the radius: $(4)^2 = 16$. Then multiply by 10: $16 \\times 10 = 160$. So $V = 160\\pi$. Step 4: Convert to a decimal using a calculator. $160 \\times \\pi \\approx 502.65482...$. Step 5: Round correctly to 1 decimal place. The second decimal digit is 5, so round up. Answer: $502.7\\text{ cm}^3$ (Award M1 for substituting into $\\pi r^2 h$, and A1 for the correct rounded answer)."
-      },
-      {
-        "question": "A solid composite shape is made from a hemisphere attached to a solid cylinder. The cylinder has a radius of $3\\text{ cm}$ and a height of $8\\text{ cm}$. The hemisphere has the same radius of $3\\text{ cm}$. Calculate the total volume of the solid. Give your answer in terms of $\\pi$.",
-        "solution": "Step 1: Break the composite shape down into its individual parts. The total volume is the volume of the cylinder plus the volume of the hemisphere. Step 2: Find the volume of the cylinder. Formula is $V = \\pi r^2 h$. Substituting $r = 3$ and $h = 8$: $V_{\\text{cylinder}} = \\pi \\times (3)^2 \\times 8 = \\pi \\times 9 \\times 8 = 72\\pi$. Step 3: Find the volume of the hemisphere. A sphere volume formula is given on the formula sheet as $V = \\frac{4}{3}\\pi r^3$. A hemisphere is half of a sphere, so we multiply by $\\frac{1}{2}$ or divide by 2. Formula: $V_{\\text{hemisphere}} = \\frac{2}{3}\\pi r^3$. Step 4: Substitute $r = 3$ into the hemisphere formula. $V_{\\text{hemisphere}} = \\frac{2}{3} \\times \\pi \\times (3)^3$. Since $3^3 = 27$, we have $V_{\\text{hemisphere}} = \\frac{2}{3} \\times \\pi \\times 27 = 18\\pi$. Step 5: Add both volumes together to find the total volume. Total volume = $72\\pi + 18\\pi = 90\\pi$. Answer: $90\\pi\\text{ cm}^3$ (Award M1 for finding the volume of either the cylinder or hemisphere correctly, M1 for adding them, and A1 for $90\\pi$)."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "Calculate the volume of a cuboid with length $7\\text{ cm}$, width $4\\text{ cm}$ and height $5\\text{ cm}$.",
-        "answer": "Volume = length $\\times$ width $\\times$ height = $7 \\times 4 \\times 5 = 140\\text{ cm}^3$. (Mark: 1 mark for correct answer with unit)."
-      },
-      {
-        "question": "A solid sphere has a radius of $6\\text{ cm}$. Work out the volume of the sphere. Give your answer correct to 1 decimal place. (Note: Sphere volume formula is given on the formula sheet as $V = \\frac{4}{3}\\pi r^3$).",
-        "answer": "$V = \\frac{4}{3} \\times \\pi \\times 6^3 = \\frac{4}{3} \\times \\pi \\times 216 = 288\\pi \\approx 904.778...$ Round to 1 decimal place: $904.8\\text{ cm}^3$. (Mark: M1 for $\\frac{4}{3}\\pi(6)^3$, A1 for $904.8$)."
-      },
-      {
-        "question": "A triangular prism has a cross-section which is a right-angled triangle with base $5\\text{ cm}$ and perpendicular height $8\\text{ cm}$. The length of the prism is $12\\text{ cm}$. Calculate the volume of the prism.",
-        "answer": "Area of cross-section (triangle) = $\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times 5 \\times 8 = 20\\text{ cm}^2$. Volume = Area $\\times$ length = $20 \\times 12 = 240\\text{ cm}^3$. (Mark: M1 for triangle area, M1 for multiplying by length 12, A1 for $240$)."
-      },
-      {
-        "question": "A solid cone has a base radius of $5\\text{ cm}$ and a vertical height of $12\\text{ cm}$. Calculate the volume of the cone. Give your answer in terms of $\\pi$. (Note: Cone volume formula is given on the formula sheet as $V = \\frac{1}{3}\\pi r^2 h$).",
-        "answer": "$V = \\frac{1}{3} \\times \\pi \\times 5^2 \\times 12 = \\frac{1}{3} \\times \\pi \\times 25 \\times 12 = 25 \\times 4 \\times \\pi = 100\\pi$. Answer: $100\\pi\\text{ cm}^3$. (Mark: M1 for correct substitution into formula, A1 for $100\\pi$)."
-      },
-      {
-        "question": "A metal cylinder has a volume of $500\\text{ cm}^3$ and a height of $10\\text{ cm}$. Work out the radius of the cylinder. Give your answer correct to 3 significant figures.",
-        "answer": "Using $V = \\pi r^2 h$, substitute knowns: $500 = \\pi \\times r^2 \\times 10$. Rearrange for $r^2$: $r^2 = \\frac{500}{10\\pi} = \\frac{50}{\\pi} \\approx 15.915$. Then $r = \\sqrt{15.915} \\approx 3.9893...$ To 3 sig figs: $3.99\\text{ cm}$. (Mark: M1 for rearranging formula, M1 for square root step, A1 for $3.99$)."
-      }
-    ],
-    "keywords": [
-      "surface area",
-      "cylinder",
-      "cone",
-      "sphere",
-      "pyramid",
-      "prism",
-      "frustum",
-      "cuboid"
-    ]
-  },
-  {
-    "id": "geometry-vectors",
-    "week": 27,
-    "subject": "Geometry",
-    "icon": "📐",
-    "title": "Vectors",
-    "overview": {
-      "hook": "Think of vectors like giving someone step-by-step walking directions across a grid.",
-      "keyIdea": "A vector is a quantity with both size and direction. We write them in bold or with an arrow, like $\\vec{AB}$ or $\\mathbf{a}$.",
-      "keyPoints": [
-        "Moving against a vector's direction makes it negative, such as $-\\mathbf{a}$.",
-        "To add vectors, just add their column components: top to top, bottom to bottom.",
-        "Parallel vectors are always exact multiples of each other.",
-        "A column vector is written as \\begin{pmatrix} x \\\\ y \\end{pmatrix} for right/left and up/down."
-      ],
-      "examNote": "Column vectors and geometric proofs appear frequently, and you must know how to factorise expressions to prove points lie on a straight line."
-    },
-    "examples": [
-      {
-        "question": "The vectors $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$. Work out the column vector for $2\\mathbf{a} + 3\\mathbf{b}$.",
-        "solution": "Step 1: Substitute the given column vectors into the expression. We need to calculate $2\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} + 3\\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$. Step 2: Multiply each vector by its scalar (the number at the front). For $2\\mathbf{a}$, multiply both numbers inside by $2$: $2 \\times 3 = 6$ and $2 \\times -2 = -4$, giving $\\begin{pmatrix} 6 \\\\ -4 \\end{pmatrix}$. For $3\\mathbf{b}$, multiply both numbers inside by $3$: $3 \\times -1 = -3$ and $3 \\times 5 = 15$, giving $\\begin{pmatrix} -3 \\\\ 15 \\end{pmatrix}$. Step 3: Add the two resulting column vectors together by adding their corresponding top and bottom components. Top: $6 + (-3) = 3$. Bottom: $-4 + 15 = 11$. Step 4: Write your final answer clearly as a single column vector: $\\begin{pmatrix} 3 \\\\ 11 \\end{pmatrix}$. (Award M1 for correct scalar multiplication or correct addition attempt, A1 for the correct final vector)."
-      },
-      {
-        "question": "In triangle $OAB$, $\\vec{OA} = 6\\mathbf{a}$ and $\\vec{OB} = 9\\mathbf{b}$. Point $P$ lies on $AB$ such that $AP : PB = 1 : 2$. Find $\\vec{OP}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$, giving your answer in its simplest form.",
-        "solution": "Step 1: Find the total vector for the journey from $A$ to $B$. To go from $A$ to $B$, we can go backwards along $\\vec{OA}$ and then forwards along $\\vec{OB}$. So, $\\vec{AB} = -\\vec{OA} + \\vec{OB} = -6\\mathbf{a} + 9\\mathbf{b}$ (or $9\\mathbf{b} - 6\\mathbf{a}$). Step 2: Understand the ratio $AP : PB = 1 : 2$. This means the line segment $AB$ is split into $1 + 2 = 3$ equal parts. Therefore, the vector $\\vec{AP}$ is equal to one-third of the total vector $\\vec{AB}$. Step 3: Calculate $\\vec{AP}$. $\\vec{AP} = \\frac{1}{3}(-6\\mathbf{a} + 9\\mathbf{b}) = -2\\mathbf{a} + 3\\mathbf{b}$. Step 4: Find the route for $\\vec{OP}$. To get from the origin $O$ to point $P$, we can travel from $O$ to $A$, and then from $A$ to $P$. Therefore, $\\vec{OP} = \\vec{OA} + \\vec{AP}$. Step 5: Substitute your expressions into the route equation. $\\vec{OP} = 6\\mathbf{a} + (-2\\mathbf{a} + 3\\mathbf{b})$. Step 6: Collect like terms to simplify. $6\\mathbf{a} - 2\\mathbf{a} = 4\\mathbf{a}$. So, $\\vec{OP} = 4\\mathbf{a} + 3\\mathbf{b}$. (Award M1 for finding $\\vec{AB}$, M1 for recognising $\\vec{AP} = \\frac{1}{3}\\vec{AB}$, M1 for setting up $\\vec{OA} + \\vec{AP}$, and A1 for the fully simplified correct answer)."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "Vector $\\mathbf{p} = \\begin{pmatrix} 4 \\\\ -3 \\end{pmatrix}$ and vector $\\mathbf{q} = \\begin{pmatrix} -2 \\\\ 7 \\end{pmatrix}$. Work out the magnitude of $\\mathbf{p} + \\mathbf{q}$.",
-        "answer": "First find $\\mathbf{p} + \\mathbf{q} = \\begin{pmatrix} 4 + (-2) \\\\ -3 + 7 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}$. Then use Pythagoras' theorem for magnitude: $\\sqrt{2^2 + 4^2} = \\sqrt{4 + 16} = \\sqrt{20} = 2\\sqrt{5}$ (or approximately 4.47)."
-      },
-      {
-        "question": "The point $P$ has coordinates $(-1, 4)$ and the point $Q$ has coordinates $(3, 9)$. Write down the column vector $\\vec{PQ}$.",
-        "answer": "To find $\\vec{PQ}$, subtract the coordinates of $P$ from the coordinates of $Q$. $x$-component: $3 - (-1) = 4$. $y$-component: $9 - 4 = 5$. Final answer: $\\begin{pmatrix} 4 \\\\ 5 \\end{pmatrix}$."
-      },
-      {
-        "question": "In a parallelogram $OABC$, $\\vec{OA} = \\mathbf{a}$ and $\\vec{OC} = \\mathbf{c}$. $M$ is the midpoint of $AC$. Find $\\vec{OM}$ in terms of $\\mathbf{a}$ and $\\mathbf{c}$.",
-        "answer": "First find $\\vec{AC} = -\\mathbf{a} + \\mathbf{c}$. Since $M$ is the midpoint, $\\vec{AM} = \\frac{1}{2}(-\\mathbf{a} + \\mathbf{c})$. Then $\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(-\\mathbf{a} + \\mathbf{c}) = \\mathbf{a} - \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{c} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{c}$ (or $\\frac{1}{2}(\\mathbf{a} + \\mathbf{c})$)."
-      },
-      {
-        "question": "Vectors $\\mathbf{x}$ and $\\mathbf{y}$ are such that $\\vec{AB} = 3\\mathbf{x} + 2\\mathbf{y}$ and $\\vec{DC} = 6\\mathbf{x} + 4\\mathbf{y}$. Explain why $AB$ is parallel to $DC$.",
-        "answer": "Since $\\vec{DC} = 6\\mathbf{x} + 4\\mathbf{y} = 2(3\\mathbf{x} + 2\\mathbf{y}) = 2\\vec{AB}$, vector $\\vec{DC}$ is a scalar multiple of $\\vec{AB}$. This means they have the same direction (and since they do not share a common point in this context, the lines are parallel)."
-      },
-      {
-        "question": "OAE is a triangle. $B$ is the midpoint of $OA$ and $C$ is the point on $AE$ such that $AC : CE = 1 : 2$. $\\vec{OA} = 6\\mathbf{a}$ and $\\vec{OE} = 6\\mathbf{e}$. Express $\\vec{BC}$ in terms of $\\mathbf{a}$ and $\\mathbf{e}$.",
-        "answer": "Find $\\vec{AE} = -6\\mathbf{a} + 6\\mathbf{e}$. Since $AC : CE = 1 : 2$, $\\vec{AC} = \\frac{1}{3}\\vec{AE} = -2\\mathbf{a} + 2\\mathbf{e}$. Now find $\\vec{BC}$: we know $\\vec{OB} = 3\\mathbf{a}$ (midpoint), so $\\vec{BC} = -\\vec{OB} + \\vec{OA} + \\vec{AC} = -3\\mathbf{a} + 6\\mathbf{a} + (-2\\mathbf{a} + 2\\mathbf{e}) = \\mathbf{a} + 2\\mathbf{e}$."
-      }
-    ],
-    "keywords": [
-      "column vectors",
-      "magnitude",
-      "scalar",
-      "parallel vectors",
-      "vector proof",
-      "resultant"
-    ]
-  },
-  {
-    "id": "geometry-transformations",
-    "week": 28,
-    "subject": "Geometry",
-    "icon": "📐",
-    "title": "Transformations",
-    "overview": {
-      "hook": "Transformations are like digital photo editing, moving or reshaping figures on a grid.",
-      "keyIdea": "You move shapes around a coordinate grid using four specific rules: translation, reflection, rotation, and enlargement. Every transformed point has a precise mathematical destination.",
-      "keyPoints": [
-        "Translations move shapes using column vectors like $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$.",
-        "Reflections flip shapes across a given mirror line like $y = x$.",
-        "Rotations turn shapes around a specific centre by an angle and direction.",
-        "Enlargements resize shapes from a centre of enlargement using a scale factor."
-      ],
-      "examNote": "Always state the exact full description required for each transformation to secure all available marks, such as the centre of rotation and angle."
-    },
-    "examples": [
-      {
-        "question": "Describe fully the single transformation that maps shape A onto shape B, where shape A has vertices at (1,1), (3,1), (3,3) and shape B has vertices at (-1,-1), (-3,-1), (-3,-3).",
-        "solution": "Step 1: Identify the type of transformation. The shape has been turned upside down and moved through the origin, which suggests either a rotation of $180^\\circ$ or an enlargement with scale factor $-1$. Step 2: Test for rotation. If we rotate shape A by $180^\\circ$ about the origin (0,0), every point $(x,y)$ becomes $(-x,-y)$. Let us check vertex (1,1): it becomes (-1,-1), which matches shape B. Check vertex (3,3): it becomes (-3,-3), which also matches shape B. Step 3: Write down the full description using correct mathematical terminology to gain all available marks (M1 for naming the transformation and stating the centre/angle, A1 for fully correct and complete description). Final Answer: Rotation, $180^\\circ$, centre (0, 0)."
-      },
-      {
-        "question": "Enlarge shape P with vertices (1,2), (3,2), (2,4) by a scale factor of $-2$ using the centre of enlargement (0,1).",
-        "solution": "Step 1: Identify the centre of enlargement $(0,1)$ and the scale factor $-2$. Step 2: For each vertex of shape P, find the vector distance from the centre of enlargement $(0,1)$. Vertex 1 is at $(1,2)$. Vector from $(0,1)$ to $(1,2)$ is $\\begin{pmatrix} 1-0 \\\\ 2-1 \\\\ end{pmatrix} = \\begin{pmatrix} 1 \\\\ 1 \\\\ end{pmatrix}$. Step 3: Multiply this vector by the scale factor $-2$. $\\begin{pmatrix} 1 \\\\ 1 \\\\ end{pmatrix} \\times -2 = \\begin{pmatrix} -2 \\\\ -2 \\\\ end{pmatrix}$. Step 4: Add this new vector back to the centre of enlargement $(0,1)$. $(0 + (-2), 1 + (-2)) = (-2,-1)$. This is the new position for the first vertex. Step 5: Repeat for vertex 2 $(3,2)$. Vector from $(0,1)$ is $\\begin{pmatrix} 3 \\\\ 1 \\\\ end{pmatrix}$. Multiply by $-2$ to get $\\begin{pmatrix} -6 \\\\ -2 \\\\ end{pmatrix}$. Add to centre: $(0-6, 1-2) = (-6,-1)$. Step 6: Repeat for vertex 3 $(2,4)$. Vector from $(0,1)$ is $\\begin{pmatrix} 2 \\\\ 3 \\\\ end{pmatrix}$. Multiply by $-2$ to get $\\begin{pmatrix} -4 \\\\ -6 \\\\ end{pmatrix}$. Add to centre: $(0-4, 1-6) = (-4,-5)$. Step 7: Plot the new vertices at $(-2,-1)$, $(-6,-1)$, and $(-4,-5)$ and join them to form the enlarged shape. (Award M1 for correct size/orientation and A1 for exact correct position)."
-      }
-    ],
-    "testQuestions": [
-      {
-        "question": "Vector $\\begin{pmatrix} -3 \\\\ 4 \\\\ end{pmatrix}$ translates shape A to shape B. If a vertex of shape B is at $(2, 1)$, find the coordinates of the corresponding vertex on shape A.",
-        "answer": "Answer: (5, -3). Working: To go from A to B we add the vector. Therefore, to go from B back to A we subtract the vector. $(2 - (-3), 1 - 4) = (2+3, 1-4) = (5, -3)$."
-      },
-      {
-        "question": "Describe fully the single transformation that maps triangle X onto triangle Y, where triangle X is reflected in the line $x = 1$.",
-        "answer": "Answer: Reflection in the line $x = 1$. Working: Must state 'reflection' (1 mark) and the exact equation of the mirror line ' $x = 1$ ' (1 mark) for full accuracy."
-      },
-      {
-        "question": "Shape C is enlarged by scale factor $1.5$ with centre of enlargement $(2,3)$. If a point on shape C is at $(4,5)$, find the coordinates of this point on the enlarged shape.",
-        "answer": "Answer: (5, 6). Working: Vector from centre $(2,3)$ to $(4,5)$ is $\\begin{pmatrix} 2 \\\\ 2 \\\\ end{pmatrix}$. Multiply by scale factor $1.5$: $\\begin{pmatrix} 2 \\\\ 2 \\\\ end{pmatrix} \\times 1.5 = \\begin{pmatrix} 3 \\\\ 3 \\\\ end{pmatrix}$. Add back to centre: $(2+3, 3+3) = (5,6)$."
-      },
-      {
-        "question": "A shape is rotated $90^\\circ$ anticlockwise about the point $(1,1)$. What are the coordinates of the image of the point $(3,2)$ under this rotation?",
-        "answer": "Answer: (0, 3). Working: Translate point to origin by subtracting centre $(1,1)$, giving $(2,1)$. Apply $90^\\circ$ anticlockwise rule $(x,y) \\rightarrow (-y,x)$, giving $(-1,2)$. Add centre back: $(-1+1, 2+1) = (0,3)$."
-      },
-      {
-        "question": "Triangle P is mapped to triangle Q by a transformation matrix, which is equivalent to an enlargement of scale factor $-0.5$ about the origin. If the area of triangle P is $24 \\text{ cm}^2$, find the area of triangle Q.",
-        "answer": "Answer: 6 cm^2. Working: Area scale factor is the square of the linear scale factor. Linear scale factor is $-0.5$, so area scale factor is $(-0.5)^2 = 0.25$ (or $1/4$). New area = $24 \\times 0.25 = 6 \\text{ cm}^2$."
-      }
-    ],
-    "keywords": [
-      "rotation",
-      "reflection",
-      "translation",
-      "enlargement",
-      "scale factor",
-      "centre of enlargement"
-    ]
-  },
-  {
     "id": "geometry-similarity-congruence",
-    "week": 29,
+    "week": 14,
     "subject": "Geometry",
     "icon": "📐",
     "title": "Similarity & congruence",
@@ -1668,8 +2015,239 @@
     ]
   },
   {
+    "id": "geometry-transformations",
+    "week": 15,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Transformations",
+    "overview": {
+      "hook": "Transformations are like digital photo editing, moving or reshaping figures on a grid.",
+      "keyIdea": "You move shapes around a coordinate grid using four specific rules: translation, reflection, rotation, and enlargement. Every transformed point has a precise mathematical destination.",
+      "keyPoints": [
+        "Translations move shapes using column vectors like $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$.",
+        "Reflections flip shapes across a given mirror line like $y = x$.",
+        "Rotations turn shapes around a specific centre by an angle and direction.",
+        "Enlargements resize shapes from a centre of enlargement using a scale factor."
+      ],
+      "examNote": "Always state the exact full description required for each transformation to secure all available marks, such as the centre of rotation and angle."
+    },
+    "examples": [
+      {
+        "question": "Describe fully the single transformation that maps shape A onto shape B, where shape A has vertices at (1,1), (3,1), (3,3) and shape B has vertices at (-1,-1), (-3,-1), (-3,-3).",
+        "solution": "Step 1: Identify the type of transformation. The shape has been turned upside down and moved through the origin, which suggests either a rotation of $180^\\circ$ or an enlargement with scale factor $-1$. Step 2: Test for rotation. If we rotate shape A by $180^\\circ$ about the origin (0,0), every point $(x,y)$ becomes $(-x,-y)$. Let us check vertex (1,1): it becomes (-1,-1), which matches shape B. Check vertex (3,3): it becomes (-3,-3), which also matches shape B. Step 3: Write down the full description using correct mathematical terminology to gain all available marks (M1 for naming the transformation and stating the centre/angle, A1 for fully correct and complete description). Final Answer: Rotation, $180^\\circ$, centre (0, 0)."
+      },
+      {
+        "question": "Enlarge shape P with vertices (1,2), (3,2), (2,4) by a scale factor of $-2$ using the centre of enlargement (0,1).",
+        "solution": "Step 1: Identify the centre of enlargement $(0,1)$ and the scale factor $-2$. Step 2: For each vertex of shape P, find the vector distance from the centre of enlargement $(0,1)$. Vertex 1 is at $(1,2)$. Vector from $(0,1)$ to $(1,2)$ is $\\begin{pmatrix} 1-0 \\\\ 2-1 \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$. Step 3: Multiply this vector by the scale factor $-2$. $\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} \\times -2 = \\begin{pmatrix} -2 \\\\ -2 \\end{pmatrix}$. Step 4: Add this new vector back to the centre of enlargement $(0,1)$. $(0 + (-2), 1 + (-2)) = (-2,-1)$. This is the new position for the first vertex. Step 5: Repeat for vertex 2 $(3,2)$. Vector from $(0,1)$ is $\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$. Multiply by $-2$ to get $\\begin{pmatrix} -6 \\\\ -2 \\end{pmatrix}$. Add to centre: $(0-6, 1-2) = (-6,-1)$. Step 6: Repeat for vertex 3 $(2,4)$. Vector from $(0,1)$ is $\\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$. Multiply by $-2$ to get $\\begin{pmatrix} -4 \\\\ -6 \\end{pmatrix}$. Add to centre: $(0-4, 1-6) = (-4,-5)$. Step 7: Plot the new vertices at $(-2,-1)$, $(-6,-1)$, and $(-4,-5)$ and join them to form the enlarged shape. (Award M1 for correct size/orientation and A1 for exact correct position)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Vector $\\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$ translates shape A to shape B. If a vertex of shape B is at $(2, 1)$, find the coordinates of the corresponding vertex on shape A.",
+        "answer": "Answer: (5, -3). Working: To go from A to B we add the vector. Therefore, to go from B back to A we subtract the vector. $(2 - (-3), 1 - 4) = (2+3, 1-4) = (5, -3)$."
+      },
+      {
+        "question": "Triangle X has vertices at $(0, 1)$, $(0, 3)$ and $(-1, 1)$. Triangle Y has vertices at $(2, 1)$, $(2, 3)$ and $(3, 1)$. Describe fully the single transformation that maps triangle X onto triangle Y.",
+        "answer": "Answer: Reflection in the line $x = 1$. Working: Each point is the same distance either side of $x = 1$ with the same $y$-coordinate. You must state 'reflection' (1 mark) and the exact mirror line $x = 1$ (1 mark)."
+      },
+      {
+        "question": "Shape C is enlarged by scale factor $1.5$ with centre of enlargement $(2,3)$. If a point on shape C is at $(4,5)$, find the coordinates of this point on the enlarged shape.",
+        "answer": "Answer: (5, 6). Working: Vector from centre $(2,3)$ to $(4,5)$ is $\\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}$. Multiply by scale factor $1.5$: $\\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix} \\times 1.5 = \\begin{pmatrix} 3 \\\\ 3 \\end{pmatrix}$. Add back to centre: $(2+3, 3+3) = (5,6)$."
+      },
+      {
+        "question": "A shape is rotated $90^\\circ$ anticlockwise about the point $(1,1)$. What are the coordinates of the image of the point $(3,2)$ under this rotation?",
+        "answer": "Answer: (0, 3). Working: Translate point to origin by subtracting centre $(1,1)$, giving $(2,1)$. Apply $90^\\circ$ anticlockwise rule $(x,y) \\rightarrow (-y,x)$, giving $(-1,2)$. Add centre back: $(-1+1, 2+1) = (0,3)$."
+      },
+      {
+        "question": "Triangle P is mapped to triangle Q by an enlargement of scale factor $-0.5$ about the origin. The area of triangle P is $24 \\text{ cm}^2$. Find the area of triangle Q.",
+        "answer": "Answer: 6 cm^2. Working: Area scale factor is the square of the linear scale factor. Linear scale factor is $-0.5$, so area scale factor is $(-0.5)^2 = 0.25$ (or $1/4$). New area = $24 \\times 0.25 = 6 \\text{ cm}^2$."
+      }
+    ],
+    "keywords": [
+      "rotation",
+      "reflection",
+      "translation",
+      "enlargement",
+      "scale factor",
+      "centre of enlargement"
+    ]
+  },
+  {
+    "id": "geometry-vectors",
+    "week": 15,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Vectors",
+    "overview": {
+      "hook": "Think of vectors like giving someone step-by-step walking directions across a grid.",
+      "keyIdea": "A vector is a quantity with both size and direction. We write them in bold or with an arrow, like $\\vec{AB}$ or $\\mathbf{a}$.",
+      "keyPoints": [
+        "Moving against a vector's direction makes it negative, such as $-\\mathbf{a}$.",
+        "To add vectors, just add their column components: top to top, bottom to bottom.",
+        "Parallel vectors are always exact multiples of each other.",
+        "A column vector is written as $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ for right/left and up/down."
+      ],
+      "examNote": "Column vectors and geometric proofs appear frequently, and you must know how to factorise expressions to prove points lie on a straight line."
+    },
+    "examples": [
+      {
+        "question": "The vectors $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$. Work out the column vector for $2\\mathbf{a} + 3\\mathbf{b}$.",
+        "solution": "Step 1: Substitute the given column vectors into the expression. We need to calculate $2\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} + 3\\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$. Step 2: Multiply each vector by its scalar (the number at the front). For $2\\mathbf{a}$, multiply both numbers inside by $2$: $2 \\times 3 = 6$ and $2 \\times -2 = -4$, giving $\\begin{pmatrix} 6 \\\\ -4 \\end{pmatrix}$. For $3\\mathbf{b}$, multiply both numbers inside by $3$: $3 \\times -1 = -3$ and $3 \\times 5 = 15$, giving $\\begin{pmatrix} -3 \\\\ 15 \\end{pmatrix}$. Step 3: Add the two resulting column vectors together by adding their corresponding top and bottom components. Top: $6 + (-3) = 3$. Bottom: $-4 + 15 = 11$. Step 4: Write your final answer clearly as a single column vector: $\\begin{pmatrix} 3 \\\\ 11 \\end{pmatrix}$. (Award M1 for correct scalar multiplication or correct addition attempt, A1 for the correct final vector)."
+      },
+      {
+        "question": "In triangle $OAB$, $\\vec{OA} = 6\\mathbf{a}$ and $\\vec{OB} = 9\\mathbf{b}$. Point $P$ lies on $AB$ such that $AP : PB = 1 : 2$. Find $\\vec{OP}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$, giving your answer in its simplest form.",
+        "solution": "Step 1: Find the total vector for the journey from $A$ to $B$. To go from $A$ to $B$, we can go backwards along $\\vec{OA}$ and then forwards along $\\vec{OB}$. So, $\\vec{AB} = -\\vec{OA} + \\vec{OB} = -6\\mathbf{a} + 9\\mathbf{b}$ (or $9\\mathbf{b} - 6\\mathbf{a}$). Step 2: Understand the ratio $AP : PB = 1 : 2$. This means the line segment $AB$ is split into $1 + 2 = 3$ equal parts. Therefore, the vector $\\vec{AP}$ is equal to one-third of the total vector $\\vec{AB}$. Step 3: Calculate $\\vec{AP}$. $\\vec{AP} = \\frac{1}{3}(-6\\mathbf{a} + 9\\mathbf{b}) = -2\\mathbf{a} + 3\\mathbf{b}$. Step 4: Find the route for $\\vec{OP}$. To get from the origin $O$ to point $P$, we can travel from $O$ to $A$, and then from $A$ to $P$. Therefore, $\\vec{OP} = \\vec{OA} + \\vec{AP}$. Step 5: Substitute your expressions into the route equation. $\\vec{OP} = 6\\mathbf{a} + (-2\\mathbf{a} + 3\\mathbf{b})$. Step 6: Collect like terms to simplify. $6\\mathbf{a} - 2\\mathbf{a} = 4\\mathbf{a}$. So, $\\vec{OP} = 4\\mathbf{a} + 3\\mathbf{b}$. (Award M1 for finding $\\vec{AB}$, M1 for recognising $\\vec{AP} = \\frac{1}{3}\\vec{AB}$, M1 for setting up $\\vec{OA} + \\vec{AP}$, and A1 for the fully simplified correct answer)."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Vector $\\mathbf{p} = \\begin{pmatrix} 4 \\\\ -3 \\end{pmatrix}$ and vector $\\mathbf{q} = \\begin{pmatrix} -2 \\\\ 7 \\end{pmatrix}$. Work out the magnitude of $\\mathbf{p} + \\mathbf{q}$.",
+        "answer": "First find $\\mathbf{p} + \\mathbf{q} = \\begin{pmatrix} 4 + (-2) \\\\ -3 + 7 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}$. Then use Pythagoras' theorem for magnitude: $\\sqrt{2^2 + 4^2} = \\sqrt{4 + 16} = \\sqrt{20} = 2\\sqrt{5}$ (or approximately 4.47)."
+      },
+      {
+        "question": "The point $P$ has coordinates $(-1, 4)$ and the point $Q$ has coordinates $(3, 9)$. Write down the column vector $\\vec{PQ}$.",
+        "answer": "To find $\\vec{PQ}$, subtract the coordinates of $P$ from the coordinates of $Q$. $x$-component: $3 - (-1) = 4$. $y$-component: $9 - 4 = 5$. Final answer: $\\begin{pmatrix} 4 \\\\ 5 \\end{pmatrix}$."
+      },
+      {
+        "question": "In a parallelogram $OABC$, $\\vec{OA} = \\mathbf{a}$ and $\\vec{OC} = \\mathbf{c}$. $M$ is the midpoint of $AC$. Find $\\vec{OM}$ in terms of $\\mathbf{a}$ and $\\mathbf{c}$.",
+        "answer": "First find $\\vec{AC} = -\\mathbf{a} + \\mathbf{c}$. Since $M$ is the midpoint, $\\vec{AM} = \\frac{1}{2}(-\\mathbf{a} + \\mathbf{c})$. Then $\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(-\\mathbf{a} + \\mathbf{c}) = \\mathbf{a} - \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{c} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{c}$ (or $\\frac{1}{2}(\\mathbf{a} + \\mathbf{c})$)."
+      },
+      {
+        "question": "Vectors $\\mathbf{x}$ and $\\mathbf{y}$ are such that $\\vec{AB} = 3\\mathbf{x} + 2\\mathbf{y}$ and $\\vec{DC} = 6\\mathbf{x} + 4\\mathbf{y}$. Explain why $AB$ is parallel to $DC$.",
+        "answer": "Since $\\vec{DC} = 6\\mathbf{x} + 4\\mathbf{y} = 2(3\\mathbf{x} + 2\\mathbf{y}) = 2\\vec{AB}$, vector $\\vec{DC}$ is a scalar multiple of $\\vec{AB}$. This means they have the same direction (and since they do not share a common point in this context, the lines are parallel)."
+      },
+      {
+        "question": "OAE is a triangle. $B$ is the midpoint of $OA$ and $C$ is the point on $AE$ such that $AC : CE = 1 : 2$. $\\vec{OA} = 6\\mathbf{a}$ and $\\vec{OE} = 6\\mathbf{e}$. Express $\\vec{BC}$ in terms of $\\mathbf{a}$ and $\\mathbf{e}$.",
+        "answer": "Find $\\vec{AE} = -6\\mathbf{a} + 6\\mathbf{e}$. Since $AC : CE = 1 : 2$, $\\vec{AC} = \\frac{1}{3}\\vec{AE} = -2\\mathbf{a} + 2\\mathbf{e}$. Now find $\\vec{BC}$: we know $\\vec{OB} = 3\\mathbf{a}$ (midpoint), so $\\vec{BC} = -\\vec{OB} + \\vec{OA} + \\vec{AC} = -3\\mathbf{a} + 6\\mathbf{a} + (-2\\mathbf{a} + 2\\mathbf{e}) = \\mathbf{a} + 2\\mathbf{e}$."
+      }
+    ],
+    "keywords": [
+      "column vectors",
+      "magnitude",
+      "scalar",
+      "parallel vectors",
+      "vector proof",
+      "resultant"
+    ]
+  },
+  {
+    "id": "geometry-circle-theorems",
+    "week": 16,
+    "subject": "Geometry",
+    "icon": "📐",
+    "title": "Circle theorems",
+    "overview": {
+      "hook": "Circle theorems are the secret rules that let you unlock missing angles inside circles.",
+      "keyIdea": "Circles have hidden geometric properties linking angles, radii, and chords. If you spot a specific shape formed by lines touching the circumference, you can instantly find unknown angles using standard rules.",
+      "keyPoints": [
+        "The angle at the centre is twice the angle at the circumference.",
+        "Angles in the same segment subtended by the same arc are equal.",
+        "Opposite angles in a cyclic quadrilateral always add up to $180^\\circ$.",
+        "The angle in a semicircle is always $90^\\circ$."
+      ],
+      "examNote": "Circle theorem formulas are not given on the formula sheet, so you must memorise all eight core rules and be ready to quote them to gain full communication marks."
+    },
+    "examples": [
+      {
+        "question": "The points A, B and C lie on the circumference of a circle with centre O. Angle ABC = 65 degrees. Work out the size of angle AOC. Give a reason for each stage of your working.",
+        "solution": "Step 1: Identify the relationship between the angle at the circumference (ABC) and the angle at the centre (AOC). Both angles subtend the same arc AC. Step 2: State the relevant circle theorem rule. The angle subtended by an arc at the centre is twice the angle subtended at the circumference. Step 3: Perform the calculation. Angle AOC = 2 * angle ABC. So, Angle AOC = 2 * 65 degrees = 130 degrees. Step 4: Write down the final answer with reasons clearly for the examiner to award full marks. Answer: 130 degrees, with reason: The angle at the centre is twice the angle at the circumference."
+      },
+      {
+        "question": "A, B, C and D are points on the circumference of a circle. AC is a diameter of the circle. Angle CAB = 38 degrees. Angle CAD = 25 degrees. Work out the size of angle BCD. You must show all your working.",
+        "solution": "Step 1: Find angle ABC by using the circle theorem that the angle in a semicircle is 90 degrees. Since AC is a diameter, triangle ABC is right-angled at B. Therefore, angle ABC = 90 degrees. Step 2: Find angle BCA within triangle ABC. The angles in a triangle sum to 180 degrees. Angle BCA = 180 - 90 - 38 = 52 degrees. Step 3: Find angle ACD. Triangle ADC also has AC as a diameter, so angle ADC = 90 degrees. In triangle ADC, angle ACD = 180 - 90 - 25 = 65 degrees. Step 4: Combine the parts to find angle BCD. Angle BCD = angle BCA + angle ACD = 52 + 65 = 117 degrees. Alternatively, notice ABCD is a cyclic quadrilateral, so opposite angles sum to 180 degrees. Angle ADC = 25 + 38 = 63 degrees, so angle BCD = 180 - 63 = 117 degrees. Answer: 117 degrees."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A, B and C are points on a circle, centre O. TA and TC are tangents to the circle. Angle ATC = 54 degrees. Work out the size of angle ABC. Give reasons.",
+        "answer": "Answer: 63 degrees. Working: Tangents from a point are equal in length, so triangle ATC is isosceles. Angle TAC = angle TCA = (180 - 54)/2 = 63 degrees. Angle OAT = 90 degrees (radius meets tangent at 90 degrees). Angle OAC = 90 - 63 = 27 degrees. Angle AOC = 180 - 54 = 126 degrees (angles in quadrilateral sum to 360 or opposite angles supplementary). Angle at centre is twice angle at circumference, so angle ABC = 126 / 2 = 63 degrees."
+      },
+      {
+        "question": "P, Q, R and S are points on the circumference of a circle. PR is a diameter. Angle PRQ = 32 degrees. Work out the size of angle PSQ.",
+        "answer": "Answer: 58 degrees. Working: Angle PQR = 90 degrees (angle in a semicircle). Angle QPR = 180 - 90 - 32 = 58 degrees. Angle PSQ = angle PRQ = 58 degrees (angles in the same segment are equal)."
+      },
+      {
+        "question": "A, B, C and D are points on a circle. AB is parallel to DC. Angle ABC = 72 degrees. Find angle ADC and angle BCD.",
+        "answer": "Answer: Angle ADC = 108 degrees, Angle BCD = 72 degrees. Working: ABCD is a cyclic quadrilateral and parallel lines create allied (co-interior) angles. Angle BCD = 180 - 72 = 108 degrees (allied angles sum to 180). Opposite angles in a cyclic quadrilateral sum to 180, so angle ADC = 180 - 72 = 108 degrees."
+      },
+      {
+        "question": "AB is a chord of a circle with centre O and radius 10 cm. The distance from the centre O to the chord AB is 6 cm. Work out the length of the chord AB.",
+        "answer": "Answer: 16 cm. Working: The perpendicular from the centre of a circle to a chord bisects the chord. This forms a right-angled triangle with hypotenuse equal to the radius (10 cm) and one shorter side equal to 6 cm. Using Pythagoras theorem: x^2 = 10^2 - 6^2 = 100 - 36 = 64. So x = sqrt(64) = 8 cm. Total length of chord AB = 8 * 2 = 16 cm."
+      },
+      {
+        "question": "TP is a tangent to a circle at point P. O is the centre of the circle. The point Q lies on the circle such that angle OPQ = 40 degrees. Find angle TPQ.",
+        "answer": "Answer: 50 degrees. Working: The radius meets the tangent at 90 degrees, so angle OPT = 90 degrees. Angle TPQ = angle OPT - angle OPQ = 90 - 40 = 50 degrees."
+      }
+    ],
+    "keywords": [
+      "tangent",
+      "chord",
+      "cyclic quadrilateral",
+      "alternate segment",
+      "semicircle",
+      "angle at the centre",
+      "angle at the circumference"
+    ]
+  },
+  {
+    "id": "algebra-equation-of-a-circle",
+    "subject": "Algebra",
+    "icon": "🧮",
+    "title": "Equation of a circle",
+    "keywords": [
+      "x squared plus y squared",
+      "radius",
+      "tangent to a circle",
+      "circle graph"
+    ],
+    "week": 16,
+    "overview": {
+      "hook": "One short equation describes every single point on a circle.",
+      "keyIdea": "The equation of a circle on a grid always links the $x$ and $y$ coordinates of any point on the edge back to its radius. For a circle with its centre at the exact origin $(0,0)$, the rule is $x^2 + y^2 = r^2$.",
+      "keyPoints": [
+        "The equation for a circle centred at $(0,0)$ is $x^2 + y^2 = r^2$.",
+        "The letter $r$ represents the radius, so remember to square it in the formula.",
+        "Tangents touch a circle at exactly one point and are perpendicular to the radius.",
+        "Perpendicular gradients multiply to give $-1$."
+      ],
+      "examNote": "$x^2 + y^2 = r^2$ is not on the exam aid, so learn it. Tangent questions also need perpendicular gradients."
+    },
+    "examples": [
+      {
+        "question": "Find the equation of a circle with centre at the origin and a radius of $5$ cm.",
+        "solution": "Step 1: Write down the standard circle formula for a centre at the origin, which is $x^2 + y^2 = r^2$. Step 2: Identify the radius $r = 5$. Step 3: Square the radius to find $r^2 = 5^2 = 25$. Step 4: Substitute this into the formula to get $x^2 + y^2 = 25$."
+      },
+      {
+        "question": "A circle has the equation $x^2 + y^2 = 25$. Find the equation of the tangent to the circle at the point $(3, 4)$.",
+        "solution": "Step 1: Find the gradient of the radius from the origin $(0,0)$ to the point $(3,4)$. Gradient $= (4 - 0) / (3 - 0) = 4/3$. Step 2: Find the perpendicular gradient for the tangent. The negative reciprocal of $4/3$ is $-3/4$. Step 3: Use the straight-line equation $y = mx + c$ with the gradient $m = -3/4$ and the point $(3,4)$. Substitute $x=3$ and $y=4$: $4 = (-3/4)(3) + c$. Step 4: Solve for $c$. $4 = -9/4 + c$, so $c = 4 + 9/4 = 25/4$. Step 5: Write the final equation: $y = -3/4x + 25/4$ or multiplied out as $4y + 3x = 25$."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "Write down the equation of a circle with centre $(0,0)$ and radius $7$ cm.",
+        "answer": "$x^2 + y^2 = 49$. Working: The radius squared is $7^2 = 49$."
+      },
+      {
+        "question": "The point $(p, 5)$ lies on the circle $x^2 + y^2 = 169$. Find the possible values of $p$.",
+        "answer": "$p = 12$ or $p = -12$. Working: Substitute $y = 5$: $p^2 + 5^2 = 169$, so $p^2 + 25 = 169$, $p^2 = 144$."
+      },
+      {
+        "question": "Find the radius of the circle given by the equation $x^2 + y^2 = 80$. Give your answer in the form $k\\sqrt{5}$.",
+        "answer": "$r = 4\\sqrt{5}$. Working: $r^2 = 80$, so $r = \\sqrt{80} = \\sqrt{16 \\times 5} = 4\\sqrt{5}$."
+      },
+      {
+        "question": "A circle has equation $x^2 + y^2 = 50$. Show that the point $(-5, 5)$ lies on this circle.",
+        "answer": "Substitute $x = -5$ and $y = 5$ into the left side: $(-5)^2 + 5^2 = 25 + 25 = 50$. This equals the right side, so the point lies on the circle."
+      },
+      {
+        "question": "Find the equation of the tangent to the circle $x^2 + y^2 = 100$ at the point $(-6, 8)$.",
+        "answer": "$y = \\frac{3}{4}x + \\frac{25}{2}$, or $4y - 3x = 50$. Working: Radius gradient $= (8 - 0) \\div (-6 - 0) = -\\frac{4}{3}$, so the tangent gradient is $\\frac{3}{4}$. Using $(-6, 8)$: $8 = \\frac{3}{4}(-6) + c$, so $8 = -\\frac{9}{2} + c$ and $c = \\frac{25}{2}$."
+      }
+    ]
+  },
+  {
     "id": "probability-basic-probability",
-    "week": 30,
+    "week": 17,
     "subject": "Probability",
     "icon": "🎲",
     "title": "Basic probability",
@@ -1679,7 +2257,7 @@
       "keyPoints": [
         "Probabilities always add up to $1$ or $100\\%$.",
         "The probability of something not happening is $1$ minus the probability it does happen.",
-        "Probability = \\text{Successful outcomes} \\div \\text{Total possible outcomes}.",
+        "Probability $=$ successful outcomes $\\div$ total possible outcomes.",
         "Experimental probability uses real-world data from trials, while theoretical uses maths."
       ],
       "examNote": "Probabilities must be written as fractions in their simplest form, decimals, or percentages unless the question specifies otherwise."
@@ -1697,7 +2275,7 @@
     "testQuestions": [
       {
         "question": "A box contains 5 red pens, 3 blue pens and 2 black pens. A pen is chosen at random. Find the probability that it is not a red pen.",
-        "answer": "Answer: \\frac{1}{2} (or 0.5). Working: Total pens = 5 + 3 + 2 = 10. Red pens = 5, so not red pens = 10 - 5 = 5. Probability = \\frac{5}{10} = \\frac{1}{2}."
+        "answer": "Answer: $\\frac{1}{2}$ (or $0.5$). Working: Total pens $= 5 + 3 + 2 = 10$. Red pens $= 5$, so not red pens $= 10 - 5 = 5$. Probability $= \\frac{5}{10} = \\frac{1}{2}$."
       },
       {
         "question": "The probability that a football team wins their next match is 0.45. The probability that they draw is 0.3. Work out the probability that they lose.",
@@ -1705,11 +2283,11 @@
       },
       {
         "question": "A standard 52-card deck of playing cards is used. One card is drawn at random. What is the probability of drawing a red face card (Jack, Queen, or King)? Give your answer as a simplified fraction.",
-        "answer": "Answer: \\frac{3}{26}. Working: There are 4 face cards per suit (Jack, Queen, King, Ace - wait, Ace is not a face card, so 3 face cards per suit: J, Q, K). There are 2 red suits (Hearts and Diamonds), so 2 x 3 = 6 red face cards. Total cards = 52. Probability = \\frac{6}{52} = \\frac{3}{26}."
+        "answer": "Answer: $\\frac{3}{26}$. Working: There are 3 face cards per suit (Jack, Queen, King) and 2 red suits, so $2 \\times 3 = 6$ red face cards out of 52. Probability $= \\frac{6}{52} = \\frac{3}{26}$."
       },
       {
         "question": "In a group of 80 students, 45 study French, 25 study Spanish, and 10 study both. If a student is chosen at random, what is the probability that they study neither French nor Spanish?",
-        "answer": "Answer: \\frac{1}{8} (or 0.125). Working: Using a Venn diagram, French only = 45 - 10 = 35. Spanish only = 25 - 10 = 15. Both = 10. Total studying at least one = 35 + 15 + 10 = 60. Students studying neither = 80 - 60 = 20. Probability = \\frac{20}{80} = \\frac{1}{4}... wait, let me recalculate. 35 + 15 + 10 = 60. Total students = 80. Neither = 80 - 60 = 20. Fraction = \\frac{20}{80} = \\frac{1}{4}."
+        "answer": "Answer: $\\frac{1}{4}$ (or $0.25$). Working: Using a Venn diagram, French only $= 45 - 10 = 35$. Spanish only $= 25 - 10 = 15$. Both $= 10$. Total studying at least one $= 35 + 15 + 10 = 60$. Neither $= 80 - 60 = 20$. Probability $= \\frac{20}{80} = \\frac{1}{4}$."
       },
       {
         "question": "A biased spinner has four sections: A, B, C and D. The probabilities of landing on A, B and C are 0.2, 0.35 and 0.15 respectively. The spinner is spun 200 times. Work out an estimate for the number of times it lands on D.",
@@ -1728,8 +2306,64 @@
     ]
   },
   {
+    "id": "number-counting-the-product-rule",
+    "subject": "Number",
+    "icon": "🔢",
+    "title": "Counting & the product rule",
+    "keywords": [
+      "combinations",
+      "number of ways",
+      "arrangements",
+      "how many ways",
+      "listing outcomes"
+    ],
+    "week": 17,
+    "overview": {
+      "hook": "Ever wondered how many outfit combinations you actually have in your wardrobe?",
+      "keyIdea": "When making independent choices one after another, you multiply the number of possibilities for each choice together to find the total number of outcomes. This is known as the product rule for counting.",
+      "keyPoints": [
+        "Multiply the number of options for each independent stage together.",
+        "If a choice uses up an item, reduce the available options by 1 for the next stage.",
+        "Read questions carefully for restrictions like 'without repetition' or 'must be even'."
+      ],
+      "examNote": "This topic usually appears as 1- or 2-mark questions where method (M1) is awarded for multiplying your choices and accuracy (A1) for the correct final total; no formulae are provided on the sheet for this, so you must memorise the method."
+    },
+    "examples": [
+      {
+        "question": "A restaurant offers 3 starters and 4 main courses. How many different two-course meal combinations of a starter and a main can a customer choose?",
+        "solution": "1. Identify the number of choices for the first stage, which is 3 starters. 2. Identify the number of choices for the second stage, which is 4 main courses. 3. Multiply the independent options together: $3 \\times 4 = 12$. The final answer is 12 different meal combinations."
+      },
+      {
+        "question": "A 4-digit code is made using the digits 1, 2, 3, 4, 5 and 6. Each digit can only be used once. How many different codes can be made?",
+        "solution": "1. Identify total available digits, which is 6. 2. For the first digit of the code, you have 6 choices. 3. Because digits cannot repeat, for the second digit you have 5 choices left. 4. For the third digit, you have 4 choices left. 5. For the fourth digit, you have 3 choices left. 6. Multiply all the choices together: $6 \\times 5 \\times 4 \\times 3 = 360$. The final answer is 360 different codes."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A school canteen offers 4 types of sandwich and 3 types of fruit. How many different lunch choices of one sandwich and one fruit are there?",
+        "answer": "4 x 3 = 12 different lunch choices."
+      },
+      {
+        "question": "A lock has a 3-digit code using the digits from 0 to 9 inclusive. Repetition of digits is allowed. How many possible codes are there?",
+        "answer": "There are 10 digits (0-9). Since repetition is allowed, each digit has 10 options. 10 x 10 x 10 = 1000 possible codes."
+      },
+      {
+        "question": "A club has 8 members. One person is chosen to be President and another to be Secretary. No person can hold both roles. How many ways can these roles be filled?",
+        "answer": "8 choices for President. 7 choices left for Secretary. 8 x 7 = 56 ways."
+      },
+      {
+        "question": "A 3-digit integer is to be formed using the digits 2, 4, 6 and 8. No digit can be repeated. How many numbers greater than 500 can be formed?",
+        "answer": "For the number to be greater than 500, the first digit must be either 6 or 8 (2 choices). Since one digit is used, 3 digits remain for the second position, and 2 digits remain for the third position. Calculation: 2 x 3 x 2 = 12 numbers."
+      },
+      {
+        "question": "A password consists of 2 letters followed by 2 digits. Letters can be repeated, but digits cannot be repeated (digits from 0 to 9). How many passwords can be made?",
+        "answer": "26 options for each of the 2 letters (26 x 26). 10 options for the first digit, 9 options for the second digit (10 x 9). Total passwords = 26 x 26 x 10 x 9 = 60,840."
+      }
+    ]
+  },
+  {
     "id": "probability-tree-diagrams",
-    "week": 31,
+    "week": 17,
     "subject": "Probability",
     "icon": "🎲",
     "title": "Tree diagrams",
@@ -1785,7 +2419,7 @@
   },
   {
     "id": "probability-venn-diagrams-set-notation",
-    "week": 32,
+    "week": 18,
     "subject": "Probability",
     "icon": "🎲",
     "title": "Venn diagrams & set notation",
@@ -1843,7 +2477,7 @@
   },
   {
     "id": "probability-conditional-probability",
-    "week": 33,
+    "week": 18,
     "subject": "Probability",
     "icon": "🎲",
     "title": "Conditional probability",
@@ -1870,7 +2504,7 @@
     "testQuestions": [
       {
         "question": "There are 4 green pens and 6 pink pens in a pencil case. Two pens are chosen at random without replacement. Work out the probability that the pens are different colours.",
-        "answer": "Answer: 24/45 or 8/15. Working: P(Green then Pink) = 4/10 \\times 6/9 = 24/90. P(Pink then Green) = 6/10 \\times 4/9 = 24/90. Total probability = 24/90 + 24/90 = 48/90 = 8/15."
+        "answer": "Answer: $\\frac{8}{15}$. Working: P(Green then Pink) $= \\frac{4}{10} \\times \\frac{6}{9} = \\frac{24}{90}$. P(Pink then Green) $= \\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90}$. Total $= \\frac{48}{90} = \\frac{8}{15}$."
       },
       {
         "question": "A jar contains 7 yellow sweets and 3 purple sweets. Two sweets are taken at random without replacement. Given that the first sweet was yellow, find the probability that the second sweet is also yellow.",
@@ -1882,7 +2516,7 @@
       },
       {
         "question": "Bag A contains 2 red counters and 3 blue counters. Bag B contains 4 red counters and 1 blue counter. A coin is flipped. If it lands on heads, a counter is taken from Bag A. If it lands on tails, a counter is taken from Bag B. Given that a red counter is chosen, find the probability that the coin landed on heads.",
-        "answer": "Answer: 2/7. Working: P(Heads and Red) = 0.5 \\times 2/5 = 2/10. P(Tails and Red) = 0.5 \\times 4/5 = 4/10. Total P(Red) = 2/10 + 4/10 = 6/10. P(Heads given Red) = (2/10) / (6/10) = 2/6 = 1/3... wait, 2/10 divided by 6/10 is 2/6 = 1/3. Let's check: 2/10 = 1/5, total red = 6/10 = 3/5. (1/5) / (3/5) = 1/3."
+        "answer": "Answer: $\\frac{1}{3}$. Working: P(Heads and Red) $= 0.5 \\times \\frac{2}{5} = \\frac{2}{10}$. P(Tails and Red) $= 0.5 \\times \\frac{4}{5} = \\frac{4}{10}$. Total P(Red) $= \\frac{6}{10}$. P(Heads given Red) $= \\frac{2}{10} \\div \\frac{6}{10} = \\frac{1}{3}$."
       },
       {
         "question": "Card A has numbers 1, 2, 3, 4. Card B has numbers 3, 4, 5, 6, 7. One card is chosen at random from Card A, and its number is added to a number chosen at random from Card B. Given that the sum is greater than 8, find the probability that the number chosen from Card A was a 4.",
@@ -1897,7 +2531,7 @@
   },
   {
     "id": "statistics-averages-range",
-    "week": 34,
+    "week": 19,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Averages & range",
@@ -1953,7 +2587,7 @@
   },
   {
     "id": "statistics-frequency-tables",
-    "week": 35,
+    "week": 19,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Frequency tables",
@@ -2010,8 +2644,68 @@
     ]
   },
   {
+    "id": "statistics-sampling-statistical-charts",
+    "subject": "Statistics",
+    "icon": "📊",
+    "title": "Sampling & statistical charts",
+    "keywords": [
+      "sample",
+      "stratified sampling",
+      "random sampling",
+      "bias",
+      "population",
+      "pie charts",
+      "time series",
+      "capture-recapture"
+    ],
+    "week": 19,
+    "overview": {
+      "hook": "Ask only the people leaving a gym if they exercise, and your survey is already biased.",
+      "keyIdea": "Sampling lets us estimate information about a whole population by looking at a smaller, representative group. Statistical charts like pie charts and time series help us clearly display and compare this data.",
+      "keyPoints": [
+        "Stratified sampling formula: $\\text{Sample size} = \\frac{\\text{Subgroup total}}{\\text{Population total}} \\times \\text{Overall sample}$",
+        "Always check if a sampling method is biased, such as an online poll missing offline people.",
+        "Capture-recapture formula: $\\frac{\\text{Tagged}}{N} = \\frac{\\text{Recaptured with tag}}{\\text{Total in second sample}}$",
+        "Pie charts divide $360^\\circ$ proportionally; time series show trends over time on a grid."
+      ],
+      "examNote": "Stratified sampling questions are typically worth 2-3 marks, awarding M1 for the correct fraction or multiplier and A1 for the correct integer answers."
+    },
+    "examples": [
+      {
+        "question": "A school has 200 Year 11 students, 300 Year 10 students, and 500 Year 9 students. A stratified sample of 50 students is needed. Calculate how many Year 10 students should be in the sample.",
+        "solution": "Step 1: Find the total school population by adding all the year groups together: $200 + 300 + 500 = 1000$ students. Step 2: Write down the fraction of Year 10 students in the school: $\\frac{300}{1000}$. Step 3: Multiply this fraction by the required sample size ($50$): $\\frac{300}{1000} \\times 50 = 0.3 \\times 50 = 15$. So, 15 Year 10 students should be in the sample."
+      },
+      {
+        "question": "An ecologist wants to estimate the number of fish in a lake. She catches and tags 80 fish, releasing them back. Later, she catches a sample of 150 fish, and 12 of them have tags. Estimate the total population of fish in the lake.",
+        "solution": "Step 1: Set up the proportion using the capture-recapture formula where $N$ is the total population: $\\frac{80}{N} = \\frac{12}{150}$. Step 2: Rearrange to solve for $N$. Cross multiply to get $12N = 80 \\times 150$. Step 3: Calculate $80 \\times 150 = 12000$. Step 4: Divide by 12: $N = \\frac{12000}{12} = 1000$. The estimated total fish population is 1000."
+      }
+    ],
+    "testQuestions": [
+      {
+        "question": "A factory makes 400 small widgets, 250 medium widgets, and 150 large widgets. A stratified sample of 160 widgets is taken. How many medium widgets are in the sample?",
+        "answer": "Total widgets = $400 + 250 + 150 = 800$. Medium fraction = $250/800$. Sample = $(250/800) \\times 160 = 50$ medium widgets."
+      },
+      {
+        "question": "Explain why asking people leaving a gym if they exercise enough introduces bias.",
+        "answer": "It is biased because people at a gym are already more likely to exercise than the general public, so the sample is not representative."
+      },
+      {
+        "question": "A pie chart represents 180 people's favourite pets. If 45 people chose cats, what angle should the cat sector be?",
+        "answer": "Angle = $(45 / 180) \\times 360^\\circ = 0.25 \\times 360^\\circ = 90^\\circ$."
+      },
+      {
+        "question": "A wildlife ranger tags 50 deer. A month later, he counts 40 deer in a survey, and 4 of them have tags. Estimate the total deer population.",
+        "answer": "Using capture-recapture: $50 / N = 4 / 40$. Cross multiply: $4N = 2000$, so $N = 500$ deer."
+      },
+      {
+        "question": "In a town, a survey is conducted by stopping people outside a local library on a Tuesday morning. Give one reason why this sample might be unrepresentative of the whole town.",
+        "answer": "People working full-time or at school on a Tuesday morning cannot be surveyed, missing a major demographic."
+      }
+    ]
+  },
+  {
     "id": "statistics-cumulative-frequency-box-plots",
-    "week": 36,
+    "week": 20,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Cumulative frequency & box plots",
@@ -2069,7 +2763,7 @@
   },
   {
     "id": "statistics-histograms",
-    "week": 37,
+    "week": 20,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Histograms",
@@ -2108,8 +2802,8 @@
         "answer": "Answer: 40. \nWorking: The question gives the frequency directly in the table as 40. (Be careful not to confuse frequency with frequency density!)."
       },
       {
-        "question": "On a histogram, a bar representing the interval $0 < t \\le 5$ has a width of 2 cm and a height of 5 cm, and represents 20 items. Find the number of items represented by a bar with class width 8 and height 3.",
-        "answer": "Answer: 48. \nWorking: For the first bar, Frequency = 20, Class Width = 5. Frequency Density = $20 \\div 5 = 4$. Height on graph = 5 cm, so 1 cm of height = $4 \\div 5 = 0.8$ frequency density units. For the second bar, Class Width = 8, Height = 3. Frequency Density = $3 \\times 0.8 = 2.4$. Frequency = Width $\\times$ Frequency Density $= 8 \\times 2.4 = 19.2$, wait, let's re-verify using area scale: Bar 1 area on grid = width $\\times$ height = $2 \\times 5 = 10$ sq cm representing 20 items (so 1 sq cm = 2 items). Bar 2: if width represents class width, area scale needs care. Let's use standard formula: Frequency = Class Width $\\times$ Frequency Density. For bar 2, Class Width = 8. We need Frequency Density. Since 1 cm height = 4/5 = 0.8 units of FD, height of 3 cm means FD = $3 \\times (5/2)$? Let us check standard Edexcel style: Area = Frequency. Bar 1 frequency = 20, class width = 5. Area factor = $20 \\div (5 \\times \\text{height})$. Let's keep it simple: Frequency = Class Width $\\times$ Frequency Density. If height = 3, and scale is proportional, Frequency = $8 \\times (3 \\times \\text{scale})$. Correct final answer is 48 if scale matches standard proportionality."
+        "question": "On a histogram, the bar for the interval $0 < t \\le 5$ has a height of 5 cm and represents 20 items. Another bar has a class width of 10 and a height of 3 cm. Find the number of items this second bar represents.",
+        "answer": "Answer: 24. Working: First bar: frequency density $= 20 \\div 5 = 4$, shown by a height of 5 cm, so 1 cm represents $4 \\div 5 = 0.8$. Second bar: frequency density $= 3 \\times 0.8 = 2.4$. Frequency $=$ class width $\\times$ frequency density $= 10 \\times 2.4 = 24$."
       },
       {
         "question": "A histogram is drawn for a set of data. The total frequency for the histogram is 100. A bar representing the interval $100 < x \\le 150$ has a width of 5 cm and a height of 4 cm. If the total area of all bars combined is 50 cm^2, calculate the total frequency represented by a bar of area 12 cm^2.",
@@ -2124,7 +2818,7 @@
   },
   {
     "id": "statistics-scatter-graphs-correlation",
-    "week": 38,
+    "week": 20,
     "subject": "Statistics",
     "icon": "📊",
     "title": "Scatter graphs & correlation",

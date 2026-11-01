@@ -4,13 +4,11 @@
 // it never calls Gemini for module content, only for live Q&A.
 //
 // Usage:
-//   node scripts/generate-modules.js            # generate every module
-//   node scripts/generate-modules.js 6           # regenerate just week 6
-//   node scripts/generate-modules.js 6 14        # regenerate weeks 6-14
+//   node scripts/generate-modules.js              # generate only lessons with no content yet
+//   node scripts/generate-modules.js <lesson-id>  # regenerate one lesson (replaces any hand edits)
 //
-// Safe to re-run: it merges into the existing content/modules.json rather
-// than wiping it, so a partial run (or a single re-generated module) never
-// loses already-good content.
+// Safe to re-run: existing lessons are never regenerated unless named, and
+// every lesson's week number and keywords are kept in line with the lists below.
 
 const fs = require('fs');
 const path = require('path');
@@ -40,33 +38,61 @@ if (!API_KEY) {
 
 const OUTPUT_PATH = path.join(__dirname, '..', 'content', 'modules.json');
 
-// This defines the week-by-week order (Number 1-6, Algebra 7-15,
-// Ratio & Proportion 16-19, Geometry 20-29, Probability 30-33, Statistics 34-38).
+// Every lesson, by subject. WEEK_PLAN below sets when each one is taught.
 const SUBJECTS = [
   { name: 'Number', icon: '🔢', subs: [
-    'Factors, multiples, primes, HCF & LCM', 'Fractions, decimals & percentages', 'Standard form', 'Surds',
-    'Laws of indices', 'Upper & lower bounds'
+    'Order of operations (BIDMAS)', 'Factors, multiples, primes, HCF & LCM', 'Fractions, decimals & percentages', 'Standard form', 'Surds',
+    'Laws of indices', 'Upper & lower bounds', 'Counting & the product rule'
   ]},
   { name: 'Algebra', icon: '🧮', subs: [
     'Expanding & factorising', 'Solving equations & inequalities', 'Simultaneous equations',
     'Quadratics: factorising & the formula', 'Completing the square', 'Algebraic fractions',
-    'Sequences (linear, quadratic, geometric)', 'Functions & iteration', 'Algebraic proof'
+    'Sequences (linear, quadratic, geometric)', 'Functions & iteration', 'Algebraic proof',
+    'Straight-line graphs', 'Quadratic, cubic & other curved graphs', 'Transforming graphs',
+    'Area under a curve & rates of change', 'Equation of a circle'
   ]},
   { name: 'Ratio & Proportion', icon: '⚖️', subs: [
-    'Ratio', 'Percentage change', 'Compound interest & depreciation', 'Direct & inverse proportion'
+    'Ratio', 'Percentage change', 'Compound interest & depreciation', 'Direct & inverse proportion',
+    'Speed, density & pressure'
   ]},
   { name: 'Geometry', icon: '📐', subs: [
     'Angles & polygons', 'Circle theorems', 'Arc length & sector area', "Pythagoras' theorem",
     'Trigonometry (SOH CAH TOA)', 'Sine & cosine rules', '3D shapes & volume', 'Vectors',
-    'Transformations', 'Similarity & congruence'
+    'Transformations', 'Similarity & congruence', 'Area & perimeter of 2D shapes',
+    'Bearings & scale drawings', 'Constructions & loci'
   ]},
   { name: 'Probability', icon: '🎲', subs: [
     'Basic probability', 'Tree diagrams', 'Venn diagrams & set notation', 'Conditional probability'
   ]},
   { name: 'Statistics', icon: '📊', subs: [
     'Averages & range', 'Frequency tables', 'Cumulative frequency & box plots',
-    'Histograms', 'Scatter graphs & correlation'
+    'Histograms', 'Scatter graphs & correlation', 'Sampling & statistical charts'
   ]}
+];
+
+// The 20 weekly sessions, in teaching order: topics that build on each other
+// sit together, and anything a later topic relies on comes first.
+const WEEK_PLAN = [
+  ['Order of operations (BIDMAS)', 'Factors, multiples, primes, HCF & LCM', 'Fractions, decimals & percentages'],
+  ['Laws of indices', 'Standard form', 'Surds'],
+  ['Ratio', 'Percentage change', 'Compound interest & depreciation'],
+  ['Direct & inverse proportion', 'Speed, density & pressure', 'Upper & lower bounds'],
+  ['Expanding & factorising', 'Solving equations & inequalities'],
+  ['Quadratics: factorising & the formula', 'Completing the square'],
+  ['Simultaneous equations', 'Algebraic fractions'],
+  ['Straight-line graphs', 'Quadratic, cubic & other curved graphs'],
+  ['Transforming graphs', 'Area under a curve & rates of change'],
+  ['Sequences (linear, quadratic, geometric)', 'Functions & iteration', 'Algebraic proof'],
+  ['Angles & polygons', 'Bearings & scale drawings', 'Constructions & loci'],
+  ['Area & perimeter of 2D shapes', 'Arc length & sector area', '3D shapes & volume'],
+  ["Pythagoras' theorem", 'Trigonometry (SOH CAH TOA)'],
+  ['Sine & cosine rules', 'Similarity & congruence'],
+  ['Transformations', 'Vectors'],
+  ['Circle theorems', 'Equation of a circle'],
+  ['Basic probability', 'Counting & the product rule', 'Tree diagrams'],
+  ['Venn diagrams & set notation', 'Conditional probability'],
+  ['Averages & range', 'Frequency tables', 'Sampling & statistical charts'],
+  ['Cumulative frequency & box plots', 'Histograms', 'Scatter graphs & correlation']
 ];
 
 // Other words people use for each topic, so the app's search finds the right
@@ -111,22 +137,58 @@ const KEYWORDS = {
   'Frequency tables': ['grouped data', 'grouped frequency', 'estimate of the mean', 'modal class', 'class interval', 'midpoints'],
   'Cumulative frequency & box plots': ['box and whisker', 'interquartile range', 'IQR', 'quartiles', 'lower quartile', 'upper quartile'],
   'Histograms': ['frequency density', 'class width', 'unequal class widths'],
-  'Scatter graphs & correlation': ['line of best fit', 'positive correlation', 'negative correlation', 'outliers', 'interpolation', 'extrapolation']
+  'Scatter graphs & correlation': ['line of best fit', 'positive correlation', 'negative correlation', 'outliers', 'interpolation', 'extrapolation'],
+  'Order of operations (BIDMAS)': ['BODMAS', 'PEMDAS', 'order of calculations', 'calculating in the right order'],
+  'Counting & the product rule': ['combinations', 'number of ways', 'arrangements', 'how many ways', 'listing outcomes'],
+  'Straight-line graphs': ['gradient', 'y = mx + c', 'y-intercept', 'parallel lines', 'perpendicular lines', 'linear graphs', 'midpoint'],
+  'Quadratic, cubic & other curved graphs': ['parabola', 'cubic graphs', 'reciprocal graphs', 'exponential graphs', 'trig graphs', 'turning point', 'roots', 'sketching graphs'],
+  'Transforming graphs': ['y = f(x) + a', 'y = f(x + a)', 'translating graphs', 'reflecting graphs', 'graph transformations'],
+  'Area under a curve & rates of change': ['distance-time graphs', 'velocity-time graphs', 'speed-time graphs', 'acceleration', 'gradient of a curve', 'trapeziums under a curve', 'tangent to a curve'],
+  'Equation of a circle': ['x squared plus y squared', 'radius', 'tangent to a circle', 'circle graph'],
+  'Speed, density & pressure': ['compound measures', 'compound units', 'speed distance time', 'mass', 'force', 'unit conversion'],
+  'Area & perimeter of 2D shapes': ['trapezium', 'parallelogram', 'triangle area', 'rhombus', 'compound shapes'],
+  'Bearings & scale drawings': ['three-figure bearings', 'scale', 'maps', 'compass directions', 'back bearings'],
+  'Constructions & loci': ['locus', 'perpendicular bisector', 'angle bisector', 'compasses', 'ruler and compass', 'equidistant'],
+  'Sampling & statistical charts': ['sample', 'stratified sampling', 'random sampling', 'bias', 'population', 'pie charts', 'time series', 'capture-recapture']
 };
 
 // Extra direction for topics whose title alone doesn't pin down the scope.
 const SCOPE_NOTES = {
-  'Factors, multiples, primes, HCF & LCM': 'Cover: writing a number as a product of prime factors in index form (e.g. $360 = 2^3 \\times 3^2 \\times 5$), then using prime factors or a Venn diagram to find the HCF and LCM, including at least one worded problem where the student must recognise that LCM or HCF is needed (e.g. two buses leaving a station together, or cutting ribbons into equal lengths).'
+  'Factors, multiples, primes, HCF & LCM': 'Cover: writing a number as a product of prime factors in index form (e.g. $360 = 2^3 \\times 3^2 \\times 5$), then using prime factors or a Venn diagram to find the HCF and LCM, including at least one worded problem where the student must recognise that LCM or HCF is needed (e.g. two buses leaving a station together, or cutting ribbons into equal lengths).',
+  'Order of operations (BIDMAS)': 'Keep it Higher-tier: nested brackets, powers, negative numbers, fractions and calculator-entry traps.',
+  'Counting & the product rule': 'Cover: the product rule for counting (e.g. 3 starters and 4 mains give $3 \\times 4$ meals), including restrictions such as codes where digits cannot repeat.',
+  'Straight-line graphs': 'Cover: gradient from two points, $y = mx + c$, finding the equation of a line, and parallel and perpendicular gradients.',
+  'Quadratic, cubic & other curved graphs': 'Cover: recognising the shapes of quadratic, cubic, reciprocal, exponential and trigonometric graphs, and reading roots, intercepts and turning points. There are no diagrams, so describe every graph in words or by its equation and coordinates. Ask questions that can be answered without seeing a graph.',
+  'Transforming graphs': 'Cover: $y = f(x) + a$, $y = f(x + a)$, $y = -f(x)$ and $y = f(-x)$. There are no diagrams, so use coordinates: e.g. where does the point $(2, 5)$ on $y = f(x)$ move to.',
+  'Area under a curve & rates of change': 'Cover: distance-time and velocity-time graphs, estimating the gradient of a curve at a point using a tangent, and estimating the area under a curve with trapeziums. There are no diagrams, so give any graph as a table of coordinates in the question.',
+  'Equation of a circle': 'Cover: $x^2 + y^2 = r^2$ for a circle centred at the origin, and the equation of a tangent at a given point using perpendicular gradients.',
+  'Speed, density & pressure': 'Cover: speed, density and pressure formulae, converting compound units (e.g. m/s to km/h), and multi-step problems. State clearly which formulae are given on the formula sheet: only give that detail if you are certain, otherwise tell the student to learn all three.',
+  'Area & perimeter of 2D shapes': 'Cover: triangles, parallelograms, trapeziums and compound shapes, including area in terms of an algebraic expression. Describe every shape fully in words, with all its measurements.',
+  'Bearings & scale drawings': 'Cover: three-figure bearings measured clockwise from north, back bearings, and using a scale such as 1 cm to 5 km. There are no diagrams, so describe each situation in words and use questions answerable by calculation or by the student sketching on paper.',
+  'Constructions & loci': 'This lesson is done with a ruler and compasses on paper. Give clear step-by-step instructions for constructing a perpendicular bisector and an angle bisector, and describe the common loci. Test questions should be things to draw on paper or to describe in words, with answers that explain what a correct drawing looks like so a parent can check it.',
+  'Sampling & statistical charts': 'Cover: random and stratified sampling (with a stratified sample calculation), bias, the capture-recapture method, and reading pie charts and time series from values given in words or tables. There are no diagrams.'
 };
 
 function buildModuleList() {
-  const modules = [];
-  let week = 1;
+  const byTitle = new Map();
   for (const subject of SUBJECTS) {
     for (const title of subject.subs) {
       const id = `${subject.name}-${title}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      modules.push({ id, week: week++, subject: subject.name, icon: subject.icon, title, keywords: KEYWORDS[title] || [] });
+      byTitle.set(title, { id, subject: subject.name, icon: subject.icon, title, keywords: KEYWORDS[title] || [] });
     }
+  }
+
+  const modules = WEEK_PLAN.flatMap((titles, i) => titles.map(title => {
+    if (!byTitle.has(title)) throw new Error(`WEEK_PLAN has an unknown lesson: ${title}`);
+    return { ...byTitle.get(title), week: i + 1 };
+  }));
+
+  // A typo here would silently drop a lesson from the course.
+  const planned = modules.map(m => m.title);
+  const unplanned = [...byTitle.keys()].filter(t => !planned.includes(t));
+  const repeated = planned.filter((t, i) => planned.indexOf(t) !== i);
+  if (unplanned.length || repeated.length) {
+    throw new Error(`WEEK_PLAN mismatch. Not planned: ${unplanned.join('; ')}. Repeated: ${repeated.join('; ')}`);
   }
   return modules;
 }
@@ -175,9 +237,11 @@ const RESPONSE_SCHEMA = {
 function buildPrompt(mod) {
   return `Create a self-contained home-tutoring lesson for a Year 10 student studying Edexcel GCSE Maths (Pearson, specification 1MA1) Higher tier, on the topic: "${mod.title}" (part of ${mod.subject}).
 
-This lesson will be used by a PARENT sitting down with their daughter for one focused hour, once a week. The parent may not be confident in maths themselves, so the overview must be genuinely clear to a non-expert adult as well as the student.
+This lesson will be used by a PARENT sitting down with their daughter, as one of two or three topics in a weekly one-hour session, so keep it focused. The parent may not be confident in maths themselves, so the overview must be genuinely clear to a non-expert adult as well as the student.
 
-Use British spellings (factorise, recognise, colour, centre). Use $...$ for inline maths and keep notation simple (x^2, sqrt(), fractions written clearly). Where relevant, mention Edexcel mark-scheme language (M1 for method, A1 for accuracy) and note which formulae are given on the Higher tier formula sheet versus which must be memorised.
+Use British spellings (factorise, recognise, colour, centre). Use $...$ for inline maths and keep notation simple (x^2, sqrt(), fractions written clearly). Where relevant, mention Edexcel mark-scheme language (M1 for method, A1 for accuracy) and say which formulae are on the Higher tier exam aid and which must be learned. The exam aid gives ONLY: area of a trapezium, volume of a prism, circumference and area of a circle, the quadratic formula, Pythagoras' theorem, the trig ratios, the sine rule, the cosine rule, the area of a triangle using sine, compound interest, and the probability rules for P(A or B) and P(A and B). Everything else is not on it. Sphere, cone and pyramid formulae are normally printed in the question.
+
+Write each answer once, as a finished answer key: never think aloud or correct yourself in the text, and put all maths inside $...$.
 
 ${SCOPE_NOTES[mod.title] || ''}
 
@@ -231,11 +295,13 @@ function loadExisting() {
 }
 
 async function main() {
-  const args = process.argv.slice(2).map(Number).filter(n => !isNaN(n));
-  const [fromWeek, toWeek] = args.length === 2 ? args : args.length === 1 ? [args[0], args[0]] : [1, 999];
-
+  const ids = process.argv.slice(2);
   const allModules = buildModuleList();
-  const targets = allModules.filter(m => m.week >= fromWeek && m.week <= toWeek);
+  const unknown = ids.filter(id => !allModules.some(m => m.id === id));
+  if (unknown.length) {
+    console.error(`Unknown lesson id: ${unknown.join(', ')}`);
+    process.exit(1);
+  }
   const existing = loadExisting();
   const byId = new Map(existing.map(m => [m.id, m]));
 
@@ -245,10 +311,17 @@ async function main() {
     if (byId.has(mod.id)) byId.set(mod.id, { ...byId.get(mod.id), ...mod });
   }
 
-  console.log(`Generating ${targets.length} module(s) (weeks ${fromWeek}-${toWeek})...`);
+  const targets = ids.length
+    ? allModules.filter(m => ids.includes(m.id))
+    : allModules.filter(m => !byId.has(m.id));
+
+  // Lessons are saved in teaching order, not just by week number.
+  const inPlanOrder = () => allModules.filter(m => byId.has(m.id)).map(m => byId.get(m.id));
+
+  console.log(`Generating ${targets.length} lesson(s)...`);
 
   for (const mod of targets) {
-    process.stdout.write(`  Week ${mod.week}/${allModules.length} — ${mod.subject}: ${mod.title} ... `);
+    process.stdout.write(`  Week ${mod.week} — ${mod.subject}: ${mod.title} ... `);
     try {
       const content = await callGemini(buildPrompt(mod));
       byId.set(mod.id, { ...mod, ...content });
@@ -256,8 +329,7 @@ async function main() {
       // Save after every success, not just at the end — a long batch like
       // this can run into rate limits or quota partway through, and we
       // don't want an interruption to lose everything generated so far.
-      const merged = Array.from(byId.values()).sort((a, b) => a.week - b.week);
-      fs.writeFileSync(OUTPUT_PATH, JSON.stringify(merged, null, 2));
+      fs.writeFileSync(OUTPUT_PATH, JSON.stringify(inPlanOrder(), null, 2));
     } catch (err) {
       console.log('FAILED:', err.message);
     }
@@ -265,7 +337,7 @@ async function main() {
     await new Promise(r => setTimeout(r, 4000));
   }
 
-  const merged = Array.from(byId.values()).sort((a, b) => a.week - b.week);
+  const merged = inPlanOrder();
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(merged, null, 2));
   console.log(`\nWrote ${merged.length} module(s) to ${OUTPUT_PATH}`);
 
@@ -273,7 +345,7 @@ async function main() {
   if (missing.length) {
     console.log(`\n${missing.length} module(s) still missing content:`);
     missing.forEach(m => console.log(`  week ${m.week}: ${m.title}`));
-    console.log('Re-run with specific week numbers to fill these in once Gemini is responsive.');
+    console.log('Re-run with no arguments to fill these in once Gemini is responsive.');
   }
 }
 
